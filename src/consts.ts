@@ -27,9 +27,8 @@ export const SITE_LANG = 'ja';
 export const AUTHOR = '親みまもり研究所 編集部';
 export const OPERATOR = '親みまもり研究所 編集部';
 
-// TODO: 公開前に、実際に受信できるメールアドレスへ変更してください。
-// （Google AdSense の審査では、連絡が取れるお問い合わせ先が必要です）
-export const CONTACT_EMAIL = 'info@oyamimamori.jp';
+// お問い合わせ先メールアドレス（お問い合わせ・プライバシー・運営者情報・フッターに表示）
+export const CONTACT_EMAIL = 'henry@iq121.com';
 
 // ---------------------------------------------------------------------
 // Google AdSense

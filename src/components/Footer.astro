@@ -5,6 +5,7 @@ import {
   CATEGORIES,
   NAV_LINKS,
   FOOTER_INFO_LINKS,
+  CONTACT_EMAIL,
 } from '../consts';
 import { withBase } from '../utils/url';
 const year = new Date().getFullYear();
@@ -15,6 +16,9 @@ const year = new Date().getFullYear();
     <div class="footer-about">
       <p class="footer-brand">{SITE_NAME}</p>
       <p class="footer-desc">{SITE_DESCRIPTION}</p>
+      <p class="footer-contact">
+        お問い合わせ：<a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
+      </p>
     </div>
 
     <nav class="footer-col" aria-label="カテゴリー">
@@ -82,7 +86,15 @@ const year = new Date().getFullYear();
     font-size: 0.85rem;
     line-height: 1.7;
     color: #c5d6d1;
+    margin: 0 0 0.7rem;
+  }
+  .footer-contact {
+    font-size: 0.82rem;
+    color: #c5d6d1;
     margin: 0;
+  }
+  .footer-contact a {
+    color: #fff;
   }
   .footer-col h2 {
     font-size: 0.95rem;
