@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages
+name: Deploy Astro site to GitHub Pages
 
 on:
   # Run on every push to the default branch.
@@ -25,10 +25,22 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      # Builds the Astro site and uploads the dist/ folder as a Pages artifact.
-      # `site` and `base` are read from astro.config.mjs.
-      - name: Build with Astro
-        uses: withastro/action@v3
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build Astro site
+        run: npm run build
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./dist
 
   deploy:
     needs: build
