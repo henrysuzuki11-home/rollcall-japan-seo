@@ -27,8 +27,8 @@ npm run preview  # ビルド結果のプレビュー
 
 このリポジトリは GitHub Pages のプロジェクトサイトとして公開する設定済みです。
 
-- 公開 URL: `https://henrysuzuki11-home.github.io/iq121-rollcall-japan/`
-- ベースパス: `/iq121-rollcall-japan`（`src/consts.ts` の `BASE_PATH`）
+- 公開 URL: `https://henrysuzuki11-home.github.io/rollcall-japan-seo/`
+- ベースパス: `/rollcall-japan-seo`（`src/consts.ts` の `BASE_PATH`）
 - 公開オリジン: `https://henrysuzuki11-home.github.io`（同 `SITE_URL`）
 - ワークフロー: [.github/workflows/deploy.yml](.github/workflows/deploy.yml) — `main` への push で自動ビルド＆デプロイ
 

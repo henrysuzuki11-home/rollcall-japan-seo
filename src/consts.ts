@@ -2,7 +2,7 @@
 // Site-wide constants.
 //
 // Deployment target: GitHub Pages project site
-//   https://henrysuzuki11-home.github.io/iq121-rollcall-japan/
+//   https://henrysuzuki11-home.github.io/rollcall-japan-seo/
 //
 // SITE_URL  = the GitHub Pages origin (your username .github.io)
 // BASE_PATH = the repository name, used as the URL base path.
@@ -13,7 +13,7 @@
 // =====================================================================
 
 export const SITE_URL = 'https://henrysuzuki11-home.github.io';
-export const BASE_PATH = '/iq121-rollcall-japan';
+export const BASE_PATH = '/rollcall-japan-seo';
 
 export const SITE_NAME = '親みまもり研究所';
 export const SITE_TITLE = '親みまもり研究所｜家族の見守り・安否確認の情報メディア';

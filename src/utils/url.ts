@@ -1,6 +1,6 @@
 // Prefix a root-relative path with the configured base path so internal
 // links work when the site is served from a subdirectory (GitHub Pages
-// project sites, e.g. /iq121-rollcall-japan/).
+// project sites, e.g. /rollcall-japan-seo/).
 //
 // import.meta.env.BASE_URL reflects the `base` option in astro.config.mjs.
 // External URLs and anchors/relative paths are returned unchanged.
