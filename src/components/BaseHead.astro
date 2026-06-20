@@ -6,12 +6,16 @@ import {
   SITE_LOCALE,
   SITE_LANG,
   ADSENSE_CLIENT_ID,
+  GA_MEASUREMENT_ID,
 } from '../consts';
 import { withBase } from '../utils/url';
 import '../styles/global.css';
 
 // AdSense loader is emitted only in production once a client id is set.
 const adsenseEnabled = import.meta.env.PROD && ADSENSE_CLIENT_ID !== '';
+
+// GA4 is emitted only in production builds (not on localhost / dev server).
+const gaEnabled = import.meta.env.PROD && GA_MEASUREMENT_ID !== '';
 
 interface Props {
   title?: string;
@@ -50,6 +54,25 @@ const imageURL = new URL(withBase(image), Astro.site);
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="generator" content={Astro.generator} />
+
+<!-- Google Analytics 4 (production builds only; not output on dev/localhost) -->
+{gaEnabled && (
+  <Fragment>
+    <script
+      async
+      src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+      is:inline
+    ></script>
+    <script is:inline define:vars={{ gaId: GA_MEASUREMENT_ID }}>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', gaId);
+    </script>
+  </Fragment>
+)}
 
 <title>{pageTitle}</title>
 <meta name="description" content={description} />
