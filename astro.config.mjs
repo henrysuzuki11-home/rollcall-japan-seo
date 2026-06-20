@@ -5,12 +5,13 @@ import { SITE_URL, BASE_PATH } from './src/consts.ts';
 
 /**
  * Rehype plugin: prefix root-relative links inside Markdown content with the
- * base path, so internal links in articles work on a GitHub Pages project site
- * (served under /rollcall-japan-seo/). Astro does not rewrite authored hrefs,
- * and Markdown links bypass the withBase() helper used in .astro components.
+ * base path. With a custom domain BASE_PATH is '' (no-op); for a GitHub Pages
+ * project site it would prefix '/<repo-name>'. Astro does not rewrite authored
+ * hrefs, and Markdown links bypass the withBase() helper used in components.
  */
 function rehypeBaseLinks() {
   const base = BASE_PATH;
+  if (!base) return (/** @type {any} */ tree) => tree;
   /** @param {any} node */
   const visit = (node) => {
     if (node.type === 'element' && node.tagName === 'a') {
@@ -27,7 +28,8 @@ function rehypeBaseLinks() {
 // https://astro.build/config
 export default defineConfig({
   site: SITE_URL,
-  base: BASE_PATH,
+  // Empty BASE_PATH (custom domain) → fall back to Astro's default '/'.
+  base: BASE_PATH || undefined,
   trailingSlash: 'ignore',
   markdown: {
     rehypePlugins: [rehypeBaseLinks],

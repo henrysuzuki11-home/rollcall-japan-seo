@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://henrysuzuki11-home.github.io/rollcall-japan-seo/sitemap-index.xml
+Sitemap: https://www.oyamimamori.jp/sitemap-index.xml

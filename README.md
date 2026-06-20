@@ -23,24 +23,29 @@ npm run build    # 本番ビルド → dist/
 npm run preview  # ビルド結果のプレビュー
 ```
 
-## デプロイ（GitHub Pages）
+## デプロイ（GitHub Pages ＋ 独自ドメイン）
 
-このリポジトリは GitHub Pages のプロジェクトサイトとして公開する設定済みです。
+GitHub Actions でビルドし、独自ドメインの直下で公開する設定です。
 
-- 公開 URL: `https://henrysuzuki11-home.github.io/rollcall-japan-seo/`
-- ベースパス: `/rollcall-japan-seo`（`src/consts.ts` の `BASE_PATH`）
-- 公開オリジン: `https://henrysuzuki11-home.github.io`（同 `SITE_URL`）
+- 公開 URL: `https://www.oyamimamori.jp/`
+- 公開オリジン: `https://www.oyamimamori.jp`（`src/consts.ts` の `SITE_URL`）
+- ベースパス: なし（`BASE_PATH = ''`／ドメイン直下）
+- 独自ドメイン: [public/CNAME](public/CNAME) に `www.oyamimamori.jp` を記載（ビルド成果物 `dist/` に含まれます）
 - ワークフロー: [.github/workflows/deploy.yml](.github/workflows/deploy.yml) — `main` への push で自動ビルド＆デプロイ
 
-GitHub 側で **Settings → Pages → Build and deployment → Source** を
-**「GitHub Actions」** に設定してください。
+GitHub 側の設定：
+
+1. **Settings → Pages → Build and deployment → Source** を **「GitHub Actions」** に
+2. **Settings → Pages → Custom domain** に `www.oyamimamori.jp` を設定
+3. DNS で `www` の CNAME を `<ユーザー名>.github.io` に向ける（apex を使う場合は A/ALIAS レコードを設定）
+4. DNS 反映後、**Enforce HTTPS** を有効化
 
 ### 設定変更が必要な場合
 
-- **ユーザー名 / リポジトリ名が異なる場合**: `src/consts.ts` の `SITE_URL` と
-  `BASE_PATH`、`public/robots.txt` の `Sitemap:` URL を変更
-- **独自ドメインに移行する場合**: `SITE_URL` をそのドメインに、`BASE_PATH` を
-  `''`（空文字）に変更
+- **GitHub Pages プロジェクトサイトに戻す場合**: `SITE_URL` を `https://<ユーザー名>.github.io`、
+  `BASE_PATH` を `'/<リポジトリ名>'` に変更し、`public/CNAME` を削除
+- **別の独自ドメインに変更する場合**: `SITE_URL`、`public/CNAME`、`public/robots.txt` の
+  `Sitemap:` URL を新ドメインに変更
 - （任意）`public/og-default.svg` をブランドの OGP 画像に差し替え
 
 ### 広告（Google AdSense）と問い合わせ先

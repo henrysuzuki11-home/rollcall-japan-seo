@@ -1,19 +1,19 @@
 // =====================================================================
 // Site-wide constants.
 //
-// Deployment target: GitHub Pages project site
-//   https://henrysuzuki11-home.github.io/rollcall-japan-seo/
+// Deployment target: custom domain (served at the domain root)
+//   https://www.oyamimamori.jp/
 //
-// SITE_URL  = the GitHub Pages origin (your username .github.io)
-// BASE_PATH = the repository name, used as the URL base path.
-//             MUST exactly match the GitHub repository name.
+// SITE_URL  = the site origin (custom domain).
+// BASE_PATH = URL base path. Empty for a custom domain (root).
+//             For a GitHub Pages project site it would be '/<repo-name>'.
 //
-// If you later move to a custom domain, set SITE_URL to that domain
-// and BASE_PATH to '' (empty string).
+// NOTE: public/CNAME must contain the custom domain so GitHub Pages
+// serves the site at the domain root.
 // =====================================================================
 
-export const SITE_URL = 'https://henrysuzuki11-home.github.io';
-export const BASE_PATH = '/rollcall-japan-seo';
+export const SITE_URL = 'https://www.oyamimamori.jp';
+export const BASE_PATH = '';
 
 export const SITE_NAME = '親みまもり研究所';
 export const SITE_TITLE = '親みまもり研究所｜離れて暮らす親の見守りと安否確認';
