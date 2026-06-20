@@ -12,7 +12,15 @@ const isActive = (href: string) => {
 <header class="site-header">
   <div class="container header-inner">
     <a href={withBase('/')} class="brand" aria-label={`${SITE_NAME} ホームへ`}>
-      <span class="brand-mark" aria-hidden="true">親</span>
+      <img
+        class="brand-mark"
+        src={withBase('/images/logo-mark.png')}
+        width="36"
+        height="36"
+        alt=""
+        aria-hidden="true"
+        decoding="async"
+      />
       <span class="brand-name">{SITE_NAME}</span>
     </a>
 
@@ -71,17 +79,21 @@ const isActive = (href: string) => {
     text-decoration: none;
   }
   .brand-mark {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    background: var(--color-primary);
-    color: #fff;
-    font-family: var(--font-serif);
-    font-size: 1rem;
-    font-weight: 700;
+    display: block;
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    object-fit: contain;
+    flex: 0 0 auto;
+  }
+  @media (max-width: 420px) {
+    .brand-name {
+      font-size: 1rem;
+    }
+    .brand-mark {
+      width: 32px;
+      height: 32px;
+    }
   }
   .site-nav ul {
     display: flex;

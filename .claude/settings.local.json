@@ -3,7 +3,12 @@
     "allow": [
       "Bash(npm run *)",
       "Read(//Users/hidemichisuzuki/Desktop/Kanex/Web/kanex-site 3/**)",
-      "Bash(python3 -)"
+      "Bash(python3 -)",
+      "Bash(python3)",
+      "Bash(rm -f public/images/logo-mark-180.png)",
+      "Bash(rm -rf dist)",
+      "Bash(git add *)",
+      "Bash(git commit -q -m ' *)"
     ]
   }
 }

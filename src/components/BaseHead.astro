@@ -35,7 +35,7 @@ const {
   description = SITE_DESCRIPTION,
   canonical,
   ogType = 'website',
-  image = '/og-default.svg',
+  image = '/og-image.png',
   publishDate,
   modifiedDate,
   noindex = false,
@@ -94,7 +94,8 @@ const imageURL = new URL(withBase(image), Astro.site);
     ></script>
   </Fragment>
 )}
-<link rel="icon" type="image/svg+xml" href={withBase('/favicon.svg')} />
+<link rel="icon" type="image/png" sizes="32x32" href={withBase('/favicon-32.png')} />
+<link rel="apple-touch-icon" sizes="180x180" href={withBase('/apple-touch-icon.png')} />
 <link rel="sitemap" href={withBase('/sitemap-index.xml')} />
 <link
   rel="alternate"
