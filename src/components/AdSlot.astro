@@ -1,0 +1,39 @@
+---
+// Ad placement that renders NOTHING until Google AdSense is configured.
+// It only outputs markup when:
+//   1. ADSENSE_CLIENT_ID is set in src/consts.ts, AND
+//   2. the site is built for production (import.meta.env.PROD).
+// So local/dev builds and the current pre-approval state show no ads and
+// no empty boxes — keeping the reading experience clean.
+import { ADSENSE_CLIENT_ID } from '../consts';
+
+interface Props {
+  /** AdSense ad unit slot id (data-ad-slot). */
+  slot?: string;
+  /** data-ad-format, e.g. "auto" or "fluid". */
+  format?: string;
+  label?: string;
+}
+
+const { slot = '', format = 'auto', label = 'スポンサーリンク' } = Astro.props;
+const enabled = import.meta.env.PROD && ADSENSE_CLIENT_ID !== '';
+---
+
+{
+  enabled && (
+    <aside class="ad-slot" aria-label="広告">
+      <span class="ad-slot__label">{label}</span>
+      <ins
+        class="adsbygoogle"
+        style="display:block"
+        data-ad-client={ADSENSE_CLIENT_ID}
+        data-ad-slot={slot}
+        data-ad-format={format}
+        data-full-width-responsive="true"
+      />
+      <script is:inline>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </aside>
+  )
+}

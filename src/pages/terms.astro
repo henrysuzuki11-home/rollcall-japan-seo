@@ -1,0 +1,77 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { withBase } from '../utils/url';
+import { SITE_NAME, OPERATOR } from '../consts';
+
+const breadcrumbs = [
+  { name: 'ホーム', url: '/' },
+  { name: '利用規約', url: '/terms' },
+];
+const updated = '2026年6月20日';
+---
+
+<BaseLayout
+  title="利用規約"
+  description={`${SITE_NAME}の利用規約です。当サイトのご利用にあたっての著作権、禁止事項、免責、規約の変更について定めています。`}
+  canonical="/terms"
+  breadcrumbs={breadcrumbs}
+>
+  <div class="container">
+    <Breadcrumbs crumbs={breadcrumbs} />
+    <article class="prose">
+      <h1>利用規約</h1>
+      <p>
+        本規約は、{SITE_NAME}（以下「当サイト」といいます）の利用条件を定めるものです。
+        利用者は、当サイトを利用することにより、本規約に同意したものとみなします。
+      </p>
+
+      <h2>著作権について</h2>
+      <p>
+        当サイトに掲載されている文章・画像などのコンテンツの著作権は、当サイトまたは
+        正当な権利を有する第三者に帰属します。権利者の許可なく、これらを複製・転載・改変・
+        再配布することを禁止します。引用の際は、出典として当サイトの該当ページへのリンクを
+        明記してください。
+      </p>
+
+      <h2>禁止事項</h2>
+      <p>当サイトの利用にあたり、利用者は以下の行為を行ってはなりません。</p>
+      <ul>
+        <li>法令または公序良俗に反する行為</li>
+        <li>当サイトや第三者の権利・利益を侵害する行為</li>
+        <li>当サイトの運営を妨害する行為</li>
+        <li>コンテンツを無断で転載・再配布する行為</li>
+      </ul>
+
+      <h2>免責事項</h2>
+      <p>
+        当サイトの情報の利用により生じた損害について、当サイトは責任を負いません。
+        詳しくは<a href={withBase('/disclaimer')}>免責事項</a>をご確認ください。
+      </p>
+
+      <h2>外部リンクについて</h2>
+      <p>
+        当サイトからリンクする外部サイトやアプリストアの内容について、当サイトは
+        管理する権限を持たず、責任を負いません。
+      </p>
+
+      <h2>規約の変更</h2>
+      <p>
+        当サイトは、必要に応じて本規約を変更することがあります。変更後の規約は、
+        当ページに掲載した時点から効力を生じます。
+      </p>
+
+      <p class="meta">運営者：{OPERATOR}<br />最終更新日：{updated}</p>
+    </article>
+  </div>
+</BaseLayout>
+
+<style>
+  .meta {
+    font-size: 0.82rem;
+    color: var(--color-text-muted);
+    border-top: 1px solid var(--color-border);
+    padding-top: 1.2rem;
+    margin-top: 2rem;
+  }
+</style>

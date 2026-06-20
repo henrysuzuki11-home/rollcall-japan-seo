@@ -1,61 +1,68 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import DownloadButtons from '../components/DownloadButtons.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
-import { SITE_NAME } from '../consts';
+import { withBase } from '../utils/url';
+import { SITE_NAME, OPERATOR, CONTACT_EMAIL } from '../consts';
 
 const breadcrumbs = [
   { name: 'ホーム', url: '/' },
-  { name: '当サイトについて', url: '/about' },
+  { name: '運営者情報', url: '/about' },
 ];
 ---
 
 <BaseLayout
-  title="当サイトについて"
-  description={`${SITE_NAME}は、家族の見守り・安否確認・防災に関する信頼できる情報をお届けする情報メディアです。運営方針や編集ポリシーをご紹介します。`}
+  title="運営者情報"
+  description={`${SITE_NAME}の運営方針と編集ポリシーをご紹介します。離れて暮らす親の見守りや安否確認について、信頼できる情報をお届けすることを大切にしています。`}
   canonical="/about"
   breadcrumbs={breadcrumbs}
 >
   <div class="container">
     <Breadcrumbs crumbs={breadcrumbs} />
     <article class="prose">
-      <h1>当サイトについて</h1>
+      <h1>運営者情報</h1>
       <p>
-        {SITE_NAME}（おやみまもりけんきゅうじょ）は、離れて暮らす家族の「見守り」を
-        テーマにした情報メディアです。高齢の親の安否確認、子どもの安全、災害への備え、
-        そして家族のつながりを保つ工夫まで、毎日の暮らしに役立つ情報を分かりやすく
-        お届けしています。
+        {SITE_NAME}（おやみまもりけんきゅうじょ）は、離れて暮らす親の見守りや安否確認をテーマにした
+        情報サイトです。一人暮らしの親が心配な方、毎日連絡を取るのは難しいけれど家族の無事を
+        確かめたい方に向けて、暮らしのなかで実際に役立つ情報をまとめています。
       </p>
 
-      <h2>私たちのミッション</h2>
+      <h2>大切にしていること</h2>
       <p>
-        核家族化や単身世帯の増加により、大切な家族と離れて暮らす人が増えています。
-        「元気にしているかな」という不安を、ほんの少しでも安心に変えること。
-        それが私たちの願いです。専門的な情報を、誰にでも分かる言葉で伝えることを
-        大切にしています。
+        年齢を重ねた親と離れて暮らす人は、年々増えています。「元気にしているかな」という気持ちと、
+        「あまり干渉しすぎたくない」という気持ち。その両方に寄り添いながら、不安をあおるのではなく、
+        今日から無理なくできることを、わかりやすい言葉でお伝えすることを心がけています。
       </p>
 
       <h2>編集ポリシー</h2>
       <ul>
-        <li>公的機関の統計や一次情報をもとに、正確な情報をお届けします。</li>
-        <li>特定の不安をあおる表現は避け、実践しやすい解決策を提案します。</li>
-        <li>記事は定期的に見直し、最新の情報に更新します。</li>
+        <li>公的機関の情報などを参考に、できるだけ正確な内容をお届けします。</li>
+        <li>特定の不安をあおる表現は避け、落ち着いて読める記事を心がけます。</li>
+        <li>掲載後も内容を見直し、必要に応じて更新します。</li>
+        <li>医療・介護・法律に関わる判断は、専門機関への相談をおすすめしています（<a href={withBase('/disclaimer')}>免責事項</a>）。</li>
       </ul>
 
-      <h2>見守りアプリ「Roll Call」について</h2>
-      <p>
-        当サイトでは、毎日の安否確認をワンタップで完了できる見守りアプリ
-        「Roll Call（ロールコール）」をご紹介しています。離れて暮らす家族同士で
-        「今日も元気」をシンプルに共有でき、高齢の親や一人暮らしの家族の見守りに
-        最適なアプリです。
-      </p>
+      <h2>運営者</h2>
+      <table>
+        <tbody>
+          <tr>
+            <th>サイト名</th>
+            <td>{SITE_NAME}</td>
+          </tr>
+          <tr>
+            <th>運営者</th>
+            <td>{OPERATOR}</td>
+          </tr>
+          <tr>
+            <th>お問い合わせ</th>
+            <td><a href={withBase('/contact')}>お問い合わせページ</a>（{CONTACT_EMAIL}）</td>
+          </tr>
+        </tbody>
+      </table>
 
-      <DownloadButtons />
-
-      <h2>お問い合わせ</h2>
+      <h2>取り上げているアプリについて</h2>
       <p>
-        記事内容に関するご意見・ご質問は、編集部までお寄せください。いただいた声は
-        今後のコンテンツづくりに活かしてまいります。
+        当サイトでは、毎日の安否確認に使える無料アプリ「Roll Call」もご紹介しています。
+        どんなアプリなのかは<a href={withBase('/app')}>アプリを見る</a>のページでまとめています。
       </p>
     </article>
   </div>

@@ -30,12 +30,12 @@ const breadcrumbs = [
       {
         CATEGORIES.map((c) => (
           <a href={withBase(`/categories/${c.slug}`)} class="cat-card">
-            <span class="cat-emoji" aria-hidden="true">
-              {c.emoji}
-            </span>
-            <div>
-              <span class="cat-name">{c.name}</span>
-              <span class="cat-count">{countFor(c.slug)} 記事</span>
+            <div class="cat-head">
+              <span class="cat-icon" aria-hidden="true">{c.icon}</span>
+              <div>
+                <span class="cat-name">{c.name}</span>
+                <span class="cat-count">{countFor(c.slug)} 記事</span>
+              </div>
             </div>
             <span class="cat-desc">{c.description}</span>
           </a>
@@ -75,11 +75,13 @@ const breadcrumbs = [
   }
   .cat-card:hover {
     text-decoration: none;
-    transform: translateY(-3px);
-    box-shadow: 0 10px 24px var(--color-shadow);
+    border-color: var(--color-primary);
+    box-shadow: 0 6px 18px var(--color-shadow);
   }
-  .cat-emoji {
-    font-size: 2rem;
+  .cat-head {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
   }
   .cat-name {
     font-weight: 700;

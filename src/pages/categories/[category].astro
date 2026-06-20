@@ -36,7 +36,7 @@ const breadcrumbs = [
 >
   <div class="container section">
     <header class="page-head">
-      <p class="page-emoji" aria-hidden="true">{cat.emoji}</p>
+      <span class="cat-icon page-icon" aria-hidden="true">{cat.icon}</span>
       <h1>{cat.name}</h1>
       <p class="page-desc">{cat.description}</p>
     </header>
@@ -61,9 +61,7 @@ const breadcrumbs = [
         {
           CATEGORIES.filter((c) => c.slug !== cat.slug).map((c) => (
             <li>
-              <a href={withBase(`/categories/${c.slug}`)}>
-                {c.emoji} {c.name}
-              </a>
+              <a href={withBase(`/categories/${c.slug}`)}>{c.name}</a>
             </li>
           ))
         }
@@ -79,13 +77,16 @@ const breadcrumbs = [
   .page-head {
     margin-bottom: 1.8rem;
   }
-  .page-emoji {
-    font-size: 2.6rem;
-    margin: 0;
+  .page-icon {
+    width: 56px;
+    height: 56px;
+    flex-basis: 56px;
+    font-size: 1.5rem;
   }
   .page-head h1 {
+    font-family: var(--font-serif);
     font-size: 1.9rem;
-    margin: 0.3rem 0 0.5rem;
+    margin: 0.6rem 0 0.5rem;
   }
   .page-desc {
     color: var(--color-text-muted);

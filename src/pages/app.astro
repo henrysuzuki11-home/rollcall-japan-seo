@@ -1,0 +1,74 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import DownloadButtons from '../components/DownloadButtons.astro';
+import { withBase } from '../utils/url';
+import { APP_NAME } from '../consts';
+
+const breadcrumbs = [
+  { name: 'ホーム', url: '/' },
+  { name: 'アプリを見る', url: '/app' },
+];
+---
+
+<BaseLayout
+  title="安否確認アプリ「Roll Call」を見る"
+  description="毎日電話しなくても、家族の無事をワンタップで知らせ合える無料の安否確認アプリ「Roll Call」を紹介します。離れて暮らす親や一人暮らしの家族の見守りに。"
+  canonical="/app"
+  breadcrumbs={breadcrumbs}
+>
+  <div class="container">
+    <Breadcrumbs crumbs={breadcrumbs} />
+    <article class="prose">
+      <h1>毎日電話しなくても、無事がわかる</h1>
+      <p>
+        離れて暮らす家族の見守りで、いちばん難しいのが「続けること」です。
+        毎日電話をすれば安心ですが、お互いに時間が合わなかったり、「忙しいのに悪いな」と
+        気をつかってしまったり。だんだん間隔が空いて、気づけば連絡が途切れていた——
+        そんな経験のある方も多いのではないでしょうか。
+      </p>
+      <p>
+        当サイトでは、その「続けにくさ」を解消するための一つの方法として、無料の安否確認アプリ
+        「{APP_NAME}」を紹介しています。編集部でも実際に使いながら、使い心地を確かめています。
+      </p>
+
+      <h2>Roll Callでできること</h2>
+      <ul>
+        <li>その日の無事を、ワンタップで家族に知らせられる</li>
+        <li>連絡がないときは、家族側で気づける</li>
+        <li>電話のように相手の時間を気にしなくてよい</li>
+        <li>操作がシンプルで、スマホが苦手な親でも使いやすい</li>
+      </ul>
+
+      <h2>こんな方におすすめです</h2>
+      <ul>
+        <li>一人暮らしの親が心配だが、毎日は電話できない方</li>
+        <li>「元気?」と聞き合うのが、お互い少し気づまりに感じる方</li>
+        <li>まずはお金をかけずに見守りを始めてみたい方</li>
+      </ul>
+
+      <p>
+        アプリの選び方や使い方は、<a href={withBase('/categories/app-guide')}>見守りアプリ活用</a>の
+        記事でもくわしく解説しています。あわせてご覧ください。
+      </p>
+
+      <DownloadButtons heading="無料で使える安否確認アプリを見る" />
+
+      <p class="app-disclaimer">
+        ※ App Store・Google Play の各ページに移動します。アプリの提供条件や内容は
+        提供元により変更される場合があります。最新の情報は各ストアでご確認ください。
+        （<a href={withBase('/disclaimer')}>免責事項</a>）
+      </p>
+    </article>
+  </div>
+</BaseLayout>
+
+<style>
+  .app-disclaimer {
+    font-size: 0.82rem;
+    color: var(--color-text-muted);
+    border-top: 1px solid var(--color-border);
+    padding-top: 1.2rem;
+    margin-top: 2rem;
+  }
+</style>

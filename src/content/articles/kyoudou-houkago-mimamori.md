@@ -1,7 +1,7 @@
 ---
 title: 共働き家庭の放課後の見守り｜学童・習い事・在宅の工夫
 description: 共働きで放課後の子どもが心配な家庭へ。学童保育・習い事・自宅での留守番など、放課後の過ごし方ごとの見守りの工夫を解説します。仕事と子育てを両立するヒントが見つかります。
-category: child-safety
+category: family-communication
 tags: [放課後, 共働き, 学童, 見守り]
 pubDate: 2026-04-08
 author: 親みまもり研究所 編集部

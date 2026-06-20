@@ -43,6 +43,15 @@ GitHub 側で **Settings → Pages → Build and deployment → Source** を
   `''`（空文字）に変更
 - （任意）`public/og-default.svg` をブランドの OGP 画像に差し替え
 
+### 広告（Google AdSense）と問い合わせ先
+
+- `src/consts.ts` の `CONTACT_EMAIL` を、実際に受信できるメールアドレスに変更
+  （お問い合わせ・プライバシーポリシー・運営者情報ページに表示されます）
+- AdSense 審査通過後、`src/consts.ts` の `ADSENSE_CLIENT_ID` に
+  `ca-pub-XXXXXXXXXXXXXXXX` を設定。空のあいだは広告タグも読み込みスクリプトも
+  一切出力されません。広告は本番ビルドでのみ表示されます。
+- 広告枠は `src/components/AdSlot.astro`。記事下に設置済みで、未設定時は何も表示しません。
+
 ## 記事の追加方法
 
 `src/content/articles/` に Markdown ファイルを追加します。

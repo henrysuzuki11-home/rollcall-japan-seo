@@ -1,5 +1,11 @@
 ---
-import { SITE_NAME, SITE_DESCRIPTION, CATEGORIES, NAV_LINKS } from '../consts';
+import {
+  SITE_NAME,
+  SITE_DESCRIPTION,
+  CATEGORIES,
+  NAV_LINKS,
+  FOOTER_INFO_LINKS,
+} from '../consts';
 import { withBase } from '../utils/url';
 const year = new Date().getFullYear();
 ---
@@ -7,16 +13,9 @@ const year = new Date().getFullYear();
 <footer class="site-footer">
   <div class="container footer-grid">
     <div class="footer-about">
-      <p class="footer-brand">🏠 {SITE_NAME}</p>
+      <p class="footer-brand">{SITE_NAME}</p>
       <p class="footer-desc">{SITE_DESCRIPTION}</p>
     </div>
-
-    <nav class="footer-col" aria-label="サイトメニュー">
-      <h2>メニュー</h2>
-      <ul>
-        {NAV_LINKS.map((l) => <li><a href={withBase(l.href)}>{l.label}</a></li>)}
-      </ul>
-    </nav>
 
     <nav class="footer-col" aria-label="カテゴリー">
       <h2>カテゴリー</h2>
@@ -25,6 +24,26 @@ const year = new Date().getFullYear();
           CATEGORIES.map((c) => (
             <li>
               <a href={withBase(`/categories/${c.slug}`)}>{c.name}</a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+
+    <nav class="footer-col" aria-label="メニュー">
+      <h2>メニュー</h2>
+      <ul>
+        {NAV_LINKS.map((l) => <li><a href={withBase(l.href)}>{l.label}</a></li>)}
+      </ul>
+    </nav>
+
+    <nav class="footer-col" aria-label="サイト情報">
+      <h2>サイト情報</h2>
+      <ul>
+        {
+          FOOTER_INFO_LINKS.map((l) => (
+            <li>
+              <a href={withBase(l.href)}>{l.label}</a>
             </li>
           ))
         }
@@ -47,13 +66,14 @@ const year = new Date().getFullYear();
   }
   .footer-grid {
     display: grid;
-    grid-template-columns: 1.6fr 1fr 1fr;
+    grid-template-columns: 1.8fr 1fr 1fr 1fr;
     gap: 2rem;
     padding-top: 3rem;
     padding-bottom: 2rem;
   }
   .footer-brand {
-    font-weight: 800;
+    font-family: var(--font-serif);
+    font-weight: 700;
     font-size: 1.1rem;
     margin: 0 0 0.6rem;
     color: #fff;

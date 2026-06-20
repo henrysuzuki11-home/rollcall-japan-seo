@@ -1,7 +1,7 @@
 ---
 title: 子どもの登下校を見守る方法｜共働き家庭の安心対策
 description: 共働きで子どもの登下校が心配な家庭へ。GPS端末・見守りアプリ・地域の見守り活動など、登下校を見守る方法を比較して解説します。子どもに負担をかけない安全対策がわかります。
-category: child-safety
+category: safety-check
 tags: [登下校, 子ども, 見守り, 共働き]
 pubDate: 2026-01-25
 author: 親みまもり研究所 編集部

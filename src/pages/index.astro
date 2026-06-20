@@ -2,8 +2,7 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ArticleCard from '../components/ArticleCard.astro';
-import DownloadButtons from '../components/DownloadButtons.astro';
-import { CATEGORIES, SITE_NAME, APP_NAME } from '../consts';
+import { CATEGORIES, SITE_NAME } from '../consts';
 import { withBase } from '../utils/url';
 
 const articles = (await getCollection('articles', ({ data }) => !data.draft)).sort(
@@ -15,25 +14,20 @@ const latest = articles.slice(0, 6);
 const showcase = featured.length >= 3 ? featured : latest.slice(0, 3);
 ---
 
-<BaseLayout
-  canonical="/"
-  breadcrumbs={[{ name: 'ホーム', url: '/' }]}
->
+<BaseLayout canonical="/" breadcrumbs={[{ name: 'ホーム', url: '/' }]}>
   <!-- Hero -->
   <section class="hero">
     <div class="container hero-inner">
-      <p class="hero-eyebrow">家族の見守り情報メディア</p>
-      <h1 class="hero-title visually-balanced">
-        離れていても、<br />毎日「元気だよ」を届けあえる。
-      </h1>
+      <h1 class="hero-title visually-balanced">一人暮らしの親を、無理なく見守る。</h1>
+      <p class="hero-sub">毎日電話しなくても、家族の安心をつくる方法。</p>
       <p class="hero-lead">
-        {SITE_NAME}は、高齢の親や一人暮らしの家族の見守り、安否確認、防災について、
-        信頼できる情報を分かりやすくお届けするメディアです。毎日の安否確認を
-        ワンタップで完了できる見守りアプリ「{APP_NAME}」もご紹介しています。
+        「元気にしているかな」と気になりながらも、毎日は連絡できない。
+        連絡がないと、それはそれで不安になる。{SITE_NAME}は、そんな思いを抱える方に向けて、
+        離れて暮らす親の見守りや安否確認について、暮らしに役立つ情報をまとめています。
       </p>
       <div class="hero-actions">
         <a href={withBase('/articles')} class="btn btn-primary">記事を読む</a>
-        <a href="#download" class="btn btn-outline">アプリを見る</a>
+        <a href={withBase('/categories')} class="btn btn-outline">テーマから探す</a>
       </div>
     </div>
   </section>
@@ -41,31 +35,33 @@ const showcase = featured.length >= 3 ? featured : latest.slice(0, 3);
   <!-- Categories -->
   <section class="container section">
     <header class="section-head">
-      <h2>カテゴリーから探す</h2>
-      <p>気になるテーマから記事を探せます。</p>
+      <h2>テーマから探す</h2>
+      <p>気になることから読み進められます。</p>
     </header>
     <div class="cat-grid">
       {
         CATEGORIES.map((c) => (
           <a href={withBase(`/categories/${c.slug}`)} class="cat-card">
-            <span class="cat-emoji" aria-hidden="true">
-              {c.emoji}
+            <span class="cat-icon" aria-hidden="true">
+              {c.icon}
             </span>
-            <span class="cat-name">{c.name}</span>
-            <span class="cat-desc">{c.description}</span>
+            <span class="cat-body">
+              <span class="cat-name">{c.name}</span>
+              <span class="cat-desc">{c.description}</span>
+            </span>
           </a>
         ))
       }
     </div>
   </section>
 
-  <!-- Featured / Showcase -->
+  <!-- Featured -->
   {
     showcase.length > 0 && (
       <section class="container section">
         <header class="section-head">
-          <h2>注目の記事</h2>
-          <p>編集部がおすすめする読んでほしい記事です。</p>
+          <h2>読まれている記事</h2>
+          <p>はじめての方に読んでいただきたい記事です。</p>
         </header>
         <div class="article-grid">
           {showcase.map((a) => (
@@ -76,60 +72,59 @@ const showcase = featured.length >= 3 ? featured : latest.slice(0, 3);
     )
   }
 
-  <!-- App download -->
-  <section class="container section" id="download">
-    <DownloadButtons />
-  </section>
-
   <!-- Latest -->
   <section class="container section">
     <header class="section-head">
       <h2>新着記事</h2>
-      <p>
-        <a href={withBase('/articles')}>すべての記事を見る →</a>
-      </p>
+      <p><a href={withBase('/articles')}>すべての記事を見る</a></p>
     </header>
     <div class="article-grid">
       {latest.map((a) => <ArticleCard article={a} />)}
+    </div>
+  </section>
+
+  <!-- Soft app mention (no store buttons on the homepage) -->
+  <section class="container section">
+    <div class="app-teaser">
+      <div>
+        <h2 class="app-teaser-title">見守りを「続けられる」しくみに</h2>
+        <p class="app-teaser-text">
+          毎日電話する代わりに、その日の無事をワンタップで知らせ合う——。
+          編集部が使っている無料の安否確認アプリも紹介しています。
+        </p>
+      </div>
+      <a href={withBase('/app')} class="btn btn-outline app-teaser-btn">アプリを見る</a>
     </div>
   </section>
 </BaseLayout>
 
 <style>
   .hero {
-    background: radial-gradient(
-        1200px 400px at 70% -10%,
-        var(--color-primary-light),
-        transparent
-      ),
-      var(--color-bg);
-    padding: 3.5rem 0 2.5rem;
+    background: var(--color-primary-tint);
+    padding: 3.6rem 0 3rem;
     border-bottom: 1px solid var(--color-border);
   }
   .hero-inner {
     max-width: 760px;
   }
-  .hero-eyebrow {
-    display: inline-block;
-    font-size: 0.8rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    color: var(--color-primary-dark);
-    background: var(--color-primary-light);
-    padding: 0.35em 1em;
-    border-radius: 999px;
-    margin: 0 0 1rem;
-  }
   .hero-title {
-    font-size: 2.4rem;
-    line-height: 1.4;
-    margin: 0 0 1rem;
+    font-family: var(--font-serif);
+    font-size: 2.3rem;
+    line-height: 1.45;
+    margin: 0 0 0.7rem;
+    color: var(--color-primary-dark);
+  }
+  .hero-sub {
+    font-size: 1.18rem;
+    font-weight: 700;
+    margin: 0 0 1.2rem;
+    color: var(--color-text);
   }
   .hero-lead {
-    font-size: 1.05rem;
+    font-size: 1rem;
     color: var(--color-text-muted);
-    line-height: 1.9;
-    margin: 0 0 1.6rem;
+    line-height: 1.95;
+    margin: 0 0 1.7rem;
   }
   .hero-actions {
     display: flex;
@@ -137,14 +132,16 @@ const showcase = featured.length >= 3 ? featured : latest.slice(0, 3);
     flex-wrap: wrap;
   }
   .section {
-    padding-top: 3rem;
+    padding-top: 3.2rem;
   }
   .section-head {
-    margin-bottom: 1.4rem;
+    margin-bottom: 1.5rem;
   }
   .section-head h2 {
-    font-size: 1.5rem;
+    font-family: var(--font-serif);
+    font-size: 1.4rem;
     margin: 0 0 0.3rem;
+    color: var(--color-text);
   }
   .section-head p {
     margin: 0;
@@ -153,27 +150,29 @@ const showcase = featured.length >= 3 ? featured : latest.slice(0, 3);
   }
   .cat-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     gap: 1rem;
   }
   .cat-card {
     display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
+    align-items: flex-start;
+    gap: 0.9rem;
     background: var(--color-surface);
     border: 1px solid var(--color-border);
     border-radius: var(--radius);
-    padding: 1.3rem;
+    padding: 1.3rem 1.4rem;
     color: inherit;
-    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
   }
   .cat-card:hover {
     text-decoration: none;
-    transform: translateY(-3px);
-    box-shadow: 0 10px 24px var(--color-shadow);
+    border-color: var(--color-primary);
+    box-shadow: 0 6px 18px var(--color-shadow);
   }
-  .cat-emoji {
-    font-size: 1.8rem;
+  .cat-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
   }
   .cat-name {
     font-weight: 700;
@@ -181,18 +180,45 @@ const showcase = featured.length >= 3 ? featured : latest.slice(0, 3);
     color: var(--color-primary-dark);
   }
   .cat-desc {
-    font-size: 0.83rem;
+    font-size: 0.86rem;
     color: var(--color-text-muted);
-    line-height: 1.7;
+    line-height: 1.75;
   }
   .article-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
     gap: 1.3rem;
+  }
+  .app-teaser {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: 1.8rem;
+  }
+  .app-teaser-title {
+    font-family: var(--font-serif);
+    font-size: 1.2rem;
+    margin: 0 0 0.4rem;
+    color: var(--color-primary-dark);
+  }
+  .app-teaser-text {
+    margin: 0;
+    font-size: 0.92rem;
+    color: var(--color-text-muted);
+    line-height: 1.8;
+    max-width: 620px;
+  }
+  .app-teaser-btn {
+    white-space: nowrap;
   }
   @media (max-width: 600px) {
     .hero-title {
-      font-size: 1.8rem;
+      font-size: 1.75rem;
     }
   }
 </style>

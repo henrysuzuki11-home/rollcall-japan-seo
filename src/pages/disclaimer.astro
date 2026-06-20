@@ -1,0 +1,73 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { SITE_NAME, OPERATOR } from '../consts';
+
+const breadcrumbs = [
+  { name: 'ホーム', url: '/' },
+  { name: '免責事項', url: '/disclaimer' },
+];
+const updated = '2026年6月20日';
+---
+
+<BaseLayout
+  title="免責事項"
+  description={`${SITE_NAME}の免責事項です。掲載情報は一般的な情報提供を目的としたものであり、医療・介護・法律などの専門的助言に代わるものではありません。`}
+  canonical="/disclaimer"
+  breadcrumbs={breadcrumbs}
+>
+  <div class="container">
+    <Breadcrumbs crumbs={breadcrumbs} />
+    <article class="prose">
+      <h1>免責事項</h1>
+      <p>
+        {SITE_NAME}（以下「当サイト」といいます）に掲載している情報の取り扱いについて、
+        以下のとおり定めます。当サイトをご利用の際は、本免責事項にご同意いただいたものとみなします。
+      </p>
+
+      <h2>専門的助言ではありません</h2>
+      <p>
+        当サイトの記事は、見守りや安否確認などに関する一般的な情報提供を目的としたものであり、
+        医療・介護・法律・税務などの専門的な助言を行うものではありません。
+        病気や介護、相続、契約などに関する具体的な判断が必要な場合は、医師・ケアマネジャー・
+        弁護士などの専門家や、市区町村の窓口・地域包括支援センターなどの専門機関に
+        ご相談ください。
+      </p>
+
+      <h2>情報の正確性について</h2>
+      <p>
+        当サイトは、掲載する情報の正確性・最新性に努めていますが、その内容を保証するものでは
+        ありません。制度やサービスの内容は変更される場合があります。掲載情報を利用したことにより
+        生じたいかなる損害についても、当サイトは責任を負いかねます。最終的なご判断は、
+        利用者ご自身の責任において行ってください。
+      </p>
+
+      <h2>外部リンク・アプリストアのリンクについて</h2>
+      <p>
+        当サイトには、外部サイトやアプリストア（App Store・Google Play など）へのリンクが
+        含まれます。リンク先で提供されるサービスやアプリの内容・利用条件・料金は、
+        提供元により予告なく変更される場合があり、当サイトはその内容について責任を負いません。
+        ご利用の際は、各リンク先の最新の情報および利用規約をご確認ください。
+      </p>
+
+      <h2>紹介しているアプリについて</h2>
+      <p>
+        当サイトで紹介しているアプリは、見守りや安否確認の手段の一例です。
+        利用するかどうか、どのように使うかは、利用者ご自身とご家族の状況に合わせてご判断ください。
+        当サイトは、アプリの提供元ではありません。
+      </p>
+
+      <p class="meta">運営者：{OPERATOR}<br />最終更新日：{updated}</p>
+    </article>
+  </div>
+</BaseLayout>
+
+<style>
+  .meta {
+    font-size: 0.82rem;
+    color: var(--color-text-muted);
+    border-top: 1px solid var(--color-border);
+    padding-top: 1.2rem;
+    margin-top: 2rem;
+  }
+</style>

@@ -1,7 +1,7 @@
 ---
 title: 子どもの帰宅を確認する方法｜連絡を習慣にする工夫
 description: 子どもが無事に帰宅したか確認したい保護者へ。GPS・見守りアプリ・キッズケータイなど帰宅を確認する方法と、子どもが自然に連絡を続けられる習慣化の工夫を解説します。
-category: child-safety
+category: safety-check
 tags: [帰宅確認, 子ども, 見守り, 連絡]
 pubDate: 2026-04-15
 author: 親みまもり研究所 編集部

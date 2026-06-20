@@ -1,0 +1,100 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { withBase } from '../utils/url';
+import { SITE_NAME, OPERATOR, CONTACT_EMAIL } from '../consts';
+
+const breadcrumbs = [
+  { name: 'ホーム', url: '/' },
+  { name: 'プライバシーポリシー', url: '/privacy' },
+];
+const updated = '2026年6月20日';
+---
+
+<BaseLayout
+  title="プライバシーポリシー"
+  description={`${SITE_NAME}のプライバシーポリシーです。当サイトにおけるCookieの利用、アクセス解析、第三者配信広告、個人情報の取り扱いについて説明します。`}
+  canonical="/privacy"
+  breadcrumbs={breadcrumbs}
+>
+  <div class="container">
+    <Breadcrumbs crumbs={breadcrumbs} />
+    <article class="prose">
+      <h1>プライバシーポリシー</h1>
+      <p>
+        {SITE_NAME}（以下「当サイト」といいます）は、利用者のプライバシーを尊重し、
+        個人情報を適切に取り扱います。本ポリシーでは、当サイトにおける情報の取り扱いについて
+        説明します。
+      </p>
+
+      <h2>個人情報の取り扱い</h2>
+      <p>
+        当サイトは、原則として利用者の氏名・住所・電話番号などの個人情報を取得することは
+        ありません。お問い合わせの際にメールアドレス等をご提供いただいた場合は、
+        お問い合わせへの対応の目的にのみ利用し、ご本人の同意なく第三者へ提供することは
+        ありません。
+      </p>
+
+      <h2>Cookie（クッキー）の利用について</h2>
+      <p>
+        当サイトでは、利用状況の把握や広告配信のために Cookie を利用することがあります。
+        Cookie は、ウェブサイトが利用者のブラウザに保存する小さなテキストファイルで、
+        これにより個人を直接特定することはありません。利用者はブラウザの設定により Cookie の
+        受け取りを拒否したり、削除したりすることができます。ただしその場合、当サイトの一部の
+        機能が利用できなくなることがあります。
+      </p>
+
+      <h2>アクセス解析について</h2>
+      <p>
+        当サイトでは、サイトの改善のためにアクセス解析ツールを利用する場合があります。
+        これらのツールは Cookie を使用してトラフィックデータを収集することがありますが、
+        収集されるデータは匿名であり、個人を特定するものではありません。
+      </p>
+
+      <h2>第三者配信の広告サービスについて</h2>
+      <p>
+        当サイトでは、将来的に Google AdSense をはじめとする第三者配信の広告サービスを
+        利用する場合があります。これらの広告事業者は、利用者の興味に応じた広告を表示するために、
+        当サイトや他サイトへのアクセスに関する情報（Cookie 等。氏名・住所・メールアドレス・
+        電話番号は含みません）を使用することがあります。
+      </p>
+      <p>
+        Google を含む第三者による Cookie の使用や、パーソナライズ広告の無効化については、
+        各事業者のポリシーや、Google の
+        <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">広告に関するポリシー</a>
+        のページをご確認ください。
+      </p>
+
+      <h2>外部リンクについて</h2>
+      <p>
+        当サイトには、外部のウェブサイトやアプリストアへのリンクが含まれます。
+        リンク先のサイトで提供される情報・サービス、およびそこでの個人情報の取り扱いについては、
+        当サイトは責任を負いません。各リンク先のプライバシーポリシーをご確認ください。
+      </p>
+
+      <h2>本ポリシーの変更</h2>
+      <p>
+        当サイトは、必要に応じて本ポリシーを変更することがあります。変更後の内容は、
+        当ページに掲載した時点から効力を生じるものとします。
+      </p>
+
+      <h2>お問い合わせ</h2>
+      <p>
+        本ポリシーに関するお問い合わせは、<a href={withBase('/contact')}>お問い合わせページ</a>
+        （{CONTACT_EMAIL}）よりご連絡ください。
+      </p>
+
+      <p class="meta">運営者：{OPERATOR}<br />最終更新日：{updated}</p>
+    </article>
+  </div>
+</BaseLayout>
+
+<style>
+  .meta {
+    font-size: 0.82rem;
+    color: var(--color-text-muted);
+    border-top: 1px solid var(--color-border);
+    padding-top: 1.2rem;
+    margin-top: 2rem;
+  }
+</style>

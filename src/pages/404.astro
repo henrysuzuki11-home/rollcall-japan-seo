@@ -18,9 +18,7 @@ import { withBase } from '../utils/url';
     <nav class="nf-cats" aria-label="カテゴリー">
       {
         CATEGORIES.map((c) => (
-          <a href={withBase(`/categories/${c.slug}`)}>
-            {c.emoji} {c.name}
-          </a>
+          <a href={withBase(`/categories/${c.slug}`)}>{c.name}</a>
         ))
       }
     </nav>

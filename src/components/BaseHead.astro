@@ -5,9 +5,13 @@ import {
   SITE_DESCRIPTION,
   SITE_LOCALE,
   SITE_LANG,
+  ADSENSE_CLIENT_ID,
 } from '../consts';
 import { withBase } from '../utils/url';
 import '../styles/global.css';
+
+// AdSense loader is emitted only in production once a client id is set.
+const adsenseEnabled = import.meta.env.PROD && ADSENSE_CLIENT_ID !== '';
 
 interface Props {
   title?: string;
@@ -53,7 +57,20 @@ const imageURL = new URL(withBase(image), Astro.site);
 {noindex && <meta name="robots" content="noindex, nofollow" />}
 {!noindex && <meta name="robots" content="index, follow, max-image-preview:large" />}
 
-<meta name="theme-color" content="#2f7d6b" />
+<meta name="theme-color" content="#2f6f5e" />
+
+<!-- Google AdSense (only output in production when a client id is configured) -->
+{adsenseEnabled && (
+  <Fragment>
+    <meta name="google-adsense-account" content={ADSENSE_CLIENT_ID} />
+    <script
+      async
+      src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT_ID}`}
+      crossorigin="anonymous"
+      is:inline
+    ></script>
+  </Fragment>
+)}
 <link rel="icon" type="image/svg+xml" href={withBase('/favicon.svg')} />
 <link rel="sitemap" href={withBase('/sitemap-index.xml')} />
 <link

@@ -19,11 +19,7 @@ const dateStr = pubDate.toLocaleDateString('ja-JP', {
 <article class="card">
   <a href={withBase(`/articles/${article.slug}`)} class="card-link">
     <div class="card-head">
-      {cat && (
-        <span class="card-cat">
-          <span aria-hidden="true">{cat.emoji}</span> {cat.name}
-        </span>
-      )}
+      {cat && <span class="card-cat">{cat.name}</span>}
       <time datetime={pubDate.toISOString()} class="card-date">{dateStr}</time>
     </div>
     <h3 class="card-title">{title}</h3>
