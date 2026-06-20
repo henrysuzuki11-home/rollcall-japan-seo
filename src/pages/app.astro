@@ -12,50 +12,77 @@ const breadcrumbs = [
 ---
 
 <BaseLayout
-  title="安否確認アプリ「Roll Call」を見る"
-  description="毎日電話しなくても、家族の無事をワンタップで知らせ合える無料の安否確認アプリ「Roll Call」を紹介します。離れて暮らす親や一人暮らしの家族の見守りに。"
+  title="離れて暮らす親を、無理なく見守るアプリ"
+  description="離れて暮らす母・父を、毎日さりげなく見守る。親みまもり研究所が紹介する、家族の安否確認ともしもの備えに役立つ見守りアプリ。"
   canonical="/app"
+  image="/og-app.png"
   breadcrumbs={breadcrumbs}
 >
   <div class="container">
     <Breadcrumbs crumbs={breadcrumbs} />
-    <article class="prose">
-      <h1>毎日電話しなくても、無事がわかる</h1>
-      <p>
-        離れて暮らす家族の見守りで、いちばん難しいのが「続けること」です。
-        毎日電話をすれば安心ですが、お互いに時間が合わなかったり、「忙しいのに悪いな」と
-        気をつかってしまったり。だんだん間隔が空いて、気づけば連絡が途切れていた——
-        そんな経験のある方も多いのではないでしょうか。
-      </p>
-      <p>
-        当サイトでは、その「続けにくさ」を解消するための一つの方法として、無料の安否確認アプリ
-        「{APP_NAME}」を紹介しています。編集部でも実際に使いながら、使い心地を確かめています。
+    <article class="prose app-page">
+      <h1>離れて暮らす母・父を、毎日さりげなく見守る</h1>
+      <p class="lead">
+        実家を離れてからも、「今日も元気にしているかな」と気になる日々。
+        かといって毎日電話するのは、お互いに少し気をつかうものです。
+        {APP_NAME}は、そんな遠く離れた親子が、無理なく安否を伝え合うための
+        無料アプリです。
       </p>
 
-      <h2>Roll Callでできること</h2>
+      <!-- 上部CTA -->
+      <DownloadButtons heading="無料で見守りを始める" />
+
+      <h2>毎日電話しなくても、無事がわかる</h2>
+      <p>
+        Roll Callは、その日の「変わりないよ」をワンタップで家族に届けられるアプリです。
+        長く話す必要はありません。親はボタンを押すだけ、家族はその通知を見るだけ。
+        連絡がない日は家族側で気づけるので、「便りがないのは元気な証拠」と
+        自分に言い聞かせなくてもよくなります。
+      </p>
+
+      <h2>一人暮らしの母・父の毎日に、そっと寄り添う</h2>
+      <p>
+        一人で暮らす親にとって、毎日の見守りは「監視」ではなく「つながり」であってほしいもの。
+        Roll Callは操作がシンプルで、スマホが得意でない親世代でも迷わず使えます。
+        お互いに「元気?」と聞き合う気づまりもなく、毎日の安否確認が自然な習慣になります。
+      </p>
       <ul>
-        <li>その日の無事を、ワンタップで家族に知らせられる</li>
-        <li>連絡がないときは、家族側で気づける</li>
-        <li>電話のように相手の時間を気にしなくてよい</li>
-        <li>操作がシンプルで、スマホが苦手な親でも使いやすい</li>
+        <li>その日の無事を、ワンタップで家族に共有</li>
+        <li>連絡がないときは、離れた家族が気づける</li>
+        <li>電話のように、相手の時間を気にしなくてよい</li>
+        <li>大きく分かりやすい画面で、親世代にもやさしい設計</li>
       </ul>
 
-      <h2>こんな方におすすめです</h2>
-      <ul>
-        <li>一人暮らしの親が心配だが、毎日は電話できない方</li>
-        <li>「元気?」と聞き合うのが、お互い少し気づまりに感じる方</li>
-        <li>まずはお金をかけずに見守りを始めてみたい方</li>
-      </ul>
+      <!-- 中部CTA -->
+      <div class="mid-cta">
+        <p class="mid-cta__lead">まずは親子で、今日から始めてみませんか。</p>
+        <DownloadButtons variant="compact" />
+      </div>
 
+      <h2>もしものときの、備えにもなる</h2>
       <p>
-        アプリの選び方や使い方は、<a href={withBase('/categories/app-guide')}>見守りアプリ活用</a>の
-        記事でもくわしく解説しています。あわせてご覧ください。
+        地震や災害で連絡が取れないと、離れて暮らす家族はとても不安になります。
+        日ごろから安否を伝え合う習慣があれば、いざというときも「無事」を
+        いち早く知らせ合えます。毎日の見守りが、そのまま、もしものときの備えにつながります。
       </p>
 
-      <DownloadButtons heading="無料で使える安否確認アプリを見る" />
+      <h2>こんな方に使われています</h2>
+      <ul>
+        <li>実家の親が一人暮らしで、毎日は電話できない方</li>
+        <li>遠方に住んでいて、親の様子がなかなか分からない方</li>
+        <li>「元気?」と聞くのが、お互い少し照れくさい方</li>
+        <li>まずはお金をかけずに、見守りを始めてみたい方</li>
+      </ul>
+      <p>
+        見守りの考え方やアプリの選び方は、<a href={withBase('/categories/app-guide')}>見守りアプリ活用</a>
+        や<a href={withBase('/categories/elderly-care')}>高齢者の見守り</a>の記事でもくわしく紹介しています。
+      </p>
+
+      <!-- 下部CTA -->
+      <DownloadButtons heading="無料で見守りを始める" />
 
       <p class="app-disclaimer">
-        ※ App Store・Google Play の各ページに移動します。アプリの提供条件や内容は
+        ※ ボタンから App Store・Google Play の各ページに移動します。アプリの提供条件や内容は
         提供元により変更される場合があります。最新の情報は各ストアでご確認ください。
         （<a href={withBase('/disclaimer')}>免責事項</a>）
       </p>
@@ -64,11 +91,41 @@ const breadcrumbs = [
 </BaseLayout>
 
 <style>
+  .app-page h1 {
+    font-family: var(--font-serif);
+    font-size: 1.95rem;
+    line-height: 1.45;
+    color: var(--color-primary-dark);
+    margin-bottom: 0.7rem;
+  }
+  .app-page .lead {
+    font-size: 1.05rem;
+    line-height: 1.95;
+    color: var(--color-text);
+  }
+  .mid-cta {
+    text-align: center;
+    background: var(--color-primary-tint);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: 1.6rem 1.4rem 1.8rem;
+    margin: 2.5rem 0;
+  }
+  .mid-cta__lead {
+    margin: 0 0 0.3rem;
+    font-weight: 700;
+    color: var(--color-primary-dark);
+  }
   .app-disclaimer {
     font-size: 0.82rem;
     color: var(--color-text-muted);
     border-top: 1px solid var(--color-border);
     padding-top: 1.2rem;
     margin-top: 2rem;
+  }
+  @media (max-width: 600px) {
+    .app-page h1 {
+      font-size: 1.55rem;
+    }
   }
 </style>

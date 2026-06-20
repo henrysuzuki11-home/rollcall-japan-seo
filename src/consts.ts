@@ -57,9 +57,9 @@ export const APP_DESCRIPTION =
   '離れて暮らす家族が、その日の体調や無事をワンタップで知らせ合えるアプリです。電話のように相手の時間を気にせず、「今日も変わりないよ」を気軽に共有できます。利用は無料です。';
 
 // CTA 文言（押し売り感を避けた、落ち着いた表現）
-export const APP_CTA_LABEL = '無料で使える安否確認アプリを見る';
-export const APP_CTA_IOS = 'iPhoneで見る';
-export const APP_CTA_ANDROID = 'Androidで見る';
+export const APP_CTA_LABEL = '無料で見守りを始める';
+export const APP_CTA_IOS = 'iPhoneでダウンロード';
+export const APP_CTA_ANDROID = 'Androidでダウンロード';
 
 export const APP_IOS_URL =
   'https://apps.apple.com/in/app/iq121-roll-call-daily-check-in/id6758536104';

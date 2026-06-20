@@ -27,10 +27,22 @@ const { variant = 'full', heading } = Astro.props;
       <p class="app-tagline">{APP_TAGLINE}</p>
       <p class="app-desc">{APP_DESCRIPTION}</p>
       <div class="store-buttons">
-        <a class="store-btn" href={APP_IOS_URL} target="_blank" rel="noopener">
+        <a
+          class="store-btn"
+          href={APP_IOS_URL}
+          target="_blank"
+          rel="noopener"
+          data-ga="app_store_click"
+        >
           {APP_CTA_IOS}
         </a>
-        <a class="store-btn" href={APP_ANDROID_URL} target="_blank" rel="noopener">
+        <a
+          class="store-btn"
+          href={APP_ANDROID_URL}
+          target="_blank"
+          rel="noopener"
+          data-ga="google_play_click"
+        >
           {APP_CTA_ANDROID}
         </a>
       </div>
@@ -40,10 +52,22 @@ const { variant = 'full', heading } = Astro.props;
     </section>
   ) : (
     <div class="store-buttons store-buttons--compact">
-      <a class="store-btn" href={APP_IOS_URL} target="_blank" rel="noopener">
+      <a
+        class="store-btn"
+        href={APP_IOS_URL}
+        target="_blank"
+        rel="noopener"
+        data-ga="app_store_click"
+      >
         {APP_CTA_IOS}
       </a>
-      <a class="store-btn" href={APP_ANDROID_URL} target="_blank" rel="noopener">
+      <a
+        class="store-btn"
+        href={APP_ANDROID_URL}
+        target="_blank"
+        rel="noopener"
+        data-ga="google_play_click"
+      >
         {APP_CTA_ANDROID}
       </a>
     </div>

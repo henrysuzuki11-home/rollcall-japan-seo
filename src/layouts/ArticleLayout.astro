@@ -4,7 +4,7 @@ import { getCategory } from '../consts';
 import { withBase } from '../utils/url';
 import BaseLayout from './BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
-import DownloadButtons from '../components/DownloadButtons.astro';
+import AppCta from '../components/AppCta.astro';
 import RelatedArticles from '../components/RelatedArticles.astro';
 import AdSlot from '../components/AdSlot.astro';
 
@@ -84,7 +84,7 @@ const breadcrumbs = [
 
     <div class="prose">
       <AdSlot label="スポンサーリンク" />
-      <DownloadButtons />
+      <AppCta />
     </div>
 
     <div class="prose">

@@ -8,7 +8,8 @@
       "Bash(rm -f public/images/logo-mark-180.png)",
       "Bash(rm -rf dist)",
       "Bash(git add *)",
-      "Bash(git commit -q -m ' *)"
+      "Bash(git commit -q -m ' *)",
+      "Bash(python3 -c ' *)"
     ]
   }
 }

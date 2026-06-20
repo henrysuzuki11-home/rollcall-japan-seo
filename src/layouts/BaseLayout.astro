@@ -62,5 +62,18 @@ const {
       <slot />
     </main>
     <Footer />
+
+    <!-- GA4 click tracking: any element with [data-ga] fires that event name. -->
+    <script is:inline>
+      document.addEventListener('click', function (e) {
+        var el = e.target instanceof Element ? e.target.closest('[data-ga]') : null;
+        if (!el || typeof window.gtag !== 'function') return;
+        window.gtag('event', el.getAttribute('data-ga'), {
+          event_category: 'engagement',
+          event_label: el.getAttribute('href') || '',
+          transport_type: 'beacon',
+        });
+      });
+    </script>
   </body>
 </html>
