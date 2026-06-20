@@ -1,7 +1,9 @@
 {
   "permissions": {
     "allow": [
-      "Bash(npm run *)"
+      "Bash(npm run *)",
+      "Read(//Users/hidemichisuzuki/Desktop/Kanex/Web/kanex-site 3/**)",
+      "Bash(python3 -)"
     ]
   }
 }
