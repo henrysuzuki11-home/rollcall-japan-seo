@@ -1,0 +1,10 @@
+# SEO API-first toolkit — Python dependencies
+# Install: pip install -r SEO/scripts/requirements.txt
+
+google-analytics-data        # GA4 Data API (fetch_ga4_api.py)
+google-api-python-client     # Search Console / URL Inspection / Sitemaps (fetch_gsc/url_inspection/submit_sitemap)
+google-auth                  # Service-account / OAuth auth
+google-auth-oauthlib         # OAuth installed-app flow (optional)
+pandas                       # CSV shaping in build_* scripts
+requests                     # PageSpeed Insights REST API
+python-dotenv                # optional .env loading

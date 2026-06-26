@@ -1,0 +1,22 @@
+{
+  "site_url": "https://www.example.com/",
+  "gsc_site_url": "https://www.example.com/",
+  "ga4_measurement_id": "G-XXXXXXXXXX",
+  "ga4_property_id": "000000000",
+  "ga_account_id": "000000000",
+  "date_range_days": 28,
+  "credentials_path": "SEO/config/google_credentials.json",
+  "pagespeed_api_key": "REPLACE_WITH_PAGESPEED_API_KEY",
+  "target_urls": [
+    "https://www.example.com/",
+    "https://www.example.com/app/",
+    "https://www.example.com/articles/",
+    "https://www.example.com/about/",
+    "https://www.example.com/contact/"
+  ],
+  "sitemaps": [
+    "https://www.example.com/sitemap-index.xml",
+    "https://www.example.com/sitemap.xml"
+  ],
+  "output_dir": "SEO/data/raw"
+}

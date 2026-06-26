@@ -1,0 +1,89 @@
+# =====================================================================
+# Weekly SEO API pipeline (data + reports only) — 親みまもり研究所
+#
+# SAFETY (initial state):
+#   - Manual run only (workflow_dispatch). The weekly `schedule:` is
+#     COMMENTED OUT on purpose — enable it only after you've confirmed the
+#     run works and the GitHub Secrets are set.
+#   - It NEVER modifies production articles (src/ or public/) and does NOT
+#     commit anything back to the repo. It only generates SEO/data &
+#     SEO/reports and uploads them as a build artifact.
+#
+# Required GitHub Secrets (Settings → Secrets and variables → Actions):
+#   GOOGLE_CREDENTIALS_JSON  – the service-account JSON (whole file contents)
+#   PAGESPEED_API_KEY        – PageSpeed Insights API key
+#   GA4_PROPERTY_ID          – e.g. 542398101
+#   GSC_SITE_URL             – e.g. https://www.oyamimamori.jp/
+# =====================================================================
+name: SEO API Weekly (data + reports only)
+
+on:
+  workflow_dispatch: {}
+  # ── Enable only when you are ready (runs Mondays 00:10 UTC) ──
+  # schedule:
+  #   - cron: "10 0 * * 1"
+
+permissions:
+  contents: read
+
+jobs:
+  seo-data:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout (read-only)
+        uses: actions/checkout@v4
+
+      - name: Setup Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r SEO/scripts/requirements.txt
+
+      - name: Write service-account credentials from secret
+        env:
+          GOOGLE_CREDENTIALS_JSON: ${{ secrets.GOOGLE_CREDENTIALS_JSON }}
+        run: |
+          if [ -z "$GOOGLE_CREDENTIALS_JSON" ]; then
+            echo "::warning::GOOGLE_CREDENTIALS_JSON secret is not set — Google API steps will be skipped."
+          else
+            printf '%s' "$GOOGLE_CREDENTIALS_JSON" > SEO/config/google_credentials.json
+            echo "Credentials written (gitignored, not committed)."
+          fi
+
+      - name: Inject secrets into config (no secrets are committed)
+        env:
+          PAGESPEED_API_KEY: ${{ secrets.PAGESPEED_API_KEY }}
+          GA4_PROPERTY_ID: ${{ secrets.GA4_PROPERTY_ID }}
+          GSC_SITE_URL: ${{ secrets.GSC_SITE_URL }}
+        run: |
+          python3 - <<'PY'
+          import json, os
+          p = "SEO/config/seo_api_config.json"
+          cfg = json.load(open(p, encoding="utf-8"))
+          if os.environ.get("PAGESPEED_API_KEY"):
+              cfg["pagespeed_api_key"] = os.environ["PAGESPEED_API_KEY"]
+          if os.environ.get("GA4_PROPERTY_ID"):
+              cfg["ga4_property_id"] = os.environ["GA4_PROPERTY_ID"]
+          if os.environ.get("GSC_SITE_URL"):
+              cfg["gsc_site_url"] = os.environ["GSC_SITE_URL"]
+          json.dump(cfg, open(p, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
+          print("Config updated in-runner only.")
+          PY
+
+      - name: Run SEO API pipeline (continues on partial failure)
+        run: python3 SEO/scripts/run_all_seo_api.py || true
+
+      - name: Upload data & reports as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: seo-data-and-reports
+          path: |
+            SEO/data/raw/
+            SEO/data/processed/
+            SEO/reports/
+          if-no-files-found: warn
+
+      # NOTE: intentionally no "git commit" / "git push" step.
+      # Publishing or changing articles is a manual, human-reviewed action.

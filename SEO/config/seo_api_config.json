@@ -1,0 +1,22 @@
+{
+  "site_url": "https://www.oyamimamori.jp/",
+  "gsc_site_url": "https://www.oyamimamori.jp/",
+  "ga4_measurement_id": "G-X4JJ4KQQG6",
+  "ga4_property_id": "542398101",
+  "ga_account_id": "398576929",
+  "date_range_days": 28,
+  "credentials_path": "SEO/config/google_credentials.json",
+  "pagespeed_api_key": "AIzaSyAWw743EWnALijY-9oCDOKdwVn_qSxPzp8",
+  "target_urls": [
+    "https://www.oyamimamori.jp/",
+    "https://www.oyamimamori.jp/app/",
+    "https://www.oyamimamori.jp/articles/",
+    "https://www.oyamimamori.jp/about/",
+    "https://www.oyamimamori.jp/contact/"
+  ],
+  "sitemaps": [
+    "https://www.oyamimamori.jp/sitemap-index.xml",
+    "https://www.oyamimamori.jp/sitemap.xml"
+  ],
+  "output_dir": "SEO/data/raw"
+}
