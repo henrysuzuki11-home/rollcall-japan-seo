@@ -29,16 +29,27 @@ pnpm-debug.log*
 # nested clone of the rollcall-japan1 repo (do not commit into this project)
 rollcall-japan/
 
-# ── SEO API: secrets & credentials (NEVER commit) ──
+# Claude local settings
+.claude/settings.local.json
+
+# SEO API local config / secrets
+SEO/config/seo_api_config.json
 SEO/config/google_credentials.json
 SEO/config/*.secret.json
-SEO/config/credentials.json
-SEO/config/token.json
+SEO/config/*credentials*.json
+SEO/config/*token*.json
+
+# SEO generated data
+SEO/data/raw/*.csv
+SEO/data/processed/*.csv
+SEO/logs/
+
+# Local env
 .env
 .env.local
+.venv/
 *.secret.json
 
-# Python virtualenv used by SEO scripts
-.venv/
+# Python cache
 __pycache__/
 
