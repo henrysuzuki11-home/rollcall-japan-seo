@@ -39,7 +39,7 @@ author: 親みまもり研究所 編集部
 市販の防災セットは、必要なものがまとまっていて便利です。選ぶときは、**セットの内容・収納のしやすさ・置き場所に合うか**を確認すると失敗しにくくなります。
 
 - 防災グッズ（例）：<a href="https://px.a8.net/svt/ejp?a8mat=4B65SJ+22F7EA+5HQC+5Z6WX" target="_blank" rel="sponsored nofollow noopener">商品ページ（例）</a>（広告・PRを含みます）
-- 携帯トイレも、停電・断水のときの備えとして用意しておくと安心です。
+- 携帯トイレ（例）：<a href="https://www.amazon.co.jp/dp/B0BK345LQD?tag=oyamimamori-22&linkCode=ll2&linkId=a61b96b640913c17d21a3648700637a8&language=ja_JP&ref_=as_li_ss_tl" target="_blank" rel="sponsored nofollow noopener">商品ページ（Amazon・例）</a>（広告・PRを含みます）。停電・断水のときの備えとして用意しておくと安心です。
 
 > ※ どれを選ぶかは、実家の広さ・親の体力・好みによって変わります。「これを買えば絶対安全」というものはありません。**家族で話し合うきっかけ**として、合う・合わないを確認しながら選んでください。
 

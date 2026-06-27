@@ -30,6 +30,7 @@ author: 親みまもり研究所 編集部
 
 - ソーラー充電・LEDライト付きのモバイルバッテリー（例）：<a href="https://www.amazon.co.jp/dp/B0FSSL4JP2?tag=oyamimamori-22&linkCode=ll2&linkId=0814a1c376c8fafefe0f345c9baaa396&language=ja_JP&ref_=as_li_ss_tl" target="_blank" rel="sponsored nofollow noopener">商品ページ（Amazon・例）</a>（広告・PRを含みます）
 - 乾電池式の充電器も、電池さえあれば使えるので、停電が長引いたときの予備として併せて検討すると安心です。
+- 停電が長く続くときの備えには、ポータブル電源（例）：<a href="https://www.amazon.co.jp/dp/B0G2LPG4LK?tag=oyamimamori-22&linkCode=ll2&linkId=f17db543e6bbf0286f3c89705d11c699&language=ja_JP&ref_=as_li_ss_tl" target="_blank" rel="sponsored nofollow noopener">商品ページ（Amazon・例）</a>（広告・PRを含みます）も選択肢になります。スマホを何度も充電でき、家族の連絡手段を保ちやすくなります。
 
 > ※ 製品によって使い勝手は異なります。「これがあれば必ず連絡できる」というものではありません。親が**実際に使えるか**を確認し、合うものを選んでください。満充電にして実家に置いておき、半年に一度は充電し直すのがおすすめです。
 
