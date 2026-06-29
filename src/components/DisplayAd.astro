@@ -1,0 +1,43 @@
+---
+// 忍者AdMax ディスプレイ広告（記事下1枠）。
+// - 本番ビルド（import.meta.env.PROD）かつタグが設定されているときだけ出力。
+//   dev / 未設定では一切描画しない（空枠も出さない）。
+// - 「広告」ラベルを明示し、CLS を抑えるため最小高さを確保。
+// 配置ルールは Ads/strategy/admax_display_ads_setup_*.md に従う
+// （/app CTA・アフィリ商品カードに隣接させない／記事下1枠まで）。
+import { ADMAX_TAG_SRC } from '../consts';
+
+interface Props {
+  label?: string;
+}
+const { label = '広告' } = Astro.props;
+const enabled = import.meta.env.PROD && ADMAX_TAG_SRC !== '';
+---
+
+{
+  enabled && (
+    <aside class="display-ad" aria-label="広告">
+      <span class="display-ad__label">{label}</span>
+      <div class="display-ad__unit">
+        <script is:inline src={ADMAX_TAG_SRC} />
+      </div>
+    </aside>
+  )
+}
+
+<style>
+  .display-ad {
+    margin: 2.6rem 0 0.5rem;
+    text-align: center;
+  }
+  .display-ad__label {
+    display: block;
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    color: #9a9d97;
+    margin-bottom: 0.4rem;
+  }
+  .display-ad__unit {
+    min-height: 100px; /* CLS対策：読み込み前に領域を確保 */
+  }
+</style>

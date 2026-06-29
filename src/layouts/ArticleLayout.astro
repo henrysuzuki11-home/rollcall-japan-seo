@@ -7,6 +7,7 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
 import AppCta from '../components/AppCta.astro';
 import RelatedArticles from '../components/RelatedArticles.astro';
 import AdSlot from '../components/AdSlot.astro';
+import DisplayAd from '../components/DisplayAd.astro';
 
 interface Props {
   article: CollectionEntry<'articles'>;
@@ -89,6 +90,10 @@ const breadcrumbs = [
 
     <div class="prose">
       <RelatedArticles current={article} />
+    </div>
+
+    <div class="prose">
+      <DisplayAd label="広告" />
     </div>
   </div>
 </BaseLayout>
