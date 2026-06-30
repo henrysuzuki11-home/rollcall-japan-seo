@@ -41,7 +41,7 @@ author: 親みまもり研究所 編集部
 - 緊急時にコールセンターの対応がほしい
 - スマホを持たない家族を見守りたい
 
-このような場合は、有料の見守りサービスも選択肢に入ります。[見守りサービスの選び方](/articles/mimamori-service-erabikata)で比較しています。
+このような場合は、有料の見守りサービスも選択肢に入ります。[見守りサービスの選び方](/articles/mimamori-service-erabikata)や[見守りアプリ・見守りサービスのおすすめ比較](/articles/mimamori-app-osusume-hikaku-2026)で比較しています。
 
 ## 無料で使える見守りサービスの選び方
 
