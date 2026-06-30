@@ -198,6 +198,33 @@ img {
   margin-bottom: 0.4rem;
 }
 
+/* 忍者AdMax ディスプレイ広告（記事中＝rehype挿入／記事下＝レイアウト）。
+   スマホ対応：枠を100%幅に収め、はみ出しを防ぎ、CLSを抑える。 */
+.display-ad {
+  margin: 2.4rem auto;
+  text-align: center;
+  max-width: 100%;
+}
+.display-ad--in-article {
+  margin: 2rem auto;
+}
+.display-ad__label {
+  display: block;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  color: #9a9d97;
+  margin-bottom: 0.4rem;
+}
+.display-ad__unit {
+  min-height: 100px; /* 読み込み前に領域確保（CLS対策） */
+  max-width: 100%;
+  overflow-x: hidden;
+}
+.display-ad__unit :where(img, iframe, ins) {
+  max-width: 100%;
+  height: auto;
+}
+
 .sr-only {
   position: absolute;
   width: 1px;
