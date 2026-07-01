@@ -1,9 +1,12 @@
 article_slug,article_title,image_type,tool,prompt_ref,saved_path,status,notes
-family-record,離れて暮らす親と家族の記録を残す方法,hero,Leonardo,leonardo-prompts/family_tree_article_images_2026-06-30.md,,pending,未生成。生成後 public/images/articles/ に保存
-family-tree-start,家系図を作る前に家族で話しておきたいこと,hero,Leonardo,leonardo-prompts/family_tree_article_images_2026-06-30.md,,pending,
-jikka-memories-smartphone,実家の思い出をスマホで残す簡単な方法,hero,Leonardo,leonardo-prompts/family_tree_article_images_2026-06-30.md,,pending,
-oya-jinsei-10questions,親の人生を聞くときに最初に聞きたい10の質問,hero,Canva,canva-prompts/article_hero_canva_prompts_2026-06-30.md,,pending,
-family-photo-seiri,家族の写真や動画を整理する前に決めておきたいこと,hero,Leonardo,leonardo-prompts/family_tree_article_images_2026-06-30.md,,pending,
-oya-moshimo-joho-kyoyu,離れて暮らす親のもしもに備えて共有しておきたい情報,hero,Leonardo,leonardo-prompts/parent_monitoring_article_images_2026-06-30.md,,pending,
-family-roots-hajimekata,家族のルーツを調べるときのやさしい始め方,hero,Leonardo,leonardo-prompts/family_tree_article_images_2026-06-30.md,,pending,
-omoide-mimamori,親の思い出を残すことは見守りの一部かもしれない,hero,絵画調,canva-prompts/article_hero_canva_prompts_2026-06-30.md,,pending,
+hanarete-kazoku-tsunagaru,離れて暮らす家族と毎日つながる方法,hero,Leonardo,leonardo-prompts/family_tree_article_images_2026-06-30.md,/images/articles/jikka-memories-smartphone.webp,used,公開記事に配置済み（jikka-memories-smartphone.webp を転用）。スマホで親を撮る＝つながる
+kourei-oya-communication,高齢の親とのコミュニケーションを円滑にするコツ,hero,Canva,canva-prompts/article_hero_canva_prompts_2026-06-30.md,/images/articles/oya-jinsei-10questions.webp,used,公開記事に配置済み（oya-jinsei-10questions.webp を転用）。祖父と孫の会話。絵画調
+saigai-anpi-kakunin-houhou,災害時の家族の安否確認方法まとめ,hero,Leonardo,leonardo-prompts/parent_monitoring_article_images_2026-06-30.md,/images/articles/ame-jikka.webp,used,公開記事に配置済み（ame-jikka.webp）。雨の実家＝災害不安。文字なし・高品質
+family-record,離れて暮らす親と家族の記録を残す方法,hero,Leonardo,leonardo-prompts/family_tree_article_images_2026-06-30.md,/images/articles/family-record.webp,used,記事を新規執筆・公開しhero配置済み（2026-07-01）
+family-record-card,離れて暮らす親と家族の記録を残す方法（カード用）,card,Leonardo,leonardo-prompts/family_tree_article_images_2026-06-30.md,/images/articles/family-record-card.webp,stock,カード用800px版。現状カードもhero画像を流用のため予備ストックとして保持
+family-tree-start,家系図を作る前に家族で話しておきたいこと,hero,Leonardo,leonardo-prompts/family_tree_article_images_2026-06-30.md,/images/articles/family-tree-start.webp,used,記事を新規執筆・公開しhero配置済み（2026-07-01）
+family-photo-seiri,家族の写真や動画を整理する前に決めておきたいこと,hero,Leonardo,leonardo-prompts/family_tree_article_images_2026-06-30.md,/images/articles/family-photo-seiri.webp,used,記事を新規執筆・公開しhero配置済み（2026-07-01）
+omoide-mimamori,親の思い出を残すことは見守りの一部かもしれない,hero,絵画調,canva-prompts/article_hero_canva_prompts_2026-06-30.md,/images/articles/omoide-mimamori.webp,used,記事を新規執筆・公開しhero配置済み（2026-07-01）。追悼調は「思い出」テーマの本記事では文脈が合う
+oya-moshimo-joho-kyoyu,離れて暮らす親のもしもに備えて共有しておきたい情報,hero,Leonardo,leonardo-prompts/oya-moshimo-joho-kyoyu_regen_2026-07-01.md,/images/articles/oya-moshimo-joho-kyoyu.webp,needs_regen,記事は執筆・公開済み（2026-07-01・hero未設定）。手書き文字崩れのため画像は再生成待ち→差し替え後にheroImage追加
+family-roots-hajimekata,家族のルーツを調べるときのやさしい始め方,hero,Leonardo,leonardo-prompts/family-roots-hajimekata_2026-07-01.md,,pending,記事は執筆・公開済み（2026-07-01・hero未設定）。画像は生成待ち。プロンプト作成済み→生成後にheroImage追加
+sns-generic-hero,（SNS/汎用ストック）,social,Leonardo,creative,/images/articles/sns-generic-hero.webp,stock,特定記事に紐づけず、SNS・汎用ヒーローのストックとして保持

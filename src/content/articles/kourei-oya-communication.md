@@ -5,6 +5,7 @@ category: family-communication
 tags: [高齢者, コミュニケーション, 親子, 家族]
 pubDate: 2026-03-12
 author: 親みまもり研究所 編集部
+heroImage: "/images/articles/oya-jinsei-10questions.webp"
 ---
 
 年を重ねた親との会話に、すれ違いやもどかしさを感じることはありませんか。「同じ話を繰り返す」「こちらの言うことがうまく伝わらない」——そんな場面でも、ちょっとした工夫で関係はぐっと良くなります。

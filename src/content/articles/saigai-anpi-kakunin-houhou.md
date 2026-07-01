@@ -5,6 +5,7 @@ category: safety-check
 tags: [災害, 安否確認, 防災, 家族]
 pubDate: 2026-01-15
 author: 親みまもり研究所 編集部
+heroImage: "/images/articles/ame-jikka.webp"
 featured: true
 ---
 

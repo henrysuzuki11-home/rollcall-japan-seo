@@ -5,6 +5,7 @@ category: family-communication
 tags: [家族, つながり, 毎日, コミュニケーション]
 pubDate: 2026-01-30
 author: 親みまもり研究所 編集部
+heroImage: "/images/articles/jikka-memories-smartphone.webp"
 featured: true
 ---
 
