@@ -75,13 +75,13 @@ export const APP_DESCRIPTION =
 
 // CTA 文言（押し売り感を避けた、落ち着いた表現）
 export const APP_CTA_LABEL = '無料で見守りを始める';
-export const APP_CTA_IOS = 'iPhoneでダウンロード';
-export const APP_CTA_ANDROID = 'Androidでダウンロード';
+export const APP_CTA_IOS = 'App Storeで無料ダウンロード';
+export const APP_CTA_ANDROID = 'Google Playで無料ダウンロード';
 
 export const APP_IOS_URL =
-  'https://apps.apple.com/in/app/iq121-roll-call-daily-check-in/id6758536104';
+  'https://apps.apple.com/jp/app/iq121-roll-call-daily-check-in/id6758536104';
 export const APP_ANDROID_URL =
-  'https://play.google.com/store/apps/details?id=com.iq121.rollcall&hl=ja';
+  'https://play.google.com/store/apps/details?id=com.iq121.rollcall&hl=ja&gl=JP';
 
 // ---------------------------------------------------------------------
 // カテゴリー

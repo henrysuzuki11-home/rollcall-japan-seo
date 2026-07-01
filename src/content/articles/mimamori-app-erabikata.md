@@ -36,7 +36,7 @@ iPhoneとAndroidの両方に対応しているかは要チェック。家族で�
 - **位置情報も知りたい** → GPS機能つき
 - **生活リズムを自動で見守りたい** → センサー連携型
 
-見守りアプリと見守りサービスの違いは[こちらの記事](/articles/mimamori-app-service-chigai)で解説しています。
+見守りアプリと見守りサービスの違いは[こちらの記事](/articles/mimamori-app-service-chigai)で解説しています。そもそも安否確認アプリの仕組みから知りたい方は[安否確認アプリとは](/articles/anpi-kakunin-app-towa)もあわせてご覧ください。
 
 ## まとめ
 
