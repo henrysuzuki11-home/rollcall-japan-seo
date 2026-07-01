@@ -5,6 +5,7 @@ category: elderly-care
 tags: [見守り, 高齢者, 遠距離介護, 安否確認]
 pubDate: 2026-01-12
 author: 親みまもり研究所 編集部
+heroImage: "/images/articles/distant-parent.webp"
 featured: true
 ---
 

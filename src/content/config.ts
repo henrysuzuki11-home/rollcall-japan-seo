@@ -16,6 +16,8 @@ const articles = defineCollection({
     draft: z.boolean().default(false),
     // Optional ordering for related-article hand-curation.
     featured: z.boolean().default(false),
+    // Optional hero/eyecatch image (used for the article hero, card, and OGP).
+    heroImage: z.string().optional(),
   }),
 });
 

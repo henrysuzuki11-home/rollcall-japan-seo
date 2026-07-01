@@ -1,5 +1,5 @@
-link_id,program_name,category,product_or_service_name,affiliate_url,landing_article,disclosure_required,last_checked,status,notes
-aff_001,Amazonアソシエイト(例),モバイルバッテリー,（掲載時に記入）,REPLACE_WITH_AFFILIATE_URL,/articles/teiden-tsushin-shougai-renraku,yes,2026-06-27,planned,実IDは人間が付与。容量・出力・残量表示で比較
-aff_002,楽天アフィリエイト(例),防災グッズ,（掲載時に記入）,REPLACE_WITH_AFFILIATE_URL,（新規記事: 防災グッズチェックリスト / SEO/drafts）,yes,2026-06-27,planned,記事冒頭に開示文。セット内容・収納性で比較
-aff_003,ASP(例: A8.net),見守りカメラ,（掲載時に記入）,REPLACE_WITH_AFFILIATE_URL,（新規記事: 見守りカメラの選び方 / SEO/drafts）,yes,2026-06-27,draft,「監視ではなく安心の確認」「本人の同意」を明記
-aff_004,通信サービス公式提携(例),親向けスマホ講座/通信サービス,（掲載時に記入）,REPLACE_WITH_AFFILIATE_URL,/articles/kourei-tsukaiyasui-app,yes,2026-06-27,idea,不要な乗り換え煽りをしない
+link_id,program_name,category,product_or_service_name,affiliate_url,image_url,landing_article,disclosure_required,last_checked,status,notes
+aff_example_01,Amazonアソシエイト,モバイルバッテリー,（商品名は掲載時に記入）,REPLACE_WITH_AFFILIATE_URL,REPLACE_WITH_ASP_OFFICIAL_IMAGE_URL,/articles/jikka-mobile-battery-bichiku,yes,2026-06-30,example,画像はAmazon公式リンク由来のみ。自前保存/加工しない
+aff_example_02,楽天アフィリエイト,防災セット,（商品名）,REPLACE_WITH_AFFILIATE_URL,REPLACE_WITH_ASP_OFFICIAL_IMAGE_URL,/articles/bousai-goods-oya-checklist,yes,2026-06-30,example,rel=sponsored nofollow noopener を付与
+aff_example_03,Yahooショッピング,非常食,（商品名）,REPLACE_WITH_AFFILIATE_URL,REPLACE_WITH_ASP_OFFICIAL_IMAGE_URL,（新規記事）,yes,2026-06-30,example,価格/レビュー点数は固定表示しない
+aff_example_04,A8.net,家族写真整理サービス,（サービス名）,REPLACE_WITH_AFFILIATE_URL,REPLACE_WITH_A8_OFFICIAL_BANNER,（新規記事: 家族の記録）,yes,2026-06-30,example,A8発行の広告素材のみ。改変禁止

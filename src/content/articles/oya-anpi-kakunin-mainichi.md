@@ -5,6 +5,7 @@ category: elderly-care
 tags: [安否確認, 毎日, 親, 見守り, 離れて暮らす親]
 pubDate: 2026-02-03
 author: 親みまもり研究所 編集部
+heroImage: "/images/articles/smartphone-oya-renraku.webp"
 featured: true
 ---
 

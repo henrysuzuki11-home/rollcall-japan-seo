@@ -1,0 +1,9 @@
+article_slug,article_title,image_type,tool,prompt_ref,saved_path,status,notes
+family-record,離れて暮らす親と家族の記録を残す方法,hero,Leonardo,leonardo-prompts/family_tree_article_images_2026-06-30.md,,pending,未生成。生成後 public/images/articles/ に保存
+family-tree-start,家系図を作る前に家族で話しておきたいこと,hero,Leonardo,leonardo-prompts/family_tree_article_images_2026-06-30.md,,pending,
+jikka-memories-smartphone,実家の思い出をスマホで残す簡単な方法,hero,Leonardo,leonardo-prompts/family_tree_article_images_2026-06-30.md,,pending,
+oya-jinsei-10questions,親の人生を聞くときに最初に聞きたい10の質問,hero,Canva,canva-prompts/article_hero_canva_prompts_2026-06-30.md,,pending,
+family-photo-seiri,家族の写真や動画を整理する前に決めておきたいこと,hero,Leonardo,leonardo-prompts/family_tree_article_images_2026-06-30.md,,pending,
+oya-moshimo-joho-kyoyu,離れて暮らす親のもしもに備えて共有しておきたい情報,hero,Leonardo,leonardo-prompts/parent_monitoring_article_images_2026-06-30.md,,pending,
+family-roots-hajimekata,家族のルーツを調べるときのやさしい始め方,hero,Leonardo,leonardo-prompts/family_tree_article_images_2026-06-30.md,,pending,
+omoide-mimamori,親の思い出を残すことは見守りの一部かもしれない,hero,絵画調,canva-prompts/article_hero_canva_prompts_2026-06-30.md,,pending,

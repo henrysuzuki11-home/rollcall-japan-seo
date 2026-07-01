@@ -5,6 +5,7 @@ category: disaster
 tags: [モバイルバッテリー, 充電, 実家, 停電, 連絡手段]
 pubDate: 2026-06-27
 author: 親みまもり研究所 編集部
+heroImage: "/images/articles/jikka-bousai-juden.webp"
 ---
 
 > この記事には広告・PRおよびアフィリエイトリンクを含みます。紹介する商品・サービスは、離れて暮らす家族の見守りや連絡、防災の備えに役立つかという観点で整理しています。

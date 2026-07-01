@@ -13,7 +13,7 @@ interface Props {
   article: CollectionEntry<'articles'>;
 }
 const { article } = Astro.props;
-const { title, description, category, pubDate, updatedDate, author, tags } =
+const { title, description, category, pubDate, updatedDate, author, tags, heroImage } =
   article.data;
 const cat = getCategory(category);
 
@@ -41,6 +41,7 @@ const breadcrumbs = [
   description={description}
   canonical={`/articles/${article.slug}`}
   ogType="article"
+  image={heroImage}
   publishDate={pubDate}
   modifiedDate={updatedDate}
   structuredDataType="article"
@@ -50,6 +51,19 @@ const breadcrumbs = [
     <Breadcrumbs crumbs={breadcrumbs} />
 
     <article class="article">
+      {
+        heroImage && (
+          <img
+            class="article-hero"
+            src={withBase(heroImage)}
+            alt=""
+            width="1200"
+            height="675"
+            loading="eager"
+            decoding="async"
+          />
+        )
+      }
       <header class="article-header">
         {
           cat && (
@@ -102,6 +116,16 @@ const breadcrumbs = [
   .article {
     max-width: var(--maxw-prose);
     margin-inline: auto;
+  }
+  .article-hero {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: var(--radius);
+    margin-bottom: 1.4rem;
+    background: var(--color-primary-tint);
   }
   .article-header {
     margin-bottom: 2rem;

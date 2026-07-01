@@ -2,7 +2,7 @@
 name: affiliate-content-planner
 description: Plans affiliate-friendly article ideas that connect naturally from existing SEO articles and X themes for 親みまもり研究所. Keeps the /app funnel primary and affiliate secondary. Writes plans/drafts to Affiliate/ or SEO/drafts only — never to production.
 tools: Read, Grep, Glob, Write
-model: opus
+model: sonnet
 ---
 
 あなたは親みまもり研究所のアフィリエイト記事プランナーです。
