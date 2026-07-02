@@ -1,0 +1,100 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import IQ121InvestorForm from '../../components/IQ121InvestorForm.astro';
+
+const breadcrumbs = [
+  { name: 'ホーム', url: '/' },
+  { name: 'IQ121 Japan', url: '/iq121-japan' },
+  { name: '投資家・事業提携の方へ', url: '/iq121-japan/investor' },
+];
+---
+
+<BaseLayout
+  title="投資家・事業提携のお問い合わせ｜IQ121 Japan"
+  description="IQ121 Japanへの投資家・事業提携・法人連携・メディアなどのお問い合わせ窓口です。内容に応じて担当チームより個別にご連絡します。本ページは投資勧誘を目的とするものではありません。"
+  canonical="/iq121-japan/investor"
+  breadcrumbs={breadcrumbs}
+>
+  <div class="container section">
+    <Breadcrumbs crumbs={breadcrumbs} />
+
+    <article class="prose inv-page">
+      <p class="iq-eyebrow">IQ121 Japan / Contact</p>
+      <h1>投資家・事業提携の方へ</h1>
+      <p class="iq-lead">
+        IQ121 Japan の事業に関するお問い合わせを受け付けています。
+        投資家・事業会社・VC / CVC・Family Office・法人連携・メディアなど、
+        目的に応じて以下のフォームよりご連絡ください。
+      </p>
+
+      <div class="inv-disclaimer" role="note">
+        <p>
+          本ページは投資勧誘を目的とするものではありません。お問い合わせ内容に応じて、
+          当社IRチームより個別にご連絡します。
+        </p>
+        <p>
+          投資に関する詳細情報の提供にあたっては、居住国・投資家属性・適格性等の確認が
+          必要となる場合があります。
+        </p>
+      </div>
+
+      <p class="inv-small">
+        High Net Worth Individual / Sophisticated Investor などの属性確認は、
+        現時点では任意項目としてお伺いしています。投資関連情報へのアクセス前の
+        適格性確認については、別途あらためてご案内する場合があります。
+      </p>
+    </article>
+
+    <div class="inv-form-wrap">
+      <IQ121InvestorForm />
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .section {
+    padding: 2.5rem 20px 3.5rem;
+  }
+  .inv-page {
+    max-width: var(--maxw-prose);
+    margin-inline: auto;
+  }
+  .iq-eyebrow {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: var(--color-primary);
+    margin: 0 0 0.5rem;
+  }
+  .iq-lead {
+    font-size: 1.02rem;
+    line-height: 1.9;
+    color: var(--color-text);
+  }
+  .inv-disclaimer {
+    background: var(--color-primary-tint);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    padding: 1rem 1.2rem;
+    margin: 1.5rem 0 1rem;
+  }
+  .inv-disclaimer p {
+    margin: 0 0 0.6rem;
+    font-size: 0.86rem;
+    line-height: 1.75;
+    color: var(--color-text);
+  }
+  .inv-disclaimer p:last-child {
+    margin-bottom: 0;
+  }
+  .inv-small {
+    font-size: 0.82rem;
+    color: var(--color-text-muted);
+    line-height: 1.75;
+  }
+  .inv-form-wrap {
+    max-width: var(--maxw-prose);
+    margin: 1.5rem auto 0;
+  }
+</style>

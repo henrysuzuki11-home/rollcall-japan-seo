@@ -1,0 +1,74 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import EarlyAdopterForm from '../../components/EarlyAdopterForm.astro';
+
+const breadcrumbs = [
+  { name: 'ホーム', url: '/' },
+  { name: 'IQ121 Japan', url: '/iq121-japan' },
+  { name: 'Early Adopter 登録', url: '/iq121-japan/early-adopter' },
+];
+---
+
+<BaseLayout
+  title="Early Adopter 登録｜IQ121 Japan Pre-release"
+  description="IQ121 JapanのPre-releaseに向けたEarly Adopter登録ページです。正式リリース前の情報や今後のご案内を優先的にお届けする予定です。離れて暮らす家族の見守りに関心のある方はこちらから。"
+  canonical="/iq121-japan/early-adopter"
+  breadcrumbs={breadcrumbs}
+>
+  <div class="container section">
+    <Breadcrumbs crumbs={breadcrumbs} />
+
+    <article class="prose ea-page">
+      <p class="iq-eyebrow">IQ121 Japan / Pre-release</p>
+      <h1>Early Adopter 登録</h1>
+      <p class="iq-lead">
+        IQ121 JapanのPre-releaseに向けて、Early Adopter登録を受け付けています。
+        正式リリース前の情報や、今後のご案内を優先的にお届けする予定です。
+      </p>
+      <p class="ea-note">
+        特典・キャンペーンの詳細は、Pre-release時にご案内予定です。
+        登録は無料で、いつでも配信の停止をご依頼いただけます。
+      </p>
+    </article>
+
+    <div class="ea-form-wrap">
+      <EarlyAdopterForm />
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .section {
+    padding: 2.5rem 20px 3.5rem;
+  }
+  .ea-page {
+    max-width: var(--maxw-prose);
+    margin-inline: auto;
+  }
+  .iq-eyebrow {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: var(--color-primary);
+    margin: 0 0 0.5rem;
+  }
+  .iq-lead {
+    font-size: 1.02rem;
+    line-height: 1.9;
+    color: var(--color-text);
+  }
+  .ea-note {
+    background: var(--color-primary-tint);
+    border-left: 3px solid var(--color-primary);
+    border-radius: var(--radius-sm);
+    padding: 0.9rem 1.2rem;
+    font-size: 0.9rem;
+    color: var(--color-text);
+    line-height: 1.75;
+  }
+  .ea-form-wrap {
+    max-width: var(--maxw-prose);
+    margin: 1.5rem auto 0;
+  }
+</style>

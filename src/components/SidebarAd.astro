@@ -1,0 +1,69 @@
+---
+// サイドバー下部の広告枠。
+// - 実タグ（ADMAX_TAG_SRC_SIDEBAR）が設定されていれば本番ビルドで忍者AdMaxを描画。
+// - 未設定のあいだは控えめなプレースホルダー枠（「広告」）を表示。
+// - PCサイドバー専用。スマホでは非表示（.side-ad の CSS で制御）。
+// - あとで実タグに差し替えやすいよう、この1コンポーネントに集約。
+import { ADMAX_TAG_SRC_SIDEBAR } from '../consts';
+
+interface Props {
+  src?: string;
+  label?: string;
+}
+const { src = ADMAX_TAG_SRC_SIDEBAR, label = '広告' } = Astro.props;
+const showReal = import.meta.env.PROD && src !== '';
+---
+
+<aside class="side-ad" aria-label="広告">
+  <span class="side-ad__label">{label}</span>
+  {
+    showReal ? (
+      <div class="side-ad__unit">
+        <script is:inline src={src} />
+      </div>
+    ) : (
+      <div class="side-ad__ph" aria-hidden="true">
+        広告
+      </div>
+    )
+  }
+</aside>
+
+<style>
+  .side-ad {
+    margin-top: 1.5rem;
+    text-align: center;
+  }
+  .side-ad__label {
+    display: block;
+    font-size: 0.66rem;
+    letter-spacing: 0.08em;
+    color: #a3a6a0;
+    margin-bottom: 0.35rem;
+  }
+  .side-ad__unit {
+    min-height: 250px; /* CLS 対策で領域確保 */
+    overflow: hidden;
+  }
+  .side-ad__unit :where(img, iframe, ins) {
+    max-width: 100%;
+    height: auto;
+  }
+  .side-ad__ph {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 200px;
+    font-size: 0.78rem;
+    color: #b4b7b1;
+    background: var(--color-primary-tint);
+    border: 1px dashed var(--color-border);
+    border-radius: var(--radius-sm);
+  }
+  /* スマホでは非表示（本文下の記事広告に集約） */
+  @media (max-width: 980px) {
+    .side-ad {
+      display: none;
+    }
+  }
+</style>

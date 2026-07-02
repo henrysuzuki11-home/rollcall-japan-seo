@@ -8,6 +8,7 @@ import AppCta from '../components/AppCta.astro';
 import RelatedArticles from '../components/RelatedArticles.astro';
 import AdSlot from '../components/AdSlot.astro';
 import DisplayAd from '../components/DisplayAd.astro';
+import ArticleSidebar from '../components/ArticleSidebar.astro';
 
 interface Props {
   article: CollectionEntry<'articles'>;
@@ -50,7 +51,9 @@ const breadcrumbs = [
   <div class="container">
     <Breadcrumbs crumbs={breadcrumbs} />
 
-    <article class="article">
+    <div class="article-layout">
+      <div class="article-main">
+        <article class="article">
       {
         heroImage && (
           <img
@@ -97,17 +100,23 @@ const breadcrumbs = [
       }
     </article>
 
-    <div class="prose">
-      <AdSlot label="スポンサーリンク" />
-      <AppCta />
-    </div>
+        <div class="prose">
+          <AdSlot label="スポンサーリンク" />
+          <AppCta />
+        </div>
 
-    <div class="prose">
-      <RelatedArticles current={article} />
-    </div>
+        <div class="prose">
+          <RelatedArticles current={article} />
+        </div>
 
-    <div class="prose">
-      <DisplayAd label="広告" />
+        <div class="prose">
+          <DisplayAd label="広告" />
+        </div>
+      </div>
+
+      <aside class="article-aside">
+        <ArticleSidebar current={article.slug} />
+      </aside>
     </div>
   </div>
 </BaseLayout>
@@ -116,6 +125,35 @@ const breadcrumbs = [
   .article {
     max-width: var(--maxw-prose);
     margin-inline: auto;
+  }
+  .article-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 300px;
+    gap: 2.5rem;
+    align-items: start;
+  }
+  .article-main {
+    min-width: 0;
+  }
+  /* サイドバー併設時は本文カラム幅に合わせる（中央寄せを解除） */
+  .article-main .article,
+  .article-main .prose {
+    max-width: none;
+    margin-inline: 0;
+  }
+  .article-aside {
+    position: sticky;
+    top: 1.5rem;
+  }
+  @media (max-width: 980px) {
+    .article-layout {
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+    .article-aside {
+      position: static;
+      margin-top: 2.5rem;
+    }
   }
   .article-hero {
     display: block;

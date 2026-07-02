@@ -1,0 +1,166 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { withBase } from '../../utils/url';
+
+const breadcrumbs = [
+  { name: 'ホーム', url: '/' },
+  { name: 'IQ121 Japan', url: '/iq121-japan' },
+];
+---
+
+<BaseLayout
+  title="IQ121 Japan｜離れて暮らす家族の安心を、これからのかたちに"
+  description="IQ121の日本展開についてのご案内です。離れて暮らす家族の見守り、重要情報の整理、家族の連絡、Personal AIという方向性で、準備を進めています。一般の方はEarly Adopter登録、投資家・事業提携の方はお問い合わせへ。"
+  canonical="/iq121-japan"
+  breadcrumbs={breadcrumbs}
+>
+  <div class="container section">
+    <Breadcrumbs crumbs={breadcrumbs} />
+
+    <article class="prose iq-page">
+      <p class="iq-eyebrow">IQ121 Japan / 日本展開準備中</p>
+      <h1>離れて暮らす家族の「安心」を、これからのかたちに</h1>
+      <p class="iq-lead">
+        「親みまもり研究所」を運営する私たちは、離れて暮らす家族が、
+        無理なくつながり続けられる仕組みづくりに取り組んでいます。
+        IQ121 Japan は、その考え方をさらに前へ進めるための、日本での取り組みです。
+        現在は正式リリースに向けた準備を進めています。
+      </p>
+
+      <h2>IQ121 の日本展開について</h2>
+      <p>
+        IQ121 は、家族の「安心の確認」を支えるプロダクトづくりに取り組むチームです。
+        日本では、まず離れて暮らす親子の見守りに役立つアプリ
+        <a href={withBase('/app')}>「Roll Call」</a>を通じて、
+        毎日の「無事」をワンタップで伝え合える体験を提供しています。
+        ここから、家族の記録や重要情報の整理といった領域へ、少しずつ広げていく予定です。
+      </p>
+
+      <h2>親みまもり研究所との関係</h2>
+      <p>
+        「親みまもり研究所」は、離れて暮らす親の見守り・安否確認・防災について、
+        暮らしに役立つ情報を発信するメディアです。IQ121 Japan は、この研究所の知見を土台に、
+        実際に使えるプロダクトとサービスを準備しています。
+        メディアで得られた「家族の本当の悩み」を、かたちにしていくのが私たちの役割です。
+      </p>
+
+      <h2>これから目指す方向性</h2>
+      <ul class="iq-dir">
+        <li><strong>離れて暮らす家族</strong>：距離があっても、自然につながり続けられること。</li>
+        <li><strong>重要情報の整理</strong>：もしものときに家族が困らないよう、大切な情報をやさしく整理できること。</li>
+        <li><strong>家族の連絡</strong>：気をつかいすぎず、毎日の「無事」を軽やかに伝え合えること。</li>
+        <li><strong>Personal AI</strong>：一人ひとりの暮らしにそっと寄り添い、安心を支える存在をめざすこと。</li>
+      </ul>
+      <p class="iq-note">
+        私たちが大切にしているのは、「見守りは監視ではなく、安心の確認である」という考え方です。
+        家族の自立した暮らしを尊重しながら、そっと支える。その姿勢を、これからも変わらず持ち続けます。
+      </p>
+
+      <h2>ご案内の入口</h2>
+      <p>目的に合わせて、次の窓口をご用意しています。</p>
+    </article>
+
+    <div class="iq-cards">
+      <a class="iq-card" href={withBase('/iq121-japan/early-adopter')}>
+        <span class="iq-card__tag">一般の方へ</span>
+        <span class="iq-card__title">Early Adopter 登録</span>
+        <span class="iq-card__text">
+          正式リリース前の情報や今後のご案内を、優先的にお届けする予定です。
+          離れて暮らす家族の見守りに関心がある方はこちらから。
+        </span>
+        <span class="iq-card__cta">登録ページへ →</span>
+      </a>
+      <a class="iq-card" href={withBase('/iq121-japan/investor')}>
+        <span class="iq-card__tag">投資家・事業提携の方へ</span>
+        <span class="iq-card__title">お問い合わせ</span>
+        <span class="iq-card__text">
+          投資家・事業会社・メディアなど、事業に関するお問い合わせはこちらから。
+          内容に応じて担当チームより個別にご連絡します。
+        </span>
+        <span class="iq-card__cta">お問い合わせページへ →</span>
+      </a>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .section {
+    padding: 2.5rem 20px 3.5rem;
+  }
+  .iq-page {
+    max-width: var(--maxw-prose);
+    margin-inline: auto;
+  }
+  .iq-eyebrow {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: var(--color-primary);
+    margin: 0 0 0.5rem;
+  }
+  .iq-lead {
+    font-size: 1.05rem;
+    line-height: 1.9;
+    color: var(--color-text);
+  }
+  .iq-dir {
+    line-height: 1.9;
+  }
+  .iq-note {
+    background: var(--color-primary-tint);
+    border-left: 3px solid var(--color-primary);
+    border-radius: var(--radius-sm);
+    padding: 1rem 1.2rem;
+    color: var(--color-text);
+  }
+  .iq-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.3rem;
+    max-width: var(--maxw-prose);
+    margin: 1.5rem auto 0;
+  }
+  .iq-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: 1.4rem;
+    transition: border-color 0.15s ease, transform 0.15s ease;
+  }
+  .iq-card:hover {
+    text-decoration: none;
+    border-color: var(--color-primary);
+    transform: translateY(-2px);
+  }
+  .iq-card__tag {
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--color-primary);
+  }
+  .iq-card__title {
+    font-family: var(--font-serif);
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--color-primary-dark);
+  }
+  .iq-card__text {
+    font-size: 0.86rem;
+    color: var(--color-text-muted);
+    line-height: 1.75;
+  }
+  .iq-card__cta {
+    margin-top: auto;
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--color-primary-dark);
+  }
+  @media (max-width: 620px) {
+    .iq-cards {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

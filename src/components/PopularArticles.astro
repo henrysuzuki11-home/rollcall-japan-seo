@@ -1,0 +1,91 @@
+---
+// 人気記事（手動キュレーション）。consts の POPULAR_SLUGS 順に表示。
+// - 存在しない / 下書きの slug は自動スキップ
+// - 現在の記事（exclude）は除外
+// - 最大5件のコンパクトなリスト表示（サイドバー向け）
+import { getCollection } from 'astro:content';
+import { POPULAR_SLUGS } from '../consts';
+import { withBase } from '../utils/url';
+
+interface Props {
+  exclude?: string;
+  limit?: number;
+  heading?: string;
+}
+const { exclude, limit = 5, heading = '人気の記事' } = Astro.props;
+
+const published = await getCollection('articles', ({ data }) => !data.draft);
+const bySlug = new Map(published.map((a) => [a.slug, a]));
+
+const items = POPULAR_SLUGS.map((slug) => bySlug.get(slug))
+  .filter((a): a is NonNullable<typeof a> => Boolean(a) && a!.slug !== exclude)
+  .slice(0, limit);
+---
+
+{
+  items.length > 0 && (
+    <section class="pop" aria-label="人気の記事">
+      <h2 class="side-h">{heading}</h2>
+      <ol class="pop-list">
+        {items.map((a) => (
+          <li>
+            <a class="pop-link" href={withBase(`/articles/${a.slug}`)}>
+              {a.data.title}
+            </a>
+          </li>
+        ))}
+      </ol>
+    </section>
+  )
+}
+
+<style>
+  .pop {
+    margin-bottom: 1.8rem;
+  }
+  .side-h {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--color-primary-dark);
+    margin: 0 0 0.7rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 2px solid var(--color-primary-light);
+  }
+  .pop-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    counter-reset: pop;
+  }
+  .pop-list li {
+    counter-increment: pop;
+    display: flex;
+    gap: 0.55rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+  .pop-list li:last-child {
+    border-bottom: none;
+  }
+  .pop-list li::before {
+    content: counter(pop);
+    flex: 0 0 auto;
+    width: 1.4em;
+    height: 1.4em;
+    line-height: 1.4em;
+    text-align: center;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--color-primary-dark);
+    background: var(--color-primary-light);
+    border-radius: 999px;
+  }
+  .pop-link {
+    font-size: 0.86rem;
+    line-height: 1.5;
+    color: var(--color-text);
+  }
+  .pop-link:hover {
+    color: var(--color-primary-dark);
+  }
+</style>

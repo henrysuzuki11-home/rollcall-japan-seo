@@ -1,0 +1,249 @@
+---
+// Early Adopter 登録フォーム（一般ユーザー向け）。
+// 送信先：Google Apps Script（type: early_adopter）。
+// 送信は text/plain;charset=utf-8 + JSON.stringify（application/json は使わない）。
+import { GOOGLE_APPS_SCRIPT_URL } from '../consts';
+import { withBase } from '../utils/url';
+const gasUrl = GOOGLE_APPS_SCRIPT_URL;
+---
+
+<form class="ff" id="ea-form" novalidate>
+  <div class="ff-row">
+    <label for="ea-name">お名前・ニックネーム<span class="ff-opt">任意</span></label>
+    <input type="text" id="ea-name" name="name_or_nickname" autocomplete="name" />
+  </div>
+
+  <div class="ff-row">
+    <label for="ea-email">メールアドレス<span class="ff-req">必須</span></label>
+    <input type="email" id="ea-email" name="email" required autocomplete="email" />
+  </div>
+
+  <div class="ff-row">
+    <label for="ea-theme">関心のあるテーマ<span class="ff-req">必須</span></label>
+    <select id="ea-theme" name="interest_theme" required>
+      <option value="">選択してください</option>
+      <option>離れて暮らす親の見守り</option>
+      <option>家族の記録</option>
+      <option>重要情報の整理</option>
+      <option>災害時の安否確認</option>
+      <option>親との連絡習慣</option>
+      <option>その他</option>
+    </select>
+  </div>
+
+  <div class="ff-row">
+    <label for="ea-apart">親と離れて暮らしていますか<span class="ff-opt">任意</span></label>
+    <select id="ea-apart" name="lives_apart_from_parent">
+      <option value="">回答しない</option>
+      <option value="yes">はい</option>
+      <option value="no">いいえ</option>
+      <option value="prefer_not_to_say">答えたくない</option>
+    </select>
+  </div>
+
+  <div class="ff-checks">
+    <label class="ff-check">
+      <input type="checkbox" name="consent_prerelease_info" required />
+      <span>Pre-releaseに関する情報・ご案内の受け取りに同意します。<span class="ff-req">必須</span></span>
+    </label>
+    <label class="ff-check">
+      <input type="checkbox" name="consent_privacy_policy" required />
+      <span><a href={withBase('/privacy')} target="_blank" rel="noopener">プライバシーポリシー</a>に同意します。<span class="ff-req">必須</span></span>
+    </label>
+    <label class="ff-check">
+      <input type="checkbox" name="consent_campaign_terms" required />
+      <span>キャンペーン・Pre-release提供に関する取り扱いに同意します。<span class="ff-req">必須</span></span>
+    </label>
+  </div>
+
+  <!-- honeypot（人には見えない。入力があれば送信をスキップ） -->
+  <div class="ff-hp" aria-hidden="true">
+    <label>Webサイト<input type="text" name="website" tabindex="-1" autocomplete="off" /></label>
+  </div>
+
+  <p class="ff-error" id="ea-error" role="alert" hidden></p>
+  <button type="submit" class="ff-submit" id="ea-submit">登録する</button>
+</form>
+
+<div class="ff-done" id="ea-done" hidden>
+  <p class="ff-done__title">登録が完了しました。</p>
+  <p>Pre-releaseに関するご案内を、準備が整い次第お届けします。</p>
+</div>
+
+<script define:vars={{ gasUrl }}>
+  const form = document.getElementById('ea-form');
+  const done = document.getElementById('ea-done');
+  const errBox = document.getElementById('ea-error');
+  const btn = document.getElementById('ea-submit');
+
+  if (form) {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      errBox.hidden = true;
+
+      const hp = form.querySelector('input[name="website"]');
+      if (hp && hp.value) {
+        // bot とみなし、送信せず完了扱い
+        form.hidden = true;
+        done.hidden = false;
+        return;
+      }
+
+      if (!form.reportValidity()) return;
+
+      const payload = {
+        type: 'early_adopter',
+        name_or_nickname: form.name_or_nickname.value.trim(),
+        email: form.email.value.trim(),
+        interest_theme: form.interest_theme.value,
+        lives_apart_from_parent: form.lives_apart_from_parent.value,
+        consent_prerelease_info: form.consent_prerelease_info.checked,
+        consent_privacy_policy: form.consent_privacy_policy.checked,
+        consent_campaign_terms: form.consent_campaign_terms.checked,
+        website: hp ? hp.value : '',
+        source_page: location.pathname,
+        user_agent: navigator.userAgent,
+      };
+
+      const original = btn.textContent;
+      btn.disabled = true;
+      btn.textContent = '送信中…';
+      try {
+        await fetch(gasUrl, {
+          method: 'POST',
+          headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+          body: JSON.stringify(payload),
+        });
+        form.hidden = true;
+        done.hidden = false;
+      } catch (err) {
+        errBox.textContent = '送信に失敗しました。通信環境をご確認のうえ、時間をおいて再度お試しください。';
+        errBox.hidden = false;
+        btn.disabled = false;
+        btn.textContent = original;
+      }
+    });
+  }
+</script>
+
+<style>
+  .ff {
+    display: grid;
+    gap: 1.1rem;
+    max-width: 560px;
+  }
+  .ff-row {
+    display: grid;
+    gap: 0.35rem;
+  }
+  .ff-row label {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--color-text);
+  }
+  .ff-req {
+    margin-left: 0.5em;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: #b4552f;
+    background: #fdeee7;
+    padding: 0.1em 0.5em;
+    border-radius: 999px;
+    vertical-align: middle;
+  }
+  .ff-opt {
+    margin-left: 0.5em;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--color-text-muted);
+    background: var(--color-primary-light);
+    padding: 0.1em 0.5em;
+    border-radius: 999px;
+    vertical-align: middle;
+  }
+  .ff input[type='text'],
+  .ff input[type='email'],
+  .ff select {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.65rem 0.8rem;
+    font-size: 1rem;
+    color: var(--color-text);
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+  }
+  .ff input:focus,
+  .ff select:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px var(--color-primary-light);
+  }
+  .ff-checks {
+    display: grid;
+    gap: 0.7rem;
+  }
+  .ff-check {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.6rem;
+    align-items: start;
+    font-size: 0.86rem;
+    line-height: 1.6;
+    color: var(--color-text);
+  }
+  .ff-check input {
+    margin-top: 0.2rem;
+  }
+  .ff-hp {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+  .ff-error {
+    margin: 0;
+    padding: 0.8rem 1rem;
+    font-size: 0.86rem;
+    color: #9a3412;
+    background: #fdeee7;
+    border: 1px solid #f3ccb8;
+    border-radius: var(--radius-sm);
+  }
+  .ff-submit {
+    justify-self: start;
+    background: var(--color-primary);
+    color: #fff;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.15s ease;
+  }
+  .ff-submit:hover:not(:disabled) {
+    background: var(--color-primary-dark);
+  }
+  .ff-submit:disabled {
+    opacity: 0.6;
+    cursor: default;
+  }
+  .ff-done {
+    padding: 1.6rem;
+    background: var(--color-primary-tint);
+    border: 1px solid var(--color-border);
+    border-left: 4px solid var(--color-primary);
+    border-radius: var(--radius);
+    line-height: 1.8;
+  }
+  .ff-done__title {
+    font-weight: 700;
+    color: var(--color-primary-dark);
+    margin: 0 0 0.3rem;
+  }
+  .ff-done p {
+    margin: 0;
+  }
+</style>

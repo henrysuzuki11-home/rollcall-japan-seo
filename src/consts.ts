@@ -84,6 +84,32 @@ export const APP_ANDROID_URL =
   'https://play.google.com/store/apps/details?id=com.iq121.rollcall&hl=ja&gl=JP';
 
 // ---------------------------------------------------------------------
+// Google Apps Script フォーム・バックエンド
+//
+// 投資家問い合わせ / Early Adopter 登録の送信先（GAS Web App）。
+// これは公開エンドポイントであり、秘密情報ではありません（.env 不要）。
+// 送信は必ず Content-Type: text/plain;charset=utf-8 で JSON 文字列を送ること。
+// ---------------------------------------------------------------------
+export const GOOGLE_APPS_SCRIPT_URL =
+  'https://script.google.com/macros/s/AKfycbwq1MVReldpB9ecckaRy4HyBtRD9dBUgwPDn5c70myZfynlE5uTMedRoIvQjtq4vYZ3/exec';
+
+// ---------------------------------------------------------------------
+// 人気記事（サイドバー用・手動キュレーション）
+//   存在しない slug は表示時に自動スキップされます。表示は最大5件。
+// ---------------------------------------------------------------------
+export const POPULAR_SLUGS = [
+  'hanarete-kurasu-oya-mimamori',
+  'oya-anpi-kakunin-mainichi',
+  'teiden-tsushin-shougai-renraku',
+  'jikka-mobile-battery-bichiku',
+  'mimamori-app-erabikata',
+];
+
+// サイドバー下部の忍者AdMaxタグ（未設定のあいだはプレースホルダー枠のみ）。
+// 実タグを入れる場合はここに src を設定（本番ビルドでのみ描画）。
+export const ADMAX_TAG_SRC_SIDEBAR = '';
+
+// ---------------------------------------------------------------------
 // カテゴリー
 //   icon … 絵文字を使わず、CSS の丸アイコンに表示する 1 文字のラベル
 // ---------------------------------------------------------------------
@@ -144,6 +170,7 @@ export const NAV_LINKS = [
   { href: '/articles', label: '記事一覧' },
   { href: '/categories', label: 'カテゴリー' },
   { href: '/app', label: 'アプリを見る' },
+  { href: '/iq121-japan', label: 'IQ121 Japan' },
   { href: '/about', label: '運営者情報' },
 ];
 

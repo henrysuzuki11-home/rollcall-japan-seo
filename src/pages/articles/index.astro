@@ -2,12 +2,24 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ArticleCard from '../../components/ArticleCard.astro';
-import { CATEGORIES } from '../../consts';
+import ArticleSearch from '../../components/ArticleSearch.astro';
+import { CATEGORIES, getCategory } from '../../consts';
 import { withBase } from '../../utils/url';
 
 const articles = (await getCollection('articles', ({ data }) => !data.draft)).sort(
   (a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime()
 );
+
+// クライアント検索用の索引文字列（title/description/カテゴリ名/タグ）
+const searchText = (a: (typeof articles)[number]) =>
+  [
+    a.data.title,
+    a.data.description,
+    getCategory(a.data.category)?.name ?? '',
+    a.data.tags.join(' '),
+  ]
+    .join(' ')
+    .toLowerCase();
 
 const breadcrumbs = [
   { name: 'ホーム', url: '/' },
@@ -27,6 +39,8 @@ const breadcrumbs = [
       <p>家族の見守りに役立つ記事をすべて掲載しています（全{articles.length}件）。</p>
     </header>
 
+    <ArticleSearch total={articles.length} />
+
     <nav class="cat-filter" aria-label="カテゴリーで絞り込み">
       {
         CATEGORIES.map((c) => (
@@ -37,8 +51,14 @@ const breadcrumbs = [
       }
     </nav>
 
-    <div class="article-grid">
-      {articles.map((a) => <ArticleCard article={a} />)}
+    <div class="article-grid" id="kiji-search-grid">
+      {
+        articles.map((a) => (
+          <div class="search-item" data-search={searchText(a)}>
+            <ArticleCard article={a} />
+          </div>
+        ))
+      }
     </div>
   </div>
 </BaseLayout>
@@ -77,5 +97,8 @@ const breadcrumbs = [
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 1.3rem;
+  }
+  .search-item {
+    height: 100%;
   }
 </style>
