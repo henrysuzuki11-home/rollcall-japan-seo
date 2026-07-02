@@ -27,7 +27,9 @@ export const SITE_LANG = 'ja';
 export const AUTHOR = '親みまもり研究所 編集部';
 export const OPERATOR = '親みまもり研究所 編集部';
 
-// お問い合わせ先メールアドレス（お問い合わせ・プライバシー・運営者情報・フッターに表示）
+// お問い合わせ先メールアドレス（参考用）。
+// ※ 公開ページには直接表示・mailtoリンクしない方針。問い合わせは /contact のフォーム
+//    （Google Apps Script）経由で受け付け、通知先メールは GAS 側で設定する。
 export const CONTACT_EMAIL = 'henry@iq121.com';
 
 // ---------------------------------------------------------------------

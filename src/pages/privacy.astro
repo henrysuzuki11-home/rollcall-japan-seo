@@ -2,7 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import { withBase } from '../utils/url';
-import { SITE_NAME, OPERATOR, CONTACT_EMAIL } from '../consts';
+import { SITE_NAME, OPERATOR } from '../consts';
 
 const breadcrumbs = [
   { name: 'ホーム', url: '/' },
@@ -80,8 +80,8 @@ const updated = '2026年6月20日';
 
       <h2>お問い合わせ</h2>
       <p>
-        本ポリシーに関するお問い合わせは、<a href={withBase('/contact')}>お問い合わせページ</a>
-        （{CONTACT_EMAIL}）よりご連絡ください。
+        本ポリシーに関するお問い合わせは、<a href={withBase('/contact')}>お問い合わせフォーム</a>
+        よりご連絡ください。
       </p>
 
       <p class="meta">運営者：{OPERATOR}<br />最終更新日：{updated}</p>
