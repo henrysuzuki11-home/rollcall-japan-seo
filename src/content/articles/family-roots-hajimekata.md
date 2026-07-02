@@ -5,6 +5,7 @@ category: family-communication
 tags: [ルーツ, 家系, 家族, 記録, 話し合い]
 pubDate: 2026-07-01
 author: 親みまもり研究所 編集部
+heroImage: "/images/articles/family-roots-hajimekata.webp"
 ---
 
 家族のルーツを調べる、と聞くと難しそうに感じるかもしれません。でも本当のところ、ルーツ探しの価値は「正確な家系をたどること」よりも、**その過程で家族の会話が増えること**にあります。この記事では、肩の力を抜いて始められる、やさしい入り口を紹介します。

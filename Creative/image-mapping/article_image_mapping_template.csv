@@ -7,6 +7,6 @@ family-record-card,離れて暮らす親と家族の記録を残す方法（カ�
 family-tree-start,家系図を作る前に家族で話しておきたいこと,hero,Leonardo,leonardo-prompts/family_tree_article_images_2026-06-30.md,/images/articles/family-tree-start.webp,used,記事を新規執筆・公開しhero配置済み（2026-07-01）
 family-photo-seiri,家族の写真や動画を整理する前に決めておきたいこと,hero,Leonardo,leonardo-prompts/family_tree_article_images_2026-06-30.md,/images/articles/family-photo-seiri.webp,used,記事を新規執筆・公開しhero配置済み（2026-07-01）
 omoide-mimamori,親の思い出を残すことは見守りの一部かもしれない,hero,絵画調,canva-prompts/article_hero_canva_prompts_2026-06-30.md,/images/articles/omoide-mimamori.webp,used,記事を新規執筆・公開しhero配置済み（2026-07-01）。追悼調は「思い出」テーマの本記事では文脈が合う
-oya-moshimo-joho-kyoyu,離れて暮らす親のもしもに備えて共有しておきたい情報,hero,Leonardo,leonardo-prompts/oya-moshimo-joho-kyoyu_regen_2026-07-01.md,/images/articles/oya-moshimo-joho-kyoyu.webp,needs_regen,記事は執筆・公開済み（2026-07-01・hero未設定）。手書き文字崩れのため画像は再生成待ち→差し替え後にheroImage追加
-family-roots-hajimekata,家族のルーツを調べるときのやさしい始め方,hero,Leonardo,leonardo-prompts/family-roots-hajimekata_2026-07-01.md,,pending,記事は執筆・公開済み（2026-07-01・hero未設定）。画像は生成待ち。プロンプト作成済み→生成後にheroImage追加
+oya-moshimo-joho-kyoyu,離れて暮らす親のもしもに備えて共有しておきたい情報,hero,Leonardo,leonardo-prompts/oya-moshimo-joho-kyoyu_regen_2026-07-01.md,/images/articles/oya-moshimo-joho-kyoyu.webp,used,再生成画像（案B・手元で書き留める/文字なし）をWebP化して差し替え・hero配置済み（2026-07-02）。旧・文字崩れ版は置換済み
+family-roots-hajimekata,家族のルーツを調べるときのやさしい始め方,hero,Leonardo,leonardo-prompts/family-roots-hajimekata_2026-07-01.md,/images/articles/family-roots-hajimekata.webp,used,生成画像（A・古いアルバム＋ルーペ/文字なし）をWebP化してhero配置済み（2026-07-02）。B/C候補は Creative/source-images に保管
 sns-generic-hero,（SNS/汎用ストック）,social,Leonardo,creative,/images/articles/sns-generic-hero.webp,stock,特定記事に紐づけず、SNS・汎用ヒーローのストックとして保持
