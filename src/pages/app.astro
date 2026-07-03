@@ -3,7 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import DownloadButtons from '../components/DownloadButtons.astro';
 import { withBase } from '../utils/url';
-import { APP_NAME } from '../consts';
+import { APP_NAME, IQ121_IOS_URL, IQ121_ANDROID_URL } from '../consts';
 
 const breadcrumbs = [
   { name: 'ホーム', url: '/' },
@@ -85,6 +85,43 @@ const breadcrumbs = [
       <!-- 下部CTA -->
       <DownloadButtons heading="無料で見守りを始める" />
 
+      <h2>家族の記録と重要情報の整理には「IQ121」</h2>
+      <p>
+        毎日の安否確認はRoll Callで。そして、家族のレシピ・写真・動画や重要情報の整理には、
+        同じIQ121が提供するアプリ「IQ121」があります。IQ121は、すでにiOS /
+        Androidで公開されています。キャンペーンコードをご利用いただくことで、
+        現在リリース済みの機能を対象期間中無料でお試しいただけます。
+        日本向けには今後、家族の安心確認、レシピ・写真・動画の共有、重要情報の整理、
+        Personal AIを活用した機能などを順次拡張していく予定です。
+      </p>
+      <div class="iq-links">
+        <a
+          class="iq-link-btn"
+          href={IQ121_IOS_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          data-ga="iq121_ios_click"
+        >
+          App Storeで見る
+        </a>
+        <a
+          class="iq-link-btn"
+          href={IQ121_ANDROID_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          data-ga="iq121_android_click"
+        >
+          Google Playで見る
+        </a>
+        <a class="iq-link-btn iq-link-btn--ea" href={withBase('/iq121-japan/early-adopter')} data-ga="iq121_early_adopter_click">
+          Early Adopter登録
+        </a>
+      </div>
+      <p class="iq-links-note">
+        キャンペーンコードの入手方法は、<a href={withBase('/iq121-japan/early-adopter')}>Early Adopter登録</a>
+        にてご案内予定です。IQ121 Japanの取り組みは<a href={withBase('/iq121-japan')}>こちら</a>。
+      </p>
+
       <p class="app-disclaimer">
         ※ ボタンから App Store・Google Play の各ページに移動します。アプリの提供条件や内容は
         提供元により変更される場合があります。最新の情報は各ストアでご確認ください。
@@ -126,6 +163,40 @@ const breadcrumbs = [
     margin: 0 0 0.3rem;
     font-weight: 700;
     color: var(--color-primary-dark);
+  }
+  .iq-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+    margin: 1.2rem 0 0.6rem;
+  }
+  .iq-link-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.65rem 1.4rem;
+    border-radius: 8px;
+    font-size: 0.92rem;
+    font-weight: 700;
+    background: var(--color-surface);
+    color: var(--color-primary-dark);
+    border: 1px solid var(--color-border);
+  }
+  .iq-link-btn:hover {
+    text-decoration: none;
+    border-color: var(--color-primary);
+  }
+  .iq-link-btn--ea {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+    color: #fff;
+  }
+  .iq-link-btn--ea:hover {
+    background: var(--color-primary-dark);
+  }
+  .iq-links-note {
+    font-size: 0.82rem;
+    color: var(--color-text-muted);
   }
   .app-disclaimer {
     font-size: 0.82rem;

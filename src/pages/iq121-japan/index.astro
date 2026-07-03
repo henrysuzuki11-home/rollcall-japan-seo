@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import { withBase } from '../../utils/url';
+import { IQ121_IOS_URL, IQ121_ANDROID_URL } from '../../consts';
 
 const breadcrumbs = [
   { name: 'ホーム', url: '/' },
@@ -48,13 +49,47 @@ const breadcrumbs = [
       <h2>これから目指す方向性</h2>
       <ul class="iq-dir">
         <li><strong>離れて暮らす家族</strong>：距離があっても、自然につながり続けられること。</li>
-        <li><strong>重要情報の整理</strong>：もしものときに家族が困らないよう、大切な情報をやさしく整理できること。</li>
+        <li><strong>親子双方の安心確認</strong>：子が親を見守るだけでなく、親も子の暮らしにそっと安心できること。</li>
         <li><strong>家族の連絡</strong>：気をつかいすぎず、毎日の「無事」を軽やかに伝え合えること。</li>
+        <li><strong>写真・動画・レシピの共有</strong>：家族の食卓や思い出を「家族の記録」として残し、共有できること。</li>
+        <li><strong>重要情報の整理</strong>：もしものときに家族が困らないよう、大切な情報をやさしく整理できること。</li>
+        <li><strong>共有タイミングの設計</strong>：情報を「すぐ共有する」「指定日時に共有する」「ご逝去後に共有する」——必要な相手に、必要なタイミングで届けられること。</li>
         <li><strong>Personal AI</strong>：一人ひとりの暮らしにそっと寄り添い、安心を支える存在をめざすこと。</li>
       </ul>
       <p class="iq-note">
         私たちが大切にしているのは、「見守りは監視ではなく、安心の確認である」という考え方です。
         家族の自立した暮らしを尊重しながら、そっと支える。その姿勢を、これからも変わらず持ち続けます。
+      </p>
+
+      <h2>いまのIQ121を試す</h2>
+      <p>
+        IQ121は、すでにiOS / Androidで公開されています。すでにリリース済みの機能については、
+        写真・動画・レシピ・重要情報の整理、家族との共有などを実際にお試しいただけます。
+        現在、IQ121はキャンペーンコードをご利用いただくことで、対象期間中無料でお試しいただけます。
+        日本展開に向けて、今後は国内パートナーとの連携やPersonal AI機能の拡張を含め、
+        より使いやすい形への進化を予定しています。
+      </p>
+      <div class="iq-applinks">
+        <a
+          href={IQ121_IOS_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          data-ga="iq121_ios_click"
+        >
+          App Storeで見る
+        </a>
+        <a
+          href={IQ121_ANDROID_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          data-ga="iq121_android_click"
+        >
+          Google Playで見る
+        </a>
+      </div>
+      <p class="iq-applinks-note">
+        キャンペーンコードは、<a href={withBase('/iq121-japan/early-adopter')}>Early Adopter登録</a>
+        いただいた方へのご案内を予定しています。
       </p>
 
       <h2>ご案内の入口</h2>
@@ -113,6 +148,32 @@ const breadcrumbs = [
     border-radius: var(--radius-sm);
     padding: 1rem 1.2rem;
     color: var(--color-text);
+  }
+  .iq-applinks {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+    margin: 0.6rem 0;
+  }
+  .iq-applinks a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.65rem 1.4rem;
+    border-radius: 8px;
+    font-size: 0.92rem;
+    font-weight: 700;
+    background: var(--color-surface);
+    color: var(--color-primary-dark);
+    border: 1px solid var(--color-border);
+  }
+  .iq-applinks a:hover {
+    text-decoration: none;
+    border-color: var(--color-primary);
+  }
+  .iq-applinks-note {
+    font-size: 0.84rem;
+    color: var(--color-text-muted);
   }
   .iq-cards {
     display: grid;

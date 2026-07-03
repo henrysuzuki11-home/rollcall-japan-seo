@@ -1,7 +1,7 @@
 ---
 title: 親の思い出を残すことは、見守りの一部かもしれない
 description: 見守りは「今」の安否だけでなく、これまでの歩みを大切にすることでもあります。思い出を残すことと見守りのつながり、会話が増えることの効果、今日からできる小さな一歩を、やさしい視点で綴ります。
-category: family-communication
+category: family-record
 tags: [見守り, 思い出, 家族, 安心, 親子]
 pubDate: 2026-07-01
 author: 親みまもり研究所 編集部

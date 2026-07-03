@@ -16,9 +16,11 @@ export const SITE_URL = 'https://www.oyamimamori.jp';
 export const BASE_PATH = '';
 
 export const SITE_NAME = '親みまもり研究所';
-export const SITE_TITLE = '親みまもり研究所｜離れて暮らす親の見守りと安否確認';
+export const SITE_TITLE = '親みまもり研究所｜離れて暮らす親子のための、安心確認と家族の記録';
 export const SITE_DESCRIPTION =
-  '離れて暮らす親の見守りや安否確認について、毎日の暮らしに役立つ情報をまとめています。一人暮らしの親が心配な方、無理なく続けられる見守りの方法を探している方へ。';
+  '離れて暮らす親子のための、安心確認と家族の記録。親の見守り・安否確認から、親子双方の安心確認、レシピ・写真・動画などの家族の記録、重要情報の整理まで。見守りは監視ではなく、安心の確認。必要な情報を、必要な相手に、必要なタイミングで届けるための情報をまとめています。';
+// サブコピー（ヒーロー等で使用）
+export const SITE_TAGLINE = '親を見守る。子を想う。家族の記録を、安心できる場所に残す。';
 
 export const SITE_LOCALE = 'ja_JP';
 export const SITE_LANG = 'ja';
@@ -86,6 +88,18 @@ export const APP_ANDROID_URL =
   'https://play.google.com/store/apps/details?id=com.iq121.rollcall&hl=ja&gl=JP';
 
 // ---------------------------------------------------------------------
+// IQ121 公式アプリ（Legacy Planner / Storage）— ダウンロードリンク
+//
+// Roll Call（毎日の安否確認）とは別の、家族の記録・重要情報整理アプリ。
+// キャンペーンコードにより対象期間中無料で試せる（保証・永続無料とは書かない）。
+// ---------------------------------------------------------------------
+export const IQ121_APP_NAME = 'IQ121';
+export const IQ121_IOS_URL =
+  'https://apps.apple.com/jp/app/iq121-legacy-planner-storage/id6476048879';
+export const IQ121_ANDROID_URL =
+  'https://play.google.com/store/apps/details?id=com.iq.iq121&hl=ja';
+
+// ---------------------------------------------------------------------
 // Google Apps Script フォーム・バックエンド
 //
 // 投資家問い合わせ / Early Adopter 登録の送信先（GAS Web App）。
@@ -102,9 +116,16 @@ export const GOOGLE_APPS_SCRIPT_URL =
 export const POPULAR_SLUGS = [
   'hanarete-kurasu-oya-mimamori',
   'oya-anpi-kakunin-mainichi',
+  'family-recipe-photo-record',
+  'inheritance-important-info-young-people',
+  'mimamori-app-erabikata',
+  // 予備（上のslugが存在しない場合の繰り上げ候補）
   'teiden-tsushin-shougai-renraku',
   'jikka-mobile-battery-bichiku',
-  'mimamori-app-erabikata',
+  'mothers-recipe-family-record',
+  'parent-child-meal-checkin',
+  'parent-child-emergency-information-sharing',
+  'when-to-share-important-family-information',
 ];
 
 // サイドバー下部の忍者AdMaxタグ（未設定のあいだはプレースホルダー枠のみ）。
@@ -157,6 +178,34 @@ export const CATEGORIES: Category[] = [
     description:
       '見守りアプリやツールの選び方、使い方を解説します。スマホが苦手な親でも使えるか、という視点も大切にしています。',
     icon: 'ア',
+  },
+  {
+    slug: 'oyako-anshin',
+    name: '親子の安心確認',
+    description:
+      '見守りは、子が親を見るだけではありません。親も子を想うもの。食事の写真ひとつでも伝わる、親子双方の「安心確認」の工夫を紹介します。',
+    icon: '子',
+  },
+  {
+    slug: 'oya-recipe',
+    name: '親のレシピ・家族の食卓',
+    description:
+      '親の味、実家のごはん、家族の食卓。料理の写真やレシピを「食の記録」として残し、家族で共有するための考え方をまとめています。',
+    icon: '食',
+  },
+  {
+    slug: 'family-record',
+    name: '家族の記録',
+    description:
+      '写真・動画・思い出・家系のこと。家族の記録を無理なく残し、整理するためのヒントを紹介します。記録は、家族の会話を増やす時間にもなります。',
+    icon: '記',
+  },
+  {
+    slug: 'important-info',
+    name: '重要情報の共有',
+    description:
+      '相続・もしもの備え・デジタル終活。年齢に関係なく、大切な情報を整理し、必要な相手に、必要なタイミングで届けるための考え方をまとめています。',
+    icon: '備',
   },
 ];
 

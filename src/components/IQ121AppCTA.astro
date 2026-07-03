@@ -1,0 +1,128 @@
+---
+// IQ121アプリ（家族の記録・重要情報整理）の控えめな記事下CTA。
+// - variant "recipe"：レシピ・写真・動画・家族の記録系の記事向け
+// - variant "info"  ：重要情報・相続・もしもの備え系の記事向け
+// - variant "default"：汎用
+// 方針：売り込まない／保証しない／「目指しています」表現／キャンペーンコードは
+//       「対象期間中無料でお試し」の範囲でのみ言及（永続無料・必ず無料とは書かない）。
+import { IQ121_IOS_URL, IQ121_ANDROID_URL } from '../consts';
+import { withBase } from '../utils/url';
+
+interface Props {
+  variant?: 'recipe' | 'info' | 'default';
+}
+const { variant = 'default' } = Astro.props;
+
+const copy = {
+  recipe:
+    '家族のレシピや写真、動画、重要な情報は、時間が経つほど散らばりやすくなります。LINEやSNSは日常の連絡には便利ですが、家族の大切な記録を長く整理して残す場所としては、少し不安が残ることもあります。IQ121では、家族の写真・動画・レシピ・重要情報を、AES-256で保護された環境で整理し、必要な相手に共有できる世界を目指しています。現在はキャンペーンコードにより、リリース済み機能を対象期間中無料でお試しいただけます。',
+  info: '重要情報は、ただ保管するだけではなく、必要な相手に、必要なタイミングで届くことが大切です。IQ121では、家族の写真・動画・レシピ・重要情報を整理し、共有タイミングを考えながら、必要な相手に残せる世界を目指しています。現在はキャンペーンコードにより、リリース済み機能を対象期間中無料でお試しいただけます。',
+  default:
+    'IQ121は、家族の写真・動画・レシピ・重要情報を整理し、必要な相手に共有できる世界を目指しているアプリです。現在はキャンペーンコードにより、リリース済み機能を対象期間中無料でお試しいただけます。',
+}[variant];
+
+const heading = {
+  recipe: '家族の記録を、安心できる場所に',
+  info: '重要情報を、必要な相手に、必要なタイミングで',
+  default: '家族の記録と重要情報の整理に',
+}[variant];
+---
+
+<aside class="iq-cta" aria-label="IQ121アプリの紹介">
+  <p class="iq-cta__eyebrow">IQ121 Japan</p>
+  <p class="iq-cta__title">{heading}</p>
+  <p class="iq-cta__text">{copy}</p>
+  <div class="iq-cta__actions">
+    <a
+      class="iq-cta__btn iq-cta__btn--primary"
+      href={withBase('/iq121-japan/early-adopter')}
+      data-ga="iq121_early_adopter_click"
+    >
+      Early Adopter登録
+    </a>
+    <a
+      class="iq-cta__btn"
+      href={IQ121_IOS_URL}
+      target="_blank"
+      rel="noopener noreferrer"
+      data-ga="iq121_ios_click"
+    >
+      App Storeで見る
+    </a>
+    <a
+      class="iq-cta__btn"
+      href={IQ121_ANDROID_URL}
+      target="_blank"
+      rel="noopener noreferrer"
+      data-ga="iq121_android_click"
+    >
+      Google Playで見る
+    </a>
+  </div>
+</aside>
+
+<style>
+  .iq-cta {
+    background: var(--color-primary-tint);
+    border: 1px solid var(--color-border);
+    border-left: 4px solid var(--color-primary);
+    border-radius: var(--radius);
+    padding: 1.5rem 1.6rem;
+    margin: 2.5rem 0;
+  }
+  .iq-cta__eyebrow {
+    margin: 0 0 0.2rem;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: var(--color-primary);
+  }
+  .iq-cta__title {
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--color-primary-dark);
+    margin: 0 0 0.5rem;
+  }
+  .iq-cta__text {
+    margin: 0 0 1rem;
+    font-size: 0.88rem;
+    color: var(--color-text-muted);
+    line-height: 1.85;
+  }
+  .iq-cta__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+  }
+  .iq-cta__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    font-size: 0.88rem;
+    font-weight: 700;
+    background: var(--color-surface);
+    color: var(--color-primary-dark);
+    border: 1px solid var(--color-border);
+    transition: border-color 0.15s ease, background 0.15s ease;
+  }
+  .iq-cta__btn:hover {
+    text-decoration: none;
+    border-color: var(--color-primary);
+  }
+  .iq-cta__btn--primary {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+    color: #fff;
+  }
+  .iq-cta__btn--primary:hover {
+    background: var(--color-primary-dark);
+  }
+  @media (max-width: 560px) {
+    .iq-cta__btn {
+      flex: 1 1 100%;
+    }
+  }
+</style>

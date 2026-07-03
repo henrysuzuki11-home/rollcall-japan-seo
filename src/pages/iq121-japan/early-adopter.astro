@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import EarlyAdopterForm from '../../components/EarlyAdopterForm.astro';
+import { IQ121_IOS_URL, IQ121_ANDROID_URL } from '../../consts';
 
 const breadcrumbs = [
   { name: 'ホーム', url: '/' },
@@ -24,11 +25,20 @@ const breadcrumbs = [
       <h1>Early Adopter 登録</h1>
       <p class="iq-lead">
         IQ121 JapanのPre-releaseに向けて、Early Adopter登録を受け付けています。
-        正式リリース前の情報や、今後のご案内を優先的にお届けする予定です。
+        登録いただいた方には、キャンペーンコードや今後のご案内を優先的にお届けする予定です。
+        キャンペーンコードをご利用いただくことで、現在リリース済みのIQ121アプリを
+        対象期間中無料でお試しいただけます。
       </p>
       <p class="ea-note">
         特典・キャンペーンの詳細は、Pre-release時にご案内予定です。
         登録は無料で、いつでも配信の停止をご依頼いただけます。
+      </p>
+      <p class="ea-applink">
+        IQ121アプリは
+        <a href={IQ121_IOS_URL} target="_blank" rel="noopener noreferrer" data-ga="iq121_ios_click">App Store</a>
+        ・
+        <a href={IQ121_ANDROID_URL} target="_blank" rel="noopener noreferrer" data-ga="iq121_android_click">Google Play</a>
+        でもご確認いただけます。
       </p>
     </article>
 
@@ -70,5 +80,9 @@ const breadcrumbs = [
   .ea-form-wrap {
     max-width: var(--maxw-prose);
     margin: 1.5rem auto 0;
+  }
+  .ea-applink {
+    font-size: 0.86rem;
+    color: var(--color-text-muted);
   }
 </style>

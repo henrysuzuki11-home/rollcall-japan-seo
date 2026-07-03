@@ -9,6 +9,7 @@ import RelatedArticles from '../components/RelatedArticles.astro';
 import AdSlot from '../components/AdSlot.astro';
 import DisplayAd from '../components/DisplayAd.astro';
 import ArticleSidebar from '../components/ArticleSidebar.astro';
+import IQ121AppCTA from '../components/IQ121AppCTA.astro';
 
 interface Props {
   article: CollectionEntry<'articles'>;
@@ -17,6 +18,18 @@ const { article } = Astro.props;
 const { title, description, category, pubDate, updatedDate, author, tags, heroImage } =
   article.data;
 const cat = getCategory(category);
+
+// 記事下CTAの出し分け：
+//  - レシピ・家族の記録系 → IQ121（家族の記録）CTA
+//  - 重要情報・親子の安心確認系 → IQ121（重要情報）CTA
+//  - それ以外 → Roll Call（毎日の安否確認）CTA
+const iqRecipeCats = ['oya-recipe', 'family-record'];
+const iqInfoCats = ['important-info', 'oyako-anshin'];
+const ctaKind = iqRecipeCats.includes(category)
+  ? 'iq-recipe'
+  : iqInfoCats.includes(category)
+    ? 'iq-info'
+    : 'rollcall';
 
 const dateStr = pubDate.toLocaleDateString('ja-JP', {
   year: 'numeric',
@@ -102,7 +115,9 @@ const breadcrumbs = [
 
         <div class="prose">
           <AdSlot label="スポンサーリンク" />
-          <AppCta />
+          {ctaKind === 'iq-recipe' && <IQ121AppCTA variant="recipe" />}
+          {ctaKind === 'iq-info' && <IQ121AppCTA variant="info" />}
+          {ctaKind === 'rollcall' && <AppCta />}
         </div>
 
         <div class="prose">
