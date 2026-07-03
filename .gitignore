@@ -56,3 +56,14 @@ __pycache__/
 # Affiliate: live link table with real affiliate URLs (keep .example.csv tracked)
 Affiliate/links/affiliate_link_table.csv
 
+# Creative source material — large originals stay local only.
+# (Optimized WebP for the site lives in public/images/. Keep .md docs tracked.)
+Creative/source-images/**/*.jpg
+Creative/source-images/**/*.JPG
+Creative/source-images/**/*.jpeg
+Creative/source-images/**/*.JPEG
+Creative/source-images/**/*.png
+Creative/source-images/**/*.PNG
+Creative/source-images/**/*.heic
+Creative/source-images/**/*.HEIC
+
