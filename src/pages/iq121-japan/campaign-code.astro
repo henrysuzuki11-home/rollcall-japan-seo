@@ -1,0 +1,93 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import EarlyAdopterForm from '../../components/EarlyAdopterForm.astro';
+import { IQ121_IOS_URL, IQ121_ANDROID_URL } from '../../consts';
+
+const breadcrumbs = [
+  { name: 'ホーム', url: '/' },
+  { name: 'IQ121 Japan', url: '/iq121-japan' },
+  { name: 'キャンペーンコード申請', url: '/iq121-japan/campaign-code' },
+];
+---
+
+<BaseLayout
+  title="IQ121アプリ キャンペーンコード申請"
+  description="現在リリース済みのIQ121アプリを試したい方向けに、キャンペーンコードの案内を行っています。必要事項をご入力いただいた方には、メールでキャンペーンコードのご案内をお送りします。"
+  canonical="/iq121-japan/campaign-code"
+  breadcrumbs={breadcrumbs}
+>
+  <div class="container section">
+    <Breadcrumbs crumbs={breadcrumbs} />
+
+    <article class="prose cc-page">
+      <p class="iq-eyebrow">IQ121 Japan / Campaign Code</p>
+      <h1>IQ121アプリ キャンペーンコード申請</h1>
+      <p class="iq-lead">
+        現在リリース済みのIQ121アプリを試したい方向けに、キャンペーンコードの案内を行っています。
+        必要事項をご入力いただいた方には、メールでキャンペーンコードのご案内をお送りします。
+      </p>
+      <p class="cc-note">
+        キャンペーンコードは、登録完了画面やサイト上には表示されません。
+        ご入力いただいたメールアドレス宛にお送りします。
+      </p>
+      <p class="cc-caution">
+        ※ 本キャンペーンの内容・対象期間・利用条件は、予告なく変更となる場合があります。
+      </p>
+      <p class="cc-applink">
+        IQ121アプリは
+        <a href={IQ121_IOS_URL} target="_blank" rel="noopener noreferrer" data-ga="iq121_ios_click">App Store</a>
+        ・
+        <a href={IQ121_ANDROID_URL} target="_blank" rel="noopener noreferrer" data-ga="iq121_android_click">Google Play</a>
+        でご確認いただけます。
+      </p>
+    </article>
+
+    <div class="cc-form-wrap">
+      <EarlyAdopterForm mode="campaign-code" />
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .section {
+    padding: 2.5rem 20px 3.5rem;
+  }
+  .cc-page {
+    max-width: var(--maxw-prose);
+    margin-inline: auto;
+  }
+  .iq-eyebrow {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: var(--color-primary);
+    margin: 0 0 0.5rem;
+  }
+  .iq-lead {
+    font-size: 1.02rem;
+    line-height: 1.9;
+    color: var(--color-text);
+  }
+  .cc-note {
+    background: var(--color-primary-tint);
+    border-left: 3px solid var(--color-primary);
+    border-radius: var(--radius-sm);
+    padding: 0.9rem 1.2rem;
+    font-size: 0.9rem;
+    color: var(--color-text);
+    line-height: 1.75;
+  }
+  .cc-caution {
+    font-size: 0.82rem;
+    color: var(--color-text-muted);
+  }
+  .cc-applink {
+    font-size: 0.86rem;
+    color: var(--color-text-muted);
+  }
+  .cc-form-wrap {
+    max-width: var(--maxw-prose);
+    margin: 1.5rem auto 0;
+  }
+</style>

@@ -17,6 +17,11 @@
   - request_status: requested → sent / resent / error
 - CampaignCodeLogs 列: timestamp / email / name_or_nickname / campaign_code / source_page / status / notes
 
+### サイト側の2入口（2026-07-03〜）
+- `/iq121-japan/early-adopter/`（先行案内登録）→ **wants_campaign_code=false 固定**。EarlyAdopterシートのみに記録。Requests/Logsには入らない・メール送信なし
+- `/iq121-japan/campaign-code/`（キャンペーンコード申請）→ **wants_campaign_code=true 固定**（チェックボックスなし）。EarlyAdopter＋CampaignCodeRequests（upsert）＋CampaignCodeLogs＋コードメール送信
+- どちらも同じGASエンドポイント・同じ `type: early_adopter`。区別は wants_campaign_code と source_page（location.pathname）で行う
+
 ### 動作
 1. `type=early_adopter` かつ `wants_campaign_code` が true/'true'/'on' のときだけ発動（希望者のみ）
 2. 条件: email あり／honeypot（website）空／必須同意3つ true

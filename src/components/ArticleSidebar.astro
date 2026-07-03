@@ -38,12 +38,17 @@ const { current } = Astro.props;
     </ul>
   </section>
 
-  <!-- 先行案内登録CTA（広告より上） -->
+  <!-- 先行案内登録CTA（主・広告より上） -->
   <a class="side-cta side-cta--ea" href={withBase('/iq121-japan/early-adopter')}>
     <span class="side-cta__eyebrow">IQ121 Japan</span>
     <span class="side-cta__title">先行案内登録</span>
-    <span class="side-cta__text">キャンペーンコードや正式リリース前のご案内をお届け予定です。</span>
+    <span class="side-cta__text">正式リリース前のご案内やアップデート情報をお届け予定です。</span>
   </a>
+
+  <!-- キャンペーンコード申請（補助） -->
+  <p class="side-cc-link">
+    既存IQ121アプリを試したい方は<a href={withBase('/iq121-japan/campaign-code')}>こちら</a>
+  </p>
 
   <!-- /app CTA（広告より上） -->
   <a class="side-cta side-cta--app" href={withBase('/app')} data-ga="app_page_cta_click">
@@ -143,9 +148,16 @@ const { current } = Astro.props;
   .side-cta--ea {
     background: var(--color-surface);
     border: 1px solid var(--color-border);
+    margin-bottom: 0.4rem;
   }
   .side-cta--ea:hover {
     border-color: var(--color-primary);
+  }
+  .side-cc-link {
+    margin: 0 0 1rem;
+    font-size: 0.78rem;
+    color: var(--color-text-muted);
+    text-align: right;
   }
   .side-cta--app {
     background: var(--color-primary-tint);

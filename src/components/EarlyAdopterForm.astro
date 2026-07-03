@@ -1,10 +1,28 @@
 ---
-// Early Adopter 登録フォーム（一般ユーザー向け）。
+// 先行案内登録 / キャンペーンコード申請 共用フォーム（一般ユーザー向け）。
 // 送信先：Google Apps Script（type: early_adopter）。
 // 送信は text/plain;charset=utf-8 + JSON.stringify（application/json は使わない）。
+//
+// mode:
+//  - 'early-adopter'（既定）… wants_campaign_code=false 固定。
+//      完了文言=「今後の先行案内を準備が整い次第お届けします。」
+//      GAS側で CampaignCodeRequests / CampaignCodeLogs には入らない。
+//  - 'campaign-code' … wants_campaign_code=true 固定（チェックボックスは出さない）。
+//      完了文言=「キャンペーンコードのご案内をメールでお送りします。」
+//      interest_theme に「既存IQ121アプリを試したい」を追加表示。
+// ※ キャンペーンコードの値は画面に一切表示しない（メール内のみ）。
 import { GOOGLE_APPS_SCRIPT_URL } from '../consts';
 import { withBase } from '../utils/url';
+
+interface Props {
+  mode?: 'early-adopter' | 'campaign-code';
+}
+const { mode = 'early-adopter' } = Astro.props;
 const gasUrl = GOOGLE_APPS_SCRIPT_URL;
+const wantsCampaignCode = mode === 'campaign-code';
+const doneMessage = wantsCampaignCode
+  ? 'キャンペーンコードのご案内をメールでお送りします。'
+  : '今後の先行案内を準備が整い次第お届けします。';
 ---
 
 <form class="ff" id="ea-form" novalidate>
@@ -31,6 +49,7 @@ const gasUrl = GOOGLE_APPS_SCRIPT_URL;
       <option>相続・もしもの備え</option>
       <option>災害時の安否確認</option>
       <option>親との連絡習慣</option>
+      {wantsCampaignCode && <option>既存IQ121アプリを試したい</option>}
       <option>その他</option>
     </select>
   </div>
@@ -46,10 +65,6 @@ const gasUrl = GOOGLE_APPS_SCRIPT_URL;
   </div>
 
   <div class="ff-checks">
-    <label class="ff-check">
-      <input type="checkbox" name="wants_campaign_code" />
-      <span>現在リリース済みのIQ121アプリを試すためのキャンペーンコード案内を希望します<span class="ff-opt">任意</span></span>
-    </label>
     <label class="ff-check">
       <input type="checkbox" name="consent_prerelease_info" required />
       <span>Pre-releaseに関する情報・ご案内の受け取りに同意します。<span class="ff-req">必須</span></span>
@@ -75,10 +90,10 @@ const gasUrl = GOOGLE_APPS_SCRIPT_URL;
 
 <div class="ff-done" id="ea-done" hidden>
   <p class="ff-done__title">登録が完了しました。</p>
-  <p id="ea-done-msg">今後の先行案内を準備が整い次第お届けします。</p>
+  <p id="ea-done-msg">{doneMessage}</p>
 </div>
 
-<script define:vars={{ gasUrl }}>
+<script define:vars={{ gasUrl, wantsCampaignCode }}>
   const form = document.getElementById('ea-form');
   const done = document.getElementById('ea-done');
   const errBox = document.getElementById('ea-error');
@@ -99,14 +114,13 @@ const gasUrl = GOOGLE_APPS_SCRIPT_URL;
 
       if (!form.reportValidity()) return;
 
-      const wantsCode = form.wants_campaign_code.checked;
       const payload = {
         type: 'early_adopter',
         name_or_nickname: form.name_or_nickname.value.trim(),
         email: form.email.value.trim(),
         interest_theme: form.interest_theme.value,
         lives_apart_from_parent: form.lives_apart_from_parent.value,
-        wants_campaign_code: wantsCode,
+        wants_campaign_code: wantsCampaignCode,
         consent_prerelease_info: form.consent_prerelease_info.checked,
         consent_privacy_policy: form.consent_privacy_policy.checked,
         consent_campaign_terms: form.consent_campaign_terms.checked,
@@ -124,10 +138,6 @@ const gasUrl = GOOGLE_APPS_SCRIPT_URL;
           headers: { 'Content-Type': 'text/plain;charset=utf-8' },
           body: JSON.stringify(payload),
         });
-        if (wantsCode) {
-          const msg = document.getElementById('ea-done-msg');
-          if (msg) msg.textContent = 'キャンペーンコードのご案内をメールでお送りします。';
-        }
         form.hidden = true;
         done.hidden = false;
       } catch (err) {

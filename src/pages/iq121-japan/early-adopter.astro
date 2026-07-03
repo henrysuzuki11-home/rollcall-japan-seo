@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import EarlyAdopterForm from '../../components/EarlyAdopterForm.astro';
 import { IQ121_IOS_URL, IQ121_ANDROID_URL } from '../../consts';
+import { withBase } from '../../utils/url';
 
 const breadcrumbs = [
   { name: 'ホーム', url: '/' },
@@ -25,12 +26,11 @@ const breadcrumbs = [
       <h1>IQ121 Japan 先行案内登録</h1>
       <p class="iq-lead">
         IQ121 JapanのPre-releaseに向けて、先行案内登録を受け付けています。
-        登録いただいた方には、今後のご案内やキャンペーンコードに関する情報をお届けする予定です。
+        登録いただいた方には、今後のご案内やアップデート情報を準備が整い次第お届けする予定です。
       </p>
-      <p class="iq-lead">
-        現在リリース済みのIQ121アプリを試したい方には、キャンペーンコードのご案内も行っています。
-        キャンペーンコードをご利用いただくことで、現在リリース済みのIQ121アプリを
-        対象期間中無料でお試しいただけます。
+      <p class="ea-cc-link">
+        現在リリース済みのIQ121アプリを試したい方は、キャンペーンコード申請ページをご利用ください。
+        → <a href={withBase('/iq121-japan/campaign-code')}>キャンペーンコードを申請する</a>
       </p>
       <p class="ea-note">
         特典・キャンペーンの詳細は、Pre-release時にご案内予定です。
@@ -91,5 +91,13 @@ const breadcrumbs = [
   .ea-applink {
     font-size: 0.86rem;
     color: var(--color-text-muted);
+  }
+  .ea-cc-link {
+    font-size: 0.9rem;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    padding: 0.8rem 1.1rem;
+    line-height: 1.8;
   }
 </style>

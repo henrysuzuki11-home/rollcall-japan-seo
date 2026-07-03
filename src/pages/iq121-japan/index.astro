@@ -109,8 +109,8 @@ const breadcrumbs = [
         </a>
       </div>
       <p class="iq-applinks-note">
-        キャンペーンコードは、<a href={withBase('/iq121-japan/early-adopter')}>先行案内登録</a>
-        いただいた方へのご案内を予定しています。
+        キャンペーンコードは、<a href={withBase('/iq121-japan/campaign-code')}>キャンペーンコード申請ページ</a>
+        からお申し込みいただいた方へ、メールでご案内します。
       </p>
 
       <h2>ご案内の入口</h2>
@@ -120,16 +120,23 @@ const breadcrumbs = [
     <div class="iq-cards">
       <a class="iq-card" href={withBase('/iq121-japan/early-adopter')}>
         <span class="iq-card__tag">一般の方へ</span>
-        <span class="iq-card__title">先行案内登録</span>
+        <span class="iq-card__title">IQ121 Japan 先行案内登録</span>
         <span class="iq-card__text">
-          正式リリース前の情報や今後のご案内を、優先的にお届けする予定です。
-          離れて暮らす家族の見守りに関心がある方はこちらから。
+          日本向けのPre-releaseや今後のアップデート情報を受け取りたい方向け。
         </span>
         <span class="iq-card__cta">登録ページへ →</span>
       </a>
+      <a class="iq-card" href={withBase('/iq121-japan/campaign-code')}>
+        <span class="iq-card__tag">いま試したい方へ</span>
+        <span class="iq-card__title">IQ121アプリ キャンペーンコード申請</span>
+        <span class="iq-card__text">
+          現在リリース済みのIQ121アプリを試したい方向け。
+        </span>
+        <span class="iq-card__cta">申請ページへ →</span>
+      </a>
       <a class="iq-card" href={withBase('/iq121-japan/investor')}>
         <span class="iq-card__tag">投資家・事業提携の方へ</span>
-        <span class="iq-card__title">お問い合わせ</span>
+        <span class="iq-card__title">投資家・事業提携のお問い合わせ</span>
         <span class="iq-card__text">
           投資家・事業会社・メディアなど、事業に関するお問い合わせはこちらから。
           内容に応じて担当チームより個別にご連絡します。
@@ -216,10 +223,16 @@ const breadcrumbs = [
   }
   .iq-cards {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 1.3rem;
-    max-width: var(--maxw-prose);
+    max-width: var(--maxw);
     margin: 1.5rem auto 0;
+  }
+  @media (max-width: 900px) {
+    .iq-cards {
+      grid-template-columns: 1fr;
+      max-width: var(--maxw-prose);
+    }
   }
   .iq-card {
     display: flex;
