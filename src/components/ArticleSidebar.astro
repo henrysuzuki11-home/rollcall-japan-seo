@@ -1,6 +1,6 @@
 ---
 // 記事詳細ページの補助サイドバー（PC=右、スマホ=本文下）。
-// 構成順：記事検索への導線 → 人気記事 → カテゴリ一覧 → Early Adopter CTA
+// 構成順：記事検索への導線 → 人気記事 → カテゴリ一覧 → 先行案内登録CTA
 //         → /app CTA → サイドバー下部広告
 // 方針：本文の邪魔をしない補助的存在。CTAは広告より上。広告感は最小限。
 import { CATEGORIES } from '../consts';
@@ -38,11 +38,11 @@ const { current } = Astro.props;
     </ul>
   </section>
 
-  <!-- Early Adopter CTA（広告より上） -->
+  <!-- 先行案内登録CTA（広告より上） -->
   <a class="side-cta side-cta--ea" href={withBase('/iq121-japan/early-adopter')}>
     <span class="side-cta__eyebrow">IQ121 Japan</span>
-    <span class="side-cta__title">Early Adopter 登録</span>
-    <span class="side-cta__text">キャンペーンコードや正式リリース前のご案内を優先的にお届け予定です。</span>
+    <span class="side-cta__title">先行案内登録</span>
+    <span class="side-cta__text">キャンペーンコードや正式リリース前のご案内をお届け予定です。</span>
   </a>
 
   <!-- /app CTA（広告より上） -->
