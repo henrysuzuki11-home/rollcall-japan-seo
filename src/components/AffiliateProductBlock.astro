@@ -1,0 +1,82 @@
+---
+// 記事内アフィリエイト商品ブロック。
+// - getDisplayableProducts() 経由でしか描画しない（candidate / URL未設定は絶対に出ない）
+// - 開示ラベルをブロック直前に自動表示
+// - リンクは rel="sponsored nofollow noopener noreferrer" + target="_blank"
+// - 1記事の最大表示数は maxItems（既定4）
+// - /app・early-adopter・investor では使用しないこと（配置ルール）
+import { getDisplayableProducts } from '../data/affiliateProducts';
+import AffiliateDisclosure from './AffiliateDisclosure.astro';
+
+interface Props {
+  slug: string;
+  heading?: string;
+  maxItems?: number;
+}
+const { slug, heading = '関連するアイテム（PR）', maxItems = 4 } = Astro.props;
+const products = getDisplayableProducts(slug).slice(0, maxItems);
+---
+
+{
+  products.length > 0 && (
+    <section class="aff-block" aria-label="関連商品の紹介（広告）">
+      <AffiliateDisclosure />
+      <h2 class="aff-block__title">{heading}</h2>
+      <ul class="aff-block__list">
+        {products.map((p) => (
+          <li class="aff-card">
+            <p class="aff-card__cat">{p.category}</p>
+            <a
+              class="aff-card__title"
+              href={p.url}
+              target="_blank"
+              rel={p.rel}
+            >
+              {p.title}
+            </a>
+            <p class="aff-card__desc">{p.description}</p>
+          </li>
+        ))}
+      </ul>
+    </section>
+  )
+}
+
+<style>
+  .aff-block {
+    margin: 2.5rem 0;
+  }
+  .aff-block__title {
+    font-size: 1.15rem;
+    margin: 0 0 0.9rem;
+  }
+  .aff-block__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 0.8rem;
+  }
+  .aff-card {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    padding: 0.9rem 1.1rem;
+    background: var(--color-surface);
+  }
+  .aff-card__cat {
+    margin: 0 0 0.2rem;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--color-text-muted);
+  }
+  .aff-card__title {
+    font-weight: 700;
+    color: var(--color-primary-dark);
+  }
+  .aff-card__desc {
+    margin: 0.35rem 0 0;
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    line-height: 1.7;
+  }
+</style>

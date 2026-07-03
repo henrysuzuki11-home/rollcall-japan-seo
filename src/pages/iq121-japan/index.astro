@@ -61,6 +61,27 @@ const breadcrumbs = [
         家族の自立した暮らしを尊重しながら、そっと支える。その姿勢を、これからも変わらず持ち続けます。
       </p>
 
+      <h2>セキュリティの考え方</h2>
+      <p>
+        大切なのは、情報を便利に共有できることだけではありません。ユーザー本人が管理する情報を、
+        運営側がむやみに見られない設計であることも重要です。IQ121では、AES-256による暗号化に加え、
+        Authenticatorアプリ等を用いた多要素認証にも対応しています。ユーザーのプライベートな情報は
+        暗号化され、開発者や運営者が内容を直接確認できない設計です。
+      </p>
+      <p>
+        また、重要情報の真正性や改ざん検知の考え方として、Ethereumを活用したブロックチェーン技術も
+        取り入れています。これはブロックチェーン上に家族の個人情報そのものを保存するという意味ではなく、
+        記録の信頼性を高めるための技術として活用されます。
+      </p>
+      <dl class="iq-faq">
+        <dt>Q. 開発者や運営者は、保存した家族情報を見ることができますか？</dt>
+        <dd>
+          IQ121では、ユーザーのプライベートな情報を暗号化して保管し、開発者や運営者が内容を
+          直接確認できない設計を採用しています。ただし、アカウント管理やサービス運営に必要な
+          最低限の情報は、プライバシーポリシーに基づいて取り扱われます。
+        </dd>
+      </dl>
+
       <h2>いまのIQ121を試す</h2>
       <p>
         IQ121は、すでにiOS / Androidで公開されています。すでにリリース済みの機能については、
@@ -148,6 +169,24 @@ const breadcrumbs = [
     border-radius: var(--radius-sm);
     padding: 1rem 1.2rem;
     color: var(--color-text);
+  }
+  .iq-faq {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    padding: 1.1rem 1.3rem;
+    margin: 1rem 0;
+  }
+  .iq-faq dt {
+    font-weight: 700;
+    color: var(--color-primary-dark);
+    margin-bottom: 0.4rem;
+  }
+  .iq-faq dd {
+    margin: 0;
+    font-size: 0.92rem;
+    line-height: 1.85;
+    color: var(--color-text-muted);
   }
   .iq-applinks {
     display: flex;

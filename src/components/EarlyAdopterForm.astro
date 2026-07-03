@@ -47,6 +47,10 @@ const gasUrl = GOOGLE_APPS_SCRIPT_URL;
 
   <div class="ff-checks">
     <label class="ff-check">
+      <input type="checkbox" name="wants_campaign_code" />
+      <span>現在リリース済みのIQ121アプリを試すためのキャンペーンコード案内を希望します<span class="ff-opt">任意</span></span>
+    </label>
+    <label class="ff-check">
       <input type="checkbox" name="consent_prerelease_info" required />
       <span>Pre-releaseに関する情報・ご案内の受け取りに同意します。<span class="ff-req">必須</span></span>
     </label>
@@ -71,7 +75,7 @@ const gasUrl = GOOGLE_APPS_SCRIPT_URL;
 
 <div class="ff-done" id="ea-done" hidden>
   <p class="ff-done__title">登録が完了しました。</p>
-  <p>Pre-releaseに関するご案内を、準備が整い次第お届けします。</p>
+  <p id="ea-done-msg">Pre-releaseに関するご案内を、準備が整い次第お届けします。</p>
 </div>
 
 <script define:vars={{ gasUrl }}>
@@ -95,12 +99,14 @@ const gasUrl = GOOGLE_APPS_SCRIPT_URL;
 
       if (!form.reportValidity()) return;
 
+      const wantsCode = form.wants_campaign_code.checked;
       const payload = {
         type: 'early_adopter',
         name_or_nickname: form.name_or_nickname.value.trim(),
         email: form.email.value.trim(),
         interest_theme: form.interest_theme.value,
         lives_apart_from_parent: form.lives_apart_from_parent.value,
+        wants_campaign_code: wantsCode,
         consent_prerelease_info: form.consent_prerelease_info.checked,
         consent_privacy_policy: form.consent_privacy_policy.checked,
         consent_campaign_terms: form.consent_campaign_terms.checked,
@@ -118,6 +124,10 @@ const gasUrl = GOOGLE_APPS_SCRIPT_URL;
           headers: { 'Content-Type': 'text/plain;charset=utf-8' },
           body: JSON.stringify(payload),
         });
+        if (wantsCode) {
+          const msg = document.getElementById('ea-done-msg');
+          if (msg) msg.textContent = 'キャンペーンコードのご案内をメールでお送りします。';
+        }
         form.hidden = true;
         done.hidden = false;
       } catch (err) {

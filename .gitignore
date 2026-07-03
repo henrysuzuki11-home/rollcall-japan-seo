@@ -56,6 +56,9 @@ __pycache__/
 # Affiliate: live link table with real affiliate URLs (keep .example.csv tracked)
 Affiliate/links/affiliate_link_table.csv
 
+# Ops: Google Apps Script sources contain the campaign code — keep local only.
+Ops/google-apps-script/
+
 # Creative source material — large originals stay local only.
 # (Optimized WebP for the site lives in public/images/. Keep .md docs tracked.)
 Creative/source-images/**/*.jpg

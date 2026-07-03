@@ -1,0 +1,25 @@
+---
+// アフィリエイト開示ラベル。商品紹介ブロックの直前（または記事冒頭）に置く。
+// 文言は Creative/affiliate/affiliate_disclosure_policy.md に準拠。
+interface Props {
+  text?: string;
+}
+const {
+  text = 'この記事にはPR・広告リンクが含まれます。リンク経由で商品やサービスを利用された場合、当サイトが報酬を受け取ることがあります。',
+} = Astro.props;
+---
+
+<p class="aff-disclosure">{text}</p>
+
+<style>
+  .aff-disclosure {
+    font-size: 0.82rem;
+    color: var(--color-text-muted);
+    background: var(--color-primary-tint);
+    border-left: 3px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    padding: 0.7rem 1rem;
+    margin: 1.2rem 0;
+    line-height: 1.7;
+  }
+</style>

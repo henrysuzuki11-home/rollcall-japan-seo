@@ -126,6 +126,9 @@ export const POPULAR_SLUGS = [
   'parent-child-meal-checkin',
   'parent-child-emergency-information-sharing',
   'when-to-share-important-family-information',
+  'family-information-security-basics',
+  'line-family-important-info-sharing',
+  'smartphone-lost-family-preparation',
 ];
 
 // サイドバー下部の忍者AdMaxタグ（未設定のあいだはプレースホルダー枠のみ）。
@@ -206,6 +209,13 @@ export const CATEGORIES: Category[] = [
     description:
       '相続・もしもの備え・デジタル終活。年齢に関係なく、大切な情報を整理し、必要な相手に、必要なタイミングで届けるための考え方をまとめています。',
     icon: '備',
+  },
+  {
+    slug: 'family-security',
+    name: '家族のセキュリティ',
+    description:
+      '家族の写真・レシピ・重要情報の守り方。パスワードや多要素認証の基本から、日常の連絡と大切な記録の置き場所の分け方まで、やさしく解説します。',
+    icon: '守',
   },
 ];
 
