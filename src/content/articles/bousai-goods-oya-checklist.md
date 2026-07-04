@@ -5,6 +5,7 @@ category: disaster
 tags: [防災グッズ, 実家, チェックリスト, 備え, 離れて暮らす親]
 pubDate: 2026-06-27
 author: 親みまもり研究所 編集部
+heroImage: "/images/articles/bousai-goods-oya-checklist.webp"
 ---
 
 > この記事には広告・PRおよびアフィリエイトリンクを含みます。紹介する商品・サービスは、離れて暮らす家族の見守りや連絡、防災の備えに役立つかという観点で整理しています。

@@ -5,6 +5,7 @@ category: app-guide
 tags: [高齢者, 見守りアプリ, 使いやすさ, 安否確認]
 pubDate: 2026-05-20
 author: 親みまもり研究所 編集部
+heroImage: "/images/articles/kourei-tsukaiyasui-app.webp"
 ---
 
 「見守りアプリを使ってほしいけれど、親がスマホを使いこなせるか不安」——よくある悩みです。この記事では、高齢の親でも使いやすいアプリの条件と、無理なく使ってもらう工夫を解説します。

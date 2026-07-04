@@ -5,6 +5,7 @@ category: elderly-care
 tags: [認知症, 高齢者, 見守り, 介護]
 pubDate: 2026-03-01
 author: 親みまもり研究所 編集部
+heroImage: "/images/articles/ninchisho-oya-mimamori.webp"
 ---
 
 認知症は早期に気づき、適切に対応することで進行を緩やかにできる場合があります。この記事では、家族が知っておきたい初期サインと、見守りの工夫を解説します。

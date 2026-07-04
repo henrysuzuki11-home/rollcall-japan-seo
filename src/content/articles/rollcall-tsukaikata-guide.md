@@ -5,6 +5,7 @@ category: app-guide
 tags: [Roll Call, 使い方, 見守りアプリ, 安否確認]
 pubDate: 2026-05-08
 author: 親みまもり研究所 編集部
+heroImage: "/images/articles/rollcall-tsukaikata-guide.webp"
 featured: true
 ---
 

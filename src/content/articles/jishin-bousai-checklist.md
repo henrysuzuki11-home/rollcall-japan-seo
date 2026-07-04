@@ -5,6 +5,7 @@ category: disaster
 tags: [防災, 地震, チェックリスト, 備蓄]
 pubDate: 2026-02-22
 author: 親みまもり研究所 編集部
+heroImage: "/images/articles/jishin-bousai-checklist.webp"
 ---
 
 「防災は大事」と分かっていても、何から手をつければいいか迷うものです。この記事では、家族で確認したい防災のポイントを**チェックリスト形式**で紹介します。一つずつ取り組んでいきましょう。

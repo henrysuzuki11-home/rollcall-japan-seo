@@ -5,6 +5,7 @@ category: app-guide
 tags: [Roll Call, 機能, チェックイン, 見守りアプリ]
 pubDate: 2026-05-26
 author: 親みまもり研究所 編集部
+heroImage: "/images/articles/rollcall-dekirukoto.webp"
 featured: true
 ---
 

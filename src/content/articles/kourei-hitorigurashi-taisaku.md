@@ -5,6 +5,7 @@ category: elderly-care
 tags: [一人暮らし, 高齢者, 見守り, 安否確認]
 pubDate: 2026-01-20
 author: 親みまもり研究所 編集部
+heroImage: "/images/articles/kourei-hitorigurashi-taisaku.webp"
 ---
 
 高齢の親が一人で暮らしている——それ自体は珍しいことではありませんが、「もしものとき、誰も気づけないのでは」という不安はつきものです。この記事では、心配を少しでも減らすために**今すぐ始められる対策**を5つ紹介します。

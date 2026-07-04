@@ -5,6 +5,7 @@ category: elderly-care
 tags: [遠距離介護, 支援制度, 高齢者, 介護]
 pubDate: 2026-03-18
 author: 親みまもり研究所 編集部
+heroImage: "/images/articles/enkyori-kaigo-kokorogamae.webp"
 ---
 
 実家を離れて暮らしながら親の介護に関わる「遠距離介護」。移動の負担や費用、精神的なプレッシャーは大きいものです。この記事では、遠距離介護を**長く続けるための心構え**と、知っておきたい支援制度を紹介します。
