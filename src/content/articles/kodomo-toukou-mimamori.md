@@ -5,6 +5,7 @@ category: safety-check
 tags: [登下校, 子ども, 見守り, 共働き]
 pubDate: 2026-01-25
 author: 親みまもり研究所 編集部
+heroImage: "/images/articles/kodomo-toukou-mimamori.webp"
 featured: true
 ---
 

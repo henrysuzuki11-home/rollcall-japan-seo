@@ -5,6 +5,7 @@ category: family-communication
 tags: [親孝行, 家族, 気づかい, コミュニケーション]
 pubDate: 2026-02-18
 author: 親みまもり研究所 編集部
+heroImage: "/images/articles/oyakoukou-tooku-kizukai.webp"
 ---
 
 「親孝行したいけれど、遠くに住んでいてなかなかできない」——そう感じて、もどかしさや罪悪感を抱える方は少なくありません。この記事では、離れていても**できる親孝行**の形を考えます。

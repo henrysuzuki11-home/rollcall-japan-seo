@@ -5,6 +5,7 @@ category: family-communication
 tags: [家族, グループ, 連絡, コミュニケーション]
 pubDate: 2026-04-20
 author: 親みまもり研究所 編集部
+heroImage: "/images/articles/kazoku-group-renraku.webp"
 ---
 
 家族でグループを作って連絡を取り合う家庭は増えています。でも「返信が来ない」「誰が見たか分からない」「高齢の親がついていけない」といった悩みもつきものです。この記事では、家族の連絡を**スムーズにする工夫**を紹介します。

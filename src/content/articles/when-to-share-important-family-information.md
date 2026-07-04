@@ -5,6 +5,7 @@ category: important-info
 tags: [重要情報, 家族共有, 相続, デジタル終活]
 pubDate: 2026-07-02
 author: 親みまもり研究所 編集部
+heroImage: "/images/articles/when-to-share-important-family-information.webp"
 ---
 
 家族に重要な情報を残そうと考えたとき、多くの人がつまずくのが「全部見せるのは抵抗がある」という気持ちです。実はこれは自然な感覚で、**重要情報は、すべてを今すぐ共有すればよいわけではありません**。「何を」だけでなく「いつ」を設計すると、安心とプライバシーは両立できます。

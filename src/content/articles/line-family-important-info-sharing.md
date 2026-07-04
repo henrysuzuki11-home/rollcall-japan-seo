@@ -5,6 +5,7 @@ category: family-security
 tags: [LINE, 情報共有, 家族, セキュリティ]
 pubDate: 2026-07-03
 author: 親みまもり研究所 編集部
+heroImage: "/images/articles/line-family-important-info-sharing.webp"
 ---
 
 家族のグループLINEは、いまや家族の連絡網そのもの。写真を送り、予定を決め、「無事だよ」を伝え合う。とても便利です。ただ、**保険や契約、パスワード、相続に関わるような重要情報**をそのまま送ろうとしたとき、少しだけ立ち止まる価値があります。この記事はLINEを否定するものではなく、「道具の役割分担」の話です。

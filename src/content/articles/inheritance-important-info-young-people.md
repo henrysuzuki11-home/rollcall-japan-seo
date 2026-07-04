@@ -5,6 +5,7 @@ category: important-info
 tags: [相続, 重要情報, 家族の備え, 親子の安心確認]
 pubDate: 2026-07-02
 author: 親みまもり研究所 編集部
+heroImage: "/images/articles/inheritance-important-info-young-people.webp"
 ---
 
 「相続」という言葉に、自分ごとという感覚を持てる人は多くありません。まだ先の話、親の世代の話——そう感じるのが自然です。でも、重要情報の整理は、実は**年齢に関係なく「家族への思いやり」として意味のある準備**です。この記事では、若い人でも無理なく始められる情報整理の考え方を紹介します。

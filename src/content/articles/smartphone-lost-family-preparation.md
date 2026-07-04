@@ -5,6 +5,7 @@ category: important-info
 tags: [スマホ紛失, 緊急連絡先, 家族の備え, セキュリティ]
 pubDate: 2026-07-03
 author: 親みまもり研究所 編集部
+heroImage: "/images/articles/smartphone-lost-family-preparation.webp"
 ---
 
 いまのスマホには、連絡先、家族の写真、認証アプリ、銀行、保険、各種契約——**生活のほとんど**が集まっています。だからこそ、紛失や故障は「不便」では済まないことがあります。脅かすための話ではありません。誰にでも起こり得ることだからこそ、落ち着いて備えておけば大丈夫、という話です。

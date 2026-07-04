@@ -5,6 +5,7 @@ category: family-communication
 tags: [安否確認, 家族, 習慣, コミュニケーション]
 pubDate: 2026-05-02
 author: 親みまもり研究所 編集部
+heroImage: "/images/articles/sarigenai-anpi-kakunin.webp"
 ---
 
 「毎日連絡したいけれど、しつこいと思われたくない」「いまさら『元気?』なんて照れくさい」——家族だからこそ、安否確認が言い出しにくいことがあります。この記事では、お互いに気をつかわず**さりげなく安否を確認しあう習慣**を提案します。

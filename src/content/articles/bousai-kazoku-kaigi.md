@@ -5,6 +5,7 @@ category: disaster
 tags: [防災家族会議, 連絡手段, 防災, 家族]
 pubDate: 2026-04-02
 author: 親みまもり研究所 編集部
+heroImage: "/images/articles/bousai-kazoku-kaigi.webp"
 ---
 
 災害は、家族がバラバラの場所にいるときに起こるかもしれません。そのとき慌てないために、平常時に家族で話し合っておく——それが「防災家族会議」です。この記事では、何をどう決めればよいかを解説します。

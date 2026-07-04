@@ -5,6 +5,7 @@ category: family-communication
 tags: [単身赴任, 家族, つながり, コミュニケーション]
 pubDate: 2026-04-05
 author: 親みまもり研究所 編集部
+heroImage: "/images/articles/tanshin-funin-kazoku-tsunagari.webp"
 ---
 
 単身赴任は、家族と離れて暮らす寂しさだけでなく、「子どもの成長を見られない」「家族の中で自分の存在が薄れていく」といった不安も伴います。この記事では、離れていても**家族とのつながりを保つ工夫**を紹介します。

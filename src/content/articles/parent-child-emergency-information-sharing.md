@@ -5,6 +5,7 @@ category: oyako-anshin
 tags: [親子, もしもの備え, 重要情報, 見守り]
 pubDate: 2026-07-02
 author: 親みまもり研究所 編集部
+heroImage: "/images/articles/parent-child-emergency-information-sharing.webp"
 ---
 
 「もしもの備え」というと、子どもが親の情報を把握しておく話だと思われがちです。でも実際は逆方向も同じ。**親にとって、離れて暮らす子どもに何かあったときに動けるか**も、同じくらい切実な問題です。この記事では、親子双方の視点で「もしもの情報共有」を整理します。

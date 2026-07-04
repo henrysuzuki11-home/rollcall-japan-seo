@@ -5,6 +5,7 @@ category: family-security
 tags: [セキュリティ, 家族の記録, 重要情報, 情報共有]
 pubDate: 2026-07-03
 author: 親みまもり研究所 編集部
+heroImage: "/images/articles/family-information-security-basics.webp"
 ---
 
 セキュリティというと、会社のシステムや専門家の話に聞こえるかもしれません。でも、家族の写真や動画、親のレシピ、保険や契約の情報、緊急連絡先——**家庭にも、守りたい大切な情報はたくさんあります**。この記事では、家族のための「はじめてのセキュリティ」を、身近なところから解説します。

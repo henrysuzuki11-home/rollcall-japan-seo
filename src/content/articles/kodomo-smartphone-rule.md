@@ -5,6 +5,7 @@ category: app-guide
 tags: [スマホ, 子ども, ルール, 安全]
 pubDate: 2026-03-08
 author: 親みまもり研究所 編集部
+heroImage: "/images/articles/kodomo-smartphone-rule.webp"
 ---
 
 「周りの子も持っているし、そろそろスマホを…」と考える一方で、トラブルが心配な保護者も多いはずです。この記事では、子どもにスマホを持たせる前に**家族で決めておきたいルール**を整理します。

@@ -5,6 +5,7 @@ category: safety-check
 tags: [帰宅確認, 子ども, 見守り, 連絡]
 pubDate: 2026-04-15
 author: 親みまもり研究所 編集部
+heroImage: "/images/articles/kodomo-kitaku-kakunin.webp"
 ---
 
 「子どもがちゃんと家に帰ったかな」——仕事中にふと心配になる保護者は多いはずです。この記事では、子どもの帰宅を確認する方法と、連絡を**自然な習慣にする工夫**を紹介します。

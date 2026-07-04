@@ -5,6 +5,7 @@ category: app-guide
 tags: [無料, 安否確認, 見守りサービス, 見守りアプリ, 一人暮らし]
 pubDate: 2026-05-16
 author: 親みまもり研究所 編集部
+heroImage: "/images/articles/muryou-anpi-kakunin-app.webp"
 ---
 
 「家族の見守りを始めたいけれど、お金はあまりかけたくない」——そんな方に向けて、この記事では**無料で始められる安否確認**の方法を紹介します。

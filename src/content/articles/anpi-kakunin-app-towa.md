@@ -5,6 +5,7 @@ category: safety-check
 tags: [安否確認アプリ, 仕組み, 選び方, 見守り, 離れて暮らす親]
 pubDate: 2026-02-08
 author: 親みまもり研究所 編集部
+heroImage: "/images/articles/anpi-kakunin-app-towa.webp"
 ---
 
 「安否確認アプリ」という言葉を聞いたことはあっても、具体的に何ができるのか分からない方も多いでしょう。この記事では、安否確認アプリの仕組みとメリット、選び方をやさしく解説します。

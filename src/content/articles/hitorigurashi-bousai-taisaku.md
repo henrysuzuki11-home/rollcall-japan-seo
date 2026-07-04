@@ -5,6 +5,7 @@ category: disaster
 tags: [一人暮らし, 防災, 備蓄, 安否確認]
 pubDate: 2026-03-05
 author: 親みまもり研究所 編集部
+heroImage: "/images/articles/hitorigurashi-bousai-taisaku.webp"
 ---
 
 一人暮らしの防災は、「助けを呼べる人がそばにいない」という前提で備えることが大切です。この記事では、最低限そろえたい備えと、いざというときに**安否を伝える手段**を紹介します。離れて暮らす高齢の親の備えにも役立つ内容です。

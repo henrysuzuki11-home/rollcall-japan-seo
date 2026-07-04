@@ -5,6 +5,7 @@ category: family-communication
 tags: [放課後, 共働き, 学童, 見守り]
 pubDate: 2026-04-08
 author: 親みまもり研究所 編集部
+heroImage: "/images/articles/kyoudou-houkago-mimamori.webp"
 ---
 
 共働き家庭にとって、子どもの「放課後」は悩みの種です。学校が終わってから親が帰宅するまでの時間を、どう安全に過ごさせるか。この記事では、過ごし方ごとの見守りの工夫を紹介します。

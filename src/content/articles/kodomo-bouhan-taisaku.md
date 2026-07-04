@@ -5,6 +5,7 @@ category: disaster
 tags: [防犯, 子ども, いかのおすし, 安全]
 pubDate: 2026-03-25
 author: 親みまもり研究所 編集部
+heroImage: "/images/articles/kodomo-bouhan-taisaku.webp"
 ---
 
 子どもを犯罪から守るには、道具による見守りに加えて、子ども自身が**身を守る力**を育てることが大切です。この記事では、家庭でできる防犯対策と、繰り返し確認したい習慣を紹介します。

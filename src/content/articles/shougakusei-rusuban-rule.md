@@ -5,6 +5,7 @@ category: safety-check
 tags: [留守番, 小学生, 子ども, 安全]
 pubDate: 2026-02-12
 author: 親みまもり研究所 編集部
+heroImage: "/images/articles/shougakusei-rusuban-rule.webp"
 ---
 
 共働き家庭では、子どもが一人で留守番をする機会が出てきます。「火事やけがが心配」「知らない人が来たらどうしよう」——そんな不安を減らすために、家庭で決めておきたいルールを紹介します。
