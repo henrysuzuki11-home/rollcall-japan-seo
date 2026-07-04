@@ -16,10 +16,19 @@ import { withBase } from '../utils/url';
 
 interface Props {
   mode?: 'early-adopter' | 'campaign-code';
+  /** 送信payloadの wants_campaign_code を強制上書き（既定：modeから導出） */
+  forceCampaignCodeRequest?: boolean;
+  /** 送信payloadの source_page を固定（既定：modeから導出したURL） */
+  sourcePage?: string;
 }
 const { mode = 'early-adopter' } = Astro.props;
+const forceCampaignCodeRequest =
+  Astro.props.forceCampaignCodeRequest ?? mode === 'campaign-code';
+const sourcePage =
+  Astro.props.sourcePage ??
+  (mode === 'campaign-code' ? '/iq121-japan/campaign-code/' : '/iq121-japan/early-adopter/');
 const gasUrl = GOOGLE_APPS_SCRIPT_URL;
-const wantsCampaignCode = mode === 'campaign-code';
+const wantsCampaignCode = forceCampaignCodeRequest;
 const doneMessage = wantsCampaignCode
   ? 'キャンペーンコードのご案内をメールでお送りします。'
   : '今後の先行案内を準備が整い次第お届けします。';
@@ -93,7 +102,7 @@ const doneMessage = wantsCampaignCode
   <p id="ea-done-msg">{doneMessage}</p>
 </div>
 
-<script define:vars={{ gasUrl, wantsCampaignCode }}>
+<script define:vars={{ gasUrl, wantsCampaignCode, sourcePage }}>
   const form = document.getElementById('ea-form');
   const done = document.getElementById('ea-done');
   const errBox = document.getElementById('ea-error');
@@ -121,27 +130,42 @@ const doneMessage = wantsCampaignCode
         interest_theme: form.interest_theme.value,
         lives_apart_from_parent: form.lives_apart_from_parent.value,
         wants_campaign_code: wantsCampaignCode,
-        consent_prerelease_info: form.consent_prerelease_info.checked,
-        consent_privacy_policy: form.consent_privacy_policy.checked,
-        consent_campaign_terms: form.consent_campaign_terms.checked,
+        consent_prerelease_info: form.consent_prerelease_info.checked === true,
+        consent_privacy_policy: form.consent_privacy_policy.checked === true,
+        consent_campaign_terms: form.consent_campaign_terms.checked === true,
         website: hp ? hp.value : '',
-        source_page: location.pathname,
+        source_page: sourcePage,
         user_agent: navigator.userAgent,
       };
+
+      // 送信直前の強制上書き（GAS側の判定条件を確実に満たすための最終保証）
+      payload.type = 'early_adopter';
+      payload.wants_campaign_code = wantsCampaignCode === true;
+      payload.source_page = sourcePage;
+
+      // デバッグ用：payloadを確認（emailは伏せる。キャンペーンコード値は扱わない）
+      console.log('[IQ121 form payload]', {
+        ...payload,
+        email: payload.email ? '[redacted]' : '',
+        user_agent: '[ua]',
+      });
 
       const original = btn.textContent;
       btn.disabled = true;
       btn.textContent = '送信中…';
       try {
-        await fetch(gasUrl, {
+        const res = await fetch(gasUrl, {
           method: 'POST',
           headers: { 'Content-Type': 'text/plain;charset=utf-8' },
           body: JSON.stringify(payload),
         });
+        if (!res.ok) {
+          throw new Error('HTTP ' + res.status);
+        }
         form.hidden = true;
         done.hidden = false;
       } catch (err) {
-        errBox.textContent = '送信に失敗しました。通信環境をご確認のうえ、時間をおいて再度お試しください。';
+        errBox.textContent = '送信できませんでした。時間をおいて再度お試しください。';
         errBox.hidden = false;
         btn.disabled = false;
         btn.textContent = original;
