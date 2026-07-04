@@ -142,6 +142,10 @@ const doneMessage = wantsCampaignCode
       payload.type = 'early_adopter';
       payload.wants_campaign_code = wantsCampaignCode === true;
       payload.source_page = sourcePage;
+      payload.consent_prerelease_info = form.consent_prerelease_info.checked === true;
+      payload.consent_privacy_policy = form.consent_privacy_policy.checked === true;
+      payload.consent_campaign_terms = form.consent_campaign_terms.checked === true;
+      payload.website = hp ? hp.value : '';
 
       // デバッグ用：payloadを確認（emailは伏せる。キャンペーンコード値は扱わない）
       console.log('[IQ121 form payload]', {
