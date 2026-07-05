@@ -37,3 +37,20 @@ WebPは `public/images/recipes/` に配置済み。hero は frontmatter `heroIma
 - レシピ分量を書く場合は必ず「写真の料理をもとにした、家庭向けの再現メモです。分量は作りやすい目安として調整しています。」を併記。
 - 今回の3本は「レシピを家族で残す方法」を優先（料理ブログ化しない）。
 - raw（88枚）は削除せず保持。追加選抜はこのファイルに追記する。
+
+---
+## 更新 2026-07-05：拡張10記事を公開済み
+「7-5 Recipes」（23枚・raw保持）から12枚をWebP化し、拡張計画の10記事をすべて執筆・公開。
+| slug | hero |
+|---|---|
+| family-meal-photo-sharing | donabe-gohan-washoku-teishoku.webp |
+| family-food-photos-private-archive | matcha-pancake-anko-coffee.webp |
+| meal-photo-checkin-family | pasta-meatball-home-dinner.webp |
+| oya-recipe-video-notes | cream-stew-cooking-pot.webp |
+| grandchild-recipe-legacy | fresh-baked-pound-cake.webp |
+| recipe-as-family-memory | okonomiyaki-home-style.webp |
+| tabeteruyo-photo-tips | fruit-omelet-breakfast-plates.webp |
+| jikka-teiban-photo-seiri | nitamago-kakuni-cooking.webp |
+| oya-cooking-video-cautions | meatball-tomato-stew-pot.webp |
+| daily-photos-vs-important-info | hiyashi-chuka-two-plates.webp |
+ストック（body/card用）: strawberry-tea-afternoon.webp / strawberry-parfait-homemade.webp
