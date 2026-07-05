@@ -5,6 +5,7 @@ category: family-security
 tags: [セキュリティ, フィッシング, 詐欺対策, 親のスマホ]
 pubDate: 2026-07-05
 author: 親みまもり研究所 編集部
+heroImage: "/images/articles/oya-phishing-taisaku.webp"
 faq:
   - q: 親が詐欺メッセージのリンクを押してしまったら？
     a: まず責めないことが大切です。押しただけなら、情報を入力していないか確認し、入力してしまった場合はパスワード変更やカード会社・銀行への連絡を落ち着いて進めます。

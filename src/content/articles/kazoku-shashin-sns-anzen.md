@@ -5,6 +5,7 @@ category: family-security
 tags: [セキュリティ, SNS, 写真, 位置情報, 子どもの安全]
 pubDate: 2026-07-05
 author: 親みまもり研究所 編集部
+heroImage: "/images/articles/kazoku-shashin-sns-anzen.webp"
 faq:
   - q: 写真の位置情報（GPS）はSNSに残りますか？
     a: 主要なSNSの多くは投稿時に位置情報を自動で削除しますが、写真の内容（背景・制服・駅名など）からは場所が分かります。データより「写っているもの」の確認が大切です。

@@ -5,6 +5,7 @@ category: family-security
 tags: [セキュリティ, パスワード, 家族の記録, 親のスマホ]
 pubDate: 2026-07-05
 author: 親みまもり研究所 編集部
+heroImage: "/images/articles/kazoku-password-kanri.webp"
 faq:
   - q: パスワードを紙にメモするのはダメですか？
     a: 自宅で保管場所を決めて管理できるなら、紙のメモは現実的な方法の一つです。危険なのは「同じパスワードをあちこちで使うこと」と「メモを財布に入れて持ち歩くこと」です。
