@@ -15,9 +15,23 @@ interface Props {
   article: CollectionEntry<'articles'>;
 }
 const { article } = Astro.props;
-const { title, description, category, pubDate, updatedDate, author, tags, heroImage } =
+const { title, description, category, pubDate, updatedDate, author, tags, heroImage, faq } =
   article.data;
 const cat = getCategory(category);
+
+// FAQ構造化データ（frontmatterのfaqが設定されている記事のみ出力）
+const faqJsonLd =
+  faq.length > 0
+    ? JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: faq.map((item) => ({
+          '@type': 'Question',
+          name: item.q,
+          acceptedAnswer: { '@type': 'Answer', text: item.a },
+        })),
+      })
+    : null;
 
 // 記事下CTAの出し分け：
 //  - レシピ・家族の記録系 → IQ121（家族の記録）CTA
@@ -61,6 +75,7 @@ const breadcrumbs = [
   structuredDataType="article"
   breadcrumbs={breadcrumbs}
 >
+  {faqJsonLd && <script type="application/ld+json" set:html={faqJsonLd} />}
   <div class="container">
     <Breadcrumbs crumbs={breadcrumbs} />
 

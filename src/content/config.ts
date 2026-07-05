@@ -18,6 +18,11 @@ const articles = defineCollection({
     featured: z.boolean().default(false),
     // Optional hero/eyecatch image (used for the article hero, card, and OGP).
     heroImage: z.string().optional(),
+    // Optional FAQ items rendered as FAQPage structured data (rich results).
+    // Keep in sync with the FAQ section in the article body.
+    faq: z
+      .array(z.object({ q: z.string(), a: z.string() }))
+      .default([]),
   }),
 });
 
