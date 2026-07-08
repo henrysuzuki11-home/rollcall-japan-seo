@@ -5,6 +5,7 @@ category: disaster
 tags: [一人暮らし, 防災, 備蓄, 安否確認]
 pubDate: 2026-03-05
 author: 親みまもり研究所 編集部
+affiliateServices: ["bousai-goods"]
 heroImage: "/images/articles/hitorigurashi-bousai-taisaku.webp"
 ---
 

@@ -20,6 +20,9 @@ const { title, description, category, pubDate, updatedDate, author, tags, heroIm
   article.data;
 const cat = getCategory(category);
 const hasAffiliate = affiliateServices.length > 0;
+// 「整理に困った時の選択肢」サイドバーは整理系（important-info）記事のみ。
+// 防災記事は本文カードのみ（整理サービスのサイドバーは出さない）。
+const showAffiliateSidebar = hasAffiliate && category === 'important-info';
 
 // FAQ構造化データ（frontmatterのfaqが設定されている記事のみ出力）
 const faqJsonLd =
@@ -132,16 +135,20 @@ const breadcrumbs = [
 
         <div class="prose">
           <AdSlot label="スポンサーリンク" />
-          {/* アフィリエイト記事では大きなIQ121 CTAは出さず、広告カードを記事下に。 */}
+          {/* 整理アフィリエイト記事では大きなIQ121 CTAは出さず、広告カードを記事下に。
+              防災記事のRoll Call（連絡の備え）CTAは本線として残す。 */}
           {!hasAffiliate && ctaKind === 'iq-recipe' && <IQ121AppCTA variant="recipe" />}
           {!hasAffiliate && ctaKind === 'iq-info' && <IQ121AppCTA variant="info" />}
-          {!hasAffiliate && ctaKind === 'rollcall' && <AppCta />}
+          {ctaKind === 'rollcall' && <AppCta />}
         </div>
 
         {
           hasAffiliate && (
             <div class="prose">
-              <AffiliateServiceGrid ids={affiliateServices} />
+              <AffiliateServiceGrid
+                ids={affiliateServices}
+                heading={category === 'disaster' ? '備えとして知っておきたい選択肢' : undefined}
+              />
             </div>
           )
         }
@@ -156,7 +163,7 @@ const breadcrumbs = [
       </div>
 
       <aside class="article-aside">
-        <ArticleSidebar current={article.slug} showAffiliate={hasAffiliate} />
+        <ArticleSidebar current={article.slug} showAffiliate={showAffiliateSidebar} />
       </aside>
     </div>
   </div>

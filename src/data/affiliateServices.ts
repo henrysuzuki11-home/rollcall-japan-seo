@@ -15,7 +15,8 @@ export type AffiliateServiceId =
   | 'coyash-doll'
   | 'ihinseiri-110'
   | 'life-reset'
-  | 'r-cleaning';
+  | 'r-cleaning'
+  | 'bousai-goods';
 
 export interface AffiliateService {
   id: AffiliateServiceId;
@@ -30,6 +31,8 @@ export interface AffiliateService {
   trackingPixel: string;
   /** サイドバー等の表示順（小さいほど上） */
   priority: number;
+  /** 「整理に困った時の選択肢」サイドバーに載せるか（防災系は本文カードのみ） */
+  inSidebar: boolean;
 }
 
 export const AFFILIATE_SERVICES: Record<AffiliateServiceId, AffiliateService> = {
@@ -46,6 +49,7 @@ export const AFFILIATE_SERVICES: Record<AffiliateServiceId, AffiliateService> = 
       'https://www28.a8.net/svt/bgt?aid=260704979072&wid=001&eno=01&mid=s00000024881001005000&mc=1',
     trackingPixel: 'https://www10.a8.net/0.gif?a8mat=4B7T8Z+16V8C2+5BZE+5ZEMP',
     priority: 1,
+    inSidebar: true,
   },
   'ihinseiri-110': {
     id: 'ihinseiri-110',
@@ -60,6 +64,7 @@ export const AFFILIATE_SERVICES: Record<AffiliateServiceId, AffiliateService> = 
       'https://www26.a8.net/svt/bgt?aid=260704979021&wid=001&eno=01&mid=s00000015223034009000&mc=1',
     trackingPixel: 'https://www13.a8.net/0.gif?a8mat=4B7T8Z+CI4HE+39GM+5MHB4H',
     priority: 2,
+    inSidebar: true,
   },
   'life-reset': {
     id: 'life-reset',
@@ -74,6 +79,7 @@ export const AFFILIATE_SERVICES: Record<AffiliateServiceId, AffiliateService> = 
       'https://www22.a8.net/svt/bgt?aid=260704979033&wid=001&eno=01&mid=s00000014894012004000&mc=1',
     trackingPixel: 'https://www18.a8.net/0.gif?a8mat=4B7T8Z+JNBQQ+36X8+1ZGVGH',
     priority: 3,
+    inSidebar: true,
   },
   'r-cleaning': {
     id: 'r-cleaning',
@@ -88,6 +94,22 @@ export const AFFILIATE_SERVICES: Record<AffiliateServiceId, AffiliateService> = 
       'https://www20.a8.net/svt/bgt?aid=260704979078&wid=001&eno=01&mid=s00000022947004008000&mc=1',
     trackingPixel: 'https://www12.a8.net/0.gif?a8mat=4B7T8Z+1AFTYQ+4X26+NV1XD',
     priority: 4,
+    inSidebar: true,
+  },
+  'bousai-goods': {
+    id: 'bousai-goods',
+    label: 'PR',
+    category: '防災グッズ・備え',
+    title: '実家と家族の防災グッズを備えるなら',
+    description:
+      '離れて暮らす親の家や自宅の備えに。防災グッズを一式でそろえたい時の選択肢の一つです。',
+    cta: '防災グッズを確認する',
+    url: 'https://px.a8.net/svt/ejp?a8mat=4B65SJ+22F7EA+5HQC+5YZ75',
+    imageUrl:
+      'https://www21.a8.net/svt/bgt?aid=260627923125&wid=001&eno=01&mid=s00000025626001003000&mc=1',
+    trackingPixel: 'https://www15.a8.net/0.gif?a8mat=4B65SJ+22F7EA+5HQC+5YZ75',
+    priority: 5,
+    inSidebar: false,
   },
 };
 
@@ -98,9 +120,11 @@ export function getServicesByIds(ids: string[] = []): AffiliateService[] {
     .filter((s): s is AffiliateService => Boolean(s));
 }
 
-/** サイドバー用：全サービスを priority 順で返す。 */
+/** サイドバー用：inSidebar のサービスを priority 順で返す（整理系の4件）。 */
 export function getAllServicesByPriority(): AffiliateService[] {
-  return Object.values(AFFILIATE_SERVICES).sort((a, b) => a.priority - b.priority);
+  return Object.values(AFFILIATE_SERVICES)
+    .filter((s) => s.inSidebar)
+    .sort((a, b) => a.priority - b.priority);
 }
 
 /** 共通の広告表記（開示文）。 */

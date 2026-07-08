@@ -5,6 +5,7 @@ category: disaster
 tags: [防災, 地震, チェックリスト, 備蓄]
 pubDate: 2026-02-22
 author: 親みまもり研究所 編集部
+affiliateServices: ["bousai-goods"]
 heroImage: "/images/articles/jishin-bousai-checklist.webp"
 ---
 
