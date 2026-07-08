@@ -23,6 +23,10 @@ const articles = defineCollection({
     faq: z
       .array(z.object({ q: z.string(), a: z.string() }))
       .default([]),
+    // Affiliate service card ids to show under the article (see
+    // src/data/affiliateServices.ts). When set, the big IQ121 CTA is
+    // suppressed and IQ121 is mentioned softly in the body instead.
+    affiliateServices: z.array(z.string()).default([]),
   }),
 });
 

@@ -1,0 +1,60 @@
+---
+// 記事中・記事下に置くアフィリエイト・サービスのグリッド。
+// - 見出し「家族だけで抱え込まないための選択肢」
+// - 直前に開示文（AffiliateDisclosure）
+// - 2〜4件。スマホ1カラム、PC2〜3カラム
+import { getServicesByIds } from '../data/affiliateServices';
+import { AFFILIATE_DISCLOSURE_TEXT } from '../data/affiliateServices';
+import AffiliateServiceCard from './AffiliateServiceCard.astro';
+import AffiliateDisclosure from './AffiliateDisclosure.astro';
+
+interface Props {
+  ids: string[];
+  heading?: string;
+}
+const { ids, heading = '家族だけで抱え込まないための選択肢' } = Astro.props;
+const services = getServicesByIds(ids);
+---
+
+{
+  services.length > 0 && (
+    <section class="asvc-grid" aria-label="関連サービスの紹介（広告）">
+      <h2 class="asvc-grid__title">{heading}</h2>
+      <AffiliateDisclosure text={AFFILIATE_DISCLOSURE_TEXT} />
+      <div class:list={['asvc-grid__list', `asvc-grid__list--${Math.min(services.length, 3)}`]}>
+        {services.map((s) => (
+          <AffiliateServiceCard service={s} />
+        ))}
+      </div>
+    </section>
+  )
+}
+
+<style>
+  .asvc-grid {
+    margin: 2.5rem 0;
+  }
+  .asvc-grid__title {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    margin: 0 0 0.4rem;
+  }
+  .asvc-grid__list {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr;
+  }
+  @media (min-width: 640px) {
+    .asvc-grid__list--2 {
+      grid-template-columns: 1fr 1fr;
+    }
+    .asvc-grid__list--3 {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  @media (min-width: 900px) {
+    .asvc-grid__list--3 {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+</style>

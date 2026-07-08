@@ -7,11 +7,14 @@ import { CATEGORIES } from '../consts';
 import { withBase } from '../utils/url';
 import PopularArticles from './PopularArticles.astro';
 import SidebarAd from './SidebarAd.astro';
+import AffiliateSidebar from './AffiliateSidebar.astro';
 
 interface Props {
   current?: string;
+  /** アフィリエイト対象記事のみサイドバーに整理サービス枠を出す */
+  showAffiliate?: boolean;
 }
-const { current } = Astro.props;
+const { current, showAffiliate = false } = Astro.props;
 ---
 
 <aside class="side" aria-label="サイドバー">
@@ -55,6 +58,9 @@ const { current } = Astro.props;
     <span class="side-cta__title">見守りアプリを見る</span>
     <span class="side-cta__text">毎日電話しなくても、家族の「無事」がわかる。（無料）</span>
   </a>
+
+  <!-- 整理サービス（対象記事のみ・PCのみ・CTAより下） -->
+  {showAffiliate && <AffiliateSidebar />}
 
   <!-- サイドバー下部広告（PCのみ・CTAより下） -->
   <SidebarAd />

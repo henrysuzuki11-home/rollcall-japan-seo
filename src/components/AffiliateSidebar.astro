@@ -1,0 +1,54 @@
+---
+// PC向けサイドバーのアフィリエイト枠。
+// - 見出し「整理に困った時の選択肢」
+// - 表示順：COYASH → 遺品整理110番 → ライフリセット → 不用品回収（priority順）
+// - スマホでは非表示（記事中カードを優先）
+import { getAllServicesByPriority } from '../data/affiliateServices';
+import AffiliateServiceCard from './AffiliateServiceCard.astro';
+
+const services = getAllServicesByPriority();
+---
+
+<section class="aff-side" aria-label="整理に困った時の選択肢（広告）">
+  <h2 class="aff-side__h">整理に困った時の選択肢<span class="aff-side__pr">PR</span></h2>
+  <div class="aff-side__list">
+    {services.map((s) => <AffiliateServiceCard service={s} compact />)}
+  </div>
+</section>
+
+<style>
+  .aff-side {
+    margin-top: 1.8rem;
+  }
+  .aff-side__h {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--color-primary-dark);
+    margin: 0 0 0.8rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 2px solid var(--color-primary-light);
+  }
+  .aff-side__pr {
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    color: #7a6a45;
+    background: #f3ead3;
+    border: 1px solid #e6d9b8;
+    border-radius: 4px;
+    padding: 0.1em 0.45em;
+  }
+  .aff-side__list {
+    display: grid;
+    gap: 0.8rem;
+  }
+  /* スマホ（サイドバーが本文下に回る幅）では非表示 */
+  @media (max-width: 980px) {
+    .aff-side {
+      display: none;
+    }
+  }
+</style>
