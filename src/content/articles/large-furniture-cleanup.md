@@ -5,6 +5,7 @@ category: important-info
 tags: [実家整理, 大型家具, 家電, 片付け]
 pubDate: 2026-06-16
 author: 親みまもり研究所 編集部
+heroImage: "/images/articles/large-furniture-cleanup.webp"
 affiliateServices: ["r-cleaning"]
 ---
 

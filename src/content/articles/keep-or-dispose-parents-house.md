@@ -5,6 +5,7 @@ category: important-info
 tags: [実家整理, 片付け, 見分け方, 家族の備え]
 pubDate: 2026-06-22
 author: 親みまもり研究所 編集部
+heroImage: "/images/articles/keep-or-dispose-parents-house.webp"
 affiliateServices: ["coyash-doll", "ihinseiri-110"]
 ---
 

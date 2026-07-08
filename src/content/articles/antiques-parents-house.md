@@ -5,6 +5,7 @@ category: important-info
 tags: [骨董品, 実家整理, 生前整理, 家族の備え]
 pubDate: 2026-06-20
 author: 親みまもり研究所 編集部
+heroImage: "/images/articles/antiques-parents-house.webp"
 affiliateServices: ["coyash-doll"]
 ---
 

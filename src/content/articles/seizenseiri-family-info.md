@@ -5,6 +5,7 @@ category: important-info
 tags: [生前整理, 重要情報, 家族の備え, デジタル終活]
 pubDate: 2026-06-24
 author: 親みまもり研究所 編集部
+heroImage: "/images/articles/seizenseiri-family-info.webp"
 affiliateServices: ["ihinseiri-110", "life-reset"]
 ---
 

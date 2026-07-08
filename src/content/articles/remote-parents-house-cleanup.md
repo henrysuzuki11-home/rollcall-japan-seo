@@ -5,6 +5,7 @@ category: important-info
 tags: [遠方, 実家整理, 生前整理, 家族の備え]
 pubDate: 2026-06-26
 author: 親みまもり研究所 編集部
+heroImage: "/images/articles/remote-parents-house-cleanup.webp"
 affiliateServices: ["ihinseiri-110", "life-reset"]
 ---
 

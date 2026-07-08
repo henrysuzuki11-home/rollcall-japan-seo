@@ -5,6 +5,7 @@ category: important-info
 tags: [施設入居, 実家整理, 生前整理, 家族の備え]
 pubDate: 2026-06-12
 author: 親みまもり研究所 編集部
+heroImage: "/images/articles/care-home-house-cleanup.webp"
 affiliateServices: ["life-reset", "ihinseiri-110"]
 ---
 

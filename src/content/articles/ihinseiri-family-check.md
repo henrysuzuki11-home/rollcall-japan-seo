@@ -5,6 +5,7 @@ category: important-info
 tags: [遺品整理, 家族, 実家整理, 家族の備え]
 pubDate: 2026-06-14
 author: 親みまもり研究所 編集部
+heroImage: "/images/articles/ihinseiri-family-check.webp"
 affiliateServices: ["ihinseiri-110", "life-reset"]
 ---
 

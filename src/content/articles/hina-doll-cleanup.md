@@ -5,6 +5,7 @@ category: important-info
 tags: [雛人形, 人形整理, 生前整理, 家族の備え]
 pubDate: 2026-06-18
 author: 親みまもり研究所 編集部
+heroImage: "/images/articles/hina-doll-cleanup.webp"
 affiliateServices: ["coyash-doll"]
 ---
 

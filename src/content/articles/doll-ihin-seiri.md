@@ -5,6 +5,7 @@ category: important-info
 tags: [人形整理, 実家整理, 生前整理, 家族の備え]
 pubDate: 2026-07-06
 author: 親みまもり研究所 編集部
+heroImage: "/images/articles/doll-ihin-seiri.webp"
 affiliateServices: ["coyash-doll"]
 ---
 

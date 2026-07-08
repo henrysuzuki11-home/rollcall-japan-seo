@@ -5,6 +5,7 @@ category: important-info
 tags: [実家整理, 片付け, チェックリスト, 家族の備え]
 pubDate: 2026-07-06
 author: 親みまもり研究所 編集部
+heroImage: "/images/articles/parents-house-checklist.webp"
 affiliateServices: ["coyash-doll", "ihinseiri-110"]
 ---
 
