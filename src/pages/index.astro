@@ -79,6 +79,31 @@ const showcase = featured.length >= 3 ? featured : latest.slice(0, 3);
     )
   }
 
+  <!-- Series / clusters -->
+  <section class="container section">
+    <header class="section-head">
+      <h2>シリーズで読む</h2>
+      <p>気になるテーマから、まとめて読めます。</p>
+    </header>
+    <div class="series-grid">
+      <a class="series-card" href={withBase('/articles/jikka-jimai-first-steps')}>
+        <span class="series-card__tag">実家整理・終活</span>
+        <span class="series-card__title">実家じまいで最初にやること</span>
+        <span class="series-card__text">書類・写真・家具の整理を、迷わない順番で。</span>
+      </a>
+      <a class="series-card" href={withBase('/articles/family-recipe-photo-record')}>
+        <span class="series-card__tag">親のレシピ・家族の記録</span>
+        <span class="series-card__title">親のレシピは、家族の記録になる</span>
+        <span class="series-card__text">スマホ写真から始める、親の味の残し方。</span>
+      </a>
+      <a class="series-card" href={withBase('/articles/when-to-share-important-family-information')}>
+        <span class="series-card__tag">重要情報の共有</span>
+        <span class="series-card__title">重要情報はいつ共有するべきか</span>
+        <span class="series-card__text">今すぐ・指定日時・もしもの後で考える。</span>
+      </a>
+    </div>
+  </section>
+
   <!-- Latest -->
   <section class="container section">
     <header class="section-head">
@@ -206,6 +231,44 @@ const showcase = featured.length >= 3 ? featured : latest.slice(0, 3);
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
     gap: 1.3rem;
+  }
+  .series-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.3rem;
+  }
+  .series-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    background: var(--color-primary-tint);
+    border: 1px solid var(--color-border);
+    border-left: 4px solid var(--color-primary);
+    border-radius: var(--radius);
+    padding: 1.3rem 1.4rem;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .series-card:hover {
+    text-decoration: none;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 24px var(--color-shadow);
+  }
+  .series-card__tag {
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--color-primary);
+  }
+  .series-card__title {
+    font-family: var(--font-serif);
+    font-size: 1.12rem;
+    font-weight: 700;
+    color: var(--color-primary-dark);
+    line-height: 1.5;
+  }
+  .series-card__text {
+    font-size: 0.86rem;
+    color: var(--color-text-muted);
+    line-height: 1.7;
   }
   .app-teaser {
     display: flex;
