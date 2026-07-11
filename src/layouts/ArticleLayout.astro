@@ -12,15 +12,22 @@ import ArticleSidebar from '../components/ArticleSidebar.astro';
 import IQ121AppCTA from '../components/IQ121AppCTA.astro';
 import AffiliateServiceGrid from '../components/AffiliateServiceGrid.astro';
 import ValueCommerceAdGrid from '../components/ValueCommerceAdGrid.astro';
+import SeasonalArticleAdBlock from '../components/SeasonalArticleAdBlock.astro';
+import { getVCAdsByIds } from '../data/valueCommerceAds';
+import { getA8SeasonalAdsByIds } from '../data/a8SeasonalAffiliateServices';
 
 interface Props {
   article: CollectionEntry<'articles'>;
 }
 const { article } = Astro.props;
-const { title, description, category, pubDate, updatedDate, author, tags, heroImage, faq, affiliateServices, valueCommerceAds } =
+const { title, description, category, pubDate, updatedDate, author, tags, heroImage, faq, affiliateServices, valueCommerceAds, a8SeasonalAds, a8SeasonalKind, a8SeasonalHeading } =
   article.data;
 const cat = getCategory(category);
-const hasAffiliate = affiliateServices.length > 0 || valueCommerceAds.length > 0;
+// 実際に「表示される」広告があるかで判定（審査中VCや不明idを除外）。
+const activeVCAds = getVCAdsByIds(valueCommerceAds);
+const activeA8SeasonalAds = getA8SeasonalAdsByIds(a8SeasonalAds);
+const hasAffiliate =
+  affiliateServices.length > 0 || activeVCAds.length > 0 || activeA8SeasonalAds.length > 0;
 // 「整理に困った時の選択肢」サイドバーは整理系（important-info）記事のみ。
 // 防災記事は本文カードのみ（整理サービスのサイドバーは出さない）。
 const showAffiliateSidebar = hasAffiliate && category === 'important-info';
@@ -143,8 +150,18 @@ const breadcrumbs = [
           {ctaKind === 'rollcall' && <AppCta />}
         </div>
 
+        {/* A8季節広告（ギフト・旅行・eSIM）を優先表示。 */}
         {
-          valueCommerceAds.length > 0 && (
+          activeA8SeasonalAds.length > 0 && (
+            <div class="prose">
+              <SeasonalArticleAdBlock ids={a8SeasonalAds} kind={a8SeasonalKind} heading={a8SeasonalHeading} />
+            </div>
+          )
+        }
+
+        {/* ValueCommerce広告は審査中のため activeVCAds は空。審査完了後に表示。 */}
+        {
+          activeVCAds.length > 0 && (
             <div class="prose">
               <ValueCommerceAdGrid ids={valueCommerceAds} />
             </div>

@@ -7,6 +7,8 @@ pubDate: 2026-06-28
 author: 親みまもり研究所 編集部
 heroImage: "/images/articles/ochugen-parent-gift.webp"
 valueCommerceAds: [seasonal-gift, yahoo-shopping, furusato-honpo]
+a8SeasonalAds: [kogetsu-wagashi, quattro-ebi-cheese, yamamotoyama-tea-nori, shimamoto-mentaiko]
+a8SeasonalKind: gift
 faq:
   - q: 離れて暮らす親にお中元を贈るときのポイントは？
     a: 高価さより、親の好みや暮らしに合うかを大切にしましょう。贈ったあとに「届いた？」と電話する口実にもなるので、会話のきっかけとして考えると選びやすくなります。

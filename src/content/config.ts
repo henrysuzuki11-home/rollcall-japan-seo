@@ -28,8 +28,15 @@ const articles = defineCollection({
     // suppressed and IQ121 is mentioned softly in the body instead.
     affiliateServices: z.array(z.string()).default([]),
     // ValueCommerce ad ids (seasonal / family events; see
-    // src/data/valueCommerceAds.ts). Shown as the primary affiliate block.
+    // src/data/valueCommerceAds.ts). 審査中は表示されない（データのみ保持）。
     valueCommerceAds: z.array(z.string()).default([]),
+    // A8 seasonal ad ids (gift / travel / eSIM; see
+    // src/data/a8SeasonalAffiliateServices.ts). 優先順に指定する。
+    a8SeasonalAds: z.array(z.string()).default([]),
+    // 季節広告ブロックの種別（見出し・表示上限を出し分け）。
+    a8SeasonalKind: z.enum(['gift', 'travel', 'esim']).optional(),
+    // 季節広告ブロックの見出し上書き（混在記事など）。
+    a8SeasonalHeading: z.string().optional(),
   }),
 });
 

@@ -7,6 +7,8 @@ pubDate: 2026-07-07
 author: 親みまもり研究所 編集部
 heroImage: "/images/articles/practical-gifts-for-parents.webp"
 valueCommerceAds: [seasonal-gift, yahoo-shopping, kinokuniya-books]
+a8SeasonalAds: [yamamotoyama-tea-nori, true-towel, shaddy-gift, ocean-princess-canned-gift]
+a8SeasonalKind: gift
 faq:
   - q: 親に贈る実用的なプレゼントの選び方は？
     a: 毎日の暮らしで使うもの、少し良くすると生活が快適になるものが喜ばれます。贈ったあとに使い心地を電話で聞けるものを選ぶと、会話のきっかけにもなります。

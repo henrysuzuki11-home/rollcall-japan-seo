@@ -7,6 +7,8 @@ pubDate: 2026-07-08
 author: 親みまもり研究所 編集部
 heroImage: "/images/articles/homecoming-family-talk.webp"
 valueCommerceAds: [nta-travel, jalan-travel, kinokuniya-books]
+a8SeasonalAds: [quattro-ebi-cheese, kogetsu-wagashi, yamamotoyama-tea-nori]
+a8SeasonalKind: gift
 faq:
   - q: 帰省のときに親と何を話せばいい？
     a: 健康や今後のことを改まって話すより、まずは昔話や近況、共通の思い出から入るのがおすすめです。会話が温まってから、体調や日々の連絡のことに自然に触れると、お互い構えずに話せます。

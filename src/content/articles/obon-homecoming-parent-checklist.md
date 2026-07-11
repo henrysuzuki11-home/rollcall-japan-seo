@@ -7,6 +7,9 @@ pubDate: 2026-07-09
 author: 親みまもり研究所 編集部
 heroImage: "/images/articles/obon-homecoming-parent-checklist.webp"
 valueCommerceAds: [nta-travel, jalan-travel, yahoo-shopping]
+a8SeasonalAds: [needs-tour-domestic, kogetsu-wagashi, yamamotoyama-tea-nori]
+a8SeasonalKind: travel
+a8SeasonalHeading: 家族との時間を考える選択肢
 affiliateServices: [coyash-doll, ihinseiri-110]
 faq:
   - q: お盆の帰省で親に確認しておくべきことは？

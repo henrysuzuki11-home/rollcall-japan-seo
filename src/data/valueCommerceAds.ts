@@ -15,6 +15,8 @@
 //  安全に描画する。元の script 文字列は raw フィールドに保持（参照用・非描画）。
 // =====================================================================
 
+export type VCAdStatus = 'pending_review' | 'active' | 'suspended';
+
 export interface ValueCommerceAd {
   id: string;
   label: string; // PR / 広告
@@ -25,7 +27,28 @@ export interface ValueCommerceAd {
   pid: string;
   /** 元の広告タグ（参照用・そのままは描画しない） */
   raw: string;
+  /** この広告を public site に表示してよいか。審査完了までは false。 */
+  isActive: boolean;
+  /** 審査ステータス。'active' 以外は非表示。 */
+  status: VCAdStatus;
+  /** 広告ネットワーク識別子。 */
+  network: 'valuecommerce';
 }
+
+// ---------------------------------------------------------------------
+// 審査ゲート（マスタースイッチ）
+//   親みまもり研究所はバリューコマース適正審査中。審査中はリンクが有効配信
+//   されず、クリックすると「配信する広告リンクが無効…」ページに飛び、
+//   バナーも汎用画像になってしまう。そのため審査完了まで VC 広告は
+//   public site に一切表示しない（コード・データは残す）。
+//
+//   審査完了後の再有効化手順：
+//     1. VC_GLOBAL_ACTIVE を true にする
+//     2. 有効化する広告の isActive を true / status を 'active' にする
+//   ※ 個別に段階公開したい場合は VC_GLOBAL_ACTIVE を true にしたうえで、
+//     公開する広告だけ isActive:true にする。
+// ---------------------------------------------------------------------
+export const VC_GLOBAL_ACTIVE = false;
 
 const SID = '3775652';
 
@@ -38,7 +61,9 @@ export function vcBannerUrl(pid: string): string {
   return `https://ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid=${SID}&pid=${pid}`;
 }
 
-export const VALUE_COMMERCE_ADS: Record<string, ValueCommerceAd> = {
+type VCAdBase = Omit<ValueCommerceAd, 'isActive' | 'status' | 'network'>;
+
+const VC_ADS_BASE: Record<string, VCAdBase> = {
   'nta-travel': {
     id: 'nta-travel', label: 'PR', category: '旅行・宿泊',
     title: '親との旅行・帰省の宿を探す',
@@ -121,11 +146,33 @@ export const VALUE_COMMERCE_ADS: Record<string, ValueCommerceAd> = {
   },
 };
 
-/** frontmatter で指定された id 順に取り出す（不明idは無視）。 */
+// 各広告に状態フィールド（isActive / status / network）を付与して確定。
+// 審査中は全広告 isActive:false / status:'pending_review'。
+export const VALUE_COMMERCE_ADS: Record<string, ValueCommerceAd> = Object.fromEntries(
+  Object.entries(VC_ADS_BASE).map(([id, ad]) => [
+    id,
+    {
+      ...ad,
+      isActive: false,
+      status: 'pending_review' as VCAdStatus,
+      network: 'valuecommerce' as const,
+    },
+  ]),
+);
+
+/** その広告を今 public site に出してよいか（マスタースイッチ×個別フラグ×状態）。 */
+export function isVCAdVisible(ad: ValueCommerceAd): boolean {
+  return VC_GLOBAL_ACTIVE && ad.isActive && ad.status === 'active';
+}
+
+/**
+ * frontmatter で指定された id 順に取り出す。
+ * 審査中（非表示）の広告は除外するため、審査完了までは常に空配列になる。
+ */
 export function getVCAdsByIds(ids: string[] = []): ValueCommerceAd[] {
   return ids
     .map((id) => VALUE_COMMERCE_ADS[id])
-    .filter((a): a is ValueCommerceAd => Boolean(a));
+    .filter((a): a is ValueCommerceAd => Boolean(a) && isVCAdVisible(a));
 }
 
 /** 季節キーワード → 広告id（SeasonalAffiliateBlock 用）。 */

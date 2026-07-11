@@ -7,6 +7,9 @@ pubDate: 2026-07-05
 author: 親みまもり研究所 編集部
 heroImage: "/images/articles/homecoming-disaster-supplies.webp"
 valueCommerceAds: [yahoo-shopping, outdoor-wear, ebest-recycle]
+a8SeasonalAds: [ocean-princess-canned-gift, yamamotoyama-tea-nori]
+a8SeasonalKind: gift
+a8SeasonalHeading: 備えとあわせて考えたい食の選択肢
 affiliateServices: [bousai-goods]
 faq:
   - q: 帰省のときに実家の防災で何を確認すればいい？

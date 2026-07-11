@@ -7,6 +7,8 @@ pubDate: 2026-06-30
 author: 親みまもり研究所 編集部
 heroImage: "/images/articles/parent-onsen-trip-memory.webp"
 valueCommerceAds: [nta-travel, jalan-travel]
+a8SeasonalAds: [needs-tour-domestic, airtrip-domestic-tour, best-one-cruise]
+a8SeasonalKind: travel
 faq:
   - q: 高齢の親と温泉旅行に行くとき気をつけることは？
     a: 移動を短めに、行程をゆったり組むことが大切です。バリアフリーの宿や、部屋食・貸切風呂など、親の体力に合わせて無理のない選択をすると、旅そのものを楽しめます。

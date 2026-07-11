@@ -21,6 +21,7 @@
 | 6 | parent-golf-memory | 親子ゴルフ | An elderly parent and adult child walking a green golf course together with a cart, back view, calm sunny day, sharing the round | ゴルフコースを一緒に回る親子の後ろ姿 |
 | 7 | homecoming-disaster-supplies | 帰省ついでの実家防災 | Neatly arranged home emergency supplies (water bottles, flashlight, small bag) on a shelf in a Japanese home, tidy and calm, no brand labels | 実家に整えた防災グッズ |
 | 8 | practical-gifts-for-parents | 親への実用的な贈り物 | A simple wrapped everyday gift and a warm cup of tea on a wooden table near a window, thoughtful and homey, no brand logos | 窓辺に置かれた実用的な贈り物 |
+| 9 | parent-overseas-trip-communication | 親との海外旅行と連絡手段 | An elderly parent and adult child looking at a smartphone map together at an airport or overseas street, calm daytime, back/side view, faces soft, reassuring | 海外でスマホの地図を一緒に見る親子 |
 
-生成必要枚数：**8枚**。優先：1・7（お盆本命）→ 残り。
+生成必要枚数：**9枚**（うち #9 は 2026-07-11 追加の海外通信記事分）。優先：1・7（お盆本命）→ 残り。
 ※ 生成が難しければ既存の落ち着いた実写を流用してもよい。トーンは「親との時間・会話・思い出」を最優先。

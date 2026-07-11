@@ -1,0 +1,63 @@
+---
+// A8 季節・帰省・ギフト・旅行系広告のグリッド。
+// - 見出しはカテゴリに応じて出し分け（ギフト/旅行/通信）
+// - 直前に開示文（A8_SEASONAL_DISCLOSURE_TEXT）
+// - 記事別上限：gift系4枚・travel系3枚など（max prop で制御）
+// - 広告が0件なら何も描画しない（空枠を出さない）
+import { getA8SeasonalAdsByIds, A8_SEASONAL_DISCLOSURE_TEXT } from '../data/a8SeasonalAffiliateServices';
+import A8SeasonalAffiliateCard from './A8SeasonalAffiliateCard.astro';
+import AffiliateDisclosure from './AffiliateDisclosure.astro';
+
+interface Props {
+  ids: string[];
+  heading?: string;
+  /** 表示上限（gift:4 / travel:3 など）。未指定なら全件。 */
+  max?: number;
+}
+const { ids, heading = '家族との時間を考える選択肢', max } = Astro.props;
+const ads = getA8SeasonalAdsByIds(ids, max);
+const cols = Math.min(ads.length, 3);
+---
+
+{
+  ads.length > 0 && (
+    <section class="a8s-grid" aria-label="関連する選択肢（広告）">
+      <h2 class="a8s-grid__title">{heading}</h2>
+      <AffiliateDisclosure text={A8_SEASONAL_DISCLOSURE_TEXT} />
+      <div class:list={['a8s-grid__list', `a8s-grid__list--${cols}`]}>
+        {ads.map((ad) => (
+          <A8SeasonalAffiliateCard ad={ad} />
+        ))}
+      </div>
+    </section>
+  )
+}
+
+<style>
+  .a8s-grid {
+    margin: 2.5rem 0;
+  }
+  .a8s-grid__title {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    margin: 0 0 0.4rem;
+  }
+  .a8s-grid__list {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr;
+  }
+  @media (min-width: 640px) {
+    .a8s-grid__list--2 {
+      grid-template-columns: 1fr 1fr;
+    }
+    .a8s-grid__list--3 {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  @media (min-width: 900px) {
+    .a8s-grid__list--3 {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+</style>

@@ -1,0 +1,29 @@
+---
+// 季節・帰省・ギフト・旅行記事に置く A8 広告ブロック。
+// kind に応じて見出しと表示上限を出し分ける薄いラッパー。
+//  - gift   … ギフト系（最大4枚）
+//  - travel … 旅行系（最大3枚）
+//  - esim   … 海外通信（最大3枚。海外旅行・海外通信記事のみ）
+// ids を優先順に渡す運用（データ側では並べ替えない）。
+import A8SeasonalAffiliateGrid from './A8SeasonalAffiliateGrid.astro';
+
+interface Props {
+  ids: string[];
+  kind?: 'gift' | 'travel' | 'esim';
+  heading?: string;
+  max?: number;
+}
+const { ids, kind = 'gift', heading, max } = Astro.props;
+
+const DEFAULTS: Record<NonNullable<Props['kind']>, { heading: string; max: number }> = {
+  gift: { heading: '家族との時間を考える贈り物の選択肢', max: 4 },
+  travel: { heading: '親と過ごす旅の選択肢', max: 3 },
+  esim: { heading: '海外での連絡手段の選択肢', max: 3 },
+};
+
+const conf = DEFAULTS[kind];
+const resolvedHeading = heading ?? conf.heading;
+const resolvedMax = typeof max === 'number' ? max : conf.max;
+---
+
+<A8SeasonalAffiliateGrid ids={ids} heading={resolvedHeading} max={resolvedMax} />
