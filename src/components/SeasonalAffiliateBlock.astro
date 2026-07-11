@@ -1,0 +1,19 @@
+---
+// 季節・家族イベント記事用の広告枠。
+// season（お盆・帰省・お中元・旅行・アウトドア・ゴルフ・本・防災）に合わせて
+// 広告を切り替えて表示する薄いラッパー。ids を直接渡すこともできる。
+import { VC_SEASON_MAP } from '../data/valueCommerceAds';
+import ValueCommerceAdGrid from './ValueCommerceAdGrid.astro';
+
+interface Props {
+  /** 'obon' | 'kisei' | 'gift' | 'onsen' | 'outdoor' | 'golf' | 'books' | 'bousai' */
+  season?: string;
+  /** season の代わりに直接 id 配列を渡す場合 */
+  ids?: string[];
+  heading?: string;
+}
+const { season, ids, heading } = Astro.props;
+const resolvedIds = ids ?? (season ? VC_SEASON_MAP[season] ?? [] : []);
+---
+
+{resolvedIds.length > 0 && <ValueCommerceAdGrid ids={resolvedIds} heading={heading} />}

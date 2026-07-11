@@ -11,15 +11,16 @@ import DisplayAd from '../components/DisplayAd.astro';
 import ArticleSidebar from '../components/ArticleSidebar.astro';
 import IQ121AppCTA from '../components/IQ121AppCTA.astro';
 import AffiliateServiceGrid from '../components/AffiliateServiceGrid.astro';
+import ValueCommerceAdGrid from '../components/ValueCommerceAdGrid.astro';
 
 interface Props {
   article: CollectionEntry<'articles'>;
 }
 const { article } = Astro.props;
-const { title, description, category, pubDate, updatedDate, author, tags, heroImage, faq, affiliateServices } =
+const { title, description, category, pubDate, updatedDate, author, tags, heroImage, faq, affiliateServices, valueCommerceAds } =
   article.data;
 const cat = getCategory(category);
-const hasAffiliate = affiliateServices.length > 0;
+const hasAffiliate = affiliateServices.length > 0 || valueCommerceAds.length > 0;
 // 「整理に困った時の選択肢」サイドバーは整理系（important-info）記事のみ。
 // 防災記事は本文カードのみ（整理サービスのサイドバーは出さない）。
 const showAffiliateSidebar = hasAffiliate && category === 'important-info';
@@ -143,7 +144,15 @@ const breadcrumbs = [
         </div>
 
         {
-          hasAffiliate && (
+          valueCommerceAds.length > 0 && (
+            <div class="prose">
+              <ValueCommerceAdGrid ids={valueCommerceAds} />
+            </div>
+          )
+        }
+
+        {
+          affiliateServices.length > 0 && (
             <div class="prose">
               <AffiliateServiceGrid
                 ids={affiliateServices}

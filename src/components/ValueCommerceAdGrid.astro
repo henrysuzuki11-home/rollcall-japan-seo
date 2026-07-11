@@ -1,0 +1,56 @@
+---
+// 記事中・記事下に置く ValueCommerce 広告グリッド。
+// - 見出し「家族との時間を考える選択肢」
+// - 直前に開示文。2〜3件。スマホ1カラム、PC2〜3カラム。
+import { getVCAdsByIds, VC_DISCLOSURE_TEXT } from '../data/valueCommerceAds';
+import ValueCommerceAd from './ValueCommerceAd.astro';
+import AffiliateDisclosure from './AffiliateDisclosure.astro';
+
+interface Props {
+  ids: string[];
+  heading?: string;
+}
+const { ids, heading = '家族との時間を考える選択肢' } = Astro.props;
+const ads = getVCAdsByIds(ids);
+---
+
+{
+  ads.length > 0 && (
+    <section class="vcgrid" aria-label="関連する選択肢（広告）">
+      <h2 class="vcgrid__title">{heading}</h2>
+      <AffiliateDisclosure text={VC_DISCLOSURE_TEXT} />
+      <div class:list={['vcgrid__list', `vcgrid__list--${Math.min(ads.length, 3)}`]}>
+        {ads.map((a) => (
+          <ValueCommerceAd ad={a} />
+        ))}
+      </div>
+    </section>
+  )
+}
+
+<style>
+  .vcgrid {
+    margin: 2.5rem 0;
+  }
+  .vcgrid__title {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    margin: 0 0 0.4rem;
+  }
+  .vcgrid__list {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr;
+  }
+  @media (min-width: 640px) {
+    .vcgrid__list--2,
+    .vcgrid__list--3 {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  @media (min-width: 900px) {
+    .vcgrid__list--3 {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+</style>

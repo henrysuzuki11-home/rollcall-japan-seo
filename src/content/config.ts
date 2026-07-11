@@ -27,6 +27,9 @@ const articles = defineCollection({
     // src/data/affiliateServices.ts). When set, the big IQ121 CTA is
     // suppressed and IQ121 is mentioned softly in the body instead.
     affiliateServices: z.array(z.string()).default([]),
+    // ValueCommerce ad ids (seasonal / family events; see
+    // src/data/valueCommerceAds.ts). Shown as the primary affiliate block.
+    valueCommerceAds: z.array(z.string()).default([]),
   }),
 });
 
