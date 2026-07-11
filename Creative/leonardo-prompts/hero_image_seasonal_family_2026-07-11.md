@@ -22,6 +22,10 @@
 | 7 | homecoming-disaster-supplies | 帰省ついでの実家防災 | Neatly arranged home emergency supplies (water bottles, flashlight, small bag) on a shelf in a Japanese home, tidy and calm, no brand labels | 実家に整えた防災グッズ |
 | 8 | practical-gifts-for-parents | 親への実用的な贈り物 | A simple wrapped everyday gift and a warm cup of tea on a wooden table near a window, thoughtful and homey, no brand logos | 窓辺に置かれた実用的な贈り物 |
 | 9 | parent-overseas-trip-communication | 親との海外旅行と連絡手段 | An elderly parent and adult child looking at a smartphone map together at an airport or overseas street, calm daytime, back/side view, faces soft, reassuring | 海外でスマホの地図を一緒に見る親子 |
+| 10 | homecoming-gift-for-parents | 帰省の手土産 | A wrapped homecoming gift box placed on a tatami table with tea being poured, family gathering warmth, hands and gift in focus, faces out of frame | 食卓に置かれた帰省の手土産とお茶 |
+| 11 | oseibo-parent-gift | お歳暮の贈り物 | A neatly wrapped year-end gift (furoshiki-style, no brand) beside a phone and warm tea on a wooden table, calm winter daylight | お歳暮の贈り物と電話 |
+| 12 | parents-house-emergency-food | 実家の保存食・防災備蓄 | Neatly arranged shelf of canned food, bottled water and dry goods in a Japanese home pantry, tidy and calm, no brand labels | 実家に整えた保存食と備蓄 |
+| 13 | wagashi-homecoming-family-time | 和菓子とお茶の時間 | Traditional Japanese wagashi on a small plate with green tea on a tatami table, two cups, gentle afternoon light, family time feeling | お茶と和菓子で過ごす帰省の時間 |
 
-生成必要枚数：**9枚**（うち #9 は 2026-07-11 追加の海外通信記事分）。優先：1・7（お盆本命）→ 残り。
+生成必要枚数：**13枚**（うち #9〜#13 は 2026-07-11 追加分。海外通信＋ギフト/備蓄4記事）。優先：1・7（お盆本命）→ 残り。
 ※ 生成が難しければ既存の落ち着いた実写を流用してもよい。トーンは「親との時間・会話・思い出」を最優先。

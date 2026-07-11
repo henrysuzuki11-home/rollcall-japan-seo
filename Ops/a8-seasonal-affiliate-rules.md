@@ -260,10 +260,17 @@
 
 ※ ValueCommerce広告は審査中のため全記事で非表示（`src/data/valueCommerceAds.ts` の `VC_GLOBAL_ACTIVE=false`）。データは保持。
 
-## 追加記事案（未作成・候補）
-1. `/articles/homecoming-gift-for-parents/`（帰省の手土産）
-2. `/articles/oseibo-parent-gift/`（お歳暮で親に贈るなら）
-3. `/articles/parents-house-emergency-food/`（親の家の保存食・防災備蓄）
-4. `/articles/wagashi-homecoming-family-time/`（和菓子を持って実家に帰る日）
+## 追加記事（2026-07-11 作成済み）
 
-（`/articles/parent-overseas-trip-communication/` は本対応で作成済み）
+| 記事 | kind | 配置（優先順・上限内） | 上限 |
+|---|---|---|---|
+| /articles/homecoming-gift-for-parents/ | gift | kogetsu-wagashi, quattro-ebi-cheese, yamamotoyama-tea-nori, shimamoto-mentaiko | 4 |
+| /articles/oseibo-parent-gift/ | gift | yamamotoyama-tea-nori, kogetsu-wagashi, true-towel, shaddy-gift（+shimamoto上限外） | 4 |
+| /articles/parents-house-emergency-food/ | gift(disaster記事) | ocean-princess-canned-gift, yamamotoyama-tea-nori, ministop-online | 3 |
+| /articles/wagashi-homecoming-family-time/ | gift | kogetsu-wagashi, quattro-ebi-cheese, yamamotoyama-tea-nori | 3 |
+
+※ `parents-house-emergency-food` は防災記事だが、備蓄と兼ねられる食（缶詰・お茶海苔）＋補助でミニストップ（**728×90横長バナー**＝縮小表示で検証）を配置。ギフト広告を出しすぎない方針。
+※ `/articles/parent-overseas-trip-communication/` も本対応で作成済み。
+
+URL提出★案件の掲載記事に上記4本を追加：
+- 鼓月・山本山：homecoming-gift-for-parents / oseibo-parent-gift / parents-house-emergency-food / wagashi-homecoming-family-time も対象
