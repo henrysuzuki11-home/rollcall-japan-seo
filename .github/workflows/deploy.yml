@@ -36,6 +36,9 @@ jobs:
 
       - name: Build Astro site
         run: npm run build
+        env:
+          # VC参加審査 承認済み → 本番ビルドで ValueCommerce 広告を有効化
+          PUBLIC_ENABLE_VALUECOMMERCE_ADS: 'true'
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3

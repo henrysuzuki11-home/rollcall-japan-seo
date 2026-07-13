@@ -24,10 +24,30 @@ const { title, description, category, pubDate, updatedDate, author, tags, heroIm
   article.data;
 const cat = getCategory(category);
 // 実際に「表示される」広告があるかで判定（審査中VCや不明idを除外）。
-const activeVCAds = getVCAdsByIds(valueCommerceAds);
+const activeVCAds = getVCAdsByIds(valueCommerceAds, article.slug);
 const activeA8SeasonalAds = getA8SeasonalAdsByIds(a8SeasonalAds);
 const hasAffiliate =
   affiliateServices.length > 0 || activeVCAds.length > 0 || activeA8SeasonalAds.length > 0;
+
+// 1記事あたり アフィリエイト広告（affiliateServices + A8季節 + VC）を
+// 合わせて最大4カード程度に抑える（広告だらけにしない・IQ121の信頼性優先）。
+// affiliateServices（整理・防災の既存A8）は維持し、残り枠を A8季節 と VC で分配。
+const AFFILIATE_BUDGET = 4;
+const remainingBudget = Math.max(0, AFFILIATE_BUDGET - affiliateServices.length);
+let a8SeasonalMax: number;
+let vcMax: number;
+if (activeA8SeasonalAds.length > 0 && activeVCAds.length > 0) {
+  a8SeasonalMax = Math.ceil(remainingBudget / 2);
+  vcMax = Math.floor(remainingBudget / 2);
+} else if (activeA8SeasonalAds.length > 0) {
+  a8SeasonalMax = remainingBudget;
+  vcMax = 0;
+} else {
+  a8SeasonalMax = 0;
+  vcMax = remainingBudget;
+}
+const showA8Seasonal = activeA8SeasonalAds.length > 0 && a8SeasonalMax > 0;
+const showVCAds = activeVCAds.length > 0 && vcMax > 0;
 // 「整理に困った時の選択肢」サイドバーは整理系（important-info）記事のみ。
 // 防災記事は本文カードのみ（整理サービスのサイドバーは出さない）。
 const showAffiliateSidebar = hasAffiliate && category === 'important-info';
@@ -150,20 +170,25 @@ const breadcrumbs = [
           {ctaKind === 'rollcall' && <AppCta />}
         </div>
 
-        {/* A8季節広告（ギフト・旅行・eSIM）を優先表示。 */}
+        {/* A8季節広告（ギフト・旅行・eSIM）。合算上限内で枚数を抑制。 */}
         {
-          activeA8SeasonalAds.length > 0 && (
+          showA8Seasonal && (
             <div class="prose">
-              <SeasonalArticleAdBlock ids={a8SeasonalAds} kind={a8SeasonalKind} heading={a8SeasonalHeading} />
+              <SeasonalArticleAdBlock
+                ids={a8SeasonalAds}
+                kind={a8SeasonalKind}
+                heading={a8SeasonalHeading}
+                max={a8SeasonalMax}
+              />
             </div>
           )
         }
 
-        {/* ValueCommerce広告は審査中のため activeVCAds は空。審査完了後に表示。 */}
+        {/* ValueCommerce広告（承認済み・PUBLIC_ENABLE_VALUECOMMERCE_ADS=true 時のみ表示）。 */}
         {
-          activeVCAds.length > 0 && (
+          showVCAds && (
             <div class="prose">
-              <ValueCommerceAdGrid ids={valueCommerceAds} />
+              <ValueCommerceAdGrid ids={valueCommerceAds} slug={article.slug} max={vcMax} />
             </div>
           )
         }

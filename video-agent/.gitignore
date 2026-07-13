@@ -1,0 +1,10 @@
+node_modules/
+.env
+outputs/
+public/images/
+public/audio/
+data/scripts/
+data/scenes/
+data/subtitles/
+data/render-props.json
+*.log

@@ -6,37 +6,43 @@
 // - PR 表記／rel="nofollow sponsored noopener" + target="_blank"。
 // - 公式サイトと誤認させないよう、当サイトの補足文（自作コピー）を添える。
 import type { ValueCommerceAd } from '../data/valueCommerceAds';
-import { vcReferralUrl, vcBannerUrl } from '../data/valueCommerceAds';
 
 interface Props {
   ad: ValueCommerceAd;
 }
 const { ad } = Astro.props;
-const href = vcReferralUrl(ad.pid);
-const banner = vcBannerUrl(ad.pid);
+const href = ad.clickUrl;
+const banner = ad.imageUrl;
 ---
 
-<div class="vcad">
-  <a class="vcad__link" href={href} target="_blank" rel="nofollow sponsored noopener">
-    <span class="vcad__head">
-      <span class="vcad__label">{ad.label}</span>
-      <span class="vcad__cat">{ad.category}</span>
-    </span>
-    <span class="vcad__imgwrap">
-      <img
-        class="vcad__img"
-        src={banner}
-        alt=""
-        loading="lazy"
-        decoding="async"
-        referrerpolicy="no-referrer-when-downgrade"
-      />
-    </span>
-    <span class="vcad__title">{ad.title}</span>
-    <span class="vcad__desc">{ad.description}</span>
-    <span class="vcad__cta">詳しく見る <span aria-hidden="true">→</span></span>
-  </a>
-</div>
+{
+  href && (
+    <div class="vcad">
+      <a class="vcad__link" href={href} target="_blank" rel="nofollow sponsored noopener">
+        <span class="vcad__head">
+          <span class="vcad__label">{ad.disclosure}</span>
+          <span class="vcad__cat">{ad.advertiserName}</span>
+        </span>
+        {banner && (
+          <span class="vcad__imgwrap">
+            <img
+              class="vcad__img"
+              src={banner}
+              alt=""
+              loading="lazy"
+              decoding="async"
+              referrerpolicy="no-referrer-when-downgrade"
+              onerror="this.closest('.vcad__imgwrap').style.display='none'"
+            />
+          </span>
+        )}
+        <span class="vcad__title">{ad.title}</span>
+        <span class="vcad__desc">{ad.description}</span>
+        <span class="vcad__cta">公式サイトで確認する <span aria-hidden="true">→</span></span>
+      </a>
+    </div>
+  )
+}
 
 <style>
   .vcad {

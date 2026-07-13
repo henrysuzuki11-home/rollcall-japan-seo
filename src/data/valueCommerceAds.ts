@@ -15,40 +15,42 @@
 //  安全に描画する。元の script 文字列は raw フィールドに保持（参照用・非描画）。
 // =====================================================================
 
-export type VCAdStatus = 'pending_review' | 'active' | 'suspended';
+export type VCApprovalStatus = 'approved' | 'pending' | 'ended';
 
 export interface ValueCommerceAd {
   id: string;
-  label: string; // PR / 広告
+  network: 'valuecommerce';
+  /** 広告主の種別（商標名は狙わない安全な総称表記） */
+  advertiserName: string;
   category: string;
   title: string;
   description: string;
-  useFor: string[];
-  pid: string;
-  /** 元の広告タグ（参照用・そのままは描画しない） */
-  raw: string;
-  /** この広告を public site に表示してよいか。審査完了までは false。 */
+  /** クリック先（元広告コードの referral URL。空なら非表示） */
+  clickUrl: string;
+  /** バナー画像（元広告コードの gifbanner URL。任意・無効時は非表示） */
+  imageUrl?: string;
+  /** 承認済みかつ有効な広告のみ true */
   isActive: boolean;
-  /** 審査ステータス。'active' 以外は非表示。 */
-  status: VCAdStatus;
-  /** 広告ネットワーク識別子。 */
-  network: 'valuecommerce';
+  /** VC参加審査/プログラム承認状態。'approved' 以外は非表示 */
+  approvalStatus: VCApprovalStatus;
+  /** 掲載を許可する記事slug（関連記事のみに限定するガード） */
+  placementArticles: string[];
+  /** PR表記（常に 'PR'） */
+  disclosure: 'PR';
+  // --- 参考用（描画しない） ---
+  pid: string;
+  raw: string;
+  useFor: string[];
 }
 
 // ---------------------------------------------------------------------
-// 審査ゲート（マスタースイッチ）
-//   親みまもり研究所はバリューコマース適正審査中。審査中はリンクが有効配信
-//   されず、クリックすると「配信する広告リンクが無効…」ページに飛び、
-//   バナーも汎用画像になってしまう。そのため審査完了まで VC 広告は
-//   public site に一切表示しない（コード・データは残す）。
-//
-//   審査完了後の再有効化手順：
-//     1. VC_GLOBAL_ACTIVE を true にする
-//     2. 有効化する広告の isActive を true / status を 'active' にする
-//   ※ 個別に段階公開したい場合は VC_GLOBAL_ACTIVE を true にしたうえで、
-//     公開する広告だけ isActive:true にする。
+// 公開ゲート（環境変数マスタースイッチ）
+//   VC参加審査が承認されたため、本番では PUBLIC_ENABLE_VALUECOMMERCE_ADS=true
+//   を設定して有効化する。未設定/false の環境では VC 広告を一切表示しない。
+//   ※ 環境変数が true でも、各広告の isActive=false / approvalStatus!=='approved'
+//     / clickUrl 空 のものは表示しない（多段ガード）。
 // ---------------------------------------------------------------------
-export const VC_GLOBAL_ACTIVE = false;
+export const VC_ENV_ENABLED = import.meta.env.PUBLIC_ENABLE_VALUECOMMERCE_ADS === 'true';
 
 const SID = '3775652';
 
@@ -61,7 +63,10 @@ export function vcBannerUrl(pid: string): string {
   return `https://ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid=${SID}&pid=${pid}`;
 }
 
-type VCAdBase = Omit<ValueCommerceAd, 'isActive' | 'status' | 'network'>;
+type VCAdBase = Pick<
+  ValueCommerceAd,
+  'id' | 'category' | 'title' | 'description' | 'useFor' | 'pid' | 'raw'
+> & { label?: string };
 
 const VC_ADS_BASE: Record<string, VCAdBase> = {
   'nta-travel': {
@@ -146,33 +151,91 @@ const VC_ADS_BASE: Record<string, VCAdBase> = {
   },
 };
 
-// 各広告に状態フィールド（isActive / status / network）を付与して確定。
-// 審査中は全広告 isActive:false / status:'pending_review'。
+// 広告主の総称表記（商標名は使わない。公式サイトと誤認させない安全な種別名）。
+const VC_ADVERTISER_NAMES: Record<string, string> = {
+  'nta-travel': '国内旅行予約',
+  'jalan-travel': '宿泊予約',
+  'yahoo-shopping': '総合オンラインストア',
+  'yahoo-shopping-sub': '総合オンラインストア',
+  'seasonal-gift': 'ギフト専門店',
+  'furusato-honpo': 'ふるさと納税',
+  'kinokuniya-books': 'オンライン書店',
+  'outdoor-wear': 'アウトドア用品',
+  'ebest-recycle': '家電・リサイクル',
+  'golf-goods': 'ゴルフ用品',
+};
+
+// 掲載を許可する記事slug（各記事の frontmatter valueCommerceAds と一致）。
+// ここに無い記事では、たとえ frontmatter で指定されても表示しない。
+const VC_PLACEMENT_ARTICLES: Record<string, string[]> = {
+  'nta-travel': ['obon-homecoming-parent-checklist', 'parent-onsen-trip-memory', 'homecoming-family-talk'],
+  'jalan-travel': ['obon-homecoming-parent-checklist', 'parent-onsen-trip-memory', 'homecoming-family-talk'],
+  'yahoo-shopping': [
+    'obon-homecoming-parent-checklist',
+    'ochugen-parent-gift',
+    'practical-gifts-for-parents',
+    'family-outdoor-memory',
+    'homecoming-disaster-supplies',
+  ],
+  'yahoo-shopping-sub': [],
+  'seasonal-gift': ['ochugen-parent-gift', 'practical-gifts-for-parents'],
+  'furusato-honpo': ['ochugen-parent-gift'],
+  'kinokuniya-books': ['practical-gifts-for-parents', 'homecoming-family-talk'],
+  'outdoor-wear': ['family-outdoor-memory', 'homecoming-disaster-supplies'],
+  'ebest-recycle': ['homecoming-disaster-supplies'],
+  'golf-goods': ['parent-golf-memory'],
+};
+
+// VC参加審査・各広告主プログラムが承認済み。
+// clickUrl / imageUrl は元広告コード（raw の pid）由来の referral / gifbanner を保持（推測URLは作らない）。
+// リンク不明・欠損の広告は clickUrl 空にして自動的に非表示になる。
 export const VALUE_COMMERCE_ADS: Record<string, ValueCommerceAd> = Object.fromEntries(
-  Object.entries(VC_ADS_BASE).map(([id, ad]) => [
-    id,
-    {
-      ...ad,
-      isActive: false,
-      status: 'pending_review' as VCAdStatus,
-      network: 'valuecommerce' as const,
-    },
-  ]),
+  Object.entries(VC_ADS_BASE).map(([id, ad]) => {
+    const clickUrl = ad.pid ? vcReferralUrl(ad.pid) : '';
+    const imageUrl = ad.pid ? vcBannerUrl(ad.pid) : undefined;
+    const placement = VC_PLACEMENT_ARTICLES[id] ?? [];
+    // 承認済み扱い：有効な clickUrl があり、掲載先が定義されているもの。
+    const approved = clickUrl !== '' && placement.length > 0;
+    return [
+      id,
+      {
+        id,
+        network: 'valuecommerce' as const,
+        advertiserName: VC_ADVERTISER_NAMES[id] ?? ad.category,
+        category: ad.category,
+        title: ad.title,
+        description: ad.description,
+        clickUrl,
+        imageUrl,
+        isActive: approved,
+        approvalStatus: (approved ? 'approved' : 'pending') as VCApprovalStatus,
+        placementArticles: placement,
+        disclosure: 'PR' as const,
+        pid: ad.pid,
+        raw: ad.raw,
+        useFor: ad.useFor,
+      },
+    ];
+  }),
 );
 
-/** その広告を今 public site に出してよいか（マスタースイッチ×個別フラグ×状態）。 */
+/** その広告を今 public site に出してよいか（環境変数×承認状態×有効フラグ×clickUrl）。 */
 export function isVCAdVisible(ad: ValueCommerceAd): boolean {
-  return VC_GLOBAL_ACTIVE && ad.isActive && ad.status === 'active';
+  return VC_ENV_ENABLED && ad.isActive && ad.approvalStatus === 'approved' && ad.clickUrl !== '';
 }
 
 /**
  * frontmatter で指定された id 順に取り出す。
- * 審査中（非表示）の広告は除外するため、審査完了までは常に空配列になる。
+ * - 環境変数OFF / 未承認 / clickUrl欠損 の広告は除外。
+ * - slug を渡すと placementArticles に含まれる記事のみに限定（関連性ガード）。
  */
-export function getVCAdsByIds(ids: string[] = []): ValueCommerceAd[] {
+export function getVCAdsByIds(ids: string[] = [], slug?: string): ValueCommerceAd[] {
   return ids
     .map((id) => VALUE_COMMERCE_ADS[id])
-    .filter((a): a is ValueCommerceAd => Boolean(a) && isVCAdVisible(a));
+    .filter(
+      (a): a is ValueCommerceAd =>
+        Boolean(a) && isVCAdVisible(a) && (!slug || a.placementArticles.includes(slug)),
+    );
 }
 
 /** 季節キーワード → 広告id（SeasonalAffiliateBlock 用）。 */

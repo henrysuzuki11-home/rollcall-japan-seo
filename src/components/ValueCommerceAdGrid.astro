@@ -9,9 +9,14 @@ import AffiliateDisclosure from './AffiliateDisclosure.astro';
 interface Props {
   ids: string[];
   heading?: string;
+  /** 現在の記事slug（placementArticlesガード用） */
+  slug?: string;
+  /** 表示上限（A8との合算上限を守るため） */
+  max?: number;
 }
-const { ids, heading = '家族との時間を考える選択肢' } = Astro.props;
-const ads = getVCAdsByIds(ids);
+const { ids, heading = '家族との時間を考える選択肢', slug, max } = Astro.props;
+const resolved = getVCAdsByIds(ids, slug);
+const ads = typeof max === 'number' ? resolved.slice(0, max) : resolved;
 ---
 
 {

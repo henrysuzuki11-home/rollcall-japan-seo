@@ -1,0 +1,34 @@
+{
+  "name": "oyamimamori-video-agent",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "親みまもり研究所 ショート動画 自動生成パイプライン（Ollama台本 → ComfyUI画像 → say仮ナレ → Whisper字幕 → Remotion → FFmpeg MP4）",
+  "scripts": {
+    "video:one": "tsx scripts/run-one-video.ts",
+    "video:script": "tsx scripts/generate-script.ts",
+    "video:images": "tsx scripts/generate-comfy-images.ts",
+    "video:voiceover": "tsx scripts/generate-voiceover.ts",
+    "video:subtitles": "tsx scripts/generate-subtitles.ts",
+    "video:render": "tsx scripts/render-remotion.ts",
+    "video:check": "tsx scripts/check-output.ts",
+    "remotion:studio": "remotion studio remotion/index.ts"
+  },
+  "dependencies": {
+    "@remotion/cli": "^4.0.290",
+    "dotenv": "^16.4.5",
+    "fs-extra": "^11.2.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "remotion": "^4.0.290",
+    "sharp": "^0.33.5",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^11.0.4",
+    "@types/node": "^20.14.0",
+    "@types/react": "^18.3.3",
+    "tsx": "^4.16.0",
+    "typescript": "^5.5.0"
+  }
+}
