@@ -1,0 +1,250 @@
+---
+// 本文中に「1件だけ」置くアフィリエイト広告（A8 / ValueCommerce）。
+// - チェックリストや選び方の直後（本文55〜70%）に配置する想定。placement で位置を記録。
+// - データ（a8SeasonalAffiliateServices / valueCommerceAds）からのみ生成。ASPのURL・計測
+//   パラメータは一切変更しない。MyLinkの推測生成もしない。
+// - リンクに rel="nofollow sponsored noopener" + target="_blank"、PR表記。
+// - GA4計測用に data-affiliate-* / data-article-slug を付与（クリックは BaseLayout の
+//   委譲リスナが affiliate_click として送信）。個人情報は送らない。
+// - 表示できない（VC未承認/環境変数OFF/ID不明/クリックURL空）の場合は何も描画しない
+//   （空枠・PRのみブロックを出さない）。
+import { A8_SEASONAL_ADS } from '../data/a8SeasonalAffiliateServices';
+import { VALUE_COMMERCE_ADS, isVCAdVisible } from '../data/valueCommerceAds';
+
+interface Props {
+  network: 'a8' | 'valuecommerce';
+  adId: string;
+  /** 記事slug（計測用） */
+  slug: string;
+  /** GA計測に送る広告主名（表示はしない） */
+  advertiserName: string;
+  /** 配置位置ラベル（記事間で統一） */
+  placement?: string;
+  /** 見出し（省略時は控えめな既定） */
+  heading?: string;
+  /** 広告直後に添える確認文（任意） */
+  note?: string;
+}
+const {
+  network,
+  adId,
+  slug,
+  advertiserName,
+  placement = 'article_after_checklist',
+  heading = '関連する選択肢（広告）',
+  note,
+} = Astro.props;
+
+type Resolved = {
+  href: string;
+  img?: string;
+  pixel?: string;
+  title: string;
+  desc: string;
+  cta: string;
+  w?: number;
+  h?: number;
+  linkType: 'banner' | 'text';
+};
+
+let ad: Resolved | null = null;
+if (network === 'a8') {
+  const a = A8_SEASONAL_ADS[adId];
+  if (a && a.url) {
+    ad = {
+      href: a.url,
+      img: a.imageUrl,
+      pixel: a.trackingPixel,
+      title: a.title,
+      desc: a.description,
+      cta: a.cta,
+      w: a.imageWidth,
+      h: a.imageHeight,
+      linkType: a.imageUrl ? 'banner' : 'text',
+    };
+  }
+} else {
+  const v = VALUE_COMMERCE_ADS[adId];
+  if (v && isVCAdVisible(v)) {
+    ad = {
+      href: v.clickUrl,
+      img: v.imageUrl,
+      pixel: undefined, // VCは gifbanner がインプレッション計測を兼ねる
+      title: v.title,
+      desc: v.description,
+      cta: '公式サイトで確認する',
+      linkType: v.imageUrl ? 'banner' : 'text',
+    };
+  }
+}
+---
+
+{
+  ad && (
+    <aside class="inlad" aria-label="関連する選択肢（広告）" data-placement={placement}>
+      <p class="inlad__disc">
+        <span class="inlad__label">PR</span>
+        当サイトはアフィリエイト広告を利用しています。価格・在庫・配送・条件は公式サイトでご確認ください。
+      </p>
+      <div class="inlad__card">
+        <a
+          class="inlad__link"
+          href={ad.href}
+          target="_blank"
+          rel="nofollow sponsored noopener"
+          data-affiliate-network={network}
+          data-affiliate-ad-id={adId}
+          data-affiliate-advertiser={advertiserName}
+          data-affiliate-placement={placement}
+          data-affiliate-link-type={ad.linkType}
+          data-article-slug={slug}
+        >
+          {ad.img && (
+            <span class="inlad__imgwrap">
+              <img
+                class="inlad__img"
+                src={ad.img}
+                alt=""
+                width={ad.w}
+                height={ad.h}
+                loading="lazy"
+                decoding="async"
+                referrerpolicy="no-referrer-when-downgrade"
+                onerror="this.closest('.inlad__imgwrap').style.display='none'"
+              />
+            </span>
+          )}
+          <span class="inlad__body">
+            <span class="inlad__title">{ad.title}</span>
+            <span class="inlad__desc">{ad.desc}</span>
+            <span class="inlad__cta">{ad.cta} <span aria-hidden="true">→</span></span>
+          </span>
+        </a>
+        {ad.pixel && (
+          <img class="inlad__pixel" src={ad.pixel} width="1" height="1" alt="" aria-hidden="true" loading="eager" />
+        )}
+      </div>
+      {note && <p class="inlad__note">{note}</p>}
+    </aside>
+  )
+}
+
+<style>
+  .inlad {
+    margin: 2.2rem 0;
+    padding: 1.1rem 1.2rem 1.3rem;
+    background: var(--color-primary-tint);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+  }
+  .inlad__disc {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    margin: 0 0 0.9rem;
+    font-size: 0.78rem;
+    line-height: 1.7;
+    color: var(--color-text-muted);
+  }
+  .inlad__label {
+    flex: 0 0 auto;
+    font-size: 0.66rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    color: #7a6a45;
+    background: #f3ead3;
+    border: 1px solid #e6d9b8;
+    border-radius: 4px;
+    padding: 0.12em 0.5em;
+  }
+  .inlad__card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+  }
+  .inlad__link {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    padding: 1rem 1.1rem;
+    color: inherit;
+  }
+  .inlad__link:hover {
+    text-decoration: none;
+  }
+  .inlad__imgwrap {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fafbfa;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    padding: 0.35rem;
+    max-width: 45%;
+    overflow: hidden;
+  }
+  .inlad__img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+  .inlad__body {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+  }
+  .inlad__title {
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--color-text);
+    margin-bottom: 0.35rem;
+  }
+  .inlad__desc {
+    font-size: 0.85rem;
+    line-height: 1.7;
+    color: var(--color-text-muted);
+    margin-bottom: 0.8rem;
+  }
+  .inlad__cta {
+    align-self: flex-start;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #fff;
+    background: var(--color-primary);
+    border-radius: 8px;
+    padding: 0.55rem 1.1rem;
+  }
+  .inlad__link:hover .inlad__cta {
+    background: var(--color-primary-dark);
+  }
+  .inlad__pixel {
+    display: block;
+    width: 1px;
+    height: 1px;
+    border: 0;
+    opacity: 0;
+    position: absolute;
+    pointer-events: none;
+  }
+  .inlad__note {
+    margin: 0.9rem 0 0;
+    font-size: 0.78rem;
+    line-height: 1.7;
+    color: var(--color-text-muted);
+  }
+  @media (max-width: 520px) {
+    .inlad__link {
+      flex-direction: column;
+      align-items: stretch;
+    }
+    .inlad__imgwrap {
+      max-width: 100%;
+    }
+  }
+</style>

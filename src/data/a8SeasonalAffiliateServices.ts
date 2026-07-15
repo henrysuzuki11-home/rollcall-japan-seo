@@ -400,6 +400,22 @@ export const A8_SEASONAL_ADS: Record<string, A8SeasonalAd> = {
     useFor: ['ハワイ旅行', '親との海外旅行', '家族旅行', '現地ツアー'],
     notes: ['無料見積りフォーム・問い合わせからの申込はNG', '催行不可による払い戻しはNG', 'マイカイ・Maikai・Maikai Hawaii Toursなど商標・商品名関連ワードはリスティングNG'],
   },
+  'fukuya-mentaiko': {
+    id: 'fukuya-mentaiko', network: 'a8', label: 'PR',
+    category: 'gift-food', subcategory: 'mentaiko',
+    title: '帰省の食卓や手土産に、地域の味を選ぶ',
+    description: '明太子などの地域の味は、帰省時の食卓や手土産の選択肢です。辛さ・内容量・保存方法・配送日は公式サイトで確認してください。',
+    cta: '食品ギフトを確認する',
+    url: 'https://px.a8.net/svt/ejp?a8mat=4B7XX7+52S3HU+30T8+5ZEMP',
+    imageUrl: 'https://www25.a8.net/svt/bgt?aid=260711035307&wid=001&eno=01&mid=s00000014102001005000&mc=1',
+    trackingPixel: 'https://www16.a8.net/0.gif?a8mat=4B7XX7+52S3HU+30T8+5ZEMP',
+    imageWidth: 300, imageHeight: 250,
+    programName: '辛子明太子の通販（ふくや）',
+    programId: 's00000014102001', commission: '未確認', epc: '-', approvalRate: '-',
+    priority: 'medium',
+    useFor: ['帰省の手土産', '家族で楽しむ食事', '食品ギフト', '地域の味'],
+    notes: ['広告主提供のPR文は転載しない', '社名・商品名はリスティングNG（要確認）', '300x250バナー', '成果条件・否認条件はA8管理画面で要確認'],
+  },
 };
 
 const PRIORITY_RANK: Record<A8Priority, number> = { high: 0, medium: 1, low: 2 };

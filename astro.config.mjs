@@ -1,6 +1,7 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
+import mdx from '@astrojs/mdx';
 import { SITE_URL, BASE_PATH, ADMAX_TAG_SRC_IN_ARTICLE } from './src/consts.ts';
 
 /**
@@ -68,6 +69,11 @@ export default defineConfig({
     rehypePlugins: [rehypeBaseLinks, rehypeInArticleAd],
   },
   integrations: [
+    // MDX：一部の記事だけ、本文中に単一のアフィリエイト広告を配置するために使用。
+    // MDXのrehype設定はmarkdownから継承されないため明示的に指定する。
+    mdx({
+      rehypePlugins: [rehypeBaseLinks, rehypeInArticleAd],
+    }),
     sitemap({
       i18n: {
         defaultLocale: 'ja',

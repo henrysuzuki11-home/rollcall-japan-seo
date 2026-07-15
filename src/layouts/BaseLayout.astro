@@ -75,5 +75,34 @@ const {
         });
       });
     </script>
+
+    <!--
+      アフィリエイトクリック計測: [data-affiliate-network] を持つリンクのクリックで
+      affiliate_click を送信。内部リンクは対象外（属性が無い）。個人情報は送らない。
+      同一クリックの二重送信を防止（直近800msの同一リンクを無視）。リンクの遷移は妨げない。
+    -->
+    <script is:inline>
+      (function () {
+        var last = { href: '', t: 0 };
+        document.addEventListener('click', function (e) {
+          var el = e.target instanceof Element ? e.target.closest('[data-affiliate-network]') : null;
+          if (!el || typeof window.gtag !== 'function') return;
+          var href = el.getAttribute('href') || '';
+          var now = Date.now();
+          if (href === last.href && now - last.t < 800) return; // 二重送信防止
+          last = { href: href, t: now };
+          window.gtag('event', 'affiliate_click', {
+            affiliate_network: el.getAttribute('data-affiliate-network') || '',
+            affiliate_ad_id: el.getAttribute('data-affiliate-ad-id') || '',
+            advertiser_name: el.getAttribute('data-affiliate-advertiser') || '',
+            article_slug: el.getAttribute('data-article-slug') || '',
+            placement: el.getAttribute('data-affiliate-placement') || '',
+            link_type: el.getAttribute('data-affiliate-link-type') || 'banner',
+            page_path: location.pathname,
+            transport_type: 'beacon',
+          });
+        });
+      })();
+    </script>
   </body>
 </html>
