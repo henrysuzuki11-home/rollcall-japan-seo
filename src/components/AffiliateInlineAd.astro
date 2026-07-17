@@ -9,12 +9,13 @@
 // - 表示できない（VC未承認/環境変数OFF/ID不明/クリックURL空）の場合は何も描画しない
 //   （空枠・PRのみブロックを出さない）。
 import { A8_SEASONAL_ADS } from '../data/a8SeasonalAffiliateServices';
+import { getA8ServiceAd } from '../data/a8ServiceAds';
 import { VALUE_COMMERCE_ADS, isVCAdVisible } from '../data/valueCommerceAds';
 
 interface Props {
   network: 'a8' | 'valuecommerce';
   adId: string;
-  /** 記事slug（計測用） */
+  /** 記事slug（計測用／掲載ガード用） */
   slug: string;
   /** GA計測に送る広告主名（表示はしない） */
   advertiserName: string;
@@ -24,6 +25,8 @@ interface Props {
   heading?: string;
   /** 広告直後に添える確認文（任意） */
   note?: string;
+  /** 'row'=画像左＋文字右 / 'stacked'=バナー中央寄せ（原寸・拡大しない） */
+  variant?: 'row' | 'stacked';
 }
 const {
   network,
@@ -33,6 +36,7 @@ const {
   placement = 'article_after_checklist',
   heading = '関連する選択肢（広告）',
   note,
+  variant = 'row',
 } = Astro.props;
 
 type Resolved = {
@@ -44,12 +48,14 @@ type Resolved = {
   cta: string;
   w?: number;
   h?: number;
+  alt: string;
   linkType: 'banner' | 'text';
 };
 
 let ad: Resolved | null = null;
 if (network === 'a8') {
   const a = A8_SEASONAL_ADS[adId];
+  const s = a ? null : getA8ServiceAd(adId, slug);
   if (a && a.url) {
     ad = {
       href: a.url,
@@ -60,7 +66,21 @@ if (network === 'a8') {
       cta: a.cta,
       w: a.imageWidth,
       h: a.imageHeight,
+      alt: '',
       linkType: a.imageUrl ? 'banner' : 'text',
+    };
+  } else if (s) {
+    ad = {
+      href: s.clickUrl,
+      img: s.imageUrl,
+      pixel: s.trackingPixelUrl,
+      title: s.title,
+      desc: s.description,
+      cta: s.cta,
+      w: s.imageWidth,
+      h: s.imageHeight,
+      alt: s.imageAlt,
+      linkType: s.imageUrl ? 'banner' : 'text',
     };
   }
 } else {
@@ -73,6 +93,7 @@ if (network === 'a8') {
       title: v.title,
       desc: v.description,
       cta: '公式サイトで確認する',
+      alt: '',
       linkType: v.imageUrl ? 'banner' : 'text',
     };
   }
@@ -81,10 +102,14 @@ if (network === 'a8') {
 
 {
   ad && (
-    <aside class="inlad" aria-label="関連する選択肢（広告）" data-placement={placement}>
+    <aside
+      class:list={['inlad', { 'inlad--stacked': variant === 'stacked' }]}
+      aria-label="関連する選択肢（広告）"
+      data-placement={placement}
+    >
       <p class="inlad__disc">
         <span class="inlad__label">PR</span>
-        当サイトはアフィリエイト広告を利用しています。価格・在庫・配送・条件は公式サイトでご確認ください。
+        この記事には広告・アフィリエイトリンクが含まれています。内容・条件は公式サイトでご確認ください。
       </p>
       <div class="inlad__card">
         <a
@@ -104,7 +129,7 @@ if (network === 'a8') {
               <img
                 class="inlad__img"
                 src={ad.img}
-                alt=""
+                alt={ad.alt}
                 width={ad.w}
                 height={ad.h}
                 loading="lazy"
@@ -246,5 +271,28 @@ if (network === 'a8') {
     .inlad__imgwrap {
       max-width: 100%;
     }
+  }
+
+  /* stacked: バナーを中央寄せで原寸表示（拡大しない）。横スクロールを出さない。 */
+  .inlad--stacked .inlad__link {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+  }
+  .inlad--stacked .inlad__imgwrap {
+    max-width: 300px;
+    width: 100%;
+  }
+  .inlad--stacked .inlad__img {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+  }
+  .inlad--stacked .inlad__body {
+    align-items: center;
+  }
+  .inlad--stacked .inlad__cta {
+    align-self: center;
   }
 </style>
