@@ -15,7 +15,7 @@
 //  安全に描画する。元の script 文字列は raw フィールドに保持（参照用・非描画）。
 // =====================================================================
 
-export type VCApprovalStatus = 'approved' | 'pending' | 'ended';
+export type VCApprovalStatus = 'approved' | 'pending' | 'paused' | 'ended';
 
 export interface ValueCommerceAd {
   id: string;
@@ -187,16 +187,42 @@ const VC_PLACEMENT_ARTICLES: Record<string, string[]> = {
   'golf-goods': ['parent-golf-memory'],
 };
 
+// ---------------------------------------------------------------------
+// 個別広告の停止指定（内部管理用・公開HTMLには出力しない）
+//
+//   広告主からの停止/終了通知を受けたら、ここに追記するだけで即座に非表示になる。
+//   設定情報（pid・URL等）は将来の再開のために残す。
+// ---------------------------------------------------------------------
+type VCOverride = {
+  status: VCApprovalStatus;
+  /** 停止日（管理用） */
+  since: string;
+  /** 停止理由コード（管理用） */
+  reason: string;
+};
+
+const VC_STATUS_OVERRIDES: Record<string, VCOverride> = {
+  // 日本旅行：広告主のシステム都合により全プログラム掲載一時停止（再開見込み未定）。
+  // 再開時は、この行を削除するだけで元の承認済み状態に戻る。
+  'nta-travel': {
+    status: 'paused',
+    since: '2026-07-22',
+    reason: 'advertiser_system_pause',
+  },
+};
+
 // VC参加審査・各広告主プログラムが承認済み。
 // clickUrl / imageUrl は元広告コード（raw の pid）由来の referral / gifbanner を保持（推測URLは作らない）。
 // リンク不明・欠損の広告は clickUrl 空にして自動的に非表示になる。
+// 停止指定（VC_STATUS_OVERRIDES）がある広告は isActive=false となり描画されない。
 export const VALUE_COMMERCE_ADS: Record<string, ValueCommerceAd> = Object.fromEntries(
   Object.entries(VC_ADS_BASE).map(([id, ad]) => {
     const clickUrl = ad.pid ? vcReferralUrl(ad.pid) : '';
     const imageUrl = ad.pid ? vcBannerUrl(ad.pid) : undefined;
     const placement = VC_PLACEMENT_ARTICLES[id] ?? [];
-    // 承認済み扱い：有効な clickUrl があり、掲載先が定義されているもの。
-    const approved = clickUrl !== '' && placement.length > 0;
+    const override = VC_STATUS_OVERRIDES[id];
+    // 承認済み扱い：有効な clickUrl があり、掲載先が定義され、停止指定が無いもの。
+    const approved = clickUrl !== '' && placement.length > 0 && !override;
     return [
       id,
       {
@@ -209,7 +235,11 @@ export const VALUE_COMMERCE_ADS: Record<string, ValueCommerceAd> = Object.fromEn
         clickUrl,
         imageUrl,
         isActive: approved,
-        approvalStatus: (approved ? 'approved' : 'pending') as VCApprovalStatus,
+        approvalStatus: (override
+          ? override.status
+          : approved
+            ? 'approved'
+            : 'pending') as VCApprovalStatus,
         placementArticles: placement,
         disclosure: 'PR' as const,
         pid: ad.pid,

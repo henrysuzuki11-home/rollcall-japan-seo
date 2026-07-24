@@ -10,7 +10,7 @@
 //  - ASPのURL・計測パラメータは一切変更しない。
 // =====================================================================
 
-export type A8ServiceApprovalStatus = 'approved' | 'pending' | 'ended';
+export type A8ServiceApprovalStatus = 'approved' | 'pending' | 'paused' | 'ended';
 
 export interface A8ServiceAd {
   id: string;
@@ -29,6 +29,10 @@ export interface A8ServiceAd {
   category: string;
   isActive: boolean;
   approvalStatus: A8ServiceApprovalStatus;
+  /** 終了日（管理用・公開しない） */
+  endedAt?: string;
+  /** 停止/終了の理由コード（管理用・公開しない） */
+  reason?: string;
   disclosure: 'PR';
   // --- 表示用（当サイトの自作コピー） ---
   title: string;
@@ -40,36 +44,41 @@ export interface A8ServiceAd {
   notes: string[];
 }
 
+// ---------------------------------------------------------------------
+// 【2026-07-23 家族信託プログラム 提携解除】
+//   広告主から提携解除の通知を受領したため、広告を即時停止。
+//   クリックURL・バナー画像URL・成果計測ピクセルURLは、誤って再描画されることが
+//   ないよう、このソース（＝公開ビルドの入力）から完全に除去した。
+//   契約・識別子などの履歴は Ops/affiliate-listing-report-20260724.md に記録。
+//   掲載していた記事は、広告に依存しない一般解説記事として内容を維持している。
+// ---------------------------------------------------------------------
 export const A8_SERVICE_ADS: Record<string, A8ServiceAd> = {
   'oyatoko-family-trust': {
     id: 'oyatoko-family-trust',
     network: 'a8',
-    advertiserName: '株式会社こころのカンパニー',
-    programName: '家族信託の「おやとこ」',
-    programId: 's00000025525001',
-    clickUrl: 'https://px.a8.net/svt/ejp?a8mat=4B65SJ+4G5MIA+5GYA+5YZ75',
-    imageUrl:
-      'https://www29.a8.net/svt/bgt?aid=260627923269&wid=001&eno=01&mid=s00000025525001003000&mc=1',
-    trackingPixelUrl: 'https://www12.a8.net/0.gif?a8mat=4B65SJ+4G5MIA+5GYA+5YZ75',
-    imageWidth: 300,
-    imageHeight: 250,
+    advertiserName: '',
+    programName: '',
+    programId: '',
+    // 提携解除のため広告コードは保持しない（空＝描画不可）
+    clickUrl: '',
+    imageUrl: '',
+    trackingPixelUrl: '',
+    imageWidth: 0,
+    imageHeight: 0,
     category: 'family-trust',
-    isActive: true,
-    approvalStatus: 'approved',
+    isActive: false,
+    approvalStatus: 'ended',
+    endedAt: '2026-07-23',
+    reason: 'advertiser_terminated',
     disclosure: 'PR',
-    title: '家族信託について専門家へ相談する',
-    description:
-      '家族信託について、専門家へ相談できるサービスです。相談内容、対応範囲、費用、契約条件はリンク先でご確認ください。',
-    cta: '家族信託について相談内容を確認する',
-    imageAlt: '家族信託の相談サービス',
-    placementArticles: ['dementia-asset-management-family-trust'],
+    title: '',
+    description: '',
+    cta: '',
+    imageAlt: '',
+    placementArticles: [],
     notes: [
-      '提携日 2026-07-17（A8.netで承認済みの通常のアフィリエイト広告）',
-      '広告主提供のPR文は転載しない',
-      '社名・サービス名・表記ゆれはリスティングNG（検索広告の出稿はしない）',
-      '商標狙いの薄い記事（評判・口コミ・費用・クーポン等）は作らない',
-      '成果条件・報酬・確定率などの内部条件は Ops/a8-family-trust-oyatoko.md を参照',
-      '法律・税務・登記の断定を避け、専門家相談を促す文脈でのみ掲載する',
+      '2026-07-23 広告主より提携解除の通知を受領。広告コードは削除済み。',
+      '再開の予定はない。復活させる場合は新規にA8で提携し直すこと。',
     ],
   },
 };
