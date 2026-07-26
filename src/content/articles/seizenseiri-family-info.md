@@ -46,3 +46,5 @@ affiliateServices: ["ihinseiri-110", "life-reset"]
 ## まとめ
 
 生前整理の本当の目的は、**残された家族が迷わないこと**。物と一緒に、連絡先・保険・医療・希望といった情報を、できる範囲から残しておきましょう。親側の備えは[離れて暮らす親の「もしも」に備えて](/articles/oya-moshimo-joho-kyoyu)もあわせてどうぞ。
+
+預金や不動産の管理を元気なうちに考えておきたい場合は、[親の認知症と資産管理（家族信託の仕組みと注意点）](/articles/dementia-asset-management-family-trust)も参考になります。

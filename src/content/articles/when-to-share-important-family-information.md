@@ -72,3 +72,5 @@ A. 併用がおすすめです。緊急連絡先のような「すぐ使う情�
 ## まとめ
 
 重要情報の共有は、「今すぐ」「指定日時」「ご逝去後」の3つのタイミングで考えると、無理なく設計できます。必要な情報を、必要な相手に、必要なタイミングで。まずは緊急連絡先の共有から始めてみてください。自分の情報整理は[相続を自分ごとにする](/articles/inheritance-important-info-young-people)、親子双方の備えは[親と子、どちらにも必要な「もしもの情報共有」](/articles/parent-child-emergency-information-sharing)もあわせてどうぞ。
+
+親の判断力が低下する前の財産管理については、[親の認知症と資産管理（家族信託・成年後見の違い）](/articles/dementia-asset-management-family-trust)で解説しています。
