@@ -177,6 +177,8 @@ const VC_PLACEMENT_ARTICLES: Record<string, string[]> = {
     'family-outdoor-memory',
     'homecoming-disaster-supplies',
     'parents-house-disaster-supplies-checklist',
+    'mimamori-camera-hikaku',
+    'bousai-set-hikaku',
   ],
   'yahoo-shopping-sub': [],
   'seasonal-gift': ['ochugen-parent-gift', 'practical-gifts-for-parents'],
