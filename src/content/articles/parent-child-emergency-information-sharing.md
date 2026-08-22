@@ -62,4 +62,4 @@ A. どちらでも構いませんが、「自分の分を整理したから、�
 
 ## まとめ
 
-もしもの情報共有は、親から子へ、子から親へ、双方向で考えてこそ意味があります。監視ではなく、家族が困らないための備えとして、まずは連絡先と保険から。日々の軽い安心確認は[写真で伝えるゆるい安心確認](/articles/parent-child-meal-checkin)、自分自身の情報整理は[相続を自分ごとにする](/articles/inheritance-important-info-young-people)もあわせてどうぞ。
+もしもの情報共有は、親から子へ、子から親へ、双方向で考えてこそ意味があります。監視ではなく、家族が困らないための備えとして、まずは連絡先と保険から。日々の軽い安心確認は[写真で伝えるゆるい安心確認](/articles/parent-child-meal-checkin)、自分自身の情報整理は[相続を自分ごとにする](/articles/inheritance-important-info-young-people)もあわせてどうぞ。重要情報をLINEで送るときの注意は[LINEで重要情報を送って大丈夫？](/articles/line-family-important-info-sharing)にまとめています。

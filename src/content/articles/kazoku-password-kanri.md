@@ -68,4 +68,4 @@ A. 何でも共有するのはおすすめしません。「もしもの時に�
 
 ## まとめ
 
-パスワード管理は「完璧」を目指すと続きません。まずはメール・お金・スマホの3つを使い回しから卒業させる。それだけで、家族の写真や記録を守る力は大きく上がります。セキュリティ全般の基本は[家族のはじめてのセキュリティ講座](/articles/family-information-security-basics)、スマホ紛失への備えは[スマホをなくした時の家族の備え](/articles/smartphone-lost-family-preparation)もあわせてどうぞ。
+パスワード管理は「完璧」を目指すと続きません。まずはメール・お金・スマホの3つを使い回しから卒業させる。それだけで、家族の写真や記録を守る力は大きく上がります。セキュリティ全般の基本は[家族のはじめてのセキュリティ講座](/articles/family-information-security-basics)、スマホ紛失への備えは[スマホをなくした時の家族の備え](/articles/smartphone-lost-family-preparation)もあわせてどうぞ。パスワードをLINEで送っていいか迷ったら、[LINEで重要情報を送って大丈夫？](/articles/line-family-important-info-sharing)も参考になります。
