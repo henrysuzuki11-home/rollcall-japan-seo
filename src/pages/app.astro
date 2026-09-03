@@ -23,18 +23,22 @@ const breadcrumbs = [
     <article class="prose app-page">
       <h1>離れて暮らす母・父を、毎日さりげなく見守る</h1>
       <p class="lead">
-        実家を離れてからも、「今日も元気にしているかな」と気になる日々。
-        かといって毎日電話するのは、お互いに少し気をつかうものです。
-        {APP_NAME}は、そんな遠く離れた親子が、無理なく安否を伝え合うための
-        無料アプリです。
+        実家を離れると、「今日も元気かな」と気になる日々。でも毎日の電話は、お互い少し気をつかうもの。
+        {APP_NAME}は、遠く離れた親子が<strong>ワンタップで「無事」を伝え合える無料アプリ</strong>です。
       </p>
 
-      <p class="app-trust">
-        無料・登録かんたん・アプリ内課金なし。難しい設定はいりません。
-      </p>
+      <ul class="app-quick">
+        <li>親は<strong>ボタンを押すだけ</strong>／家族は<strong>通知を見るだけ</strong></li>
+        <li>連絡がない日は、離れた家族が<strong>気づける</strong></li>
+        <li>登録かんたん・アプリ内課金なし・<strong>完全無料</strong></li>
+      </ul>
 
       <!-- 上部CTA（ファーストビュー） -->
-      <DownloadButtons heading="無料で見守りを始める" />
+      <DownloadButtons heading="無料でダウンロードして始める" />
+
+      <p class="app-trust">
+        ダウンロード後すぐに使えます。難しい設定はいりません。
+      </p>
 
       <h2>毎日電話しなくても、無事がわかる</h2>
       <p>
@@ -137,7 +141,7 @@ const breadcrumbs = [
 
   {/* スクロール追従の常時CTA（/appページ限定・スマホの取りこぼし防止） */}
   <div class="app-sticky-cta" role="region" aria-label="無料ダウンロード">
-    <span class="app-sticky-cta__label">無料で見守りを始める</span>
+    <span class="app-sticky-cta__label">無料ダウンロード ▶</span>
     <span class="app-sticky-cta__btns">
       <a
         class="app-sticky-cta__btn"
@@ -174,9 +178,31 @@ const breadcrumbs = [
     line-height: 1.95;
     color: var(--color-text);
   }
+  .app-quick {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.4rem;
+    display: grid;
+    gap: 0.5rem;
+  }
+  .app-quick li {
+    position: relative;
+    padding-left: 1.6rem;
+    font-size: 0.98rem;
+    line-height: 1.7;
+    color: var(--color-text);
+  }
+  .app-quick li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-weight: 700;
+    color: var(--color-primary);
+  }
   .app-trust {
-    margin: 0.4rem 0 0;
-    font-size: 0.9rem;
+    margin: 0.6rem 0 0;
+    font-size: 0.85rem;
     font-weight: 700;
     color: var(--color-primary-dark);
     text-align: center;
