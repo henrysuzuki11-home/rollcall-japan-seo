@@ -51,4 +51,4 @@ heroImage: "/images/articles/jishin-bousai-checklist.webp"
 
 ## まとめ
 
-防災は「完璧」を目指すより、まず一つでも行動することが大切です。このチェックリストを家族で共有し、[防災家族会議](/articles/bousai-kazoku-kaigi)の機会に話し合ってみてください。
+防災は「完璧」を目指すより、まず一つでも行動することが大切です。このチェックリストを家族で共有し、[防災家族会議](/articles/bousai-kazoku-kaigi)の機会に話し合ってみてください。市販の防災セットを容量別・中身で比較したい方は、[高齢の親・実家向け防災セットの選び方と中身の比較](/articles/bousai-set-hikaku)も参考になります。
