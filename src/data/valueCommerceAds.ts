@@ -179,6 +179,8 @@ const VC_PLACEMENT_ARTICLES: Record<string, string[]> = {
     'parents-house-disaster-supplies-checklist',
     'mimamori-camera-hikaku',
     'bousai-set-hikaku',
+    'mimamori-gps-hikaku',
+    'senior-smartphone-erabikata',
   ],
   'yahoo-shopping-sub': [],
   'seasonal-gift': ['ochugen-parent-gift', 'practical-gifts-for-parents'],

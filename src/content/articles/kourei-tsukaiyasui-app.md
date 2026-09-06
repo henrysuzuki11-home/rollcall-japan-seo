@@ -57,4 +57,4 @@ heroImage: "/images/articles/kourei-tsukaiyasui-app.webp"
 
 ## まとめ
 
-高齢の親に使ってもらえる見守りアプリは、「シンプル・大きい・分かりやすい」が条件です。ワンタップで完結するアプリを選び、家族が設定を手伝いながら、無理なく習慣にしていきましょう。[Roll Callの使い方ガイド](/articles/rollcall-tsukaikata-guide)もご覧ください。
+高齢の親に使ってもらえる見守りアプリは、「シンプル・大きい・分かりやすい」が条件です。ワンタップで完結するアプリを選び、家族が設定を手伝いながら、無理なく習慣にしていきましょう。[Roll Callの使い方ガイド](/articles/rollcall-tsukaikata-guide)や、親に贈るスマホ選びは[シニア向けスマホの選び方](/articles/senior-smartphone-erabikata)もご覧ください。
