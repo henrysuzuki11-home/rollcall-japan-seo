@@ -1,0 +1,246 @@
+---
+// トップページ「親との時間を、もっと楽しむ」セクション。
+// 「親の見守り」から一歩広げ、家族の時間を楽しむ前向きな話題（旅行／思い出を
+// 残す／新しい挑戦を応援）を、記事の延長のような編集トーンで3枚のカードで紹介する。
+//
+// - 広告データは src/data/a8Recommendations.ts に集約（本文直書きしない）。
+//   A8発行の href / img src / 計測1px画像 / a8mat / aid / mid は一切改変しない。
+// - セクション冒頭に「PR・広告を含みます」表記＋開示文（AffiliateDisclosure）。
+// - リンクは rel="nofollow sponsored noopener" + target="_blank"（既存実装と統一）。
+// - GA4計測用に data-affiliate-* を付与（クリックは BaseLayout の委譲リスナが送信）。
+// - 300×250バナーは width/height を指定してCLSを抑制、モバイルは max-width:100%。
+import { A8_RECOMMENDATIONS } from '../data/a8Recommendations';
+import AffiliateDisclosure from './AffiliateDisclosure.astro';
+
+const PLACEMENT = 'home_recommendations';
+---
+
+<section class="container section" aria-labelledby="home-reco-heading">
+  <header class="section-head">
+    <p class="reco-pr"><span class="reco-pr__label">PR</span>広告を含みます</p>
+    <h2 id="home-reco-heading">親との時間を、もっと楽しむ</h2>
+    <p class="section-lead">
+      見守りの話だけでなく、親と一緒に過ごす時間そのものを、もう少し楽しむために。
+      旅行や思い出づくり、応援したくなる取り組みなど、家族の時間を豊かにするきっかけを集めました。
+    </p>
+  </header>
+
+  <div class="reco-grid">
+    {
+      A8_RECOMMENDATIONS.map((ad) => (
+        <article class="reco-card">
+          <p class="reco-card__theme">{ad.theme}</p>
+          <h3 class="reco-card__title">{ad.title}</h3>
+          <p class="reco-card__desc">{ad.description}</p>
+          {ad.tags && ad.tags.length > 0 && (
+            <ul class="reco-card__tags">
+              {ad.tags.map((t) => (
+                <li class="reco-card__tag">{t}</li>
+              ))}
+            </ul>
+          )}
+
+          <a
+            class="reco-card__banner"
+            href={ad.clickUrl}
+            target="_blank"
+            rel="nofollow sponsored noopener"
+            aria-label={`${ad.title}（広告・別ウィンドウで開きます）`}
+            data-affiliate-network="a8"
+            data-affiliate-ad-id={ad.id}
+            data-affiliate-advertiser={ad.advertiserName}
+            data-affiliate-placement={PLACEMENT}
+            data-affiliate-link-type="banner"
+          >
+            <img
+              class="reco-card__img"
+              src={ad.imageUrl}
+              alt={ad.imageAlt}
+              width={ad.imageWidth}
+              height={ad.imageHeight}
+              loading="lazy"
+              decoding="async"
+              referrerpolicy="no-referrer-when-downgrade"
+            />
+          </a>
+
+          <a
+            class="reco-card__cta"
+            href={ad.clickUrl}
+            target="_blank"
+            rel="nofollow sponsored noopener"
+            data-affiliate-network="a8"
+            data-affiliate-ad-id={ad.id}
+            data-affiliate-advertiser={ad.advertiserName}
+            data-affiliate-placement={PLACEMENT}
+            data-affiliate-link-type="text"
+          >
+            {ad.cta} <span aria-hidden="true">→</span>
+          </a>
+
+          <img
+            class="reco-card__pixel"
+            src={ad.trackingPixelUrl}
+            width="1"
+            height="1"
+            alt=""
+            aria-hidden="true"
+            loading="eager"
+          />
+        </article>
+      ))
+    }
+  </div>
+
+  <AffiliateDisclosure />
+</section>
+
+<style>
+  .reco-pr {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin: 0 0 0.6rem;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: var(--color-text-muted);
+  }
+  .reco-pr__label {
+    font-size: 0.66rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    color: #7a6a45;
+    background: #f3ead3;
+    border: 1px solid #e6d9b8;
+    border-radius: 4px;
+    padding: 0.12em 0.5em;
+  }
+  .section-lead {
+    margin: 0.4rem 0 0;
+    font-size: 0.95rem;
+    line-height: 1.9;
+    color: var(--color-text-muted);
+  }
+
+  .reco-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.3rem;
+    margin-top: 0.4rem;
+  }
+
+  .reco-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    background: var(--color-primary-tint);
+    border: 1px solid var(--color-border);
+    border-left: 4px solid var(--color-primary);
+    border-radius: var(--radius);
+    padding: 1.3rem 1.4rem 1.4rem;
+    transition: transform 0.15s, box-shadow 0.15s;
+  }
+  .reco-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 24px var(--color-shadow);
+  }
+
+  .reco-card__theme {
+    margin: 0;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: var(--color-primary);
+  }
+  .reco-card__title {
+    margin: 0;
+    font-family: var(--font-serif);
+    font-size: 1.12rem;
+    font-weight: 700;
+    line-height: 1.5;
+    color: var(--color-primary-dark);
+  }
+  .reco-card__desc {
+    margin: 0;
+    font-size: 0.88rem;
+    line-height: 1.85;
+    color: var(--color-text);
+  }
+  .reco-card__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin: 0.1rem 0 0;
+    padding: 0;
+    list-style: none;
+  }
+  .reco-card__tag {
+    font-size: 0.72rem;
+    color: var(--color-text-muted);
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+    padding: 0.16em 0.7em;
+  }
+
+  .reco-card__banner {
+    display: block;
+    margin: 0.6rem 0 0.2rem;
+    line-height: 0;
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+  }
+  .reco-card__img {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    margin: 0 auto;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    background: #fafbfa;
+  }
+
+  .reco-card__cta {
+    align-self: flex-start;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    margin-top: auto;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #fff;
+    background: var(--color-primary);
+    border-radius: 8px;
+    padding: 0.55rem 1.1rem;
+    transition: background 0.15s;
+  }
+  .reco-card__cta:hover {
+    background: var(--color-primary-dark);
+    text-decoration: none;
+  }
+
+  .reco-card__pixel {
+    display: block;
+    width: 1px;
+    height: 1px;
+    border: 0;
+    opacity: 0;
+    position: absolute;
+    pointer-events: none;
+  }
+
+  /* タブレット：2列（3枚目は1枚で折り返し） */
+  @media (max-width: 900px) {
+    .reco-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  /* スマートフォン：1列 */
+  @media (max-width: 600px) {
+    .reco-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

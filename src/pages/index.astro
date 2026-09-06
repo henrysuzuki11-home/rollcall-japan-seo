@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ArticleCard from '../components/ArticleCard.astro';
+import AffiliateRecommendations from '../components/AffiliateRecommendations.astro';
 import { CATEGORIES, SITE_NAME } from '../consts';
 import { withBase } from '../utils/url';
 
@@ -129,6 +130,9 @@ const showcase = featured.length >= 3 ? featured : latest.slice(0, 3);
       {latest.map((a) => <ArticleCard article={a} />)}
     </div>
   </section>
+
+  <!-- 親との時間を、もっと楽しむ（A8アフィリエイト・編集トーンの提案） -->
+  <AffiliateRecommendations />
 
   <!-- Soft app mention (no store buttons on the homepage) -->
   <section class="container section">
