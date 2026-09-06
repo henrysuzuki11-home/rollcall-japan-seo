@@ -58,4 +58,4 @@ affiliateServices: ["ihinseiri-110", "life-reset"]
 
 ## まとめ
 
-遺品整理は「急いで捨てない」「一人で決めない」「先に話し合う」の3つで、後悔とトラブルを大きく減らせます。捨てる前の見分け方は[捨てていい物・残した方がいい物の見分け方](/articles/keep-or-dispose-parents-house)もあわせてご覧ください。
+遺品整理は「急いで捨てない」「一人で決めない」「先に話し合う」の3つで、後悔とトラブルを大きく減らせます。捨てる前の見分け方は[捨てていい物・残した方がいい物の見分け方](/articles/keep-or-dispose-parents-house)、発見が遅れて通常の清掃が難しい状態のときは[孤独死後の部屋の対応と特殊清掃の流れ](/articles/oya-kodokushi-tokushu-seiso)もあわせてご覧ください。

@@ -53,6 +53,36 @@ export interface A8ServiceAd {
 //   掲載していた記事は、広告に依存しない一般解説記事として内容を維持している。
 // ---------------------------------------------------------------------
 export const A8_SERVICE_ADS: Record<string, A8ServiceAd> = {
+  // 特殊清掃（孤独死後の部屋の清掃・消臭・原状回復の相談先の一つ）。
+  // A8で承認済みの通常広告。href/img/計測1px/a8mat/aid/mid/wid/eno/mc は発行値のまま。
+  // 成果条件はWEB見積り申込後の成約。電話問い合わせは成果対象外のため、CTAは
+  // 「WEBから見積もりを相談する」に限定し、電話誘導はしない（本文にも書かない）。
+  'tokushu-seiso': {
+    id: 'tokushu-seiso',
+    network: 'a8',
+    advertiserName: '特殊清掃サービス',
+    programName: 'tokushu-seiso',
+    programId: 's00000014894',
+    clickUrl: 'https://px.a8.net/svt/ejp?a8mat=4BC4QT+E2NXCQ+36X8+2NAN35',
+    imageUrl: 'https://www21.a8.net/svt/bgt?aid=260906501851&wid=002&eno=01&mid=s00000014894016006000&mc=1',
+    trackingPixelUrl: 'https://www18.a8.net/0.gif?a8mat=4BC4QT+E2NXCQ+36X8+2NAN35',
+    imageWidth: 300,
+    imageHeight: 250,
+    category: 'tokushu-seiso',
+    isActive: true,
+    approvalStatus: 'approved',
+    disclosure: 'PR',
+    title: 'WEBで特殊清掃の見積もりを相談する',
+    description:
+      '発見まで時間が経過している、臭い・汚れが残っているなど、通常の清掃では難しい場合の相談先の一つです。作業範囲や見積り条件を確認したうえで検討できます。',
+    cta: 'WEBから特殊清掃の見積もりを相談する',
+    imageAlt: '特殊清掃サービスの広告',
+    placementArticles: ['oya-kodokushi-tokushu-seiso'],
+    notes: [
+      '成果条件はWEB見積り申込後の成約。電話問い合わせは成果対象外のため電話誘導しない。',
+      'デリケートな話題のため、煽り・恐怖訴求・断定表現を避ける。',
+    ],
+  },
   'oyatoko-family-trust': {
     id: 'oyatoko-family-trust',
     network: 'a8',
