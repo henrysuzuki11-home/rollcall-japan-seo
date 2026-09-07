@@ -53,6 +53,42 @@ export interface A8ServiceAd {
 //   掲載していた記事は、広告に依存しない一般解説記事として内容を維持している。
 // ---------------------------------------------------------------------
 export const A8_SERVICE_ADS: Record<string, A8ServiceAd> = {
+  // ミライアス「スマート仲介」（ミライアス株式会社）。相続した不動産（マンション・戸建・
+  // 土地）の売却を検討する段階での「売却査定」の相談先の一つ。
+  // A8で承認済みの通常広告。href/img/計測1px/a8mat/aid/mid/wid/eno/mc は発行値のまま。
+  //
+  // 【役割分担】相続手続きそのものは nocos、相続した不動産の売却査定はミライアス、と
+  // CVを分ける（1記事1メインCV）。売却検討記事にのみ掲載し、手続き記事には出さない。
+  // 【対象エリア】東京都・神奈川県・埼玉県・千葉県。エリア外は成果対象外のため、CTA付近に
+  // 対象エリアを必ず明示する（本文・note で表示）。対象物件はマンション・戸建・土地。
+  // 断定・比較優良（日本初/No.1/必ず高く売れる/他社より高く 等）は根拠確認なしに使わない。
+  'miraias-satei': {
+    id: 'miraias-satei',
+    network: 'a8',
+    advertiserName: 'ミライアス スマート仲介',
+    programName: 'miraias-smart-chukai',
+    programId: 's00000021019001',
+    clickUrl: 'https://px.a8.net/svt/ejp?a8mat=4BC4QT+DGMVYY+4I6M+65ME9',
+    imageUrl: 'https://www25.a8.net/svt/bgt?aid=260906501814&wid=002&eno=01&mid=s00000021019001034000&mc=1',
+    trackingPixelUrl: 'https://www17.a8.net/0.gif?a8mat=4BC4QT+DGMVYY+4I6M+65ME9',
+    imageWidth: 300,
+    imageHeight: 250,
+    category: 'real-estate',
+    isActive: true,
+    approvalStatus: 'approved',
+    disclosure: 'PR',
+    title: '相続した実家の売却を検討するなら、まず査定を',
+    description:
+      '相続したマンション・戸建・土地の「今の価値」を、WEBから無料で売却査定に申し込めるサービスです。囲い込みをしない仲介の仕組みや、宅建士による対応、VR内見への対応などの特徴があります。対象エリアは東京都・神奈川県・埼玉県・千葉県です。',
+    cta: '無料で査定を申し込む',
+    imageAlt: '相続した不動産の売却査定サービスの広告',
+    placementArticles: ['jikka-sozoku-uru-nokosu-kasu'],
+    notes: [
+      '成果は WEB経由の売却査定申込＋30日以内の本人確認完了。対象エリア外は成果対象外。',
+      '対象エリア：東京都・神奈川県・埼玉県・千葉県。対象物件：マンション・戸建・土地。',
+      'クリック＝査定ではないと分かる表現にする。断定・比較優良表現は使わない。',
+    ],
+  },
   // 相続手続きの「nocos」（NCPグループ運営）。相続発生後（親族が亡くなった後）の
   // 名義変更・相続登記・遺産分割などの手続きをまとめて相談できる相談先の一つ。
   // A8で承認済みの通常広告。href/img/計測1px/a8mat/aid/mid/wid/eno/mc は発行値のまま。
