@@ -206,13 +206,10 @@ type VCOverride = {
 };
 
 const VC_STATUS_OVERRIDES: Record<string, VCOverride> = {
-  // 日本旅行：広告主のシステム都合により全プログラム掲載一時停止（再開見込み未定）。
-  // 再開時は、この行を削除するだけで元の承認済み状態に戻る。
-  'nta-travel': {
-    status: 'paused',
-    since: '2026-07-22',
-    reason: 'advertiser_system_pause',
-  },
+  // 日本旅行（nta-travel）：2026-07-22 に広告主のシステム都合で全プログラムを一時停止。
+  // 2026-09-07 広告主側のシステム対応完了に伴い掲載再開（ValueCommerce 再開依頼／
+  // サイトID 2137988）。停止指定を解除し、元の承認済み状態（pid=892656908）に戻す。
+  // 停止が必要になった場合は、ここに 'nta-travel' の override を再追加するだけでよい。
 };
 
 // VC参加審査・各広告主プログラムが承認済み。
