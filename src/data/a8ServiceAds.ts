@@ -53,6 +53,69 @@ export interface A8ServiceAd {
 //   掲載していた記事は、広告に依存しない一般解説記事として内容を維持している。
 // ---------------------------------------------------------------------
 export const A8_SERVICE_ADS: Record<string, A8ServiceAd> = {
+  // 松井証券（証券口座）。金融商品を扱うため、松井証券アフィリエイト広告掲載
+  // ガイドライン（2023/11/1版・確認日2026-09-07）に厳密に従う。
+  //   禁止：断定的・扇動的表現、「業界No.1/断然有利/絶対儲かる/必勝」等、元本保証との
+  //   誤認（元本保証/予想利回り/高利回り等）、リスク記載の著しい過少、初心者でも容易に
+  //   利益が得られる印象、成功例のみの紹介、過度な取引誘導、バナーの改変・独自保有、
+  //   会社名を含むリスティング購入。必須：広告/PRの明示、十分なリスク記載、日付併記。
+  //   → 表示コピーは投資勧誘にならない中立表現に限定し、必ず元本割れリスクに触れる。
+  //   掲載は「資産形成/資産管理」文脈の記事のみ（見守り記事等には出さない）。
+  'matsui-shoken': {
+    id: 'matsui-shoken',
+    network: 'a8',
+    advertiserName: '松井証券',
+    programName: 'matsui-shoken',
+    programId: 's00000018318001',
+    clickUrl: 'https://px.a8.net/svt/ejp?a8mat=4BC4QS+6D7WOI+3XCC+6GRMP',
+    imageUrl: 'https://www28.a8.net/svt/bgt?aid=260906500385&wid=001&eno=01&mid=s00000018318001086000&mc=1',
+    trackingPixelUrl: 'https://www12.a8.net/0.gif?a8mat=4BC4QS+6D7WOI+3XCC+6GRMP',
+    imageWidth: 300,
+    imageHeight: 250,
+    category: 'finance',
+    isActive: true,
+    approvalStatus: 'approved',
+    disclosure: 'PR',
+    title: '自分の資産形成を考えるなら（証券口座の選択肢）',
+    description:
+      'NISAや投資信託・株式などを扱う証券会社の一つです。口座開設・サービス内容・手数料は公式サイトの最新情報をご確認ください。投資には価格変動があり、元本割れとなる可能性があります。',
+    cta: '松井証券のサービス内容を確認する',
+    imageAlt: '松井証券の証券口座サービスの広告',
+    placementArticles: ['oya-shisan-seiri'],
+    notes: [
+      '成果地点は新規口座開設完了（WEB申込、申込後30日以内の開設完了）。資料請求経由等は成果対象外。成果地点を誤認させる記載をしない。',
+      'ガイドライン遵守：断定・比較優良・元本保証誤認・リスク過少を避け、必ずリスクに触れる。',
+    ],
+  },
+  // 松井証券 iDeCo。上記と同じガイドラインに従う。制度（掛金上限・加入年齢・税制）は
+  // 改正が予定されており、古いPR文のみを根拠にしない。表示は中立・リスク明記に限定し、
+  // 具体的制度数値は本文側で「時点」「公式確認」を明示して扱う。掲載はiDeCo記事のみ。
+  'matsui-ideco': {
+    id: 'matsui-ideco',
+    network: 'a8',
+    advertiserName: '松井証券 iDeCo',
+    programName: 'matsui-ideco',
+    programId: 's00000018318002',
+    clickUrl: 'https://px.a8.net/svt/ejp?a8mat=4BC4QS+6DTCAA+3XCC+BYT9D',
+    imageUrl: 'https://www23.a8.net/svt/bgt?aid=260906500386&wid=001&eno=01&mid=s00000018318002010000&mc=1',
+    trackingPixelUrl: 'https://www10.a8.net/0.gif?a8mat=4BC4QS+6DTCAA+3XCC+BYT9D',
+    imageWidth: 300,
+    imageHeight: 250,
+    category: 'finance',
+    isActive: true,
+    approvalStatus: 'approved',
+    disclosure: 'PR',
+    title: 'iDeCo（私的年金）の選択肢を調べる',
+    description:
+      'iDeCoは老後資金づくりの制度の一つです。掛金が所得控除の対象になる一方、原則60歳まで引き出せず、運用による元本割れの可能性もあります。制度・手数料・加入条件は公式サイトの最新情報をご確認ください。',
+    cta: '松井証券のiDeCoについて確認する',
+    imageAlt: '松井証券のiDeCo（個人型確定拠出年金）サービスの広告',
+    placementArticles: ['ideco-kihon-oya-to-jibun'],
+    notes: [
+      '成果地点は新規口座開設申込（WEB経由で手続き完了）。成果地点を誤認させる記載をしない。',
+      'iDeCoのメリットとデメリット（60歳まで引き出せない・手数料・元本割れ）を公平に併記する。',
+    ],
+  },
   // ミライアス「スマート仲介」（ミライアス株式会社）。相続した不動産（マンション・戸建・
   // 土地）の売却を検討する段階での「売却査定」の相談先の一つ。
   // A8で承認済みの通常広告。href/img/計測1px/a8mat/aid/mid/wid/eno/mc は発行値のまま。
