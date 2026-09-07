@@ -67,4 +67,4 @@ A. 「もしものときはこのメモを見て」と場所だけ伝えれば�
 
 重要情報の整理は、死を考えることではなく、**家族が困らないようにしておく思いやり**です。年齢に関係なく、1枚のメモから始められます。親側の備えについては[離れて暮らす親の「もしも」に備えて共有しておきたい情報](/articles/oya-moshimo-joho-kyoyu)、親子双方の視点は[親と子、どちらにも必要な「もしもの情報共有」](/articles/parent-child-emergency-information-sharing)もあわせてどうぞ。
 
-親の認知症による資産凍結や財産管理が気になる方は、[親の認知症と資産管理（家族信託・成年後見の違い）](/articles/dementia-asset-management-family-trust)もご覧ください。
+親の認知症による資産凍結や財産管理が気になる方は、[親の認知症と資産管理（家族信託・成年後見の違い）](/articles/dementia-asset-management-family-trust)もご覧ください。すでに相続が発生し、名義変更などの手続きが必要になった場合は[親が亡くなった後にやること一覧](/articles/oya-nakunatta-ato-yarukoto)にまとめています。

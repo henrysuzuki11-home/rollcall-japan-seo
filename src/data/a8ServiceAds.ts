@@ -53,6 +53,42 @@ export interface A8ServiceAd {
 //   掲載していた記事は、広告に依存しない一般解説記事として内容を維持している。
 // ---------------------------------------------------------------------
 export const A8_SERVICE_ADS: Record<string, A8ServiceAd> = {
+  // 相続手続きの「nocos」（NCPグループ運営）。相続発生後（親族が亡くなった後）の
+  // 名義変更・相続登記・遺産分割などの手続きをまとめて相談できる相談先の一つ。
+  // A8で承認済みの通常広告。href/img/計測1px/a8mat/aid/mid/wid/eno/mc は発行値のまま。
+  //
+  // 【送客文脈の限定】成果対象は「相続発生後」の相談のみ。生前相談・遺言・生前贈与・
+  // 生前の相続税対策・成年後見・死後事務委任・家族信託・相続放棄・限定承認・確定申告
+  // 等（相続発生前の相談）は成果対象外。したがって本広告は「親が亡くなった後にやること」
+  // 系の記事にのみ掲載し、生前対策・遺言・家族信託の記事には掲載しない（placementで制御）。
+  // CTAは資料請求（WEB完了）を基本とする。
+  'nocos-sozoku': {
+    id: 'nocos-sozoku',
+    network: 'a8',
+    advertiserName: '相続手続きのnocos',
+    programName: 'nocos',
+    programId: 's00000026317001',
+    clickUrl: 'https://px.a8.net/svt/ejp?a8mat=4BC4QS+5GH36I+5N2A+5ZU29',
+    imageUrl: 'https://www25.a8.net/svt/bgt?aid=260906500330&wid=002&eno=01&mid=s00000026317001007000&mc=1',
+    trackingPixelUrl: 'https://www13.a8.net/0.gif?a8mat=4BC4QS+5GH36I+5N2A+5ZU29',
+    imageWidth: 300,
+    imageHeight: 250,
+    category: 'inheritance',
+    isActive: true,
+    approvalStatus: 'approved',
+    disclosure: 'PR',
+    title: '相続手続きをまとめて相談したい方へ',
+    description:
+      '亡くなった後の名義変更・相続登記・遺産分割などの手続きを、相続に慣れた専門家へまとめて相談できる相談先の一つです。初回相談は無料、全国のオンライン・訪問・来所に対応しています。',
+    cta: '無料で資料請求する',
+    imageAlt: '相続手続きの相談サービスの広告',
+    placementArticles: ['oya-nakunatta-ato-yarukoto'],
+    notes: [
+      '成果対象は相続発生後の相談のみ。生前対策・遺言・家族信託・相続放棄等は成果対象外。',
+      '送客文脈は必ず「相続発生後」に限定する。生前対策の記事には掲載しない。',
+      '断定・過度なNo.1表現・広告主PR文の転載は避ける。',
+    ],
+  },
   // 特殊清掃（孤独死後の部屋の清掃・消臭・原状回復の相談先の一つ）。
   // A8で承認済みの通常広告。href/img/計測1px/a8mat/aid/mid/wid/eno/mc は発行値のまま。
   // 成果条件はWEB見積り申込後の成約。電話問い合わせは成果対象外のため、CTAは
