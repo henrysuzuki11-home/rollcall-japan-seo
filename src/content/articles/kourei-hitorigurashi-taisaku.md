@@ -44,4 +44,4 @@ heroImage: "/images/articles/kourei-hitorigurashi-taisaku.webp"
 
 一人暮らしの不安は「見える化」で大きく軽減できます。まずは毎日の安否確認から始め、緊急通報・地域連携と組み合わせていきましょう。[離れて暮らす親の見守り方法7選](/articles/hanarete-kurasu-oya-mimamori)もあわせてご覧ください。
 
-一人暮らしの親は詐欺の標的にもなりやすいため、[親のスマホを狙う詐欺・フィッシング・迷惑SMS対策](/articles/oya-phishing-taisaku)も参考になります。
+一人暮らしの親は詐欺の標的にもなりやすいため、[親のスマホを狙う詐欺・フィッシング・迷惑SMS対策](/articles/oya-phishing-taisaku)も参考になります。親の食生活が気になり、自分でも料理を作れるようになりたい方は、[親のために家庭料理を基礎から学ぶ方法](/articles/oya-no-tame-ni-ryouri-kihon)もどうぞ。

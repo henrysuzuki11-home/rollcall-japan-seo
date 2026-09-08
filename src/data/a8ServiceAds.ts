@@ -53,6 +53,40 @@ export interface A8ServiceAd {
 //   掲載していた記事は、広告に依存しない一般解説記事として内容を維持している。
 // ---------------------------------------------------------------------
 export const A8_SERVICE_ADS: Record<string, A8ServiceAd> = {
+  // RIZAP COOK（RIZAP株式会社）。マンツーマンの料理レッスン。親の食生活をきっかけに
+  // 「自分が家庭料理を作れるようになりたい」家族向けの選択肢の一つとして紹介する。
+  //   成果地点は「来店完了」（WEB申込→30日以内の来店）。予約のみ・カウンセリング予約
+  //   だけでは成果にならない点を、CTA・本文で誤認させない（「予約で報酬」的表現は禁止）。
+  //   否認条件に「会員紹介制度・割引制度の記載/利用」があるため、紹介割引には一切触れない。
+  //   バナーは 640×640。改変せずA8配信のまま。断定（必ず上達等）・健康効果の断定は禁止。
+  //   料金・店舗・コースは公式の最新情報を確認（古いPR文を丸写ししない）。掲載は料理学習
+  //   文脈の記事のみ。
+  'rizap-cook': {
+    id: 'rizap-cook',
+    network: 'a8',
+    advertiserName: 'RIZAP COOK',
+    programName: 'rizap-cook',
+    programId: 's00000001671076',
+    clickUrl: 'https://px.a8.net/svt/ejp?a8mat=4BC6B4+5N0UU2+CW6+CKRXU9',
+    imageUrl: 'https://www29.a8.net/svt/bgt?aid=260908528341&wid=002&eno=01&mid=s00000001671076049000&mc=1',
+    trackingPixelUrl: 'https://www18.a8.net/0.gif?a8mat=4BC6B4+5N0UU2+CW6+CKRXU9',
+    imageWidth: 640,
+    imageHeight: 640,
+    category: 'cooking-lesson',
+    isActive: true,
+    approvalStatus: 'approved',
+    disclosure: 'PR',
+    title: 'マンツーマンの料理レッスンという選択肢',
+    description:
+      '受講者のスキルや目標に合わせ、マンツーマン形式で家庭料理などを学べる料理教室の一つです。各工程を自分で実践するスタイルで、オンラインでの復習サポートが用意されている場合があります。料金・店舗・コース内容は公式サイトの最新情報をご確認ください。',
+    cta: 'マンツーマン料理レッスンの内容を確認する',
+    imageAlt: 'RIZAP COOK（マンツーマン料理レッスン）の広告',
+    placementArticles: ['oya-no-tame-ni-ryouri-kihon'],
+    notes: [
+      '成果地点は来店完了（WEB申込後30日以内）。予約・カウンセリング予約だけでは成果にならない旨を誤認させない。',
+      '会員紹介制度・割引制度には触れない（否認条件）。健康効果の断定・「必ず上達」等の断定表現も使わない。',
+    ],
+  },
   // 松井証券（証券口座）。金融商品を扱うため、松井証券アフィリエイト広告掲載
   // ガイドライン（2023/11/1版・確認日2026-09-07）に厳密に従う。
   //   禁止：断定的・扇動的表現、「業界No.1/断然有利/絶対儲かる/必勝」等、元本保証との
