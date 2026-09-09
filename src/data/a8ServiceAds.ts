@@ -53,6 +53,41 @@ export interface A8ServiceAd {
 //   掲載していた記事は、広告に依存しない一般解説記事として内容を維持している。
 // ---------------------------------------------------------------------
 export const A8_SERVICE_ADS: Record<string, A8ServiceAd> = {
+  // Agoda 遊び・体験予約（AGODA COMPANY PTE LTD）。旅行先での「遊び・体験」
+  // （観光ツアー・テーマパーク・美術館・博物館・現地体験・アクティビティ等）の
+  // WEB予約が成果対象。成果は予約時ではなく「実際の体験完了」時に発生する。
+  //   ★ホテル・航空券・パッケージ・アプリ経由予約は成果対象外。したがって表示・CTAは
+  //     「遊び・体験を探す/予約する」に限定し、宿泊・航空券の予約と誤認させない。
+  //   ★日本旅行(VC/nta-travel)＝国内旅行計画・宿泊、Agoda＝旅行先の体験・観光、と役割
+  //     を分ける。掲載は「旅行先での体験・観光」文脈の記事のみ。
+  //   バナーは 640×340。改変せずA8配信のまま。断定（高齢者なら誰でも参加可等）は禁止。
+  //   AgodaブランドをURL/デザインに使わない（運営サイトと誤認させない）。
+  'agoda-taiken': {
+    id: 'agoda-taiken',
+    network: 'a8',
+    advertiserName: 'Agoda 遊び・体験予約',
+    programName: 'agoda-activities',
+    programId: 's00000022946005',
+    clickUrl: 'https://px.a8.net/svt/ejp?a8mat=4BC735+F5D3OA+4X1W+TSYJL',
+    imageUrl: 'https://www29.a8.net/svt/bgt?aid=260909537916&wid=002&eno=01&mid=s00000022946005006000&mc=1',
+    trackingPixelUrl: 'https://www18.a8.net/0.gif?a8mat=4BC735+F5D3OA+4X1W+TSYJL',
+    imageWidth: 640,
+    imageHeight: 340,
+    category: 'travel-experience',
+    isActive: true,
+    approvalStatus: 'approved',
+    disclosure: 'PR',
+    title: '旅行先で親と楽しめる遊び・体験を探す',
+    description:
+      '観光ツアー・美術館・博物館・現地体験など、旅行先での「遊び・体験」をWEBから事前に予約できるサービスの一つです。所要時間・集合場所・バリアフリー・キャンセル条件などは予約前にご確認ください（ホテル・航空券ではなく、遊び・体験の予約が対象です）。',
+    cta: '旅行先で楽しめる体験を探す',
+    imageAlt: '旅行先の遊び・体験予約サービスの広告',
+    placementArticles: ['oyakoukou-ryokou-taiken'],
+    notes: [
+      '成果対象は遊び・体験のWEB予約＋実際の体験完了。ホテル・航空券・パッケージ・アプリ経由・キャンセル/未参加は対象外。',
+      'CTAは体験予約に限定し、宿泊・航空券の予約と誤認させない。高齢者が「誰でも参加可」等の断定はしない。',
+    ],
+  },
   // RIZAP COOK（RIZAP株式会社）。マンツーマンの料理レッスン。親の食生活をきっかけに
   // 「自分が家庭料理を作れるようになりたい」家族向けの選択肢の一つとして紹介する。
   //   成果地点は「来店完了」（WEB申込→30日以内の来店）。予約のみ・カウンセリング予約
