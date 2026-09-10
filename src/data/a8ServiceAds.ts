@@ -53,6 +53,41 @@ export interface A8ServiceAd {
 //   掲載していた記事は、広告に依存しない一般解説記事として内容を維持している。
 // ---------------------------------------------------------------------
 export const A8_SERVICE_ADS: Record<string, A8ServiceAd> = {
+  // ラクウル（株式会社ネクサスプロパティマネジメント）。相続した不動産（実家・土地・
+  // マンション）の売却相談。A8 s00000024144002。href/img/1px/a8mat/aid/mid は発行値のまま。
+  //   成果は「WEB問い合わせ＋30日以内に“相続人本人”であることの確認」。したがって
+  //   送客文脈は「すでに相続が発生し、相続人本人が売却を検討」に限定する。生前相談・
+  //   親が存命中の売却相談を主要CVにしない。
+  //   ★禁止：必ず高く/早く売れる、相場より高く買取、一番高く売れる、絶対損しない 等の断定。
+  //   役割分担：ラクウル=相続した不動産の売却相談（全国）、ミライアス=一般的な売却査定
+  //   （首都圏）、nocos=相続手続きそのもの。同一記事で横並び強掲載しない（1記事1メインCV）。
+  //   掲載は「相続した不動産の売却」文脈の記事のみ。
+  'rakuuru-souzoku': {
+    id: 'rakuuru-souzoku',
+    network: 'a8',
+    advertiserName: 'ラクウル 相続不動産売却',
+    programName: 'rakuuru',
+    programId: 's00000024144002',
+    clickUrl: 'https://px.a8.net/svt/ejp?a8mat=4BC4QS+7E4SYI+56AO+BY641',
+    imageUrl: 'https://www20.a8.net/svt/bgt?aid=260906500447&wid=002&eno=01&mid=s00000024144002007000&mc=1',
+    trackingPixelUrl: 'https://www11.a8.net/0.gif?a8mat=4BC4QS+7E4SYI+56AO+BY641',
+    imageWidth: 300,
+    imageHeight: 250,
+    category: 'souzoku-real-estate',
+    isActive: true,
+    approvalStatus: 'approved',
+    disclosure: 'PR',
+    title: '相続した不動産の売却を相談する',
+    description:
+      '相続した実家・土地・マンションの売却を相談できるサービスの一つです。不動産の売買のほか、リフォームや賃貸管理などの関連領域も扱い、士業との連携体制があります。相談内容や進め方は問い合わせ時にご確認ください。',
+    cta: '相続した不動産について相談する',
+    imageAlt: '相続した不動産の売却相談サービスの広告',
+    placementArticles: ['souzoku-jikka-baikyaku-nagare'],
+    notes: [
+      '成果はWEB問い合わせ＋30日以内の“相続人本人”確認。相続発生後・相続人本人の売却検討に限定し、生前/存命中の相談を主要CVにしない。',
+      '「必ず高く/早く売れる」「一番高く」「絶対損しない」等の断定は禁止。広告主PR文を丸写ししない。',
+    ],
+  },
   // ALGO Chair Pro（株式会社アイル）。在宅ワーク環境への自己投資（エルゴノミクス
   // チェア）の選択肢の一つとして、リモートワーク・在宅勤務・仕事環境改善の文脈の
   // 記事にのみ紹介する。プログラムID s00000027668001。

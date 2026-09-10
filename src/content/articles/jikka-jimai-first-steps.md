@@ -50,4 +50,4 @@ affiliateServices: ["ihinseiri-110", "life-reset", "r-cleaning"]
 
 ## まとめ
 
-実家じまいは、「貴重品→思い出→日用品→大型」の順で進めるのが基本。最初に重要書類を確保し、思い出は家族で、大型は無理せず。順番さえ決まれば、着実に前に進みます。まずは[親の家を片付ける前に確認したいものリスト](/articles/parents-house-checklist)から始めてみてください。発見が遅れ、通常の清掃では難しい状態のときは[親が自宅で亡くなった場合の部屋の片付けと特殊清掃](/articles/oya-kodokushi-tokushu-seiso)、実家の名義変更など相続手続きの全体像は[親が亡くなった後にやること一覧](/articles/oya-nakunatta-ato-yarukoto)、相続した実家を売る・残す・貸すで迷うときは[親の実家を相続したらどうする？](/articles/jikka-sozoku-uru-nokosu-kasu)も参考になります。
+実家じまいは、「貴重品→思い出→日用品→大型」の順で進めるのが基本。最初に重要書類を確保し、思い出は家族で、大型は無理せず。順番さえ決まれば、着実に前に進みます。まずは[親の家を片付ける前に確認したいものリスト](/articles/parents-house-checklist)から始めてみてください。発見が遅れ、通常の清掃では難しい状態のときは[親が自宅で亡くなった場合の部屋の片付けと特殊清掃](/articles/oya-kodokushi-tokushu-seiso)、実家の名義変更など相続手続きの全体像は[親が亡くなった後にやること一覧](/articles/oya-nakunatta-ato-yarukoto)、相続した実家を売る・残す・貸すで迷うときは[親の実家を相続したらどうする？](/articles/jikka-sozoku-uru-nokosu-kasu)、売ると決めて売却の流れを知りたいときは[相続した実家を売るには？売却の流れ・注意点・相談先](/articles/souzoku-jikka-baikyaku-nagare)も参考になります。
