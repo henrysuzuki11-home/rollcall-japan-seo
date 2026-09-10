@@ -53,6 +53,72 @@ export interface A8ServiceAd {
 //   掲載していた記事は、広告に依存しない一般解説記事として内容を維持している。
 // ---------------------------------------------------------------------
 export const A8_SERVICE_ADS: Record<string, A8ServiceAd> = {
+  // ほけんNaviせつやくん（株式会社フィナンシャル・エージェンシー）。生命保険・医療保険・
+  // 家計・老後資金などをFP（ファイナンシャルプランナー）に無料相談できるサービス。
+  //   成果地点は「申込」ではなく“FPとの初回無料相談完了”（WEB申込→45日以内・対象69歳以下）。
+  //   ★禁止：必ず安くなる/必ず得/相談すれば節約できる 等の断定、無料相談で特典がもらえる等の
+  //     示唆、成果報酬のユーザー向け示唆、面談意思のない誘導。→ 表示は中立表現に限定。
+  //   ★対象69歳以下。70代以上の送客を避けるため、記事は「親をきっかけに自分(40〜60代)も
+  //     見直す」層を主要CVに設計する。掲載は家計・保険・老後資金の相談文脈の記事のみ。
+  //   役割分担：松井証券=資産形成/NISA、ほけんNavi=家計・保険・老後資金の相談。
+  'hoken-navi-setsuyakun': {
+    id: 'hoken-navi-setsuyakun',
+    network: 'a8',
+    advertiserName: 'ほけんNaviせつやくん',
+    programName: 'hoken-navi-setsuyakun',
+    programId: 's00000027771001',
+    clickUrl: 'https://px.a8.net/svt/ejp?a8mat=4BC735+EL4D3U+5YA6+5YZ75',
+    imageUrl: 'https://www24.a8.net/svt/bgt?aid=260909537882&wid=002&eno=01&mid=s00000027771001003000&mc=1',
+    trackingPixelUrl: 'https://www13.a8.net/0.gif?a8mat=4BC735+EL4D3U+5YA6+5YZ75',
+    imageWidth: 300,
+    imageHeight: 250,
+    category: 'insurance-fp',
+    isActive: true,
+    approvalStatus: 'approved',
+    disclosure: 'PR',
+    title: '保険や家計をFPに相談するという選択肢',
+    description:
+      '生命保険・医療保険・家計・老後資金などを、ファイナンシャルプランナー（FP）に無料で相談できるサービスの一つです。相談内容によって提案は異なります。対象は69歳以下で、WEBからの申込です。',
+    cta: '無料相談の内容を確認する',
+    imageAlt: 'FPへの保険・家計の無料相談サービスの広告',
+    placementArticles: ['oya-hoken-kakei-fp-soudan'],
+    notes: [
+      '成果地点はFPとの初回無料相談完了（WEB申込後45日以内・対象69歳以下）。申込＝成果ではない旨を誤認させない。',
+      '「必ず安くなる/必ず得/特典がもらえる」等の断定・示唆や、成果報酬のユーザー向け示唆をしない。',
+    ],
+  },
+  // QEEQ 海外レンタカー。海外でのレンタカー比較・予約。成果は海外レンタカーの利用完了。
+  //   ★海外利用のみ対象。日本国内レンタカーは対象外のため、国内旅行記事には掲載しない。
+  //   ★「AXA安心保険」についての記事掲載・紹介は禁止（本広告の文脈で触れない）。
+  //   ★「最安/必ず安い」等は公式に確認できる根拠がない限り断定しない。中立に比較サービスの
+  //     一つとして紹介。役割分担：Agoda=現地アクティビティ、QEEQ=海外の移動/レンタカー、
+  //     日本旅行=国内旅行全体。掲載は海外旅行の移動文脈の記事のみ。
+  'qeeq-rentacar': {
+    id: 'qeeq-rentacar',
+    network: 'a8',
+    advertiserName: 'QEEQ 海外レンタカー',
+    programName: 'qeeq-rentacar',
+    programId: 's00000027697001',
+    clickUrl: 'https://px.a8.net/svt/ejp?a8mat=4BC735+CY6G7U+5XPM+609HT',
+    imageUrl: 'https://www23.a8.net/svt/bgt?aid=260909537783&wid=002&eno=01&mid=s00000027697001009000&mc=1',
+    trackingPixelUrl: 'https://www15.a8.net/0.gif?a8mat=4BC735+CY6G7U+5XPM+609HT',
+    imageWidth: 300,
+    imageHeight: 250,
+    category: 'travel-rentacar',
+    isActive: true,
+    approvalStatus: 'approved',
+    disclosure: 'PR',
+    title: '海外レンタカーを比較して選ぶ',
+    description:
+      '海外でのレンタカーを比較・予約できるサービスの一つです（海外利用が対象です）。車種・料金・保険・条件は予約前に公式サイトの最新情報をご確認ください。',
+    cta: '海外レンタカーを比較する',
+    imageAlt: '海外レンタカー比較・予約サービスの広告',
+    placementArticles: ['oya-kaigai-ryokou-rentacar'],
+    notes: [
+      '成果は海外レンタカーのWEB予約＋180日以内の利用完了。日本国内・キャンセル・LINE/アプリ経由は対象外。',
+      'AXA安心保険には触れない。「最安/必ず安い」等の断定はしない。',
+    ],
+  },
   // Agoda 遊び・体験予約（AGODA COMPANY PTE LTD）。旅行先での「遊び・体験」
   // （観光ツアー・テーマパーク・美術館・博物館・現地体験・アクティビティ等）の
   // WEB予約が成果対象。成果は予約時ではなく「実際の体験完了」時に発生する。
