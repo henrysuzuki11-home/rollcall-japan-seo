@@ -53,6 +53,43 @@ export interface A8ServiceAd {
 //   掲載していた記事は、広告に依存しない一般解説記事として内容を維持している。
 // ---------------------------------------------------------------------
 export const A8_SERVICE_ADS: Record<string, A8ServiceAd> = {
+  // ALGO Chair Pro（株式会社アイル）。在宅ワーク環境への自己投資（エルゴノミクス
+  // チェア）の選択肢の一つとして、リモートワーク・在宅勤務・仕事環境改善の文脈の
+  // 記事にのみ紹介する。プログラムID s00000027668001。
+  //
+  // 2026-09-10 A8発行コードを受領し有効化（href/img/1px/a8mat/aid/mid は発行値のまま）。
+  //   バナーは 350×240。改変せずA8配信のまま。
+  //
+  // 【コンプライアンス】健康効果の断定（腰痛改善/肩こりが治る/姿勢矯正 等）禁止。
+  //   自己投資はOKだが「生産性が必ず上がる/年収が上がる/人生が変わる」等の断定禁止。
+  //   介護を理由に購入を煽らない。数量限定（30台限定 等）は現在有効と確認できない限り
+  //   本文に書かない。価格は公式で確認できる場合に価格帯として明示。
+  'algo-chair-pro': {
+    id: 'algo-chair-pro',
+    network: 'a8',
+    advertiserName: 'ALGO Chair Pro',
+    programName: 'algo-chair-pro',
+    programId: 's00000027668001',
+    clickUrl: 'https://px.a8.net/svt/ejp?a8mat=4BC7V7+7JHPEI+5XHK+614CX',
+    imageUrl: 'https://www26.a8.net/svt/bgt?aid=260910547456&wid=002&eno=01&mid=s00000027668001013000&mc=1',
+    trackingPixelUrl: 'https://www19.a8.net/0.gif?a8mat=4BC7V7+7JHPEI+5XHK+614CX',
+    imageWidth: 350,
+    imageHeight: 240,
+    category: 'work-environment',
+    isActive: true,
+    approvalStatus: 'approved',
+    disclosure: 'PR',
+    title: 'エルゴノミクスチェアという選択肢',
+    description:
+      '長時間のデスクワーク向けに、座面・背もたれ・アームレスト・ヘッドレスト・リクライニングなど複数箇所を調整できるエルゴノミクスチェアの一つです。仕様・価格・在庫・キャンペーンは公式サイトの最新情報をご確認ください。',
+    cta: 'ALGO Chair Proの仕様を確認する',
+    imageAlt: 'エルゴノミクスチェア ALGO Chair Pro の広告',
+    placementArticles: ['zaitaku-work-jiko-toushi-chair'],
+    notes: [
+      '2026-09-10 A8広告コード受領・有効化（350×240）。成果は対象商品のWEB注文＋決済完了。',
+      '健康効果の断定・購入煽り・未確認の数量限定表記は禁止。',
+    ],
+  },
   // ほけんNaviせつやくん（株式会社フィナンシャル・エージェンシー）。生命保険・医療保険・
   // 家計・老後資金などをFP（ファイナンシャルプランナー）に無料相談できるサービス。
   //   成果地点は「申込」ではなく“FPとの初回無料相談完了”（WEB申込→45日以内・対象69歳以下）。
