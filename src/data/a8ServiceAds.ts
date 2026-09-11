@@ -53,6 +53,47 @@ export interface A8ServiceAd {
 //   掲載していた記事は、広告に依存しない一般解説記事として内容を維持している。
 // ---------------------------------------------------------------------
 export const A8_SERVICE_ADS: Record<string, A8ServiceAd> = {
+  // Marvelous One（株式会社悠久）。乳酸菌食品。A8 s00000027704001。
+  //
+  // 2026-09-11 A8発行コードを受領し有効化（href/img/1px/a8mat/aid/mid は発行値のまま）。
+  //   バナーは 467×299。遷移先は px.a8.net 経由で marvelousone.jp 配下（改変しない）。
+  //
+  // 【薬機法・景表法・健康増進法に配慮】健康食品のため効果を断定しない。免疫力/
+  //   アレルギー/便秘/腸内環境改善/病気予防/健康になる/医薬品的効果 等の表現は禁止。
+  //   「高齢者におすすめ」「親に飲ませるべき」等の強い訴求もしない。人物画像は使用禁止。
+  //
+  // 【公式で事実確認済み（2026-09-11 marvelousone.jp）／数値は公式表記のまま・効能化しない】
+  //   ・4種の植物由来乳酸菌を使用
+  //   ・国産大豆100%（全粒粉）の豆乳培地で国内培養・生産
+  //   ・特許第5958985号
+  //   ・500ml当たり1兆5000億個以上の生菌数（※製品スペック。健康効果としては書かない）
+  //   ・価格は公式ページに明示表示なし → 本文に価格を記載しない
+  'marvelous-one': {
+    id: 'marvelous-one',
+    network: 'a8',
+    advertiserName: 'Marvelous One',
+    programName: 'marvelous-one',
+    programId: 's00000027704001',
+    clickUrl: 'https://px.a8.net/svt/ejp?a8mat=4BC8N5+3KN6I+5XRK+5YZ75',
+    imageUrl: 'https://www28.a8.net/svt/bgt?aid=260911553006&wid=002&eno=01&mid=s00000027704001003000&mc=1',
+    trackingPixelUrl: 'https://www12.a8.net/0.gif?a8mat=4BC8N5+3KN6I+5XRK+5YZ75',
+    imageWidth: 467,
+    imageHeight: 299,
+    category: 'fermented-food',
+    isActive: true,
+    approvalStatus: 'approved',
+    disclosure: 'PR',
+    title: '乳酸菌食品（植物由来乳酸菌）の一例',
+    description:
+      '4種の植物由来乳酸菌を、国産大豆100%の豆乳培地で国内培養した乳酸菌飲料です（特許第5958985号）。原材料・特徴・価格・購入条件は公式サイトの最新情報をご確認ください。',
+    cta: 'Marvelous Oneの商品情報を見る',
+    imageAlt: '乳酸菌食品 Marvelous One の広告',
+    placementArticles: ['nyusankin-shokuhin-kihon'],
+    notes: [
+      '2026-09-11 A8広告コード受領・有効化（467×299）。成果はWEB注文後の決済完了。遷移先は marvelousone.jp 配下。',
+      '健康効果の断定禁止（免疫/アレルギー/便秘/腸内改善/病気予防 等）。人物画像は使用禁止。価格は公式未表示のため本文に書かない。',
+    ],
+  },
   // キャリナビ転職（株式会社Assh）。20〜34歳向けのキャリア相談・転職面談。
   //   成果地点は「LINE追加・予約」ではなく“実際の面談実施”（WEB→LINE友だち追加→
   //   面談日程確定→30日以内に面談実施）。★対象年齢20〜34歳。40〜50代向け記事で強い
