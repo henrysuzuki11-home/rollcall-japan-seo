@@ -53,6 +53,42 @@ export interface A8ServiceAd {
 //   掲載していた記事は、広告に依存しない一般解説記事として内容を維持している。
 // ---------------------------------------------------------------------
 export const A8_SERVICE_ADS: Record<string, A8ServiceAd> = {
+  // ラボカフェ（株式会社オークス）。注文後に焙煎するコーヒーの通販。A8 s00000027754001。
+  //   親への「消えもの」ギフト（コーヒー）の文脈で紹介する。遷移先は px.a8.net 経由で
+  //   https://coffee-labo.co.jp/shop/ 配下（改変しない）。
+  //   ★禁止：最高の一杯/必ず自分にぴったり/絶対喜ばれる/誰にでもおすすめ/必ずおいしい/
+  //     買わないと損 等の断定。AI診断は「質問への回答をもとに豆選びをサポートする診断機能」
+  //     程度に留め、「AIが最適を必ず選ぶ」とは書かない。カフェインの健康効果・悪影響は
+  //     断定しない（持病・服薬中は医師等へ確認する旨を本文に記載）。
+  //   ★LINE経由注文は成果対象外 → LINEへ誘導する独自CTAを追加しない。
+  //   役割分担：ラボカフェ=コーヒー等の消えものギフト、旅行=体験ギフト、RIZAP COOK=
+  //   自分の料理スキルへの自己投資。1記事1メインCV。掲載はギフト（消えもの/コーヒー）文脈のみ。
+  'labo-cafe': {
+    id: 'labo-cafe',
+    network: 'a8',
+    advertiserName: 'ラボカフェ',
+    programName: 'labo-cafe',
+    programId: 's00000027754001',
+    clickUrl: 'https://px.a8.net/svt/ejp?a8mat=4BC738+8I0UHM+5Y5G+65ME9',
+    imageUrl: 'https://www28.a8.net/svt/bgt?aid=260909540514&wid=002&eno=01&mid=s00000027754001034000&mc=1',
+    trackingPixelUrl: 'https://www11.a8.net/0.gif?a8mat=4BC738+8I0UHM+5Y5G+65ME9',
+    imageWidth: 300,
+    imageHeight: 250,
+    category: 'gift-coffee',
+    isActive: true,
+    approvalStatus: 'approved',
+    disclosure: 'PR',
+    title: 'コーヒー好きの親へのギフトという選択肢',
+    description:
+      '注文を受けてから焙煎する方式のコーヒー通販の一つです。複数の産地の豆を扱い、焙煎度を選べるほか、質問への回答をもとに豆選びをサポートする診断機能や定期便もあります。ラインナップ・価格・ギフト対応は公式サイトでご確認ください。',
+    cta: 'コーヒー豆のラインナップを見る',
+    imageAlt: 'コーヒー通販ラボカフェの広告',
+    placementArticles: ['oya-coffee-gift-erabikata'],
+    notes: [
+      '成果はWEB注文＋30日以内の入金確認（定期便は別）。LINE経由注文は対象外のためLINE誘導CTAを追加しない。',
+      '「最高の一杯/必ずぴったり/絶対喜ばれる」等の断定禁止。AI診断は「診断機能」程度に留める。カフェインの健康効果・悪影響は断定しない。',
+    ],
+  },
   // Marvelous One（株式会社悠久）。乳酸菌食品。A8 s00000027704001。
   //
   // 2026-09-11 A8発行コードを受領し有効化（href/img/1px/a8mat/aid/mid は発行値のまま）。
