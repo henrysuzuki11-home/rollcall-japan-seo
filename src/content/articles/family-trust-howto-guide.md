@@ -130,3 +130,4 @@ A. 役割が異なり、一概にどちらがよいとは言えません。家�
 - [家族信託の費用とやり方（手続きの流れ）](/articles/family-trust-cost-flow)
 - [生前整理で残す情報の整理](/articles/seizenseiri-family-info)
 - [認知症の初期サインと見守り](/articles/ninchisho-oya-mimamori)
+- [親の資産はどう整理する？（預貯金・証券・保険・不動産の把握）](/articles/oya-shisan-seiri)
