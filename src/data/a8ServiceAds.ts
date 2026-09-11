@@ -53,6 +53,40 @@ export interface A8ServiceAd {
 //   掲載していた記事は、広告に依存しない一般解説記事として内容を維持している。
 // ---------------------------------------------------------------------
 export const A8_SERVICE_ADS: Record<string, A8ServiceAd> = {
+  // キャリナビ転職（株式会社Assh）。20〜34歳向けのキャリア相談・転職面談。
+  //   成果地点は「LINE追加・予約」ではなく“実際の面談実施”（WEB→LINE友だち追加→
+  //   面談日程確定→30日以内に面談実施）。★対象年齢20〜34歳。40〜50代向け記事で強い
+  //   CTAを出さない（掲載は20〜30代が自然流入する働き方・キャリアの記事に限定）。
+  //   ★禁止：必ず年収が上がる/絶対に転職成功/無料だから受けるだけ得/面談で報酬が出る
+  //     示唆/特定転職の強制。満足度・年収UP率等の数値は公式根拠を確認できた場合のみ。
+  //   スタンスは「家族事情と自分のキャリアの両立」（キャリアを犠牲にする構図にしない）。
+  //   役割分担：ALGO Chair Pro=在宅ワーク環境、キャリナビ=働き方・転職・キャリア。
+  'carinavi-tenshoku': {
+    id: 'carinavi-tenshoku',
+    network: 'a8',
+    advertiserName: 'キャリナビ転職',
+    programName: 'carinavi',
+    programId: 's00000027527001',
+    clickUrl: 'https://px.a8.net/svt/ejp?a8mat=4BC8N4+G2PDJU+5WEE+5ZEMP',
+    imageUrl: 'https://www26.a8.net/svt/bgt?aid=260911552972&wid=002&eno=01&mid=s00000027527001005000&mc=1',
+    trackingPixelUrl: 'https://www13.a8.net/0.gif?a8mat=4BC8N4+G2PDJU+5WEE+5ZEMP',
+    imageWidth: 300,
+    imageHeight: 250,
+    category: 'career',
+    isActive: true,
+    approvalStatus: 'approved',
+    disclosure: 'PR',
+    title: '働き方・キャリアを無料で相談する',
+    description:
+      '家族の事情も含めて、今後の働き方やキャリアを相談できるサービスの一つです（対象は20〜34歳）。転職ありきではなく、まず現状を整理する場としても使えます。相談の進め方は公式サイトでご確認ください。',
+    cta: '無料キャリア相談の内容を確認する',
+    imageAlt: '20〜34歳向けキャリア相談・転職面談サービスの広告',
+    placementArticles: ['oya-chikaku-uturn-tenshoku'],
+    notes: [
+      '成果地点は実際の面談実施（対象20〜34歳）。LINE追加・予約＝成果ではない旨を誤認させない。40〜50代向け記事で強いCTAを出さない。',
+      '「必ず年収が上がる/絶対転職成功/無料だから受けるだけ得」等の断定・示唆をしない。数値は公式根拠を確認できた場合のみ。',
+    ],
+  },
   // ラクウル（株式会社ネクサスプロパティマネジメント）。相続した不動産（実家・土地・
   // マンション）の売却相談。A8 s00000024144002。href/img/1px/a8mat/aid/mid は発行値のまま。
   //   成果は「WEB問い合わせ＋30日以内に“相続人本人”であることの確認」。したがって
