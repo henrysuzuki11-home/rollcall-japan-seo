@@ -8,6 +8,36 @@ const breadcrumbs = [
   { name: 'ホーム', url: '/' },
   { name: 'IQ121 Japan', url: '/iq121-japan' },
 ];
+
+// FAQ（本文の <dl class="iq-faq"> と同期）。FAQPage 構造化データにも使用。
+const iqFaq = [
+  {
+    q: 'IQ121とは何ですか？',
+    a: 'IQ121とは、離れて暮らす家族の見守り・安否確認から、写真やレシピの記録、もしものときの重要情報の整理までを一つにまとめるアプリ・サービスです。現在は、毎日の安否確認に今すぐ使える無料の見守りアプリ「Roll Call」を公開しています。',
+  },
+  {
+    q: 'IQ121は無料で使えますか？',
+    a: '現在公開している見守りアプリ「Roll Call」は、無料でダウンロード・利用できます。IQ121 日本版の各機能は準備を進めており、最新の情報はこのページでご案内します。',
+  },
+  {
+    q: 'IQ121とRoll Callの違いは何ですか？',
+    a: 'IQ121は、家族の見守り・記録・重要情報の整理をまとめて支える取り組みの総称です。Roll Callは、そのうち「毎日の安否確認」を担う無料アプリで、まずはRoll Callから使い始められます。',
+  },
+  {
+    q: '開発者や運営者は、保存した家族情報を見ることができますか？',
+    a: 'IQ121では、ユーザーのプライベートな情報を暗号化して保管し、開発者や運営者が内容を直接確認できない設計を採用しています。ただし、アカウント管理やサービス運営に必要な最低限の情報は、プライバシーポリシーに基づいて取り扱われます。',
+  },
+];
+
+const faqJsonLd = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: iqFaq.map((item) => ({
+    '@type': 'Question',
+    name: item.q,
+    acceptedAnswer: { '@type': 'Answer', text: item.a },
+  })),
+});
 ---
 
 <BaseLayout
@@ -16,6 +46,7 @@ const breadcrumbs = [
   canonical="/iq121-japan"
   breadcrumbs={breadcrumbs}
 >
+  <script type="application/ld+json" set:html={faqJsonLd} />
   <div class="container section">
     <Breadcrumbs crumbs={breadcrumbs} />
 
@@ -74,13 +105,16 @@ const breadcrumbs = [
         取り入れています。これはブロックチェーン上に家族の個人情報そのものを保存するという意味ではなく、
         記録の信頼性を高めるための技術として活用されます。
       </p>
+      <h2 id="faq">よくある質問</h2>
       <dl class="iq-faq">
-        <dt>Q. 開発者や運営者は、保存した家族情報を見ることができますか？</dt>
-        <dd>
-          IQ121では、ユーザーのプライベートな情報を暗号化して保管し、開発者や運営者が内容を
-          直接確認できない設計を採用しています。ただし、アカウント管理やサービス運営に必要な
-          最低限の情報は、プライバシーポリシーに基づいて取り扱われます。
-        </dd>
+        {
+          iqFaq.map((item) => (
+            <>
+              <dt>Q. {item.q}</dt>
+              <dd>{item.a}</dd>
+            </>
+          ))
+        }
       </dl>
 
       <h2>いまのIQ121を試す</h2>
