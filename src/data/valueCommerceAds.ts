@@ -149,6 +149,19 @@ const VC_ADS_BASE: Record<string, VCAdBase> = {
     pid: '892656923',
     raw: '<script language="javascript" src="//ad.jp.ap.valuecommerce.com/servlet/jsbanner?sid=3775652&pid=892656923"></script><noscript><a href="//ck.jp.ap.valuecommerce.com/servlet/referral?sid=3775652&pid=892656923" rel="nofollow sponsored noopener"><img src="//ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid=3775652&pid=892656923" border="0"></a></noscript>',
   },
+  // 藤巻百貨店（株式会社caramo）。日本の職人・ブランドによる上質な品を扱う通販。親への
+  // 「日本製・長く使える上質なギフト」の文脈で紹介。ValueCommerce発行コード（sid=3775652 /
+  // pid=892700112）は改変しない。VC プログラム 2119840。MyLink は未取得のため、商品別リンクは
+  // 生成しない（本バナー/referral のみ使用）。断定（No.1/最高/絶対喜ばれる 等）や古いTV・
+  // ランキングの現在実績化はしない。人物顔写真は使用しない。
+  'fujimaki-hyakkaten': {
+    id: 'fujimaki-hyakkaten', label: 'PR', category: '日本製・上質ギフト',
+    title: '親への上質な日本製ギフトを探す',
+    description: '日本の職人・ブランドによるバッグ・財布・生活雑貨・グラスなどを扱う通販の選択肢です。父の日・敬老の日・還暦などの贈り物に。商品・価格・在庫は公式サイトでご確認ください。',
+    useFor: ['父の日', '母の日', '敬老の日', '還暦・古希', '退職祝い', '日本製ギフト'],
+    pid: '892700112',
+    raw: '<script language="javascript" src="//ad.jp.ap.valuecommerce.com/servlet/jsbanner?sid=3775652&pid=892700112"></script><noscript><a href="//ck.jp.ap.valuecommerce.com/servlet/referral?sid=3775652&pid=892700112" rel="nofollow"><img src="//ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid=3775652&pid=892700112" border="0"></a></noscript>',
+  },
 };
 
 // 広告主の総称表記（商標名は使わない。公式サイトと誤認させない安全な種別名）。
@@ -163,6 +176,7 @@ const VC_ADVERTISER_NAMES: Record<string, string> = {
   'outdoor-wear': 'アウトドア用品',
   'ebest-recycle': '家電・リサイクル',
   'golf-goods': 'ゴルフ用品',
+  'fujimaki-hyakkaten': '日本製・職人ものの通販',
 };
 
 // 掲載を許可する記事slug（各記事の frontmatter valueCommerceAds と一致）。
@@ -189,6 +203,7 @@ const VC_PLACEMENT_ARTICLES: Record<string, string[]> = {
   'outdoor-wear': ['family-outdoor-memory', 'homecoming-disaster-supplies'],
   'ebest-recycle': ['homecoming-disaster-supplies'],
   'golf-goods': ['parent-golf-memory'],
+  'fujimaki-hyakkaten': ['nihonsei-gift-oya-jouhitsu'],
 };
 
 // ---------------------------------------------------------------------
