@@ -46,4 +46,4 @@ affiliateServices: ["life-reset", "ihinseiri-110"]
 
 ## まとめ
 
-施設入居後の実家整理は、急がず、本人の気持ちを聞きながら、貴重品→思い出→日用品→大型の順で。家族だけで抱え込まず、必要なときは相談先を選択肢に。実家じまいの全体像は[実家じまいで最初にやること](/articles/jikka-jimai-first-steps)、空いた実家を売る・残す・貸すで迷うときは[親の実家を相続したらどうする？](/articles/jikka-sozoku-uru-nokosu-kasu)もあわせてご覧ください。
+施設入居後の実家整理は、急がず、本人の気持ちを聞きながら、貴重品→思い出→日用品→大型の順で。家族だけで抱え込まず、必要なときは相談先を選択肢に。実家じまいの全体像は[実家じまいで最初にやること](/articles/jikka-jimai-first-steps)、空いた実家を売る・残す・貸すで迷うときは[親の実家を相続したらどうする？](/articles/jikka-sozoku-uru-nokosu-kasu)、売ると決めたあとの流れは[相続した実家を売るには？売却の流れ・注意点・相談先](/articles/souzoku-jikka-baikyaku-nagare)、住み続ける場合の修繕・リフォームは[親の実家はリフォームすべき？](/articles/jikka-reform-kakunin-point)もあわせてご覧ください。
