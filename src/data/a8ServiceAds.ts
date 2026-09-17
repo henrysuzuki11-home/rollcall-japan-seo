@@ -53,6 +53,98 @@ export interface A8ServiceAd {
 //   掲載していた記事は、広告に依存しない一般解説記事として内容を維持している。
 // ---------------------------------------------------------------------
 export const A8_SERVICE_ADS: Record<string, A8ServiceAd> = {
+  // ネイティブキャンプ留学（大人の自己投資・親子/三世代の海外滞在＋学び）。A8 s00000014758002。
+  //   成果は正式見積完了。学生向け留学に寄せず「40〜60代の学び直し／親子・三世代の海外体験」文脈。
+  //   断定（必ず話せる/絶対安心 等）禁止。国・費用・期間は公式で確認。
+  'nativecamp-ryugaku': {
+    id: 'nativecamp-ryugaku', network: 'a8', advertiserName: 'ネイティブキャンプ留学',
+    programName: 'nativecamp-ryugaku', programId: 's00000014758002',
+    clickUrl: 'https://px.a8.net/svt/ejp?a8mat=4BCDBJ+6UHHZU+35VG+BXB8X',
+    imageUrl: 'https://www26.a8.net/svt/bgt?aid=260917615414&wid=002&eno=01&mid=s00000014758002003000&mc=1',
+    trackingPixelUrl: 'https://www18.a8.net/0.gif?a8mat=4BCDBJ+6UHHZU+35VG+BXB8X',
+    imageWidth: 300, imageHeight: 250, category: 'study-abroad', isActive: true, approvalStatus: 'approved', disclosure: 'PR',
+    title: '語学留学（大人・親子）の相談・見積もり',
+    description: '語学留学の相談・見積もりができるサービスの一つです。40代・50代からの学び直しや、親子・三世代での海外滞在＋学びの選択肢に。対象国・費用・期間は公式サイトの最新情報をご確認ください。',
+    cta: '語学留学の内容・見積もりを確認する', imageAlt: '語学留学の相談・見積もりサービスの広告',
+    placementArticles: ['otona-oyako-ryugaku'],
+    notes: ['成果は正式見積完了。学生向けに寄せず大人の自己投資・親子/三世代の海外体験文脈で紹介。', '「必ず話せる/絶対安心」等の断定禁止。費用・期間・国は公式で確認。'],
+  },
+  // BeBe オンラインストア（こども服・ギフト）。A8 s00000027677001。孫・子どもへの贈り物文脈。
+  //   「おすすめ子ども服ランキング」化しない。断定（絶対喜ばれる 等）禁止。サイズ・価格は公式で確認。
+  'bebe-store': {
+    id: 'bebe-store', network: 'a8', advertiserName: 'BeBe オンラインストア',
+    programName: 'bebe', programId: 's00000027677001',
+    clickUrl: 'https://px.a8.net/svt/ejp?a8mat=4BCDBJ+6HZEAI+5XK2+5YZ75',
+    imageUrl: 'https://www20.a8.net/svt/bgt?aid=260917615393&wid=002&eno=01&mid=s00000027677001003000&mc=1',
+    trackingPixelUrl: 'https://www17.a8.net/0.gif?a8mat=4BCDBJ+6HZEAI+5XK2+5YZ75',
+    imageWidth: 300, imageHeight: 250, category: 'kids-gift', isActive: true, approvalStatus: 'approved', disclosure: 'PR',
+    title: '孫・子どもへのこども服・ギフト',
+    description: 'こども服やキッズ向けアイテムを扱うオンラインストアの一つです。出産祝い・誕生日・帰省時の贈り物の選択肢に。サイズ・在庫・価格は公式サイトの最新情報をご確認ください。',
+    cta: 'こども服・ギフトの商品を見る', imageAlt: 'こども服・ギフトのオンラインストアの広告',
+    placementArticles: ['mago-present-mono-taiken'],
+    notes: ['孫・子どもへの贈り物文脈で紹介（ランキング化しない）。', '「絶対喜ばれる」等の断定禁止。サイズ・価格は公式で確認。'],
+  },
+  // CampusTop（6〜12歳向け英語）。A8 s00000020929005。孫への「体験・学び」を贈る文脈。
+  //   無料カウンセリングが成果。断定（必ず話せる 等）禁止。対象年齢・料金は公式で確認。
+  'campustop-kids': {
+    id: 'campustop-kids', network: 'a8', advertiserName: 'CampusTop',
+    programName: 'campustop', programId: 's00000020929005',
+    clickUrl: 'https://px.a8.net/svt/ejp?a8mat=4BCDBJ+75SQHM+4HHM+TSBE9',
+    imageUrl: 'https://www24.a8.net/svt/bgt?aid=260917615433&wid=002&eno=01&mid=s00000020929005003000&mc=1',
+    trackingPixelUrl: 'https://www18.a8.net/0.gif?a8mat=4BCDBJ+75SQHM+4HHM+TSBE9',
+    imageWidth: 300, imageHeight: 250, category: 'kids-english', isActive: true, approvalStatus: 'approved', disclosure: 'PR',
+    title: '小学生の英語・学びを贈るという選択肢',
+    description: '6〜12歳向けの英語学習サービスの一つです。孫や子どもへ「体験・学び」を贈る選択肢として。対象年齢・料金・内容は公式サイトの最新情報をご確認ください。無料カウンセリングがあります。',
+    cta: '小学生向け英語プログラムの内容を見る', imageAlt: '小学生向け英語学習サービスの広告',
+    placementArticles: ['mago-present-mono-taiken'],
+    notes: ['対象6〜12歳。孫への体験・学びを贈る文脈で紹介。成果は無料カウンセリング。', '「必ず話せる/誰でも上達」等の断定禁止。対象年齢・料金は公式で確認。'],
+  },
+  // RIZAPゴルフ（趣味・自己投資／体験ギフト）。A8 s00000001671069。定年後の趣味・親子で楽しむ文脈。
+  //   ★本人申込は成果対象外＝セルフバック的訴求をしない。バナー 1200×628。断定禁止。
+  'rizap-golf': {
+    id: 'rizap-golf', network: 'a8', advertiserName: 'RIZAPゴルフ',
+    programName: 'rizap-golf', programId: 's00000001671069',
+    clickUrl: 'https://px.a8.net/svt/ejp?a8mat=4BCDBJ+70FU1M+CW6+BF1O1T',
+    imageUrl: 'https://www26.a8.net/svt/bgt?aid=260917615424&wid=002&eno=01&mid=s00000001671069040000&mc=1',
+    trackingPixelUrl: 'https://www11.a8.net/0.gif?a8mat=4BCDBJ+70FU1M+CW6+BF1O1T',
+    imageWidth: 1200, imageHeight: 628, category: 'hobby', isActive: true, approvalStatus: 'approved', disclosure: 'PR',
+    title: 'ゴルフを習うという趣味・自己投資',
+    description: 'マンツーマンでゴルフを学べるスクールの一つです。定年後の趣味や、親子で楽しむきっかけ、体験型ギフトの選択肢に。料金・店舗・体験内容は公式サイトの最新情報をご確認ください。',
+    cta: 'ゴルフレッスンの内容を確認する', imageAlt: 'マンツーマンのゴルフスクールの広告',
+    placementArticles: ['parent-golf-memory'],
+    notes: ['本人申込は成果対象外のためセルフバック訴求をしない。趣味・親子・体験ギフト文脈で紹介。', '「必ず上達/絶対失敗しない」等の断定禁止。料金・店舗は公式で確認。'],
+  },
+  // 京つけもの ニシダや（食べ物・消えものギフト）。A8 s00000021775001。親への食べ物ギフト文脈。
+  //   健康効果を訴求しない（贈り物・食を楽しむ切り口）。断定禁止。商品・価格は公式で確認。
+  'nishidaya-tsukemono': {
+    id: 'nishidaya-tsukemono', network: 'a8', advertiserName: '京つけもの ニシダや',
+    programName: 'nishidaya', programId: 's00000021775001',
+    clickUrl: 'https://px.a8.net/svt/ejp?a8mat=4BCDBJ+7B5MXM+4O0M+609HT',
+    imageUrl: 'https://www22.a8.net/svt/bgt?aid=260917615442&wid=002&eno=01&mid=s00000021775001009000&mc=1',
+    trackingPixelUrl: 'https://www19.a8.net/0.gif?a8mat=4BCDBJ+7B5MXM+4O0M+609HT',
+    imageWidth: 300, imageHeight: 250, category: 'food-gift', isActive: true, approvalStatus: 'approved', disclosure: 'PR',
+    title: '京つけもの（親への食べ物ギフト）',
+    description: '京都の漬物を扱う通販の一つです。離れて暮らす親への食べ物・消えものギフトや、敬老の日・帰省の手土産、ご飯のお供の選択肢に。商品・価格は公式サイトの最新情報をご確認ください。',
+    cta: '京つけものの商品を見る', imageAlt: '京つけもの通販の広告',
+    placementArticles: ['homecoming-local-food-family'],
+    notes: ['健康効果を訴求せず、贈り物・食を楽しむ切り口で紹介。', '「絶対美味しい/必ず喜ばれる」等の断定禁止。商品・価格は公式で確認。'],
+  },
+  // ナノラル 薬用ホワイト＆プロテクト（薬用オーラルケア・医薬部外品）。A8 s00000027814002。
+  //   ★健康・医療の断定禁止（治る/必ず改善/口臭がなくなる/高齢者に最適 等）。PR文の転載禁止。
+  //   医薬部外品の効能は公式確認の範囲に限定。毎日の歯みがき用品の見直し文脈で紹介。バナー 300×250。
+  'nanoral-oral': {
+    id: 'nanoral-oral', network: 'a8', advertiserName: 'ナノラル 薬用ホワイト＆プロテクト',
+    programName: 'nanoral', programId: 's00000027814002',
+    clickUrl: 'https://px.a8.net/svt/ejp?a8mat=4BCDBJ+6OJ5Y2+5YM4+BXB8X',
+    imageUrl: 'https://www21.a8.net/svt/bgt?aid=260917615404&wid=002&eno=01&mid=s00000027814002003000&mc=1',
+    trackingPixelUrl: 'https://www14.a8.net/0.gif?a8mat=4BCDBJ+6OJ5Y2+5YM4+BXB8X',
+    imageWidth: 300, imageHeight: 250, category: 'oral-care', isActive: true, approvalStatus: 'approved', disclosure: 'PR',
+    title: '薬用オーラルケア用品という選択肢',
+    description: '薬用ハミガキ（医薬部外品）のオーラルケア製品の一つです。毎日の歯みがき用品を見直すときの選択肢に。成分・使い方・効能や価格は公式サイトの最新情報をご確認ください。',
+    cta: 'オーラルケア用品の詳細を確認する', imageAlt: '薬用オーラルケア用品の広告',
+    placementArticles: ['oya-oral-care-minaoshi'],
+    notes: ['健康・医療効果の断定禁止（治る/必ず改善/口臭がなくなる/高齢者に最適 等）。効能は公式確認の範囲に限定。', 'PR文の転載をしない。毎日の歯みがき用品の見直し文脈で紹介。'],
+  },
   // BLUEBOX Z1 コイシ マットレス（Hong Kong Jianing Limited）。A8 s00000027770001。
   //   親の寝室・寝具環境を見直す文脈で紹介。対象商品は「Z1 コイシ」のみ（他BLUEBOX商品へ
   //   誤誘導しない）。バナー 300×250。遷移先は px.a8.net 経由で
