@@ -53,6 +53,49 @@ export interface A8ServiceAd {
 //   掲載していた記事は、広告に依存しない一般解説記事として内容を維持している。
 // ---------------------------------------------------------------------
 export const A8_SERVICE_ADS: Record<string, A8ServiceAd> = {
+  // Kimochi｜オンライン心理カウンセリング（rementalグループ）。A8 s00000026504001。バナー 400×209。
+  //   ★位置づけ：高齢の親に受けさせる訴求ではなく「親を支える側（子世代）の心の負担」への選択肢。
+  //   ★最重要（メンタルヘルス／YMYL）：治る/うつが改善/受ければ解決/精神的に弱い人向け 等は禁止。
+  //     読者を精神疾患と推測しない。自己診断を促さない。恐怖・不安を煽ってCTAを押させない。
+  //     ★医療機関の代替として表示しない。緊急時（自傷・自殺念慮等）はアフィリエイトCTAでなく
+  //     公的緊急相談・医療につなぐ設計を優先する（記事側で明記）。
+  //   ★公式(2026-09-18 kimochi-mental.com)確認：オンラインカウンセリング／「国家資格(公認心理師)を
+  //     持ったカウンセラーだけが在籍」／月額プラン制。医療機関でない旨は公式ページに明示がないため
+  //     記事側で「医療機関の代替ではない」と明記。PR文は転載しない。
+  //   導線：負担→自分で整理→家族・友人に話す→自治体/地域包括支援センター等の公的相談→専門家→
+  //     オンラインで相談できる民間サービス→Kimochi の順序を基本に、静かに置く。
+  'kimochi-counseling': {
+    id: 'kimochi-counseling', network: 'a8', advertiserName: 'Kimochi オンライン心理カウンセリング',
+    programName: 'kimochi', programId: 's00000026504001',
+    clickUrl: 'https://px.a8.net/svt/ejp?a8mat=4BCDBJ+78RWII+5OI8+631SX',
+    imageUrl: 'https://www25.a8.net/svt/bgt?aid=260917615438&wid=002&eno=01&mid=s00000026504001022000&mc=1',
+    trackingPixelUrl: 'https://www15.a8.net/0.gif?a8mat=4BCDBJ+78RWII+5OI8+631SX',
+    imageWidth: 400, imageHeight: 209, category: 'mental-care', isActive: true, approvalStatus: 'approved', disclosure: 'PR',
+    title: '心が疲れたときに相談できる選択肢',
+    description: 'オンラインで公認心理師に相談できる、心のケアのサービスの一つです。月額プラン制で、スマホ・PCから利用できます。医療機関ではなく、治療を目的とするものではありません。料金・プラン・対象は公式サイトの最新情報をご確認ください。',
+    cta: 'オンライン心理相談の内容を確認する', imageAlt: 'オンライン心理カウンセリングサービスの広告',
+    placementArticles: ['oya-shinpai-tsukareta-kokoro'],
+    notes: ['メンタルヘルス。治る/改善/解決の断定・精神疾患の推測・自己診断誘導・不安を煽るCTAは禁止。医療機関の代替として表示しない。', '緊急時は公的緊急相談・医療を優先する導線を記事に置く。公式で確認できた事実（公認心理師/オンライン/月額プラン）のみ記載。'],
+  },
+  // キャリアカ｜AIキャリアサービス（自己分析・キャリア整理の入口）。A8 s00000008977002。対象18〜44歳。
+  //   ★成果150円。単独記事は作らず、既存の自己投資/キャリア導線に「STEP1（転職を決める前の自己
+  //     分析）」として静かに置く。★150円へのクリックを増やすために、キャリナビ(11,000)・sXars
+  //     (25,000)への導線を弱めないこと（キャリナビ記事ではキャリナビが主CV、キャリアカは前段の
+  //     テキストリンク）。断定（必ず転職成功 等）禁止。
+  //   段階分け：STEP1 キャリアカ(自己分析)→STEP2 キャリナビ(相談)→STEP3 sXars(コンサル転職)。
+  'careerca-ai': {
+    id: 'careerca-ai', network: 'a8', advertiserName: 'キャリアカ',
+    programName: 'careerca', programId: 's00000008977002',
+    clickUrl: 'https://px.a8.net/svt/ejp?a8mat=4BCDBJ+6QBGRE+1X9M+C6YGX',
+    imageUrl: 'https://www22.a8.net/svt/bgt?aid=260917615407&wid=002&eno=01&mid=s00000008977002048000&mc=1',
+    trackingPixelUrl: 'https://www17.a8.net/0.gif?a8mat=4BCDBJ+6QBGRE+1X9M+C6YGX',
+    imageWidth: 300, imageHeight: 250, category: 'career-self', isActive: true, approvalStatus: 'approved', disclosure: 'PR',
+    title: '転職を決める前の自己分析・キャリア整理',
+    description: 'AIを使って自己分析やキャリアの整理ができるサービスの一つです。転職するか決めていない段階の「まず自分を知る」入口として。対象は18〜44歳、プロフィール登録から始められます。内容・対象は公式サイトでご確認ください。',
+    cta: '自己分析・キャリア整理の内容を見る', imageAlt: 'AIキャリア自己分析サービスの広告',
+    placementArticles: ['oya-chikaku-uturn-tenshoku'],
+    notes: ['STEP1（転職を決める前の自己分析）の入口として静かに置く。キャリナビ/sXarsへの導線を弱めない。', '成果150円。「必ず転職成功/誰でも」等の断定禁止。対象18〜44歳。'],
+  },
   // ネイティブキャンプ留学（大人の自己投資・親子/三世代の海外滞在＋学び）。A8 s00000014758002。
   //   成果は正式見積完了。学生向け留学に寄せず「40〜60代の学び直し／親子・三世代の海外体験」文脈。
   //   断定（必ず話せる/絶対安心 等）禁止。国・費用・期間は公式で確認。

@@ -49,4 +49,4 @@ heroImage: "/images/articles/enkyori-kaigo-kokorogamae.webp"
 
 ## まとめ
 
-遠距離介護は「一人で抱え込まない」ことが何より大切です。見守りの仕組みと支援制度を上手に活用し、自分の生活も守りながら、無理なく親を支えていきましょう。親の対応で在宅勤務が増えた方は、[在宅ワーク環境にお金をかけるなら何から？毎日使うものへの自己投資](/articles/zaitaku-work-jiko-toushi-chair)、20〜30代で親の近くへの転職・働き方の見直しを考える方は[親の近くで働きたい｜Uターン・転職を考える20代・30代の選択肢](/articles/oya-chikaku-uturn-tenshoku)、医師として介護・見守りと仕事の両立を考える方は[医師が親の介護・見守りと仕事を両立するには？](/articles/ishi-oya-kaigo-hatarakikata)もあわせてご覧ください。
+遠距離介護は「一人で抱え込まない」ことが何より大切です。見守りの仕組みと支援制度を上手に活用し、自分の生活も守りながら、無理なく親を支えていきましょう。親のことを考え続けて心が疲れてしまったときは、[親のことが心配で疲れてしまったとき｜一人で抱え込まないために](/articles/oya-shinpai-tsukareta-kokoro)もあわせてご覧ください。親の対応で在宅勤務が増えた方は、[在宅ワーク環境にお金をかけるなら何から？毎日使うものへの自己投資](/articles/zaitaku-work-jiko-toushi-chair)、20〜30代で親の近くへの転職・働き方の見直しを考える方は[親の近くで働きたい｜Uターン・転職を考える20代・30代の選択肢](/articles/oya-chikaku-uturn-tenshoku)、医師として介護・見守りと仕事の両立を考える方は[医師が親の介護・見守りと仕事を両立するには？](/articles/ishi-oya-kaigo-hatarakikata)もあわせてご覧ください。
