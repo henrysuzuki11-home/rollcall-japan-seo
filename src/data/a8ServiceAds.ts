@@ -53,6 +53,28 @@ export interface A8ServiceAd {
 //   掲載していた記事は、広告に依存しない一般解説記事として内容を維持している。
 // ---------------------------------------------------------------------
 export const A8_SERVICE_ADS: Record<string, A8ServiceAd> = {
+  // POSIWILLエージェント紹介（自分に合う転職エージェントを探す）。A8 s00000025557003。バナー 300×250。
+  //   ★主用途＝STEP2「転職したいが、どのエージェントに相談すればいいか分からない」段階。
+  //     キャリアカ(STEP1自己分析)→POSIWILL(STEP2エージェント選び)→キャリナビ(STEP3キャリア相談)
+  //     →sXars(STEP4コンサル)の順。1ページに4案件を広告一覧のように並べない（Primary1＋Secondary
+  //     最大1）。POSIWILL=「誰に相談するか」を探す、キャリナビ=「自分のキャリアをどうするか」を相談。
+  //   ★対象：正社員転職希望者。学生・50歳以上・フリーランスのみ希望は成果対象外＝シニア中心記事に
+  //     主CTAとして設置しない。想定読者年齢が合う記事にのみ掲載。
+  //   ★禁止：おすすめNo.1/一番信頼できる/絶対に失敗しない 等の断定。親の不安を利用して転職を煽らない。
+  //     「自分に合うエージェントを探す選択肢の一つ」として紹介。PR文は転載しない。
+  'posiwill-agent': {
+    id: 'posiwill-agent', network: 'a8', advertiserName: 'POSIWILLエージェント紹介',
+    programName: 'posiwill-agent', programId: 's00000025557003',
+    clickUrl: 'https://px.a8.net/svt/ejp?a8mat=4BC735+EPVTY2+5H76+HVNAP',
+    imageUrl: 'https://www21.a8.net/svt/bgt?aid=260909537890&wid=002&eno=01&mid=s00000025557003003000&mc=1',
+    trackingPixelUrl: 'https://www12.a8.net/0.gif?a8mat=4BC735+EPVTY2+5H76+HVNAP',
+    imageWidth: 300, imageHeight: 250, category: 'career-agent', isActive: true, approvalStatus: 'approved', disclosure: 'PR',
+    title: '自分に合う転職エージェントを探すという選択肢',
+    description: '「転職したいけれど、どのエージェントに相談すればいいか分からない」ときに、自分に合う転職エージェント選びを相談できるサービスの一つです。無料相談があります。対象は正社員転職を考える方（学生や、フリーランスのみ希望の方は対象外の場合があります）。内容・対象は公式サイトでご確認ください。',
+    cta: '自分に合う転職エージェントを探す', imageAlt: '転職エージェント紹介サービスの広告',
+    placementArticles: ['tenshoku-agent-erabikata'],
+    notes: ['STEP2（エージェント選びに迷う段階）の主用途。対象は正社員転職希望者、学生・50歳以上・フリーランスのみ希望は対象外＝シニア中心記事に主CTAを置かない。', '「No.1/一番信頼/絶対失敗しない」等の断定禁止。親の不安を利用して煽らない。1ページに4案件を並べない。'],
+  },
   // Kimochi｜オンライン心理カウンセリング（rementalグループ）。A8 s00000026504001。バナー 400×209。
   //   ★位置づけ：高齢の親に受けさせる訴求ではなく「親を支える側（子世代）の心の負担」への選択肢。
   //   ★最重要（メンタルヘルス／YMYL）：治る/うつが改善/受ければ解決/精神的に弱い人向け 等は禁止。
