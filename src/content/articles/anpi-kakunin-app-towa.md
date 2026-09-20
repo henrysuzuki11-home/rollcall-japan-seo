@@ -85,4 +85,4 @@ A. 企業向けは災害時に従業員の安否を一斉確認するもの、�
 
 安否確認アプリは、日常の見守りと災害への備えを兼ねられる便利なツールです。まずは無料で使えるシンプルなものから試し、家族に合うかどうかを確かめてみましょう。
 
-毎日続けやすい方法は[親の安否確認を毎日する方法](/articles/oya-anpi-kakunin-mainichi)、無料で始められる選び方は[無料で始める家族の安否確認](/articles/muryou-anpi-kakunin-app)もあわせてどうぞ。実際に無料で試せる安否確認アプリは[こちら](/app)で紹介しています。
+毎日続けやすい方法は[親の安否確認を毎日する方法](/articles/oya-anpi-kakunin-mainichi)、無料で始められる選び方は[無料で始める家族の安否確認](/articles/muryou-anpi-kakunin-app)もあわせてどうぞ。実際に無料で試せる安否確認アプリは[こちら](/app)で紹介しています。名前の似た海外アプリを含めて比べたい方は[Roll Call・Snug・I'm Aliveを比較](/articles/anpi-app-rollcall-snug-imalive)、終活・情報整理まで含めた全体像は[親の見守り・終活アプリ比較](/articles/mimamori-shukatsu-app-hikaku)もご覧ください。

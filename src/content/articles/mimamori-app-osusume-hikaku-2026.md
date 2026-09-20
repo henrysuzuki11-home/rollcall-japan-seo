@@ -126,4 +126,6 @@ A. 特定の商品名より「タイプと基準」で選ぶのがおすすめ�
 カメラ型の見守りを具体的に比較したい方は、[高齢の親向け見守りカメラの選び方とタイプ別比較](/articles/mimamori-camera-hikaku)もあわせてご覧ください。
 
 > 毎日電話しなくても、家族の「無事」を確かめ合う方法があります。
+安否確認だけでなく終活・情報整理まで含めて比べたい方は[親の見守り・終活アプリ比較](/articles/mimamori-shukatsu-app-hikaku)、海外アプリを含む安否確認アプリの比較は[Roll Call・Snug・I'm Aliveを比較](/articles/anpi-app-rollcall-snug-imalive)もご覧ください。
+
 > → [離れて暮らす親を、無理なく見守る方法を見る](/app)

@@ -8,11 +8,15 @@ import {
   APP_CTA_ANDROID,
   APP_IOS_URL,
   APP_ANDROID_URL,
+  IQ121_APP_NAME,
+  IQ121_IOS_URL,
+  IQ121_ANDROID_URL,
 } from '../consts';
 
 interface Props {
-  /** "full" = bordered card with description, "compact" = just the two buttons. */
-  variant?: 'full' | 'compact';
+  /** "full" = bordered card with description (Roll Call), "compact" = just the two Roll Call buttons,
+   *  "iq121" = two IQ121 store buttons (App Store / Google Play). */
+  variant?: 'full' | 'compact' | 'iq121';
   heading?: string;
 }
 
@@ -20,7 +24,28 @@ const { variant = 'full', heading } = Astro.props;
 ---
 
 {
-  variant === 'full' ? (
+  variant === 'iq121' ? (
+    <div class="store-buttons store-buttons--compact" role="group" aria-label="IQ121のダウンロード">
+      <a
+        class="store-btn"
+        href={IQ121_IOS_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        data-ga="iq121_ios_click"
+      >
+        {IQ121_APP_NAME}をApp Storeで見る
+      </a>
+      <a
+        class="store-btn"
+        href={IQ121_ANDROID_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        data-ga="iq121_android_click"
+      >
+        {IQ121_APP_NAME}をGoogle Playで見る
+      </a>
+    </div>
+  ) : variant === 'full' ? (
     <section class="app-cta" aria-label="安否確認アプリの紹介">
       <p class="app-eyebrow">編集部が使っている見守りアプリ</p>
       <h2 class="app-name">{heading ?? APP_CTA_LABEL}</h2>
