@@ -53,6 +53,29 @@ export interface A8ServiceAd {
 //   掲載していた記事は、広告に依存しない一般解説記事として内容を維持している。
 // ---------------------------------------------------------------------
 export const A8_SERVICE_ADS: Record<string, A8ServiceAd> = {
+  // Qualial（クオリアル／萩原株式会社）。ベッド・収納・テーブル・ソファ・ラグ等の家具・インテリア通販。
+  //   A8 s00000027728001。バナー 300×250（wid=003）。遷移先は px.a8.net 経由（改変しない）。
+  //   ★位置づけ：韓国インテリア通販として量産しない。「親の住環境×実家整理×片付け後の家具見直し
+  //     ×暮らしやすい部屋づくり」文脈で紹介。
+  //   ★役割分担：BLUEBOX=マットレスそのもの、Qualial=ベッド/収納/テーブル/ソファ/ラグ等を含む
+  //     住環境の家具全般。睡眠・マットレス記事はBLUEBOX主CV、実家整理・家具・部屋づくり記事はQualial主CV。
+  //     住宅そのものの工事はRe:est。
+  //   ★禁止：高齢者向け家具/介護用家具/転倒防止家具 と事実確認なく表現しない（高齢者向け専用品では
+  //     ない）。安全性は「一般論」と「商品仕様」を明確に分離。断定表現を使わない。LINE経由注文は成果
+  //     対象外＝LINEへ誘導する独自CTAを作らない。PR文は転載しない。
+  'qualial-furniture': {
+    id: 'qualial-furniture', network: 'a8', advertiserName: 'Qualial',
+    programName: 'qualial', programId: 's00000027728001',
+    clickUrl: 'https://px.a8.net/svt/ejp?a8mat=4BCFNL+51L9TU+5XY8+5YZ75',
+    imageUrl: 'https://www22.a8.net/svt/bgt?aid=260920641305&wid=003&eno=01&mid=s00000027728001003000&mc=1',
+    trackingPixelUrl: 'https://www11.a8.net/0.gif?a8mat=4BCFNL+51L9TU+5XY8+5YZ75',
+    imageWidth: 300, imageHeight: 250, category: 'furniture-interior', isActive: true, approvalStatus: 'approved', disclosure: 'PR',
+    title: '親の部屋を整えるときの家具選びの選択肢',
+    description: 'ベッド・収納・テーブル・ソファ・ラグなど、部屋づくりに使える家具・インテリアを扱う通販の一つです。実家を片付けたあと、親が暮らしやすい部屋へ整える際の家具選びの選択肢に。サイズ・素材・価格は公式サイトの最新情報をご確認ください。',
+    cta: '家具・収納・インテリアを見る', imageAlt: '家具・インテリア通販 Qualial の広告',
+    placementArticles: ['jikka-kagu-heyazukuri'],
+    notes: ['家具・部屋づくり文脈の主CV（BLUEBOX=マットレス、Re:est=住宅工事と棲み分け）。高齢者向け専用/介護用/転倒防止家具と誤認させない。', '成果はWEB注文＋入金確認。LINE経由は対象外のためLINE誘導しない。安全性は一般論と商品仕様を分離。断定禁止。'],
+  },
   // POSIWILLエージェント紹介（自分に合う転職エージェントを探す）。A8 s00000025557003。バナー 300×250。
   //   ★主用途＝STEP2「転職したいが、どのエージェントに相談すればいいか分からない」段階。
   //     キャリアカ(STEP1自己分析)→POSIWILL(STEP2エージェント選び)→キャリナビ(STEP3キャリア相談)

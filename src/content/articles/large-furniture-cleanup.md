@@ -48,4 +48,4 @@ affiliateServices: ["r-cleaning"]
 
 ## まとめ
 
-大型家具・家電は、無理をせず「運べるもの」と「頼むもの」を分けるのが安全です。怪我をしてしまっては元も子もありません。実家じまいの全体の手順は[実家じまいで最初にやること](/articles/jikka-jimai-first-steps)、施設入居後の整理は[施設入居後の実家整理で家族が困ること](/articles/care-home-house-cleanup)、実家に住み続ける場合の修繕・リフォームは[親の実家はリフォームすべき？](/articles/jikka-reform-kakunin-point)もどうぞ。
+大型家具・家電は、無理をせず「運べるもの」と「頼むもの」を分けるのが安全です。怪我をしてしまっては元も子もありません。実家じまいの全体の手順は[実家じまいで最初にやること](/articles/jikka-jimai-first-steps)、施設入居後の整理は[施設入居後の実家整理で家族が困ること](/articles/care-home-house-cleanup)、実家に住み続ける場合の修繕・リフォームは[親の実家はリフォームすべき？](/articles/jikka-reform-kakunin-point)、片付けたあとに親が暮らしやすい部屋へ家具を見直すなら[実家を片付けた後、親が暮らしやすい部屋づくりを](/articles/jikka-kagu-heyazukuri)もどうぞ。
