@@ -162,6 +162,22 @@ const VC_ADS_BASE: Record<string, VCAdBase> = {
     pid: '892700112',
     raw: '<script language="javascript" src="//ad.jp.ap.valuecommerce.com/servlet/jsbanner?sid=3775652&pid=892700112"></script><noscript><a href="//ck.jp.ap.valuecommerce.com/servlet/referral?sid=3775652&pid=892700112" rel="nofollow"><img src="//ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid=3775652&pid=892700112" border="0"></a></noscript>',
   },
+  // レンティオ（レンティオ株式会社）。家電・カメラ・生活家電などを「買う前に一定期間試せる」
+  // レンタルサービス。親の家電を買う前に試す／実家の家電買い替え前に試す／旅行・帰省で短期間
+  // だけ必要なもの（スーツケース・カメラ等）を借りる、という文脈で紹介。ValueCommerce 発行
+  // コード（sid=3775652 / pid=892710979）は改変しない。VC プログラム 2168594。MyLink は
+  // 商品URL/画像/価格を推測して作らないため未使用（本 referral のみ）。成果対象は「新規レンタル
+  // 予約」。「レンタル品を後から購入すれば成果」等の誤誘導はしない。価格・キャンペーン・宿泊先
+  // 配送可否など一次情報で確認できない事項は本文に固定掲載せず「公式サイトで確認」に寄せる。
+  // 断定（No.1/最安/必ず安全/故障しても無料/何でも借りられる/どこでも受取可能）は使わない。
+  'rentio': {
+    id: 'rentio', label: 'PR', category: '家電レンタル',
+    title: '買う前に試せる家電レンタルを確認する',
+    description: '掃除機・空気清浄機・調理家電・カメラなどを、購入前に一定期間レンタルして使い勝手を試せるサービスの選択肢です。取扱商品・料金・レンタル期間・条件は公式サイトでご確認ください。',
+    useFor: ['家電を買う前に試す', '実家の家電の買い替え', '親へのプレゼント選び', '短期間だけ必要な家電', '旅行・帰省で使う用品'],
+    pid: '892710979',
+    raw: '<script language="javascript" src="//ad.jp.ap.valuecommerce.com/servlet/jsbanner?sid=3775652&pid=892710979"></script><noscript><a href="//ck.jp.ap.valuecommerce.com/servlet/referral?sid=3775652&pid=892710979" rel="nofollow"><img src="//ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid=3775652&pid=892710979" border="0"></a></noscript>',
+  },
 };
 
 // 広告主の総称表記（商標名は使わない。公式サイトと誤認させない安全な種別名）。
@@ -177,6 +193,7 @@ const VC_ADVERTISER_NAMES: Record<string, string> = {
   'ebest-recycle': '家電・リサイクル',
   'golf-goods': 'ゴルフ用品',
   'fujimaki-hyakkaten': '日本製・職人ものの通販',
+  'rentio': '家電・カメラのレンタル',
 };
 
 // 掲載を許可する記事slug（各記事の frontmatter valueCommerceAds と一致）。
@@ -204,6 +221,9 @@ const VC_PLACEMENT_ARTICLES: Record<string, string[]> = {
   'ebest-recycle': ['homecoming-disaster-supplies'],
   'golf-goods': ['parent-golf-memory'],
   'fujimaki-hyakkaten': ['nihonsei-gift-oya-jouhitsu'],
+  // レンタルの広告カードは専用の2記事のみに限定（既存記事へは本文内リンクで自然送客し、
+  // 既存記事の検索意図を広告で崩さない方針）。
+  'rentio': ['oya-kaden-kau-mae-rental', 'oyako-ryokou-rental-mono'],
 };
 
 // ---------------------------------------------------------------------
