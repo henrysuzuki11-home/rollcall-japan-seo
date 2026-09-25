@@ -53,6 +53,47 @@ export interface A8ServiceAd {
 //   掲載していた記事は、広告に依存しない一般解説記事として内容を維持している。
 // ---------------------------------------------------------------------
 export const A8_SERVICE_ADS: Record<string, A8ServiceAd> = {
+  // ONEKOSAMA OINUSAMA（犬猫用品の通販）。A8 s00000015995003。バナー 336×280。
+  //   ★位置づけ：「ペット好きの親／親と暮らす犬・猫」への贈り物・ペット用品の選択肢。単独の
+  //     ペットEC紹介にせず、既存の「親への贈り物」文脈に接続する。
+  //   ★公式(2026-09-25 oneko-sama.com)確認：キャットタワー/猫トイレ/猫砂/ペットウェア(犬服・猫服・
+  //     着物・袴・浴衣)/キャリー・抱っこ紐/ペットバギー/ハーネス・リード/寝具・マット/おもちゃ/
+  //     防災グッズ/空調ペット服 等を確認。健康効能の宣伝はしない（用品の区分・用途の事実のみ）。
+  //   ★成果：WEB注文後30日以内の入金確認。定期便猫砂は2回目以上の継続が必要。LINE経由注文は成果
+  //     対象外＝LINEへ誘導する独自CTAを作らない。断定（絶対喜ばれる/最高 等）禁止。価格・在庫・
+  //     ラインナップは変動するため公式で確認に寄せる。
+  'onekosama-pet': {
+    id: 'onekosama-pet', network: 'a8', advertiserName: 'ONEKOSAMA OINUSAMA',
+    programName: 'onekosama-oinusama', programId: 's00000015995003',
+    clickUrl: 'https://px.a8.net/svt/ejp?a8mat=4BCJJT+DE95JU+3FF2+HWPVL',
+    imageUrl: 'https://www20.a8.net/svt/bgt?aid=260925689810&wid=002&eno=01&mid=s00000015995003008000&mc=1',
+    trackingPixelUrl: 'https://www14.a8.net/0.gif?a8mat=4BCJJT+DE95JU+3FF2+HWPVL',
+    imageWidth: 336, imageHeight: 280, category: 'pet-goods', isActive: true, approvalStatus: 'approved', disclosure: 'PR',
+    title: '犬・猫と暮らす家族へのペット用品の選択肢',
+    description: 'キャットタワー・猫トイレ・ペットウェア（犬服・猫服・着物）・キャリー・ペットベッド・防災グッズなど、犬猫用品を扱う通販の一つです。ペット好きの親や、親と暮らす犬・猫への贈り物の選択肢に。取扱商品・価格・在庫は公式サイトの最新情報をご確認ください（2026年9月25日確認）。',
+    cta: 'ペット用品・ペットグッズを見る', imageAlt: '犬猫用品の通販 ONEKOSAMA OINUSAMA の広告',
+    placementArticles: ['oya-pet-gift-erabikata'],
+    notes: ['ペット好きの親への贈り物文脈の主CV。ランキング化しない。健康効能は書かない（用品の用途・区分の事実のみ）。', '成果はWEB注文＋30日以内入金。定期便猫砂は2回目以上継続が条件。LINE経由は対象外＝LINE誘導しない。断定禁止。'],
+  },
+  // Takashirt（タカシャツ）。犬・猫モチーフのTシャツ・グッズ、写真/名入れ対応。A8 s00000027462001。
+  //   バナー 300×250。★位置づけ：単なる猫Tシャツ紹介にせず「ペット好きの親へのプレゼント」「愛犬・
+  //     愛猫の写真を家族の思い出としてグッズにする」文脈で紹介。
+  //   ★公式(2026-09-25 takashirt.jp)確認：犬・猫柄のTシャツ/トート/パーカー/スマホケース/マグカップ、
+  //     犬種別T、名入れ・ペット写真入れ対応（オリジナルTシャツ/キーホルダー等）を確認。
+  //   ★成果：購入10%。断定（絶対喜ばれる 等）禁止。デザイン・対応商品・価格は公式で確認に寄せる。
+  'takashirt-pet': {
+    id: 'takashirt-pet', network: 'a8', advertiserName: 'Takashirt',
+    programName: 'takashirt', programId: 's00000027462001',
+    clickUrl: 'https://px.a8.net/svt/ejp?a8mat=4BCJJT+E9T4M2+5VWC+5YZ75',
+    imageUrl: 'https://www26.a8.net/svt/bgt?aid=260925689863&wid=002&eno=01&mid=s00000027462001003000&mc=1',
+    trackingPixelUrl: 'https://www18.a8.net/0.gif?a8mat=4BCJJT+E9T4M2+5VWC+5YZ75',
+    imageWidth: 300, imageHeight: 250, category: 'pet-goods', isActive: true, approvalStatus: 'approved', disclosure: 'PR',
+    title: '犬・猫モチーフのグッズ・写真入れの選択肢',
+    description: '犬・猫モチーフのTシャツ・トートバッグ・スマホケースなどを扱い、ペット写真入れや名入れに対応した商品もある通販の一つです。ペット好きの親への贈り物や、愛犬・愛猫の写真を思い出のグッズにする選択肢に。デザイン・対応商品・価格は公式サイトの最新情報をご確認ください（2026年9月25日確認）。',
+    cta: 'ペットモチーフ・写真入れグッズを見る', imageAlt: '犬・猫モチーフのグッズ通販 Takashirt の広告',
+    placementArticles: ['oya-pet-gift-erabikata', 'oya-pet-shashin-omoide'],
+    notes: ['ペットの贈り物／写真を思い出グッズにする文脈で紹介。ランキング化しない。断定禁止。', '成果は購入。デザイン・対応商品・価格は公式で確認。'],
+  },
   // Qualial（クオリアル／萩原株式会社）。ベッド・収納・テーブル・ソファ・ラグ等の家具・インテリア通販。
   //   A8 s00000027728001。バナー 300×250（wid=003）。遷移先は px.a8.net 経由（改変しない）。
   //   ★位置づけ：韓国インテリア通販として量産しない。「親の住環境×実家整理×片付け後の家具見直し
