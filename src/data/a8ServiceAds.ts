@@ -127,10 +127,11 @@ export const A8_SERVICE_ADS: Record<string, A8ServiceAd> = {
   'omiokuri-pet-kaso': {
     id: 'omiokuri-pet-kaso', network: 'a8', advertiserName: 'おみおくりペット火葬',
     programName: 'omiokuri-pet', programId: 's00000026781002',
-    clickUrl: 'https://px.a8.net/svt/ejp?a8mat=4BCJJT+DRCOUY+5QN6+BXQOH',
-    imageUrl: 'https://www25.a8.net/svt/bgt?aid=260925689832&wid=002&eno=01&mid=s00000026781002005000&mc=1',
-    trackingPixelUrl: 'https://www10.a8.net/0.gif?a8mat=4BCJJT+DRCOUY+5QN6+BXQOH',
-    imageWidth: 300, imageHeight: 250, category: 'pet-memorial', isActive: true, approvalStatus: 'approved', disclosure: 'PR',
+    // 2026-10-03 提携終了。誤って再描画されないよう clickUrl・imageUrl・trackingPixelUrl を空にする。
+    clickUrl: '',
+    imageUrl: '',
+    trackingPixelUrl: '',
+    imageWidth: 300, imageHeight: 250, category: 'pet-memorial', isActive: false, approvalStatus: 'ended', endedAt: '2026-10-03', reason: 'program_ended',
     title: '静岡・愛知の一部地域のペット火葬・訪問火葬の選択肢',
     description: '犬・猫などのペットの訪問火葬・合同火葬・個別火葬に対応するサービスの一つです。対応は静岡県・愛知県の一部地域に限られ、全国対応ではありません。対応地域・プラン・料金・受付方法は公式サイトの最新情報をご確認ください（2026年9月25日確認）。',
     cta: '対応地域・サービス内容を確認する', imageAlt: 'ペットの訪問火葬・火葬サービス おみおくりペット火葬 の広告',
@@ -138,7 +139,7 @@ export const A8_SERVICE_ADS: Record<string, A8ServiceAd> = {
     notes: [
       '静岡・愛知の一部地域限定＝全国対応と書かない。地域外読者に問い合わせを促さない。サービス対応地域(公式)とA8成果対象地域(静岡西部・中部/愛知中部・東部)を混同しない。',
       '成果条件：新規の電話問い合わせ＋葬儀日程調整完了。単なる電話発信で成果になると書かない。死・不安を煽らない断定禁止。料金は変動のため固定掲載せず公式確認へ。',
-      '提携終了日：A8管理画面表示 2026-10-03。終了後は isActive:false / approvalStatus:"ended" / endedAt を設定し clickUrl・imageUrl・trackingPixelUrl を空にする。記事本体は広告非依存で存続。',
+      '提携終了日：A8管理画面表示 2026-10-03。2026-10-06 に終了処理を実施（isActive:false / approvalStatus:"ended" / endedAt / clickUrl等を空に）。記事 jikka-pet-nakunattara はハピネス（継続）と本文で広告非依存に存続。周辺文は汎用化済みのため、おみおくりカードが非表示でも破綻しない。',
     ],
   },
   // ONEKOSAMA OINUSAMA（犬猫用品の通販）。A8 s00000015995003。バナー 336×280。
