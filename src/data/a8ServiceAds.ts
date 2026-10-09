@@ -1080,32 +1080,39 @@ export const A8_SERVICE_ADS: Record<string, A8ServiceAd> = {
       'デリケートな話題のため、煽り・恐怖訴求・断定表現を避ける。',
     ],
   },
+  // 家族信託「おやとこ」（株式会社こころのカンパニー）。A8 s00000025525001。バナー 300×250。
+  //   ★経緯：2026-07-23 に一度提携解除→2026-10 に再承認。新しいA8コード（a8mat=4BC4QS+8NDQXM+
+  //     5GYA+5ZMCH / aid=260906500523 / mid=s00000025525001006000）で再有効化。コードは改変しない。
+  //   ★成果：家族信託の新規問い合わせ（WEBは30日以内に電話で氏名・電話番号確認、電話は問い合わせ時確認）。
+  //     家族信託以外（相続・投資信託・成年後見制度だけが目的）の問い合わせへ誤誘導しない。
+  //   ★YMYL厳守：一次情報で確認できない「認知症になると必ず口座凍結」「家族信託なら資産凍結を必ず防げる」
+  //     「5人に1人」「2050年1000万人」「契約件数No.1」「年間数千件」等は使わない。広告主PR文を事実として
+  //     転載しない。成年後見・遺言と単純に優劣比較しない。IQ121とは別サービスで連携・提携表現は禁止。
   'oyatoko-family-trust': {
     id: 'oyatoko-family-trust',
     network: 'a8',
-    advertiserName: '',
-    programName: '',
-    programId: '',
-    // 提携解除のため広告コードは保持しない（空＝描画不可）
-    clickUrl: '',
-    imageUrl: '',
-    trackingPixelUrl: '',
-    imageWidth: 0,
-    imageHeight: 0,
+    advertiserName: 'おやとこ（家族信託の相談）',
+    programName: 'oyatoko',
+    programId: 's00000025525001',
+    clickUrl: 'https://px.a8.net/svt/ejp?a8mat=4BC4QS+8NDQXM+5GYA+5ZMCH',
+    imageUrl: 'https://www23.a8.net/svt/bgt?aid=260906500523&wid=002&eno=01&mid=s00000025525001006000&mc=1',
+    trackingPixelUrl: 'https://www13.a8.net/0.gif?a8mat=4BC4QS+8NDQXM+5GYA+5ZMCH',
+    imageWidth: 300,
+    imageHeight: 250,
     category: 'family-trust',
-    isActive: false,
-    approvalStatus: 'ended',
-    endedAt: '2026-07-23',
-    reason: 'advertiser_terminated',
+    isActive: true,
+    approvalStatus: 'approved',
     disclosure: 'PR',
-    title: '',
-    description: '',
-    cta: '',
-    imageAlt: '',
-    placementArticles: [],
+    title: '家族信託を専門家に相談するという選択肢',
+    description:
+      '家族信託について相談・問い合わせができるサービスの一つです。親の判断力があるうちに、財産管理の仕組みを検討したい家族向け。制度が自分の家庭に合うか、費用や手続きは、問い合わせや専門家への相談で確認できます。',
+    cta: '家族信託の相談・問い合わせ内容を確認する',
+    imageAlt: '家族信託の相談サービス おやとこ の広告',
+    placementArticles: ['dementia-asset-management-family-trust'],
     notes: [
-      '2026-07-23 広告主より提携解除の通知を受領。広告コードは削除済み。',
-      '再開の予定はない。復活させる場合は新規にA8で提携し直すこと。',
+      '2026-07-23 提携解除→2026-10 再承認。新コードで再有効化（改変しない）。',
+      '成果=家族信託の新規問い合わせ。相続・投資信託・成年後見だけが目的の問い合わせへ誤誘導しない。',
+      '「必ず口座凍結/必ず防げる/5人に1人/2050年1000万人/No.1/年間数千件」等の未確認断定禁止。PR文転載禁止。成年後見・遺言と優劣比較しない。IQ121とは別サービス（連携表現禁止）。',
     ],
   },
 };
