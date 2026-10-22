@@ -294,24 +294,25 @@ export const A8_SERVICE_ADS: Record<string, A8ServiceAd> = {
     placementArticles: ['oya-pet-gift-erabikata'],
     notes: ['ペット好きの親への贈り物文脈の主CV。ランキング化しない。健康効能は書かない（用品の用途・区分の事実のみ）。', '成果はWEB注文＋30日以内入金。定期便猫砂は2回目以上継続が条件。LINE経由は対象外＝LINE誘導しない。断定禁止。'],
   },
-  // Takashirt（タカシャツ）。犬・猫モチーフのTシャツ・グッズ、写真/名入れ対応。A8 s00000027462001。
-  //   バナー 300×250。★位置づけ：単なる猫Tシャツ紹介にせず「ペット好きの親へのプレゼント」「愛犬・
-  //     愛猫の写真を家族の思い出としてグッズにする」文脈で紹介。
-  //   ★公式(2026-09-25 takashirt.jp)確認：犬・猫柄のTシャツ/トート/パーカー/スマホケース/マグカップ、
-  //     犬種別T、名入れ・ペット写真入れ対応（オリジナルTシャツ/キーホルダー等）を確認。
-  //   ★成果：購入10%。断定（絶対喜ばれる 等）禁止。デザイン・対応商品・価格は公式で確認に寄せる。
+  // Takashirt（タカシャツ／株式会社高旗）。A8 プログラム番号 26-0421（s00000027462001）。
+  //   ★2026-10-20 18:00 にA8プログラム終了（成果報酬が発生しないため撤去）。既存の終了処理パターンに
+  //     準拠し、isActive:false / approvalStatus:'ended' / endedAt を設定、clickUrl・imageUrl・
+  //     trackingPixelUrl を空にして再描画不可にした。掲載記事（oya-pet-gift-erabikata・
+  //     oya-pet-shashin-omoide）からは広告コンポーネントとTakashirt言及を撤去済み。記事本体は
+  //     広告非依存の一般情報として存続。再開する場合はA8で新規提携し直すこと。
   'takashirt-pet': {
     id: 'takashirt-pet', network: 'a8', advertiserName: 'Takashirt',
     programName: 'takashirt', programId: 's00000027462001',
-    clickUrl: 'https://px.a8.net/svt/ejp?a8mat=4BCJJT+E9T4M2+5VWC+5YZ75',
-    imageUrl: 'https://www26.a8.net/svt/bgt?aid=260925689863&wid=002&eno=01&mid=s00000027462001003000&mc=1',
-    trackingPixelUrl: 'https://www18.a8.net/0.gif?a8mat=4BCJJT+E9T4M2+5VWC+5YZ75',
-    imageWidth: 300, imageHeight: 250, category: 'pet-goods', isActive: true, approvalStatus: 'approved', disclosure: 'PR',
-    title: '犬・猫モチーフのグッズ・写真入れの選択肢',
-    description: '犬・猫モチーフのTシャツ・トートバッグ・スマホケースなどを扱い、ペット写真入れや名入れに対応した商品もある通販の一つです。ペット好きの親への贈り物や、愛犬・愛猫の写真を思い出のグッズにする選択肢に。デザイン・対応商品・価格は公式サイトの最新情報をご確認ください（2026年9月25日確認）。',
-    cta: 'ペットモチーフ・写真入れグッズを見る', imageAlt: '犬・猫モチーフのグッズ通販 Takashirt の広告',
-    placementArticles: ['oya-pet-gift-erabikata', 'oya-pet-shashin-omoide'],
-    notes: ['ペットの贈り物／写真を思い出グッズにする文脈で紹介。ランキング化しない。断定禁止。', '成果は購入。デザイン・対応商品・価格は公式で確認。'],
+    clickUrl: '',
+    imageUrl: '',
+    trackingPixelUrl: '',
+    imageWidth: 0, imageHeight: 0, category: 'pet-goods', isActive: false, approvalStatus: 'ended', endedAt: '2026-10-20', reason: 'program_ended',
+    disclosure: 'PR',
+    title: '',
+    description: '',
+    cta: '', imageAlt: '',
+    placementArticles: [],
+    notes: ['2026-10-20 18:00 A8プログラム終了（26-0421）。広告コードを削除し描画不可に。掲載記事からも撤去済み。'],
   },
   // Qualial（クオリアル／萩原株式会社）。ベッド・収納・テーブル・ソファ・ラグ等の家具・インテリア通販。
   //   A8 s00000027728001。バナー 300×250（wid=003）。遷移先は px.a8.net 経由（改変しない）。
