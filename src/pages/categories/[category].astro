@@ -29,8 +29,8 @@ const breadcrumbs = [
 ---
 
 <BaseLayout
-  title={`${cat.name}の記事一覧`}
-  description={cat.description}
+  title={cat.seoTitle ?? `${cat.name}の記事一覧`}
+  description={cat.seoDescription ?? cat.description}
   canonical={`/categories/${cat.slug}`}
   breadcrumbs={breadcrumbs}
 >

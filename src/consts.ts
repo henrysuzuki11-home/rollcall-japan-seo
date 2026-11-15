@@ -154,6 +154,10 @@ export interface Category {
   name: string;
   description: string;
   icon: string;
+  /** 一覧ページ用のSEOタイトル（省略時は `${name}の記事一覧`）。ナビ表示の name は変えずに検索意図へ寄せる。 */
+  seoTitle?: string;
+  /** 一覧ページ用のmeta description（省略時は description）。 */
+  seoDescription?: string;
 }
 
 export const CATEGORIES: Category[] = [
@@ -191,6 +195,9 @@ export const CATEGORIES: Category[] = [
     description:
       '見守りアプリやツールの選び方、使い方を解説します。スマホが苦手な親でも使えるか、という視点も大切にしています。',
     icon: 'ア',
+    seoTitle: '見守りアプリの選び方・比較とおすすめ｜親の見守りに【2026年版】',
+    seoDescription:
+      '親の見守りアプリの選び方・比較と使い方をまとめた記事一覧です。安否確認・GPS・カメラなどタイプ別の違いや、スマホが苦手な親でも使えるか、無料で始められるかという視点から、わが家に合うアプリ選びを解説します。',
   },
   {
     slug: 'oyako-anshin',
