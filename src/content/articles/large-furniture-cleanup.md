@@ -6,7 +6,7 @@ tags: [実家整理, 大型家具, 家電, 片付け]
 pubDate: 2026-06-16
 author: 親みまもり研究所 編集部
 heroImage: "/images/articles/large-furniture-cleanup.webp"
-affiliateServices: ["r-cleaning"]
+affiliateServices: ["r-cleaning", "cuore-fuyouhin"]
 ---
 
 実家の片付けで、最後に立ちはだかるのが大型の家具や家電です。タンス、ベッド、食器棚、冷蔵庫、洗濯機、ピアノ——**家族の力だけでは動かせない**ものは意外と多いもの。この記事では、無理をせずに大型のものを整理するための考え方を紹介します。

@@ -16,7 +16,9 @@ export type AffiliateServiceId =
   | 'ihinseiri-110'
   | 'life-reset'
   | 'r-cleaning'
-  | 'bousai-goods';
+  | 'bousai-goods'
+  | 'cuore-ihinseiri'
+  | 'cuore-fuyouhin';
 
 export interface AffiliateService {
   id: AffiliateServiceId;
@@ -95,6 +97,56 @@ export const AFFILIATE_SERVICES: Record<AffiliateServiceId, AffiliateService> = 
     trackingPixel: 'https://www12.a8.net/0.gif?a8mat=4B7T8Z+1AFTYQ+4X26+NV1XD',
     priority: 4,
     inSidebar: true,
+  },
+  // 遺品整理クオーレ（株式会社クオーレ）。A8 s00000027657003。提携 2026-11-17。バナー 300×250。
+  //   ★位置づけ：関東（東京・埼玉・神奈川・千葉・栃木・群馬・茨城）・東海（静岡・愛知・岐阜）エリア特化の
+  //     遺品整理サービス。既存の全国系（ihinseiri-110 / life-reset）とは「地域特化」で棲み分ける選択肢。
+  //     inSidebar:false＝サイト全体のサイドバーには出さず、frontmatterで指定した記事にのみ本文カードとして表示。
+  //   ★成果条件（内部管理・本文/カードに書かない）：新規見積もり=WEB申込後30日以内に電話/メールで
+  //     氏名・住所・電話・メール確認完了（電話経由は通話60秒以下で否認）。再訪問90日・初回のみ。報酬額は非掲載。
+  //   ★対応エリア＝関東7＋東海3のみ。「全国対応」と書かない。遠方の子が対応エリア内の実家について申し込む場合の
+  //     居住地条件は未確認＝成果対象と断定しない。LINE経由・19歳以下・海外・エリア外・他社見積比較のみ等は否認条件。
+  //   ★禁止：「必ず最安値」「絶対に追加料金なし」「どんな物でも回収」「全国対応」等の保証表現。広告主PR文の転載。
+  //     利用体験の創作。料金・作業範囲・キャンセル条件は「公式で確認」と明記。
+  'cuore-ihinseiri': {
+    id: 'cuore-ihinseiri',
+    label: 'PR',
+    category: '遺品整理（関東・東海）',
+    title: '関東・東海で遺品整理を相談・見積もりしたい時に',
+    description:
+      '関東・東海エリアで、家族だけでは進めにくい遺品整理を相談・見積もりできるサービスの一つです。対応エリア・料金・作業範囲・追加料金・キャンセル条件は、必ず公式サイトでご確認ください。',
+    cta: '遺品整理の見積もり内容を確認する',
+    url: 'https://px.a8.net/svt/ejp?a8mat=4BGERE+CL2WWQ+5XEI+HW2Q9',
+    imageUrl:
+      'https://www29.a8.net/svt/bgt?aid=261106106761&wid=002&eno=01&mid=s00000027657003005000&mc=1',
+    trackingPixel: 'https://www17.a8.net/0.gif?a8mat=4BGERE+CL2WWQ+5XEI+HW2Q9',
+    priority: 6,
+    inSidebar: false,
+  },
+  // 不用品回収クオーレ（株式会社クオーレ）。A8 s00000027657004。提携 2026-11-17。バナー 300×250。
+  //   ★位置づけ：関東（東京・埼玉・神奈川・千葉・栃木・群馬・茨城）・東海（静岡・愛知・岐阜）エリア特化の
+  //     不用品回収サービス。既存の r-cleaning（大型家具・不用品）とは「地域特化」で棲み分ける選択肢。inSidebar:false。
+  //     自治体の粗大ごみ回収も選択肢として併記し、回収業者の一社に誘導しすぎない。
+  //   ★成果条件（内部管理・本文/カードに書かない）：新規見積もり=WEB申込後30日以内に電話/メールで
+  //     氏名・住所・電話・メール確認完了（電話経由は通話60秒以下で否認）。再訪問90日・初回のみ。報酬額は非掲載。
+  //   ★対応エリア＝関東7＋東海3のみ。「全国対応」と書かない。遠方の子が対応エリア内の実家について申し込む場合の
+  //     居住地条件は未確認＝成果対象と断定しない。LINE経由・自治体回収前提の無料相談のみ・他社価格確認のみ等は否認条件。
+  //   ★禁止：「必ず最安値」「絶対に追加料金なし」「どんな物でも回収」「全国対応」等の保証表現。広告主PR文の転載。
+  //     利用体験の創作。一般廃棄物の回収は許可等が関係するため、適法な回収体制・料金・条件は「公式で確認」と明記。
+  'cuore-fuyouhin': {
+    id: 'cuore-fuyouhin',
+    label: 'PR',
+    category: '不用品回収（関東・東海）',
+    title: '関東・東海で不用品の回収を相談・見積もりしたい時に',
+    description:
+      '関東・東海エリアで、大型家具・家電など不用品の回収を相談・見積もりできるサービスの一つです。自治体の粗大ごみ回収も選択肢に入れつつ、対応エリア・料金・追加料金・キャンセル条件は、必ず公式サイトでご確認ください。',
+    cta: '不用品回収の見積もり内容を確認する',
+    url: 'https://px.a8.net/svt/ejp?a8mat=4BGERE+CYRVTM+5XEI+NUES1',
+    imageUrl:
+      'https://www28.a8.net/svt/bgt?aid=261106106784&wid=002&eno=01&mid=s00000027657004005000&mc=1',
+    trackingPixel: 'https://www11.a8.net/0.gif?a8mat=4BGERE+CYRVTM+5XEI+NUES1',
+    priority: 7,
+    inSidebar: false,
   },
   'bousai-goods': {
     id: 'bousai-goods',
