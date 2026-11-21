@@ -48,4 +48,4 @@ GPS機能のある端末や見守りサービスで、万一の外出時にも�
 
 認知症の見守りは「早く気づく」ことから始まります。毎日の会話や安否確認を通じて変化を見逃さず、地域や専門職とつながりながら備えていきましょう。日々の接し方に迷ったら、[高齢者とのコミュニケーションのコツ](/articles/kourei-oya-communication)もあわせてご覧ください。
 
-判断力があるうちに親の預金・不動産の管理を考えておきたい方は、[親の認知症と資産管理（家族信託の仕組みと注意点）](/articles/dementia-asset-management-family-trust)も参考になります。外出時の位置がわかる備えは[見守りGPS・スマートタグの選び方とタイプ別比較](/articles/mimamori-gps-hikaku)もあわせてどうぞ。介護する側が疲れを感じたときは、[親のことが心配で疲れてしまったとき｜一人で抱え込まないために](/articles/oya-shinpai-tsukareta-kokoro)も参考になります。
+判断力があるうちに親の預金・不動産の管理を考えておきたい方は、[親の認知症と資産管理（家族信託の仕組みと注意点）](/articles/dementia-asset-management-family-trust)も参考になります。外出時の位置がわかる備えは[見守りGPS・スマートタグの選び方とタイプ別比較](/articles/mimamori-gps-hikaku)もあわせてどうぞ。介護する側が疲れを感じたときは、[親のことが心配で疲れてしまったとき｜一人で抱え込まないために](/articles/oya-shinpai-tsukareta-kokoro)も参考になります。歩行が不安定になってきたときの[杖・シルバーカー・歩行器・車椅子の選び方](/articles/oya-hokou-fuan-tsue-walker-kurumaisu)、運転の継続が心配なときの[親が免許返納した後の車の進め方](/articles/oya-menkyo-henno-kuruma)もあわせてご覧ください。
